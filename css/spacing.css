@@ -1,0 +1,71 @@
+/* 
+    spacing.css
+    Loic Lavergne portfolio
+*/
+
+/* Padding */
+.pd-lr-3 {
+  padding-left: 3% !important;
+  padding-right: 3% !important;
+}
+
+.pd-lr-4 {
+  padding-left: 4% !important;
+  padding-right: 4% !important;
+}
+
+/* Before md */
+@media (max-width: 767px) {
+  .p-4-5 {
+    padding: 1.8rem;
+  }
+
+  .m-neg-4-5 {
+    margin: 1.8rem -1.8rem;
+  }
+
+  .technologies-row {
+    animation: scroll_mobile 90s linear infinite;
+  }
+
+  .technologies-row:nth-of-type(2) {
+    left: -12.5%;
+    /* animation: scroll_mobile 90s linear infinite; */
+  }
+
+  .technologies-row>img {
+    width: 25%;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .p-md-5 {
+    padding: 2.5rem !important;
+  }
+
+  .m-neg-md-5 {
+    margin: 1.5rem -2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  p.fs-5.text-white.initially-hidden {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Width */
+.w-35-percent {
+  width: 35% !important;
+}
+
+/* Line height */
+.lh-md {
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 767px) {
+  .container-sm {
+    max-width: 560px;
+  }
+}

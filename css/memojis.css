@@ -1,0 +1,75 @@
+/* 
+    memojis.css
+    Loic Lavergne portfolio
+*/
+
+.memoji {
+  width: 75%;
+  max-width: 420px;
+  height: auto;
+  pointer-events: none;
+  transition: transform 1s ease;
+}
+
+.memoji-container {
+  filter: drop-shadow(30px 30px 7px rgb(0, 0, 0, 0.125));
+}
+
+/* Greeting */
+#greeting .memoji {
+  width: 90%;
+}
+
+#greeting .memoji-container {
+  margin-top: -2.25rem;
+  /* Push memoji up */
+  margin-bottom: -2.5rem;
+  /* Push element below up */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 69%, transparent 99%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, transparent 99%);
+}
+
+/* Intro */
+#intro .memoji-container {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  max-width: 555px;
+}
+
+/* Skills */
+#skills .memoji-container {
+  filter: drop-shadow(25px 25px 10px rgb(0, 0, 0, 0.125));
+  margin-top: 1vh;
+  margin-bottom: -5vh;
+}
+
+#skills .memoji:first-of-type {
+  margin-right: -10%;
+  margin-bottom: unset;
+}
+
+#skills .memoji {
+  margin-bottom: 5%;
+}
+
+#skills .memoji:last-of-type {
+  margin-left: -7%;
+  margin-bottom: unset;
+}
+
+@media (max-width: 575px) {
+  #skills .memoji {
+    display: none;
+  }
+
+  #skills .memoji {
+    display: block;
+    margin: unset;
+    width: 100% !important;
+  }
+
+  #skills .memoji:last-of-type,
+  #skills .memoji:first-of-type {
+    display: none;
+  }
+}

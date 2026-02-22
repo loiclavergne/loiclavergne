@@ -1,0 +1,71 @@
+/* 
+    navbar-toggler.css
+    Loic Lavergne portfolio
+*/
+
+/* (inspired by Apple's mobile site) */
+
+.navbar-toggler {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  padding-bottom: 2px;
+}
+
+/* 
+    Make "X"
+  */
+
+/* Move inwards */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-bread-crust {
+  transition: transform .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96),
+    -webkit-transform .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  transform: none;
+}
+
+/* Rotate to form "X" */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-bread {
+  transition: transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s,
+    -webkit-transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-bread.top {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-bread.bottom {
+  transform: rotate(-45deg);
+}
+
+/* 
+    Make "="
+  */
+
+/* Rotate to original orientation */
+.navbar-toggler .navbar-toggler-bread {
+  position: absolute;
+  right: calc(var(--bs-gutter-x) * .6);
+  transition: transform .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96),
+    -webkit-transform .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  transform: none;
+}
+
+/* Move outwards */
+.navbar-toggler-bread-crust {
+  display: block;
+  width: 20px;
+  height: 2px;
+  transition: transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s,
+    -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;
+}
+
+.navbar-toggler-bread-crust.top {
+  transform: translateY(-4px);
+}
+
+.navbar-toggler-bread-crust.bottom {
+  transform: translateY(4px);
+}

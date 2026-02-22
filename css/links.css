@@ -1,0 +1,53 @@
+/* 
+    links.css
+    Loic Lavergne portfolio
+*/
+
+/* Pointer cursor */
+.navbar-toggler-icon-wrapper,
+.navbar-brand,
+.goto-intro,
+.goto-projects,
+.goto-contact,
+#formspree-logo,
+#appearance-toggle {
+  cursor: pointer;
+}
+
+a[class*="link-"] {
+  text-decoration: none;
+}
+
+a[class*="link-"]:hover {
+  text-decoration: underline;
+}
+
+@media (hover: hover) {
+  a.social-link {
+    transition: opacity 0.35s ease;
+    text-decoration: none;
+  }
+
+  a.social-link:hover {
+    opacity: 0.75;
+  }
+
+  #navbar .navbar-brand {
+    opacity: 0.87;
+    transition: opacity 0.25s ease;
+  }
+
+  #navbar .navbar-brand:hover {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  a.social-link {
+    text-decoration: none;
+  }
+}
+
+#formspree-logo:hover {
+  opacity: 0.75;
+}

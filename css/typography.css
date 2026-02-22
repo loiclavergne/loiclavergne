@@ -1,0 +1,65 @@
+/* 
+    typography.css
+    Loic Lavergne portfolio
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+  /* font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", Arial, sans-serif !important; */
+  font-family: "Inter", Arial, sans-serif !important;
+  letter-spacing: -0.0075em;
+}
+
+.fs-14px {
+  font-size: 14px;
+}
+
+.navbar-brand {
+  font-size: calc(var(--bs-navbar-brand-font-size) - 0.05rem);
+}
+
+.nav-link {
+  font-size: 0.835rem;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.025em;
+}
+
+h1, h2, h3, h4, h5, h6, .fw-kinda-bold, #navbar .nav-link.active {
+  font-weight: 550;
+}
+
+h5 {
+  margin-bottom: .5rem !important;
+  font-size: 1.20rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Before md */
+@media (max-width: 767px) {
+  .fs-5 {
+    font-size: 1.15rem!important;
+  }
+  .display-1 {
+    font-size: calc(1.75rem + 5vw);
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* lg */
+@media (min-width: 992px) {
+  h2 {
+    font-size: 3.25rem;
+  }
+}

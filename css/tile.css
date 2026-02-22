@@ -1,0 +1,259 @@
+/* 
+    tile.css
+    Loic Lavergne portfolio
+*/
+
+.tile {
+  --tile-contrast-text: rgba(255, 255, 255, 0.96);
+  --tile-contrast-muted: rgba(255, 255, 255, 0.78);
+  min-height: 576px !important;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+}
+
+.tile>.tile-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.tile>.tile-overlay-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  z-index: 0;
+  opacity: 0;
+}
+
+.tile .tile-content {
+  z-index: 2;
+}
+
+/* Shared text token hook used by data-driven tiles. */
+.tile .tile-contrast-text {
+  color: var(--tile-contrast-text) !important;
+}
+
+/* Text layout for "+" overlays: centered block, left-aligned content. */
+.tile>.tile-overlay .overlay-content-glass {
+  width: min(100%, 27rem);
+  margin: 0 auto;
+  text-align: left;
+}
+
+.tile>.tile-overlay .overlay-content-glass p {
+  margin-bottom: 0.72rem !important;
+}
+
+.tile>.tile-overlay .overlay-content-glass p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.section-inner-container > h2, .section-inner-container > div > h2 {
+  opacity: 0;
+}
+
+/* Before md */
+@media (max-width: 767px) {
+  .tile h2 {
+    font-size: 2.275rem;
+  }
+}
+
+.tile h5 {
+  z-index: 10;
+}
+
+.tile h5,
+.tile p {
+  margin-bottom: 4px !important;
+  transition: color 0.65s cubic-bezier(0.66, 0, 0.01, 1) !important;
+}
+
+.tile p {
+  font-size: 1.025em;
+}
+
+.tile .topic-badge {
+  margin-left: 0.05rem !important;
+  margin-right: 0.05rem !important;
+  padding: 3px 11px;
+
+  font-size: 12px;
+  line-height: 1.3333733333;
+  font-weight: 500;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: inline-block;
+  background: transparent;
+}
+
+@media (min-width: 768px) {
+  .tile {
+    min-height: 600px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .tile {
+    min-height: 800px !important;
+  }
+
+  .col-lg-8 p,
+  .col p {
+    max-width: 655px;
+  }
+
+  .tile-overlay>div {
+    max-width: 550px;
+  }
+}
+
+/* @media (max-width: 575px) {
+    .mobile-min-height-600px {
+      min-height: 600px !important;
+    }
+  } */
+
+.text-white-animated {
+  color: white !important;
+  transition: color 0.65s cubic-bezier(0.66, 0, 0.01, 1) !important;
+}
+
+/* plus-go-x button container */
+.plus-go-x-container {
+  position: absolute;
+  /* bottom: 24px;
+    right: 24px; */
+  bottom: 16px;
+  right: 16px;
+  z-index: 10;
+}
+
+.plus-go-x>div {
+  /* https://stackoverflow.com/a/53355814/19227228 */
+  /* -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; */
+  will-change: transform;
+}
+
+/* plus-go-x button */
+.plus-go-x {
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity ease 0.39s;
+}
+
+.plus-go-x:hover {
+  opacity: 1;
+  transition: opacity ease 0.39s;
+  /* z-index: 10; */
+}
+
+.plus-go-x>input {
+  /* z-index: 10; */
+  display: none;
+}
+
+/* plus-go-x button icon */
+.plus-go-x-container>label>div>svg {
+  width: 32px;
+  height: 32px;
+}
+
+@media (min-width: 992px) {
+  .plus-go-x-container>label>div>svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.plus-go-x {
+  fill: rgba(130, 130, 130, 1);
+  transition: fill ease 0.5s;
+}
+
+.plus-go-x.checked {
+  transition: fill ease 0.5s;
+  fill: white;
+}
+
+.plus-go-x.fill-white {
+  fill: white;
+  transition: fill ease 0.5s;
+}
+
+.plus-go-x i.bi-plus-circle-fill {
+  color: rgba(130, 130, 130, 1);
+  font-size: 2.5rem;
+}
+
+/*
+  Intro "+" button cleanup:
+  keep the control fully transparent above the media so no
+  rectangular artifact appears over the placeholder image shadow.
+*/
+#intro .plus-go-x,
+#intro .plus-go-x > div,
+#intro .plus-go-x > div > svg {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#intro .plus-go-x > div {
+  line-height: 0;
+}
+
+/* Images */
+img.device {
+  filter: drop-shadow(10px 15px 15px rgb(0, 0, 0, 0.35));
+  height: 575px;
+  width: 100%;
+  object-fit: contain;
+}
+
+img.macbook {
+  /* filter: drop-shadow(0px 10px 20px rgb(0, 0, 0, 0.35)); */
+  /* height: 575px; */
+  height: unset;
+  width: 100%;
+  /* object-fit: contain; */
+}
+
+img.window {
+  width: 100%;
+  margin: 3vh 0;
+}
+
+/* Before lg breakpoint */
+@media (max-width: 991px) {
+
+  /* img.device { height: 100%; } */
+  img.device.landscape {
+    min-height: unset;
+    width: unset;
+    height: 500px;
+  }
+
+  img.window,
+  img.macbook {
+    height: 555px;
+    width: unset;
+    margin-left: -5%;
+  }
+
+  img.macbook {
+    height: 395px;
+  }
+}

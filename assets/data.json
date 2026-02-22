@@ -1,0 +1,387 @@
+{
+  "greeting": {
+    "heading": "Greetings, programs!",
+    "description": "I engineer things for iOS",
+    "platform_rotator": {
+      "enabled": true,
+      "token": "iOS",
+      "suffix": "OS",
+      "prefixes": [
+        "i",
+        "iPad",
+        "tv",
+        "mac",
+        "watch"
+      ],
+      "interval_ms": 1000
+    },
+    "enable_apple_logo_fallback": true,
+    "fallback_apple_logo_text": "Apple",
+    "keywords": [
+      "Swift",
+      "SwiftUI",
+      "Project Management",
+      "Team Management",
+      "iOS Development",
+      "Android Development",
+      "Xcode",
+      "watchOS",
+      "tvOS",
+      "macOS",
+      "ARKit",
+      "Kotlin",
+      "Objective-C",
+      "Git",
+      "Firebase",
+      "Rust",
+      "C++",
+      "Databases",
+      "SQL",
+      "MySQL",
+      "PHP",
+      "Python",
+      "Unix Shell Scripting",
+      "C#",
+      "Figma",
+      "Sketch",
+      "Linux",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Symfony",
+      "Unity3D",
+      "Blender"
+    ]
+  },
+  "intro": {
+    "heading": "These are the <span style=\"color: var(--azure);\">apps</span> you're looking for.",
+    "typewriter_lines": [
+      "Shipping mobile, one clean merge at a time.",
+      "May the source be with you.",
+      "These are the builds you're looking for.",
+      "Live long and refactor.",
+      "Boldly shipping where no app has shipped before.",
+      "One does not simply ship on Friday.",
+      "So we let CI decide.",
+      "Winter is coming. So are edge cases.",
+      "Good thing tests travel in packs.",
+      "Houston, we have a merge conflict.",
+      "Resolving at T-minus deploy.",
+      "The app awakens.",
+      "SwiftUI strikes back.",
+      "Keep calm and let Xcode index.",
+      "I ship when the spinner stops.",
+      "There is no place like 127.0.0.1.",
+      "Until QA says otherwise.",
+      "In Swift we trust.",
+      "In CI we verify.",
+      "With great power comes great merge responsibility.",
+      "And fewer force unwraps."
+    ],
+    "description": "I'm an Engineering Manager at Roole, responsible for mobile engineering across Roole Map and Roole Premium. My focus is aligning product strategy, technical architecture, and execution so teams can deliver high-quality outcomes at a sustainable pace.\nI work at the intersection of engineering, product, and platform concerns: roadmap planning, cross-team coordination, API and tooling evaluation, and continuous improvement of architecture and CI/CD practices.",
+    "timeline": [
+      {
+        "title": "Engineering Manager",
+        "subtitle": "Roole",
+        "date": "Jan 2026 - Present",
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "color": "#007aff",
+        "muted_color": "#5ac8fa",
+        "description": "Leads mobile engineering for Roole Map and Roole Premium.\nCoordinates teams and Tech Leads around roadmap, priorities, and delivery quality.\nAligns product strategy, backend dependencies, and platform-level objectives."
+      },
+      {
+        "title": "Tech Lead Mobile",
+        "subtitle": "Roole",
+        "date": "Oct 2022 - Dec 2025",
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "color": "#34c759",
+        "muted_color": "#30d158",
+        "description": "Led technical design and delivery for Roole Map.\nDrove architecture evolution, including migration toward MVVM with SwiftUI.\nEstablished stronger engineering practices across iOS and Android collaboration."
+      },
+      {
+        "title": "Chief Digital Officer",
+        "subtitle": "Vialife",
+        "date": "Oct 2020 - Sep 2022",
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "color": "#ff9500",
+        "muted_color": "#ffcc00",
+        "description": "Owned technical direction for Vialife Digital's platform and products.\nCoordinated engineering and business execution for publisher-facing digital services.\nSupported API strategy, product evolution, and delivery scalability."
+      },
+      {
+        "title": "Mobile Project Manager",
+        "subtitle": "Vialife",
+        "date": "Oct 2018 - Sep 2020",
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "color": "#af52de",
+        "muted_color": "#bf5af2",
+        "description": "Managed and delivered mobile projects across multiple platforms.\nLed technical decisions across iOS and Android applications.\nContributed hands-on to backend APIs, R&D initiatives, and app publication workflows."
+      },
+      {
+        "title": "iOS Developer, Project Manager",
+        "subtitle": "Things Are Moving",
+        "date": "Sep 2015 - Sep 2018",
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "color": "#5856d6",
+        "muted_color": "#5e5ce6",
+        "description": "Designed and shipped native Apple platform applications.\nCovered product design, development, integration, testing, and App Store release.\nWorked with Core Data, Core Location, Core Animation, In-App Purchases, and GameKit."
+      },
+      {
+        "title": ".NET Developer (Intern)",
+        "subtitle": "Air Liquide",
+        "date": "Apr 2014 - Sep 2014",
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "color": "#ff3b30",
+        "muted_color": "#ff6961",
+        "description": "Contributed to .NET application development in an enterprise environment.\nSupported implementation and maintenance of internal software components."
+      },
+      {
+        "title": "Symfony Developer (Intern)",
+        "subtitle": "Superprof",
+        "date": "Oct 2013 - Mar 2014",
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "color": "#8e8e93",
+        "muted_color": "#aeaeb2",
+        "description": "Worked on Symfony-based web development tasks and backend features.\nContributed to implementation quality and product iteration speed."
+      }
+    ]
+  },
+  "skills": {
+    "heading": "Skills",
+    "color": "var(--orange)",
+    "muted_color": "#ff9238",
+    "description": "I combine hands-on mobile engineering depth with leadership across roadmap, architecture, and delivery. The objective is simple: make teams faster, systems clearer, and releases more predictable.",
+    "list": []
+  },
+  "profile_url": "https://www.linkedin.com/in/loiclavergne/",
+  "projects": {
+    "heading": "Project Highlights",
+    "color": "#f63e54",
+    "muted_color": "#f76476",
+    "hobby_color": "#34c759",
+    "hobby_muted_color": "#30d158",
+    "description": "Selected products and initiatives across mobility and digital publishing.",
+    "typewriter_lines": [
+      "Why did the iOS app break up with production?",
+      "It said: this relationship needs more test coverage.",
+      "I told Xcode a joke about memory leaks.",
+      "It did not retain it.",
+      "Why do engineers avoid shipping on Friday?",
+      "Because bugs love weekend road trips.",
+      "How many developers does it take to fix a race condition?",
+      "Depends on who gets there first.",
+      "Why did the feature ask for a rollback plan?",
+      "It had trust issues with hotfixes."
+    ],
+    "pro": [
+      {
+        "heading": "Roole Map",
+        "cover_description": "A free mobility app designed to simplify everyday driving across France.",
+        "description": "Led technical strategy and delivery for the product's mobile foundations.\nDrove architecture modernization and delivery practices across teams.\nSupported roadmap execution with strong product-backend alignment.",
+        "topics": [
+          "ios",
+          "android",
+          "mobility",
+          "navigation",
+          "swiftui",
+          "mvvm",
+          "team-leadership"
+        ],
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "img_type": "device landscape",
+        "img_alt": "roole-map",
+        "center_image": true,
+        "md_size": 6,
+        "lg_size": 8,
+        "custom_url": "https://www.linkedin.com/in/loiclavergne/",
+        "custom_url_text": "View role details on LinkedIn",
+        "custom_url_2": {
+          "text": "Visit Roole",
+          "url": "https://www.roole.fr"
+        }
+      },
+      {
+        "heading": "Roole Premium",
+        "cover_description": "The mobile companion app for Roole members and premium services.",
+        "description": "Coordinated mobile delivery alongside Roole Map under shared standards.\nImproved cross-team planning and execution predictability.\nAligned technical and product roadmaps with platform objectives.",
+        "topics": [
+          "ios",
+          "android",
+          "membership",
+          "product-delivery",
+          "cross-team-coordination"
+        ],
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "img_type": "device",
+        "img_alt": "roole-premium",
+        "max_width": "350px",
+        "md_size": 6,
+        "lg_size": 4,
+        "custom_url": "https://www.linkedin.com/in/loiclavergne/",
+        "custom_url_text": "View role details on LinkedIn"
+      },
+      {
+        "heading": "Vialife Digital",
+        "cover_description": "A multi-channel digital publishing platform for press publishers.",
+        "description": "Helped shape and deliver APIs, mobile readers, and platform integrations.\nContributed to secure architecture, content distribution workflows, and long-term scalability.\nSupported product and business objectives across digital channels.",
+        "topics": [
+          "apis",
+          "ios",
+          "android",
+          "voice-assistants",
+          "ml-audio",
+          "security",
+          "offline"
+        ],
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "img_type": "device landscape",
+        "img_alt": "vialife-digital",
+        "md_size": 6,
+        "lg_size": 6,
+        "custom_url": "https://www.linkedin.com/in/loiclavergne/",
+        "custom_url_text": "View project context on LinkedIn"
+      },
+      {
+        "heading": "Digital Press Applications Suite",
+        "cover_description": "A shared architecture powering multiple branded press distribution apps.",
+        "description": "Led delivery of a suite of press apps with a common technical foundation.\nBalanced reusable architecture with product-specific customizations.\nOwned project coordination, iOS implementation, and release quality.",
+        "topics": [
+          "swift",
+          "ios",
+          "templated-architecture",
+          "project-management",
+          "app-store-delivery"
+        ],
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "img_type": "device",
+        "img_alt": "press-suite",
+        "md_size": 6,
+        "lg_size": 6,
+        "custom_url": "https://www.linkedin.com/in/loiclavergne/",
+        "custom_url_text": "View project context on LinkedIn"
+      },
+      {
+        "heading": "MyViapresse",
+        "cover_description": "A consumer mobile app for digital magazines and newspapers at scale.",
+        "description": "Owned end-to-end product lifecycle across design, architecture, and delivery.\nMigrated and modernized the app through multiple technical generations.\nImplemented subscription models and offline reading at scale.",
+        "topics": [
+          "swift",
+          "subscriptions",
+          "in-app-purchases",
+          "offline-reading",
+          "consumer-app"
+        ],
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "img_type": "device landscape",
+        "img_alt": "myviapresse",
+        "md_size": 6,
+        "lg_size": 8,
+        "custom_url": "https://www.linkedin.com/in/loiclavergne/",
+        "custom_url_text": "View project context on LinkedIn"
+      },
+      {
+        "heading": "Dakar Press",
+        "cover_description": "A mobile app delivering Senegalese daily newspapers to a global audience.",
+        "description": "Designed and built an iOS app for international digital press access.\nFocused on quality reading UX, subscription flows, and offline capability.\nSupported scalability for geographically distributed users.",
+        "topics": [
+          "swift",
+          "subscriptions",
+          "news",
+          "offline",
+          "global-distribution"
+        ],
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "img_type": "device",
+        "img_alt": "dakar-press",
+        "max_width": "350px",
+        "md_size": 6,
+        "lg_size": 4,
+        "custom_url": "https://www.linkedin.com/in/loiclavergne/",
+        "custom_url_text": "View project context on LinkedIn"
+      },
+      {
+        "heading": "Le Moniteur des Pharmacies",
+        "cover_description": "A professional iOS app for pharmacists combining news, training, and clinical references.",
+        "description": "Built the native iOS app in Swift for pharmacists' daily workflows.\nDelivered multi-format access across real-time news, digital magazines, jobs, and reference content.\nImplemented a reliable mobile experience focused on practical tools and frequent professional use.",
+        "topics": [
+          "swift",
+          "ios",
+          "pharmacy",
+          "reference-data",
+          "professional-app"
+        ],
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "img_type": "device landscape",
+        "img_alt": "le-moniteur-des-pharmacies",
+        "md_size": 6,
+        "lg_size": 6,
+        "custom_url": "https://www.linkedin.com/in/loiclavergne/",
+        "custom_url_text": "View project context on LinkedIn"
+      },
+      {
+        "heading": "Le Point Veterinaire",
+        "cover_description": "A native iOS app for veterinarians with news, training, and practical decision tools.",
+        "description": "Developed the native iOS app in Swift for veterinary professionals.\nIntegrated news, training content, publications, and practical data tools in one mobile product.\nFocused on usability, regular usage patterns, and dependable information access.",
+        "topics": [
+          "swift",
+          "ios",
+          "veterinary",
+          "professional-tools",
+          "mobile-product"
+        ],
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "img_type": "device landscape",
+        "img_alt": "le-point-veterinaire",
+        "md_size": 6,
+        "lg_size": 6,
+        "custom_url": "https://www.linkedin.com/in/loiclavergne/",
+        "custom_url_text": "View project context on LinkedIn"
+      }
+    ],
+    "hobby": [
+      {
+        "heading": "Loic Engineer Portfolio",
+        "cover_description": "This portfolio website, built as a fast static project with data-driven content.",
+        "description": "Designed and implemented as a static site tailored for GitHub Pages hosting.\nFocused on maintainable structure, accessibility, and performance-first rendering.\nIncludes reusable section/tile systems and typewriter-based storytelling.",
+        "topics": [
+          "html",
+          "css",
+          "javascript",
+          "seo",
+          "accessibility"
+        ],
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "img_type": "device landscape",
+        "img_alt": "portfolio-project",
+        "md_size": 6,
+        "lg_size": 8,
+        "custom_url": "https://loic.engineer/",
+        "custom_url_text": "Visit loic.engineer"
+      },
+      {
+        "heading": "Templated Mobile Starter",
+        "cover_description": "A reusable mobile app starter template for faster product kickoffs.",
+        "description": "Structured template for iOS/Android projects with shared conventions and CI foundations.\nAccelerates setup for navigation, API wiring, state management, and release pipelines.\nBuilt to improve delivery consistency across multiple app initiatives.",
+        "topics": [
+          "swiftui",
+          "kotlin",
+          "mvvm",
+          "ci-cd",
+          "template"
+        ],
+        "img": "assets/img/placeholders/placeholder-media.svg",
+        "img_type": "device",
+        "img_alt": "templated-mobile-starter",
+        "max_width": "350px",
+        "md_size": 6,
+        "lg_size": 4
+      }
+    ]
+  },
+  "socials": [
+    {
+      "platform": "linkedin",
+      "username": "loiclavergne",
+      "username_prefix": "in/"
+    }
+  ]
+}

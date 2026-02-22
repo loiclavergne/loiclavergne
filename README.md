@@ -1,60 +1,72 @@
-#  Hello there
+# Loic Lavergne Portfolio
 
-<pre>
- <strong>$ whoami</strong>
+## Overview
+This repository contains Loic Lavergne's portfolio website as a fully static site.
 
- Loïc Lavergne • Engineering Manager @ <a href="https://www.roole.fr">Roole</a>
-</pre>
+The site is data-driven:
+- `index.html` defines the page shell and section structure.
+- `assets/data.json` stores profile content (intro, timeline, skills, projects, socials).
+- `js/main.js` renders content from JSON into the UI.
 
-<pre>
- <strong>$ cat .plan</strong>
+No build step is required.
 
- Login: loiclavergne
+## Stack
+- HTML5
+- CSS3 (modular stylesheets in `css/`)
+- Vanilla JavaScript ES modules (in `js/`)
+- Bootstrap 5 (local vendor files)
 
- [ Engineering • Architecture • Mobile Platforms ]
-</pre>
+## Project Structure
+- `index.html`: semantic layout and static containers
+- `assets/data.json`: portfolio content source
+- `css/`: component and system styles (`style`, `sections`, `tile`, `colors`, etc.)
+- `js/`: rendering and interaction logic
+- `vendor/`: Bootstrap, Bootstrap Icons, Normalize
 
-<pre>
- <strong>$ git ls-files stack</strong>
+## Key Systems
+- Appearance system (`js/appearance.js`):
+  - supports Light / Dark / Auto modes
+  - persists preference to `localStorage`
+  - updates CSS custom properties for contrast and glass surfaces
+- Animation system (`js/animations.js`):
+  - section entrance animations
+  - mobile navbar collapse transitions
+  - tile overlay open/close interactions
+- Media fallback system (`js/lib.js`):
+  - replaces failed images/videos with local placeholders
 
- Swift • SwiftUI • iOS • Architecture • CI/CD
-</pre>
+Detailed notes:
+- `docs/ARCHITECTURE.md`
 
-<pre>
- <strong>$ tree responsibilities/</strong>
+## SEO and Accessibility
+- SEO metadata and social cards are declared in `index.html`.
+- Structured data (`Person`) is embedded as JSON-LD in `index.html`.
+- Crawl support files:
+  - `robots.txt`
+  - `sitemap.xml`
+- Accessibility enhancements include:
+  - skip link
+  - semantic landmarks (`nav`, `main`, `section`, `footer`)
+  - ARIA labels for interactive icon controls
+  - keyboard-accessible appearance toggle and tile expand controls
 
- responsibilities/
- ├── Technical roadmap definition & execution tracking
- ├── Architecture evolution & long-term initiatives
- ├── Cross-team coordination & shared standards
- ├── API integration, tooling evaluation & CI improvements
- └── Sustainable and predictable delivery practices
-</pre>
+## Local Development
+Use a local HTTP server (required for ES modules and `fetch`):
 
-<pre>
- <strong>$ cat background.txt</strong>
+```bash
+cd /Users/loki/Developer/website
+python3 -m http.server 8080
+```
 
- Computer Science – Epitech, Paris
-</pre>
+Open:
 
-<pre>
- <strong>$ uptime</strong>
+`http://localhost:8080`
 
- Mobile platforms running. CI green. Roadmap active.
-</pre>
+## Hosting
+This site is static and can be hosted directly on GitHub Pages.
 
-<pre>
- <strong>$ ls socials</strong>
-
- -rw-r--r--@   3 <strong>LinkedIn</strong>    262B <a href="https://www.linkedin.com/in/loiclavergne/">linkedin.com/in/loiclavergne</a>
- -rw-rw-rw-@   3 <strong>Email</strong>        96B <a href="mailto:twofold.wallow02@icloud.com">contact</a>
- drwxr-xr-x@   1 <strong>Portfolio</strong>   116K <a href="https://loic.engineer">loic.engineer</a>
- -r--r--r--@   1 <strong>Bluesky</strong>     706B <a href="https://bsky.app/profile/loic.engineer">bsky.app/profile/loic.engineer</a>
- -r--r--r--@   1 <strong>X</strong>           410B <a href="https://twitter.com/loiclavergne">twitter.com/loiclavergne</a>
-</pre>
-
-<pre>
- <strong>$ exit</strong>
-
- logout
-</pre>
+Typical Pages setup:
+1. Push repository to GitHub.
+2. Open repository settings.
+3. Go to Pages.
+4. Set source to your branch root (`/`).

@@ -1,27 +1,523 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Coming Soon</title>
-  <meta name="description" content="This site is under construction. Coming soon." />
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <link href="main.css" rel="stylesheet">
-</head>
-<body>
-  <main class="wrap">
-    <section class="card" aria-label="Coming soon">
-      <h1>Coming soon.</h1>
-      <p>This site is under construction.<br/>Working on something clean, fast, and simple.</p>
-      <div class="hairline" aria-hidden="true"></div>
-      <footer>© Loïc Lavergne <span id="y"></span></footer>
-    </section>
-  </main>
+<!--
+    index.html
+    Loic Lavergne portfolio website.
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    Static HTML shell rendered with local JSON data and modular CSS/JS.
+    Compatible with GitHub Pages hosting.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Loïc Lavergne is an Engineering Manager at Roole leading mobile engineering across Roole Map and Roole Premium.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="theme-color" content="#0f1931" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f8ff" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://loic.engineer/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://twitter.com/loiclavergne">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="me" href="https://loic.lavergne.tech">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Loïc Lavergne | Engineering Manager">
+  <meta property="og:description"
+    content="Engineering leadership for mobile platforms: roadmap, architecture, and delivery.">
+  <meta property="og:url" content="https://loic.engineer/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/placeholders/placeholder-media.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@loiclavergne">
+  <meta name="twitter:creator" content="@loiclavergne">
+  <meta name="twitter:title" content="Loïc Lavergne | Engineering Manager">
+  <meta name="twitter:description"
+    content="Engineering leadership for mobile platforms: roadmap, architecture, and delivery.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/placeholders/placeholder-media.svg">
+  <title>Loïc Lavergne | Engineering Manager</title>
+  <link rel="shortcut icon" href="assets/img/placeholders/placeholder-media.svg">
+  <link rel="preload" href="vendor/bootstrap-icons/fonts/bootstrap-icons.woff2" as="font" type="font/woff2"
+    crossorigin>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Loïc Lavergne",
+      "url": "https://loic.engineer/",
+      "jobTitle": "Engineering Manager",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Roole"
+      },
+      "sameAs": [
+        "https://github.com/loiclavergne/",
+        "https://www.linkedin.com/in/loiclavergne/",
+        "https://bsky.app/profile/loic.engineer",
+        "https://twitter.com/loiclavergne",
+        "https://www.instagram.com/loic.lavergne.tech",
+        "https://loic.lavergne.tech"
+      ],
+      "knowsAbout": [
+        "Mobile Engineering",
+        "iOS Development",
+        "Android Development",
+        "Swift",
+        "SwiftUI",
+        "Technical Leadership",
+        "Roadmap Planning",
+        "CI/CD"
+      ]
+    }
   </script>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="vendor/normalize.css">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/tile.css">
+  <link rel="stylesheet" href="css/navbar-toggler.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/spacing.css">
+  <link rel="stylesheet" href="css/links.css">
+  <link rel="stylesheet" href="css/memojis.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="overflow-x: hidden;">
+  <a href="#main-container" class="skip-link">Skip to main content</a>
+  <!-- 
+    Nav bar
+   -->
+  <nav id="navbar" class="navbar navbar-expand-sm navbar-dark fixed-top bg-blur" aria-label="Primary">
+    <div class="container-sm d-flex flex-row justify-content-between">
+      <a id="title" class="navbar-brand fw-kinda-bold px-2 d-flex flex-row align-items-center gap-2"
+        href="#greeting" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+        <img src="assets/img/placeholders/placeholder-media.svg" alt="profile-placeholder" class="pfp"
+          style="border: 1px solid rgba(255, 255, 255, 0.25);">
+        Loïc Lavergne
+      </a>
+      <!-- Nav bar toggler (mobile) -->
+      <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false"
+        aria-label="Navigation toggler">
+        <div class="navbar-toggler-icon-wrapper">
+          <span class="navbar-toggler-bread top">
+            <span class="navbar-toggler-bread-crust top"></span>
+          </span>
+          <span class="navbar-toggler-bread bottom">
+            <span class="navbar-toggler-bread-crust bottom"></span>
+          </span>
+        </div>
+      </button>
+      <!-- Nav bar items -->
+      <div id="navbar-content" class="collapse navbar-collapse flex-grow-0">
+        <!-- Links -->
+        <ul class="navbar-nav navbar-nav-scroll me-auto mb-2 mb-sm-0">
+          <li class="nav-item mx-md-1">
+            <a href="#intro" class="nav-link py-1 goto-intro" data-bs-toggle="collapse"
+              data-bs-target=".navbar-collapse.show">
+              About
+            </a>
+          </li>
+          <li class="nav-item mx-md-1">
+            <a href="#skills" class="nav-link py-1 goto-skills" data-bs-toggle="collapse"
+              data-bs-target=".navbar-collapse.show">
+              Skills
+            </a>
+          </li>
+          <li class="nav-item mx-md-1">
+            <a href="#projects" class="nav-link py-1 goto-projects" data-bs-toggle="collapse"
+              data-bs-target=".navbar-collapse.show">
+              Projects
+            </a>
+          </li>
+          <li class="nav-item mx-md-1">
+            <a href="#contact" class="nav-link py-1 goto-contact" data-bs-toggle="collapse"
+              data-bs-target=".navbar-collapse.show">
+              Say hello
+            </a>
+          </li>
+          <li class="nav-item mx-md-1">
+            <a href="https://www.linkedin.com/in/loiclavergne/" target="_blank" rel="noopener noreferrer"
+              class="nav-link py-1">
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+        <div id="filler"></div>
+      </div>
+    </div>
+  </nav>
+  <!-- 
+    Main container
+   -->
+  <main id="main-container" data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- 
+      Greeting section
+     -->
+    <section id="greeting" class="container-fluid d-flex flex-column justify-content-center p-5 pd-lr-3"
+      aria-labelledby="hero-title">
+      <div class="mb-3">
+        <div id="hello-wrapper"
+          class="position-absolute top-0 start-50 translate-middle-x vw-100 vh-100 pe-none overflow-hidden">
+          <div id="hello-container"
+            class="position-relative w-100 h-100 d-flex flex-column justify-content-center overflow-hidden">
+            <div class="hello-row"></div>
+            <div class="hello-row"></div>
+            <div class="hello-row"></div>
+          </div>
+        </div>
+        <div class="memoji-container text-center">
+          <img
+            srcset="assets/img/placeholders/placeholder-media.svg 400w,
+                    assets/img/placeholders/placeholder-media.svg 600w,
+                    assets/img/placeholders/placeholder-media.svg 800w"
+            sizes="(max-width: 576px) 90vw, (max-width: 992px) 600px, 800px"
+            src="assets/img/placeholders/placeholder-media.svg" alt="hero-media-placeholder" class="initially-hidden memoji"
+            decoding="async" fetchpriority="high">
+        </div>
+        <h1 id="hero-title" class="initially-hidden text-white text-center display-1 fw-kinda-bold"></h1>
+        <p class="initially-hidden text-white text-center fs-5 fw-light"></p>
+      </div>
+    </section>
+    <!-- 
+      Intro section
+     -->
+    <section id="intro" class="section container-fluid bg-light" aria-labelledby="intro-heading">
+      <div class="section-inner-container">
+        <h2 id="intro-heading" class="p-4 p-md-5 pd-tb-1-5-rem" style="color: var(--azure);">
+          About
+        </h2>
+        <div class="row row-cols-1 g-3 g-md-4">
+          <div class="col">
+            <div class="tile bg-light-secondary rounded-5 d-flex flex-column p-4-5 p-md-5 h-100"
+              data-contrast-primary="#33a3ff" data-contrast-secondary="#9ccfff"
+              data-contrast-primary-alpha="0.58" data-contrast-secondary-alpha="0.34"
+              style="min-height: unset !important; padding-bottom: 0!important;">
+              <!-- Heading -->
+              <h5 style="color: var(--azure);">
+                A little about me
+              </h5>
+              <!-- Content -->
+              <div class="tile-content row row-cols-1" style="height: 73vh; max-height: 650px !important;">
+                <!-- Text -->
+                <div class="col col-md-6 d-flex align-items-center p-3 p-lg-5">
+                  <h2></h2>
+                </div>
+                <!-- Image -->
+                <div class="col col-md-6 d-flex align-items-end justify-content-center text-center m-0"
+                  style="margin-top: -9vh !important; margin-bottom: 0 !important;">
+                  <img
+                    srcset="assets/img/placeholders/placeholder-media.svg 400w,
+                            assets/img/placeholders/placeholder-media.svg 600w,
+                            assets/img/placeholders/placeholder-media.svg 800w"
+                    sizes="(max-width: 767px) 100vw, 555px" src="assets/img/placeholders/placeholder-media.svg"
+                    alt="about-media-placeholder" class="memoji-container w-100 m-0" loading="lazy" decoding="async"
+                    fetchpriority="low">
+                </div>
+              </div>
+              <!-- Overlay -->
+              <div class="initially-hidden tile-overlay rounded-5 d-none fw-kinda-bold lh-md p-4-5 p-md-5 fs-6">
+                <!-- Detail text -->
+                <div class="d-flex flex-column align-items-center justify-content-center tile-contrast-text h-100 w-100"
+                  style="margin: 0 auto;">
+                  <div class="overlay-content-glass"></div>
+                </div>
+              </div>
+              <!-- Overlay background -->
+              <span class="tile-overlay-background rounded-5"
+                style="background-color: var(--azure) !important;"></span>
+              <!-- Plus go x button -->
+              <div class="plus-go-x-container">
+                <label class="plus-go-x">
+                  <input type="checkbox" aria-label="Toggle details for About" aria-expanded="false">
+                  <div class="p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill" width="16" height="16"
+                      viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                      <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                    </svg>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="timeline" class="mx-md-4" aria-labelledby="timeline-heading">
+          <h2 id="timeline-heading" class="text-center my-4">Timeline</h2>
+          <div class="timeline-pager" role="region" aria-label="Career timeline pager">
+            <div class="timeline-pager-track"></div>
+            <div class="timeline-pager-controls">
+              <button type="button" class="timeline-pager-button timeline-pager-prev" aria-label="Show previous job">
+                <i class="bi bi-chevron-left" aria-hidden="true"></i>
+              </button>
+              <div class="timeline-media-card-gallery-nav" role="tablist" aria-label="Timeline pages"></div>
+              <button type="button" class="timeline-pager-button timeline-pager-next" aria-label="Show next job">
+                <i class="bi bi-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div id="timeline-job-modal" class="timeline-job-modal" role="dialog" aria-modal="true"
+            aria-labelledby="timeline-job-modal-title" aria-hidden="true">
+            <div class="timeline-job-modal-backdrop" data-timeline-modal-close></div>
+            <div class="timeline-job-modal-card">
+              <button type="button" class="timeline-job-modal-close" aria-label="Close job description"
+                data-timeline-modal-close>
+                <i class="bi bi-x-lg" aria-hidden="true"></i>
+              </button>
+              <p id="timeline-job-modal-meta" class="timeline-job-modal-meta"></p>
+              <h3 id="timeline-job-modal-title" class="timeline-job-modal-title"></h3>
+              <div id="timeline-job-modal-description" class="timeline-job-modal-description"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 
+      Skills section
+    -->
+    <section id="skills" class="section container-fluid bg-light" aria-labelledby="skills-heading">
+      <div class="section-inner-container">
+        <!-- Section heading -->
+        <h2 id="skills-heading" class="p-4 p-md-5 pd-tb-1-5-rem" style="color: var(--orange);">
+          Skills
+        </h2>
+        <!-- Tiles -->
+        <div class="row row-cols-1 g-3 g-md-4">
+          <!-- Overview tile -->
+          <div class="col">
+            <div class="tile rounded-5 d-flex flex-column p-4-5 p-md-5 h-100" style="min-height: unset!important;">
+              <!-- Heading -->
+              <h5 style="color: var(--orange);">
+                Quick to learn, quick to build
+              </h5>
+              <!-- Content -->
+              <div class="tile-content fw-kinda-bold lh-md">
+                <p></p>
+                <div class="m-neg-4-5 m-neg-md-5 d-flex flex-column">
+                  <div class="d-flex technologies-row"></div>
+                  <div class="d-flex technologies-row"></div>
+                  <div class="d-flex technologies-row"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Skills tiles -->
+        </div>
+      </div>
+    </section>
+    <!-- 
+      Projects section
+     -->
+    <section id="projects"
+      class="section container-fluid bg-light d-flex flex-column align-items-center justify-content-center"
+      aria-labelledby="projects-heading">
+      <div class="section-inner-container">
+        <!-- Section heading -->
+        <div class="p-4 p-md-5 pd-tb-1-5-rem pd-b-2-2-5-rem">
+          <h2 id="projects-heading" style="color: var(--tomato)">
+            Projects
+          </h2>
+        </div>
+        <!-- Projects tiles -->
+        <div class="row row-cols-1 g-3 g-md-4">
+          <div class="col">
+            <div class="tile bg-light-secondary rounded-5 d-flex flex-column"
+              style="min-height: unset !important; background: linear-gradient(25deg, var(--very-dark-grey) 45%, var(--dark-secondary) 90%); overflow: hidden;">
+              <!-- Content -->
+              <div class="tile-content row row-cols-1" style="height: 80vh; min-height: 670px; max-height: 750px;">
+                <!-- Text -->
+                <div class="col col-md-4 d-flex flex-row align-items-center p-5 special">
+                  <div class="text-center text-sm-start px-3 ps-lg-5">
+                    <h2 id="projects-typewriter" class="text-white mb-3"></h2>
+                  </div>
+                </div>
+                <!-- Image -->
+                <div
+                  class="col col-md-8 d-flex align-items-end justify-content-start justify-content-sm-center m-0 ps-1 ps-sm-5 pe-lg-5"
+                  style="z-index: -1; transform: translateZ(0);">
+                  <!-- translateZ(0) needed because border-radius + overflow: hidden is whack on Safari -->
+                  <img
+                    srcset="assets/img/placeholders/placeholder-media.svg 800w,
+                            assets/img/placeholders/placeholder-media.svg 1200w,
+                            assets/img/placeholders/placeholder-media.svg 1600w"
+                    sizes="(max-width: 767px) 95vw, 66vw"
+                    src="assets/img/placeholders/placeholder-media.svg" alt="project-highlight-placeholder"
+                    class="device macbook ms-5 ms-lg-0" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 class="mt-4 mb-3 px-2 px-md-0" style="color: var(--tomato);">Pro</h3>
+        <div id="projects-pro-row" class="row row-cols-1 g-3 g-md-4"></div>
+        <h3 class="mt-5 mb-3 px-2 px-md-0" style="color: #34c759;">Hobby</h3>
+        <div id="projects-hobby-row" class="row row-cols-1 g-3 g-md-4"></div>
+      </div>
+    </section> <!-- End project section -->
+    <!-- 
+      Contact section
+     -->
+    <section id="contact" class="section container-fluid bg-light" aria-labelledby="contact-heading">
+      <div class="section-inner-container">
+        <!-- Section heading -->
+        <h2 id="contact-heading" class="p-4 p-md-5 pd-tb-1-5-rem" style="color: var(--violet);">
+          Say hello
+        </h2>
+        <!-- Tiles -->
+        <div class="row row-cols-1 g-3 g-md-4">
+          <!-- Get in touch tile -->
+          <div class="col-md-6 col-lg-6">
+            <div
+              class="tile contact-tile rounded-5 d-flex flex-column justify-content-between p-4-5 p-md-5 h-100"
+              data-contrast-primary="#7f89ff" data-contrast-secondary="#8cb6ff"
+              data-contrast-primary-alpha="0.56" data-contrast-secondary-alpha="0.32"
+              style="background: linear-gradient(var(--violet) 20%, var(--violet-secondary) 60%);">
+              <!-- Heading -->
+              <h5 class="tile-contrast-text">
+                Shoot me a message
+              </h5>
+              <!-- Content -->
+              <div class="tile-content tile-contrast-text d-flex flex-column justify-content-center h-100">
+                <div class="tile-contrast-text mb-2 mb-md-3 p-md-3 p-lg-5">
+                  <div id="send-icon" class="initially-hidden mb-2 mb-md-3">
+                    <i class="bi bi-send" style="font-size: 5em;" aria-hidden="true"></i>
+                  </div>
+                  <h2>
+                    Leave a message and I'll get back to you ASAP.
+                  </h2>
+                </div>
+              </div>
+              <!-- Overlay -->
+              <div class="initially-hidden tile-overlay rounded-5 d-none fw-kinda-bold fs-6 lh-md p-1 p-md-3 p-lg-5">
+                <div class="text-white d-flex flex-column align-items-center justify-content-center h-100 w-100"
+                  style="margin: 0 auto;">
+                  <form action="https://formspree.io/f/mlezvpqp" method="POST" id="form" class="w-100">
+                    <div id="messageForm" class="container w-100">
+                      <div class="container-fluid w-100">
+                        <div class="mb-3">
+                          <label for="name" class="required form-label text-white fw-kinda-bold">
+                            Name
+                          </label>
+                          <input type="text" name="name" autocomplete="name" required id="name" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                          <label for="email" class="required form-label text-white fw-kinda-bold">
+                            Email
+                          </label>
+                          <input type="email" name="email" autocomplete="email" inputmode="email" required id="email"
+                            class="form-control">
+                        </div>
+                        <div class="mb-3">
+                          <label for="message" class="required form-label text-white fw-kinda-bold">
+                            Message
+                          </label>
+                          <textarea name="message" rows="3" required id="message" class="form-control"></textarea>
+                        </div>
+                        <div class="text-end">
+                          <button type="submit" class="btn btn-primary fw-kinda-bold shadow1 w-100">
+                            Send
+                          </button>
+                        </div>
+                      </div>
+                      <div class="container d-flex align-items-end justify-content-center pt-4">
+                        <h6 class="text-white" style="margin-right: 12px;">
+                          Powered by
+                        </h6>
+                        <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" id="formspree-logo"
+                          class="shadow1">
+                          <img src="assets/img/svg/logo-formspree.svg" alt="formspree-logo" loading="lazy"
+                            decoding="async" fetchpriority="low">
+                        </a>
+                      </div>
+                    </div> <!-- End inner container -->
+                  </form>
+                </div>
+              </div>
+              <!-- Overlay background -->
+              <span class="tile-overlay-background rounded-5"
+                style="background-color: var(--violet) !important;"></span>
+              <!-- Plus go x button -->
+              <div class="plus-go-x-container">
+                <label class="plus-go-x fill-white">
+                  <input type="checkbox" aria-label="Toggle message form" aria-expanded="false">
+                  <div class="p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill" width="16" height="16"
+                      viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                      <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                    </svg>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <div
+              class="tile contact-tile bg-light-secondary rounded-5 d-flex flex-column justify-content-between p-4-5 p-md-5 h-100">
+              <!-- Heading -->
+              <h5 style="color: var(--violet)">Connect with me</h5>
+              <div class="tile-content d-flex flex-column justify-content-between fw-kinda-bold lh-md h-100">
+                <p style="transition: none !important;">Elsewhere on the internet...</p>
+                <!-- Social links -->
+                <div style="margin: 0 auto;" id="socials-container"></div>
+                <div>
+                  <!-- Blank div to push socials-container to middle of flex container -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 
+      Footer
+     -->
+    <footer>
+      <div style="max-width: 100vw; overflow: hidden;">
+        <div class="row bg-light-secondary pd-lr-4 pt-1 pb-1">
+          <div class="foot-div col-sm-8 d-flex align-items-center">
+            <p class="text-matte-light text-center fw-normal fs-14px p-2" style="margin-bottom: 0;">
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script>
+              <span><a class="link- text-light goto-contact" href="#contact">Loïc Lavergne</a></span>. All rights reserved.
+            </p>
+          </div>
+          <div id="appearance-toggle-container" class="foot-div col-sm d-flex align-items-start p-2"
+            style="justify-content: flex-end" role="group" aria-label="Appearance mode switcher">
+            <div id="appearance-toggle">
+              <ul class="nav nav-pills fs-14px">
+                <li class="nav-item">
+                  <button id="light-appearance" type="button" class="nav-link">Light</button>
+                </li>
+                <li class="nav-item">
+                  <button id="dark-appearance" type="button" class="nav-link">Dark</button>
+                </li>
+                <li class="nav-item">
+                  <button id="auto-appearance" type="button" class="nav-link">Auto</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main> <!-- End #main-container -->
+
+  <!-- 
+    Scripts
+   -->
+  <script src="vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="js/main.js" type="module"></script>
 </body>
+
 </html>
