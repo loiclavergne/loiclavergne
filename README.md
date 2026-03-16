@@ -52,9 +52,3 @@
  -r--r--r--@   1 <strong>Bluesky</strong>     706B <a href="https://bsky.app/profile/loic.engineer">bsky.app/profile/loic.engineer</a>
  -r--r--r--@   1 <strong>X</strong>           410B <a href="https://twitter.com/loiclavergne">twitter.com/loiclavergne</a>
 </pre>
-
-<pre>
- <strong>$ exit</strong>
-
- logout
-</pre>
