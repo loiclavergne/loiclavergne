@@ -51,6 +51,9 @@ Generated output:
   changes should move users between equivalent English and French URLs.
 - Keep translations synchronized. When changing structure or content fields in
   one locale, update the other locale in the same pass.
+- Keep localized route structures consistent. Locale copy may differ, but code,
+  folders, file names, and slugs should stay English unless there is a strong
+  technical reason not to.
 - Keep accessibility, privacy, and performance as first-class constraints.
 - Avoid third-party fonts, analytics, trackers, and unnecessary dependencies.
 - Preserve Safari-first quality while keeping modern Chromium browsers fully

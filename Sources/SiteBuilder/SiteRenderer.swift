@@ -79,7 +79,7 @@ struct SiteRenderer {
         return payload.site.baseUrl + path
     }
 
-    /// Map a route like `/fr/projets/` to the generated output file.
+    /// Map a route like `/fr/projects/` to the generated output file.
     func outputURL(for route: String) -> URL {
         if route == "/" {
             return rootURL.appendingPathComponent("index.html")
