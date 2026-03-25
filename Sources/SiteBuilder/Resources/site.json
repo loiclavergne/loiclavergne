@@ -32,23 +32,23 @@
     },
     "work": {
       "en": "/work/",
-      "fr": "/fr/travail/"
+      "fr": "/fr/work/"
     },
     "projects": {
       "en": "/projects/",
-      "fr": "/fr/projets/"
+      "fr": "/fr/projects/"
     },
     "writing": {
       "en": "/writing/",
-      "fr": "/fr/ecrits/"
+      "fr": "/fr/writing/"
     },
     "library": {
       "en": "/library/",
-      "fr": "/fr/bibliotheque/"
+      "fr": "/fr/library/"
     },
     "about": {
       "en": "/about/",
-      "fr": "/fr/a-propos/"
+      "fr": "/fr/about/"
     }
   },
   "pageKeys": [

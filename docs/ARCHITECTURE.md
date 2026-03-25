@@ -18,11 +18,11 @@ English routes:
 
 French routes:
 - `/fr/`
-- `/fr/travail/`
-- `/fr/projets/`
-- `/fr/ecrits/`
-- `/fr/bibliotheque/`
-- `/fr/a-propos/`
+- `/fr/work/`
+- `/fr/projects/`
+- `/fr/writing/`
+- `/fr/library/`
+- `/fr/about/`
 
 ## Rendering Model
 
