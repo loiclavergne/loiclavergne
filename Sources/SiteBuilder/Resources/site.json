@@ -325,7 +325,34 @@
           }
         ],
         "education_heading": "Education",
-        "education_note": "The structure for the education timeline is ready, but the public education details still need to be added in the next content pass."
+        "education_intro": "Formal education details are still missing from the public profile, but the section can already distinguish between academic background, early technical formation, and ongoing self-directed learning.",
+        "education_cards": [
+          {
+            "title": "Academic timeline",
+            "copy": "Institution names, degree titles, and dates can be added here once the public version of the education history is ready.",
+            "items": [
+              "The page is already structured for a future formal timeline.",
+              "No renderer changes should be needed once the data is available."
+            ]
+          },
+          {
+            "title": "Early technical foundation",
+            "copy": "Before the Apple-platform specialization, the foundation was broadened through internships across Ruby, Symfony, and .NET environments.",
+            "items": [
+              "Ubudu introduced early startup product work in Ruby.",
+              "Superprof added Symfony backend experience.",
+              "Air Liquide added enterprise .NET implementation work."
+            ]
+          },
+          {
+            "title": "Continuous learning",
+            "copy": "A large part of the education path has come from shipping products directly: Apple platforms, backend APIs, product design coordination, digital publishing systems, and AI-assisted workflows.",
+            "items": [
+              "Learning stayed close to real delivery constraints.",
+              "The range expanded with each product generation rather than through one isolated domain."
+            ]
+          }
+        ]
       },
       "projects": {
         "page_title": "Projects | Loïc Lavergne",
@@ -944,7 +971,34 @@
           }
         ],
         "education_heading": "Formation",
-        "education_note": "La structure de la chronologie de formation est prête, mais les détails publics doivent encore être ajoutés dans un prochain passage contenu."
+        "education_intro": "Les détails de formation initiale manquent encore dans le profil public, mais la section peut déjà distinguer le parcours académique, la première formation technique et l'apprentissage continu.",
+        "education_cards": [
+          {
+            "title": "Parcours académique",
+            "copy": "Les établissements, diplômes et dates pourront être ajoutés ici dès que la version publique de la formation sera prête.",
+            "items": [
+              "La page est déjà structurée pour accueillir une chronologie formelle.",
+              "Aucune évolution du renderer ne devrait être nécessaire quand les données seront disponibles."
+            ]
+          },
+          {
+            "title": "Première base technique",
+            "copy": "Avant la spécialisation Apple platforms, la base s'est élargie via des stages en environnements Ruby, Symfony et .NET.",
+            "items": [
+              "Ubudu a apporté une première expérience produit startup en Ruby.",
+              "Superprof a ajouté une expérience backend Symfony.",
+              "Air Liquide a apporté une expérience .NET en contexte entreprise."
+            ]
+          },
+          {
+            "title": "Apprentissage continu",
+            "copy": "Une large part du parcours de formation vient de la livraison directe de produits : plateformes Apple, APIs backend, coordination design produit, systèmes d'édition numérique et workflows assistés par l'IA.",
+            "items": [
+              "L'apprentissage est resté proche des contraintes réelles de delivery.",
+              "L'amplitude s'est construite produit après produit plutôt que dans un seul domaine isolé."
+            ]
+          }
+        ]
       },
       "projects": {
         "page_title": "Projets | Loïc Lavergne",

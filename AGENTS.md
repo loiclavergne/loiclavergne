@@ -77,9 +77,9 @@ swift run SiteServer
 - The public lead title is `Engineering Manager, Mobile Products`.
 - `hello@loic.engineer` is currently treated as a placeholder contact address
   until the user confirms the final public inbox.
-- Writing, library, sports, and trophy sections now use structured static
-  content blocks in `site.json`, even when the underlying personal data is
-  still pending.
-- Education, real reading data, sports specifics, trophy selections, and the
-  final contact email still require a later content pass.
+- Education, writing, library, sports, and trophy sections now use structured
+  static content blocks in `site.json`, even when the underlying personal data
+  is still pending.
+- Formal education data, real reading data, sports specifics, trophy
+  selections, and the final contact email still require a later content pass.
 - Blog architecture exists in v1 even though posts are not published yet.

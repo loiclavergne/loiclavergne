@@ -86,8 +86,8 @@ JavaScript disabled and motion reduced.
 
 ## Secondary Sections
 
-The writing, library, sports, and trophy areas are now modeled as structured
-static content rather than single placeholder paragraphs.
+The education, writing, library, sports, and trophy areas are now modeled as
+structured static content rather than single placeholder paragraphs.
 
 This matters because:
 - the site can present these areas as real product surfaces before live data exists
@@ -109,7 +109,7 @@ privacy-first delivery.
 
 The architecture is ready for these sections, but the detailed content still
 needs a later pass:
-- education
+- formal education institutions, degrees, and dates
 - real books and reading counts
 - actual sports activities and milestones
 - trophy case selections

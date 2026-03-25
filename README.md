@@ -90,6 +90,7 @@ The v1 architecture includes:
 - work, projects, writing, library, and about pages
 - English and French localization
 - light, dark, and auto appearance modes
+- structured static education section on the work page
 - structured static surfaces for writing themes, reading shelves, sports, and trophy curation
 - manual-first content architecture for sections where personal data is still being curated
 

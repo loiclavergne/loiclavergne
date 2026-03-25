@@ -160,7 +160,8 @@ struct WorkPage: Decodable {
     let experienceHeading: String
     let experience: [ExperienceItem]
     let educationHeading: String
-    let educationNote: String
+    let educationIntro: String
+    let educationCards: [ContentCard]
 }
 
 struct FeaturedProject: Decodable {

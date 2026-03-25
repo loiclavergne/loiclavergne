@@ -357,6 +357,8 @@ struct SiteRenderer {
             """
         }.joined(separator: "\n")
 
+        let educationCards = page.educationCards.map(renderContentCard).joined(separator: "\n")
+
         return """
             <section class="hero hero--page">
               <div class="shell hero__content hero__content--page">
@@ -399,14 +401,17 @@ struct SiteRenderer {
             </section>
 
             <section class="section section--compact">
-              <div class="shell section-heading">
-                <span class="eyebrow">\(escapeHTML(label(labels, key: "context", fallback: "Context")))</span>
-                <h2>\(escapeHTML(page.educationHeading))</h2>
+              <div class="shell split-heading">
+                <div>
+                  <span class="eyebrow">\(escapeHTML(label(labels, key: "context", fallback: "Context")))</span>
+                  <h2>\(escapeHTML(page.educationHeading))</h2>
+                </div>
+                <div class="section-copy">
+                  <p>\(escapeHTML(page.educationIntro))</p>
+                </div>
               </div>
-              <div class="shell">
-                <article class="card reveal">
-                  <p>\(escapeHTML(page.educationNote))</p>
-                </article>
+              <div class="shell card-grid card-grid--three">
+                \(educationCards)
               </div>
             </section>
         """
