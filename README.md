@@ -73,9 +73,15 @@ Serve locally:
 swift run SiteServer
 ```
 
+If port `8080` is already in use:
+
+```bash
+swift run SiteServer --port 8081
+```
+
 Open:
 
-`http://localhost:8080`
+`http://localhost:8080` or the port you passed to `--port`
 
 ## Product Scope In V1
 

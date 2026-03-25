@@ -6,9 +6,8 @@
 //  Copyright © 2026 Loïc Lavergne. All rights reserved.
 //
 
-import Dispatch
+import Darwin
 import Foundation
-import Network
 
 /// Supported command-line options for the local static server.
 struct ServerConfiguration {
@@ -67,21 +66,36 @@ struct ServerConfiguration {
 
 /// Errors surfaced by the local server configuration and request lifecycle.
 enum SiteServerError: Error, LocalizedError {
+    case acceptFailed(String)
+    case bindFailed(String)
     case invalidPort(String)
-    case missingArgument(String)
-    case unknownArgument(String)
     case invalidRoot(URL)
+    case listenFailed(String)
+    case missingArgument(String)
+    case sendFailed(String)
+    case socketFailed(String)
+    case unknownArgument(String)
 
     var errorDescription: String? {
         switch self {
+        case let .acceptFailed(message):
+            return "Failed to accept a connection: \(message)"
+        case let .bindFailed(message):
+            return "Failed to bind the local server: \(message)"
         case let .invalidPort(value):
             return "Invalid port value '\(value)'."
-        case let .missingArgument(flag):
-            return "Missing value for \(flag)."
-        case let .unknownArgument(argument):
-            return "Unknown argument '\(argument)'."
         case let .invalidRoot(url):
             return "Static root does not exist: \(url.path)"
+        case let .listenFailed(message):
+            return "Failed to listen for connections: \(message)"
+        case let .missingArgument(flag):
+            return "Missing value for \(flag)."
+        case let .sendFailed(message):
+            return "Failed to send the response: \(message)"
+        case let .socketFailed(message):
+            return "Failed to create the local server socket: \(message)"
+        case let .unknownArgument(argument):
+            return "Unknown argument '\(argument)'."
         }
     }
 }
@@ -136,108 +150,12 @@ struct HTTPResponse {
     }
 }
 
-/// Serves static files from the generated site output folder over loopback HTTP.
-final class StaticSiteServer: @unchecked Sendable {
-    private let configuration: ServerConfiguration
-    private let listener: NWListener
-    private let rootURL: URL
-    private let fileManager = FileManager.default
-    private let queue = DispatchQueue(label: "loic.engineer.siteserver.listener")
-    private var signalSource: DispatchSourceSignal?
-
-    init(configuration: ServerConfiguration) throws {
-        self.configuration = configuration
-        self.rootURL = configuration.rootURL.standardizedFileURL
-
-        var isDirectory: ObjCBool = false
-        guard fileManager.fileExists(atPath: rootURL.path, isDirectory: &isDirectory), isDirectory.boolValue else {
-            throw SiteServerError.invalidRoot(rootURL)
-        }
-
-        guard let port = NWEndpoint.Port(rawValue: configuration.port) else {
-            throw SiteServerError.invalidPort(String(configuration.port))
-        }
-
-        let parameters = NWParameters.tcp
-        parameters.allowLocalEndpointReuse = true
-        listener = try NWListener(using: parameters, on: port)
-        configureLifecycle()
-    }
-
-    /// Start the listener and keep the process alive until interrupted.
-    func start() {
-        listener.start(queue: queue)
-        installSignalHandler()
-        dispatchMain()
-    }
-
-    /// Configure lifecycle and connection handling callbacks.
-    private func configureLifecycle() {
-        listener.stateUpdateHandler = { [weak self] state in
-            guard let self else { return }
-
-            switch state {
-            case .ready:
-                print("Serving \(self.rootURL.path) at http://localhost:\(self.configuration.port)")
-            case let .failed(error):
-                fputs("SiteServer failed: \(error.localizedDescription)\n", stderr)
-                exit(1)
-            default:
-                break
-            }
-        }
-
-        listener.newConnectionHandler = { [weak self] connection in
-            self?.handle(connection)
-        }
-    }
-
-    /// Allow clean termination with Ctrl-C during local preview sessions.
-    private func installSignalHandler() {
-        signal(SIGINT, SIG_IGN)
-
-        let signalSource = DispatchSource.makeSignalSource(signal: SIGINT, queue: .main)
-        signalSource.setEventHandler { [weak self] in
-            self?.listener.cancel()
-            print("\nSiteServer stopped")
-            exit(0)
-        }
-        signalSource.resume()
-        self.signalSource = signalSource
-    }
-
-    /// Read a single request from the connection and reply once.
-    private func handle(_ connection: NWConnection) {
-        let connectionQueue = DispatchQueue(label: "loic.engineer.siteserver.connection.\(UUID().uuidString)")
-        connection.start(queue: connectionQueue)
-
-        connection.receive(minimumIncompleteLength: 1, maximumLength: 64 * 1024) { [weak self] data, _, _, error in
-            guard let self else {
-                connection.cancel()
-                return
-            }
-
-            if let error {
-                self.log("Connection error: \(error.localizedDescription)")
-                connection.cancel()
-                return
-            }
-
-            guard let data else {
-                connection.cancel()
-                return
-            }
-
-            let response = self.response(for: data)
-            let headOnly = HTTPRequest.parse(data)?.method.uppercased() == "HEAD"
-            connection.send(content: response.encoded(headOnly: headOnly), completion: .contentProcessed { _ in
-                connection.cancel()
-            })
-        }
-    }
+/// Resolves requests and maps them to static files inside the generated site.
+struct StaticSiteResponder {
+    let rootURL: URL
 
     /// Build a response for a raw HTTP request payload.
-    private func response(for data: Data) -> HTTPResponse {
+    func response(for data: Data) -> HTTPResponse {
         guard let request = HTTPRequest.parse(data) else {
             return errorResponse(statusCode: 400, reasonPhrase: "Bad Request", message: "Malformed HTTP request.")
         }
@@ -295,6 +213,7 @@ final class StaticSiteServer: @unchecked Sendable {
         let trimmedPath = decodedPath.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
 
         var candidateURL = rootURL
+        let fileManager = FileManager.default
 
         if trimmedPath.isEmpty {
             candidateURL = rootURL.appendingPathComponent("index.html")
@@ -306,7 +225,7 @@ final class StaticSiteServer: @unchecked Sendable {
 
         if fileManager.fileExists(atPath: candidateURL.path, isDirectory: &isDirectory), isDirectory.boolValue {
             candidateURL = candidateURL.appendingPathComponent("index.html")
-        } else if !candidateURL.pathExtension.isEmpty == false,
+        } else if candidateURL.pathExtension.isEmpty,
                   !fileManager.fileExists(atPath: candidateURL.path) {
             let directoryIndexURL = candidateURL.appendingPathComponent("index.html")
             if fileManager.fileExists(atPath: directoryIndexURL.path) {
@@ -390,6 +309,145 @@ final class StaticSiteServer: @unchecked Sendable {
     }
 }
 
+/// A blocking POSIX HTTP server for local development previews.
+final class StaticSiteServer {
+    private let configuration: ServerConfiguration
+    private let responder: StaticSiteResponder
+    private let socketDescriptor: Int32
+
+    init(configuration: ServerConfiguration) throws {
+        self.configuration = configuration
+
+        var isDirectory: ObjCBool = false
+        let standardizedRootURL = configuration.rootURL.standardizedFileURL
+        guard FileManager.default.fileExists(atPath: standardizedRootURL.path, isDirectory: &isDirectory), isDirectory.boolValue else {
+            throw SiteServerError.invalidRoot(standardizedRootURL)
+        }
+
+        responder = StaticSiteResponder(rootURL: standardizedRootURL)
+        socketDescriptor = try StaticSiteServer.makeSocket(port: configuration.port)
+    }
+
+    deinit {
+        close(socketDescriptor)
+    }
+
+    /// Start the local server and block until the process is terminated.
+    func start() throws {
+        signal(SIGPIPE, SIG_IGN)
+        print("Serving \(responder.rootURL.path) at http://localhost:\(configuration.port)")
+
+        while true {
+            let clientDescriptor = accept(socketDescriptor, nil, nil)
+
+            if clientDescriptor < 0 {
+                if errno == EINTR {
+                    continue
+                }
+
+                throw SiteServerError.acceptFailed(StaticSiteServer.errorMessage())
+            }
+
+            do {
+                try handleConnection(clientDescriptor)
+            } catch {
+                fputs("SiteServer warning: \(error.localizedDescription)\n", stderr)
+            }
+        }
+    }
+
+    /// Accept one request, write one response, then close the connection.
+    private func handleConnection(_ clientDescriptor: Int32) throws {
+        defer {
+            shutdown(clientDescriptor, SHUT_RDWR)
+            close(clientDescriptor)
+        }
+
+        var buffer = [UInt8](repeating: 0, count: 64 * 1024)
+        let bytesRead = recv(clientDescriptor, &buffer, buffer.count, 0)
+
+        guard bytesRead > 0 else {
+            return
+        }
+
+        let requestData = Data(buffer.prefix(Int(bytesRead)))
+        let response = responder.response(for: requestData)
+        let headOnly = HTTPRequest.parse(requestData)?.method.uppercased() == "HEAD"
+        try writeAll(response.encoded(headOnly: headOnly), to: clientDescriptor)
+    }
+
+    /// Send all response bytes before returning.
+    private func writeAll(_ data: Data, to clientDescriptor: Int32) throws {
+        try data.withUnsafeBytes { rawBuffer in
+            guard let baseAddress = rawBuffer.baseAddress?.assumingMemoryBound(to: UInt8.self) else {
+                return
+            }
+
+            var totalBytesSent = 0
+
+            while totalBytesSent < rawBuffer.count {
+                let bytesRemaining = rawBuffer.count - totalBytesSent
+                let bytesSent = send(clientDescriptor, baseAddress.advanced(by: totalBytesSent), bytesRemaining, 0)
+
+                if bytesSent < 0 {
+                    throw SiteServerError.sendFailed(StaticSiteServer.errorMessage())
+                }
+
+                totalBytesSent += bytesSent
+            }
+        }
+    }
+
+    /// Create, bind, and listen on the TCP socket used for local preview.
+    private static func makeSocket(port: UInt16) throws -> Int32 {
+        let descriptor = socket(AF_INET, SOCK_STREAM, 0)
+
+        guard descriptor >= 0 else {
+            throw SiteServerError.socketFailed(errorMessage())
+        }
+
+        var shouldReuseAddress: Int32 = 1
+        if setsockopt(descriptor, SOL_SOCKET, SO_REUSEADDR, &shouldReuseAddress, socklen_t(MemoryLayout<Int32>.size)) < 0 {
+            close(descriptor)
+            throw SiteServerError.socketFailed(errorMessage())
+        }
+
+        var address = sockaddr_in()
+        address.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
+        address.sin_family = sa_family_t(AF_INET)
+        address.sin_port = in_port_t(port).bigEndian
+        address.sin_addr = in_addr(s_addr: inet_addr("127.0.0.1"))
+
+        let bindResult = withUnsafePointer(to: &address) { pointer in
+            pointer.withMemoryRebound(to: sockaddr.self, capacity: 1) { socketAddress in
+                bind(descriptor, socketAddress, socklen_t(MemoryLayout<sockaddr_in>.size))
+            }
+        }
+
+        guard bindResult == 0 else {
+            close(descriptor)
+            throw SiteServerError.bindFailed(errorMessage())
+        }
+
+        guard listen(descriptor, SOMAXCONN) == 0 else {
+            close(descriptor)
+            throw SiteServerError.listenFailed(errorMessage())
+        }
+
+        return descriptor
+    }
+
+    /// Convert the current `errno` value into a readable message.
+    private static func errorMessage() -> String {
+        String(cString: strerror(errno))
+    }
+}
+
+/// Convert the current `errno` value into a readable message.
+private func errorMessage() -> String {
+    String(cString: strerror(errno))
+}
+
 /// Boot the local static server for development previews.
 do {
     let arguments = Array(CommandLine.arguments.dropFirst())
@@ -399,7 +457,7 @@ do {
     )
 
     let server = try StaticSiteServer(configuration: configuration)
-    server.start()
+    try server.start()
 } catch {
     fputs("SiteServer failed: \(error.localizedDescription)\n", stderr)
     ServerConfiguration.printHelp()
