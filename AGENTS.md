@@ -32,6 +32,7 @@ Primary source files:
 - `css/tokens.css`: design tokens and theme variables
 - `css/site.css`: layout, components, page styling, and responsive behavior
 - `js/site.js`: theme handling, reveal behavior, and homepage story activation
+- `assets/img/og/og-default.svg`: shared Open Graph image and SVG favicon
 
 Generated output:
 - `index.html`
@@ -43,6 +44,12 @@ Generated output:
 - `library/index.html`
 - `about/index.html`
 - `sitemap.xml`
+
+Active runtime assets are intentionally minimal:
+- `css/tokens.css`
+- `css/site.css`
+- `js/site.js`
+- `assets/img/og/og-default.svg`
 
 # Working Rules
 
@@ -59,6 +66,9 @@ Generated output:
   locale-specific folder aliases when a host-level redirect rule is unavailable.
 - Keep the local Swift preview server aligned with production-like behavior
   where feasible; missing routes should surface the root `404.html`.
+- Do not reintroduce the removed Bootstrap, vendor, or JSON-driven asset tree
+  unless there is a concrete architectural reason and the docs are updated in
+  the same pass.
 - Keep accessibility, privacy, and performance as first-class constraints.
 - Avoid third-party fonts, analytics, trackers, and unnecessary dependencies.
 - Preserve Safari-first quality while keeping modern Chromium browsers fully

@@ -13,6 +13,8 @@ The site is:
 
 The current iteration replaces the earlier single-page Bootstrap portfolio with a
 multi-page Apple-inspired editorial experience built from local source files.
+The legacy Bootstrap, vendor, and JSON-driven asset tree has been removed from
+the active codebase.
 
 ## Stack
 
@@ -39,6 +41,7 @@ Core source files:
 - `css/tokens.css`: design tokens, themes, and motion settings
 - `css/site.css`: layout, components, responsive rules, and page styling
 - `js/site.js`: appearance switching, reveal behavior, and homepage story activation
+- `assets/img/og/og-default.svg`: shared Open Graph image and SVG favicon
 
 Generated output:
 - `index.html`
@@ -53,6 +56,12 @@ Generated output:
 
 Detailed notes:
 - `docs/ARCHITECTURE.md`
+
+Active shipped asset surface:
+- `css/tokens.css`
+- `css/site.css`
+- `js/site.js`
+- `assets/img/og/og-default.svg`
 
 ## Local Development
 

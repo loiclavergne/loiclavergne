@@ -40,6 +40,9 @@ Rendering flow:
 This keeps the shipped site fully static while avoiding duplicated hand-written
 HTML for every locale and page combination.
 
+The earlier Bootstrap, vendor, and JSON-driven single-page asset tree is no
+longer part of the active architecture.
+
 ## Source Layout
 
 - `Package.swift`
@@ -61,6 +64,20 @@ HTML for every locale and page combination.
   Component and page styling.
 - `js/site.js`
   Theme controls, reveal observer, and homepage story state.
+- `assets/img/og/og-default.svg`
+  Shared Open Graph image and SVG favicon.
+
+## Active Asset Surface
+
+The generated site currently depends on only four shared frontend assets:
+- `css/tokens.css`
+- `css/site.css`
+- `js/site.js`
+- `assets/img/og/og-default.svg`
+
+If a new asset is added, it should have a clear purpose in the generated site.
+Do not reintroduce unused vendor bundles or archive-era media into the runtime
+path.
 
 ## Localization Strategy
 

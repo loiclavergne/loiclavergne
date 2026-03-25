@@ -8,14 +8,15 @@
 
 # Current Direction
 
-The repository is in the middle of a 2026 rebuild from a legacy single-page
-Bootstrap portfolio to a multi-page static site with bilingual routing.
+The repository now runs on the Swift-generated bilingual static architecture.
+The legacy single-page Bootstrap implementation has been retired from the
+active codebase.
 
 Priority for the current implementation phase:
-- establish the new source architecture
-- generate English and French pages from shared renderers
-- ship the Apple-like visual foundation and homepage storytelling
+- deepen content quality without expanding runtime complexity
+- preserve Apple-like polish, restraint, and bilingual parity
 - keep placeholder states elegant where source content is not available yet
+- avoid regressing into archived vendor or data-loading patterns
 
 Current generator path:
 - Swift package executable `SiteBuilder`
