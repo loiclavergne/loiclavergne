@@ -84,6 +84,16 @@ The homepage uses progressive enhancement for reveal behavior and a
 scroll-activated narrative panel. Core content remains fully readable with
 JavaScript disabled and motion reduced.
 
+## Secondary Sections
+
+The writing, library, sports, and trophy areas are now modeled as structured
+static content rather than single placeholder paragraphs.
+
+This matters because:
+- the site can present these areas as real product surfaces before live data exists
+- future content can be added by editing localized JSON without changing the renderer
+- the architecture stays static-first while leaving room for richer manual curation
+
 ## Why No Framework
 
 The current build avoids frontend and build-time package dependencies because:
@@ -100,7 +110,7 @@ privacy-first delivery.
 The architecture is ready for these sections, but the detailed content still
 needs a later pass:
 - education
-- books and reading stats
-- sports activities
-- trophy case data
+- real books and reading counts
+- actual sports activities and milestones
+- trophy case selections
 - final public contact email

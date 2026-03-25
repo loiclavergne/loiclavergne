@@ -442,6 +442,48 @@
         "eyebrow": "Writing",
         "title": "The publishing system is ready before the archive goes live.",
         "intro": "Writing is part of the long-term structure of the portfolio, but the v1 launch keeps the archive intentionally empty until the first pieces are ready.",
+        "themes_heading": "Planned editorial themes",
+        "themes": [
+          {
+            "title": "Mobile architecture and delivery",
+            "copy": "Writing will focus on the systems that keep mobile products shippable: roadmap alignment, app architecture, APIs, CI, and team coordination.",
+            "items": [
+              "Grounded in real product delivery rather than abstract process.",
+              "Good fit for lessons that become public over time."
+            ]
+          },
+          {
+            "title": "Apple platform engineering",
+            "copy": "Another stream will cover Swift, SwiftUI, native frameworks, and the technical decisions behind premium Apple-platform experiences.",
+            "items": [
+              "Useful for long-lived codebases on iOS, watchOS, tvOS, and macOS.",
+              "Likely to mix implementation details with product-quality concerns."
+            ]
+          },
+          {
+            "title": "AI-assisted engineering",
+            "copy": "A third area is agentic workflow design: where AI helps engineering teams move faster without lowering standards on privacy, correctness, or maintainability.",
+            "items": [
+              "Focus stays on practical use, not hype.",
+              "The same rigor should apply to automation as to any other tool."
+            ]
+          }
+        ],
+        "publishing_heading": "Publishing model",
+        "publishing_cards": [
+          {
+            "title": "Long-form essays first",
+            "copy": "The default format is thoughtful articles, not a rapid-fire notes feed. The site should favor durable pieces over constant posting."
+          },
+          {
+            "title": "Project and systems notes",
+            "copy": "Some entries can become case-study style notes on architecture choices, delivery patterns, or lessons from products once they are safe to publish."
+          },
+          {
+            "title": "Bilingual by architecture",
+            "copy": "The archive is already built on a localized content model, so publishing in English and French can follow the same static-first structure."
+          }
+        ],
         "status_title": "Ready for first publication",
         "status_copy": "Post pages, metadata, and archive structure are part of the architecture. The first public essays will be added in a later content pass."
       },
@@ -465,8 +507,50 @@
             "value": "--"
           }
         ],
+        "shelves_heading": "Manual shelves, ready for real books",
+        "shelves": [
+          {
+            "title": "Current shelf",
+            "copy": "This shelf is meant for the books currently in progress, with lightweight status and optional reading notes.",
+            "items": [
+              "Manual curation keeps the signal high.",
+              "No account sync is required to make the page useful."
+            ]
+          },
+          {
+            "title": "Recent reads",
+            "copy": "Finished books can surface as a compact editorial shelf rather than an exhaustive catalogue.",
+            "items": [
+              "A few strong notes matter more than logging everything.",
+              "The structure supports month and year views later."
+            ]
+          },
+          {
+            "title": "Reference shelf",
+            "copy": "Technical, product, and design references can live separately from broader reading so the library stays clear and navigable.",
+            "items": [
+              "Useful for books that continue shaping engineering practice.",
+              "Also a good fit for recurring recommendations."
+            ]
+          }
+        ],
+        "tracking_heading": "Tracking model",
+        "tracking_cards": [
+          {
+            "title": "Year, month, now",
+            "copy": "The visible counters stay deliberately small in v1: books this year, books this month, and the current read."
+          },
+          {
+            "title": "Selective notes over exhaustive logs",
+            "copy": "The goal is not to mirror a reading service. The site should publish only the parts of the reading life that feel useful and durable."
+          },
+          {
+            "title": "Static-first by default",
+            "copy": "All shelves and counts can be updated manually in the content file without introducing external services, accounts, or background jobs."
+          }
+        ],
         "status_title": "Manual tracking for v1",
-        "status_copy": "Stats, bookshelves, and notes remain static in the first release. No external reading service is required for the site to work."
+        "status_copy": "As soon as real books and counts are ready, this page can shift from scaffolding to a curated library without changing the architecture."
       },
       "about": {
         "page_title": "About | Loïc Lavergne",
@@ -548,9 +632,49 @@
           }
         ],
         "sports_title": "Sports",
-        "sports_copy": "The sports profile is part of the product plan for this site and will be added with user-provided details in a later pass.",
+        "sports_copy": "The sports layer should show discipline, rhythm, and continuity without turning the site into a telemetry feed.",
+        "sports_cards": [
+          {
+            "title": "Training profile",
+            "copy": "This area is ready for the sports practiced today, the weekly rhythm, and the broader role that training plays alongside work.",
+            "items": [
+              "Manual updates keep the public version intentional.",
+              "The section can stay selective without losing meaning."
+            ]
+          },
+          {
+            "title": "Events and milestones",
+            "copy": "Races, long efforts, seasonal goals, or personal bests can appear here as static highlights once they are worth publishing.",
+            "items": [
+              "A good fit for compact yearly recaps.",
+              "Also compatible with deeper subpages later."
+            ]
+          },
+          {
+            "title": "Consistency over raw telemetry",
+            "copy": "The site can show habits and continuity without exposing overly detailed health or workout data.",
+            "items": [
+              "Better signal for a public portfolio.",
+              "Closer to the calm editorial tone of the rest of the product."
+            ]
+          }
+        ],
         "trophies_title": "Trophy case",
-        "trophies_copy": "Apple Watch rewards and personal milestones will be curated manually in v1. No live sync is required for the section to exist.",
+        "trophies_copy": "The trophy case is intended as a curated visual archive, not a live sync dashboard.",
+        "trophy_cards": [
+          {
+            "title": "Apple Watch rewards",
+            "copy": "The section is designed to eventually host manually curated activity awards, streaks, and ring-related milestones."
+          },
+          {
+            "title": "Personal milestones",
+            "copy": "Broader personal achievements can sit next to fitness rewards when they matter enough to keep as part of the public profile."
+          },
+          {
+            "title": "Seasonal snapshots",
+            "copy": "Limited-time challenges or yearly highlight sets can be grouped into compact collections without requiring any backend integration."
+          }
+        ],
         "contact_title": "Contact",
         "contact_copy": "For now the contact path stays static and lightweight: email plus public profiles."
       }
@@ -937,6 +1061,48 @@
         "eyebrow": "Écrits",
         "title": "Le système de publication est prêt avant l'ouverture de l'archive.",
         "intro": "L'écriture fait partie de la structure long terme du portfolio, mais le lancement v1 garde volontairement l'archive vide tant que les premiers textes ne sont pas prêts.",
+        "themes_heading": "Thèmes éditoriaux prévus",
+        "themes": [
+          {
+            "title": "Architecture mobile et delivery",
+            "copy": "Les écrits pourront couvrir les systèmes qui rendent la delivery mobile tenable : alignement roadmap, architecture applicative, APIs, CI et coordination d'équipe.",
+            "items": [
+              "Ancrés dans la réalité produit plutôt que dans des abstractions de process.",
+              "Bon terrain pour des leçons qui deviennent publiables avec le temps."
+            ]
+          },
+          {
+            "title": "Ingénierie Apple platforms",
+            "copy": "Un autre flux pourra traiter de Swift, SwiftUI, des frameworks natifs et des choix techniques derrière des expériences Apple platform de qualité.",
+            "items": [
+              "Pertinent pour des codebases durables sur iOS, watchOS, tvOS et macOS.",
+              "Mêlera probablement détails d'implémentation et exigences de qualité produit."
+            ]
+          },
+          {
+            "title": "Ingénierie assistée par l'IA",
+            "copy": "Un troisième axe concerne les workflows agentiques : là où l'IA aide les équipes à aller plus vite sans dégrader la confidentialité, la justesse ou la maintenabilité.",
+            "items": [
+              "Le focus reste l'usage pratique, pas le discours hype.",
+              "La même rigueur doit s'appliquer à l'automatisation qu'à n'importe quel autre outil."
+            ]
+          }
+        ],
+        "publishing_heading": "Modèle de publication",
+        "publishing_cards": [
+          {
+            "title": "Des essais long format d'abord",
+            "copy": "Le format par défaut est l'article réfléchi, pas un flux de notes courtes. Le site doit privilégier les pièces durables aux publications permanentes."
+          },
+          {
+            "title": "Notes de projet et de système",
+            "copy": "Certaines entrées pourront prendre la forme de notes de cas sur des choix d'architecture, des patterns de delivery ou des leçons de produits quand elles deviennent publiables."
+          },
+          {
+            "title": "Bilingue par architecture",
+            "copy": "L'archive repose déjà sur un modèle de contenu localisé, donc publier en français et en anglais peut suivre la même structure statique."
+          }
+        ],
         "status_title": "Prêt pour la première publication",
         "status_copy": "Les pages d'article, les métadonnées et la structure d'archive font partie de l'architecture. Les premiers textes publics seront ajoutés dans un prochain passage contenu."
       },
@@ -960,8 +1126,50 @@
             "value": "--"
           }
         ],
+        "shelves_heading": "Des étagères manuelles, prêtes pour de vrais livres",
+        "shelves": [
+          {
+            "title": "Étagère en cours",
+            "copy": "Cette étagère est prévue pour les livres actuellement ouverts, avec un statut léger et éventuellement quelques notes.",
+            "items": [
+              "La mise à jour manuelle garde un bon niveau de signal.",
+              "Aucune synchronisation de compte n'est nécessaire pour rendre la page utile."
+            ]
+          },
+          {
+            "title": "Lectures récentes",
+            "copy": "Les livres terminés peuvent apparaître comme une étagère éditoriale compacte plutôt qu'un catalogue exhaustif.",
+            "items": [
+              "Quelques notes fortes valent mieux qu'un log complet.",
+              "La structure supporte plus tard des vues par mois ou par année."
+            ]
+          },
+          {
+            "title": "Étagère de référence",
+            "copy": "Les références techniques, produit et design peuvent vivre séparément du reste de la lecture pour garder la bibliothèque lisible.",
+            "items": [
+              "Utile pour les livres qui continuent à influencer la pratique d'ingénierie.",
+              "Convient aussi à des recommandations récurrentes."
+            ]
+          }
+        ],
+        "tracking_heading": "Modèle de suivi",
+        "tracking_cards": [
+          {
+            "title": "Année, mois, maintenant",
+            "copy": "Les compteurs visibles restent volontairement simples en v1 : livres cette année, livres ce mois-ci et lecture en cours."
+          },
+          {
+            "title": "Des notes sélectives plutôt qu'un log exhaustif",
+            "copy": "L'objectif n'est pas de copier un service de lecture. Le site ne doit publier que la partie de la vie de lecteur qui reste utile et durable."
+          },
+          {
+            "title": "Static-first par défaut",
+            "copy": "Les étagères et les compteurs peuvent être mis à jour directement dans le contenu sans services externes, comptes ou jobs en arrière-plan."
+          }
+        ],
         "status_title": "Suivi manuel en v1",
-        "status_copy": "Les statistiques, étagères et notes restent statiques dans la première version. Aucun service de lecture externe n'est nécessaire pour faire fonctionner le site."
+        "status_copy": "Dès que de vrais livres et compteurs sont prêts, cette page peut passer d'une structure d'accueil à une bibliothèque éditorialisée sans changer l'architecture."
       },
       "about": {
         "page_title": "À propos | Loïc Lavergne",
@@ -1043,9 +1251,49 @@
           }
         ],
         "sports_title": "Sport",
-        "sports_copy": "Le profil sportif fait partie du plan produit du site et sera ajouté avec des détails fournis par l'utilisateur dans une prochaine passe.",
+        "sports_copy": "La couche sport doit montrer discipline, rythme et continuité sans transformer le site en flux de télémétrie.",
+        "sports_cards": [
+          {
+            "title": "Profil d'entraînement",
+            "copy": "Cette zone est prête pour les sports pratiqués aujourd'hui, le rythme hebdomadaire et la place plus large de l'entraînement à côté du travail.",
+            "items": [
+              "La mise à jour manuelle garde la version publique intentionnelle.",
+              "La section peut rester sélective sans perdre son sens."
+            ]
+          },
+          {
+            "title": "Événements et jalons",
+            "copy": "Courses, longs efforts, objectifs de saison ou records personnels peuvent apparaître ici comme des highlights statiques une fois qu'ils méritent d'être publiés.",
+            "items": [
+              "Bon support pour des récapitulatifs annuels compacts.",
+              "Compatible aussi avec des sous-pages plus profondes plus tard."
+            ]
+          },
+          {
+            "title": "La régularité avant la télémétrie brute",
+            "copy": "Le site peut montrer les habitudes et la continuité sans exposer des données de santé ou d'entraînement trop détaillées.",
+            "items": [
+              "Meilleur signal pour un portfolio public.",
+              "Plus proche du ton éditorial calme du reste du produit."
+            ]
+          }
+        ],
         "trophies_title": "Vitrine de trophées",
-        "trophies_copy": "Les récompenses Apple Watch et autres jalons personnels seront organisés manuellement en v1. Aucune synchronisation live n'est nécessaire.",
+        "trophies_copy": "La vitrine de trophées est pensée comme une archive visuelle éditorialisée, pas comme un dashboard synchronisé en live.",
+        "trophy_cards": [
+          {
+            "title": "Récompenses Apple Watch",
+            "copy": "La section est pensée pour accueillir plus tard des récompenses d'activité, streaks et jalons liés aux anneaux, sélectionnés manuellement."
+          },
+          {
+            "title": "Jalons personnels",
+            "copy": "Des accomplissements plus larges peuvent s'afficher à côté des récompenses fitness quand ils comptent suffisamment pour faire partie du profil public."
+          },
+          {
+            "title": "Instantanés saisonniers",
+            "copy": "Des challenges limités dans le temps ou des séries de highlights annuels peuvent être regroupés en collections compactes sans backend."
+          }
+        ],
         "contact_title": "Contact",
         "contact_copy": "Pour l'instant, le contact reste simple et statique : email plus profils publics."
       }

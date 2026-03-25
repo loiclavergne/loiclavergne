@@ -190,12 +190,22 @@ struct ProjectsPage: Decodable {
     let hobby: [SummaryProject]
 }
 
+struct ContentCard: Decodable {
+    let title: String
+    let copy: String
+    let items: [String]?
+}
+
 struct WritingPage: Decodable {
     let pageTitle: String
     let description: String
     let eyebrow: String
     let title: String
     let intro: String
+    let themesHeading: String
+    let themes: [ContentCard]
+    let publishingHeading: String
+    let publishingCards: [ContentCard]
     let statusTitle: String
     let statusCopy: String
 }
@@ -212,6 +222,10 @@ struct LibraryPage: Decodable {
     let title: String
     let intro: String
     let stats: [ReadingStat]
+    let shelvesHeading: String
+    let shelves: [ContentCard]
+    let trackingHeading: String
+    let trackingCards: [ContentCard]
     let statusTitle: String
     let statusCopy: String
 }
@@ -232,8 +246,10 @@ struct AboutPage: Decodable {
     let skillGroups: [SkillGroup]
     let sportsTitle: String
     let sportsCopy: String
+    let sportsCards: [ContentCard]
     let trophiesTitle: String
     let trophiesCopy: String
+    let trophyCards: [ContentCard]
     let contactTitle: String
     let contactCopy: String
 }

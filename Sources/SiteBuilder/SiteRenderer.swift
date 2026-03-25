@@ -129,6 +129,17 @@ struct SiteRenderer {
         return renderList(items, className: className)
     }
 
+    /// Render a content card with optional supporting bullet points.
+    func renderContentCard(_ card: ContentCard) -> String {
+        """
+        <article class="card reveal">
+          <h3>\(escapeHTML(card.title))</h3>
+          <p>\(escapeHTML(card.copy))</p>
+          \(renderOptionalList(card.items))
+        </article>
+        """
+    }
+
     /// Render the localized header navigation.
     func renderNav(locale: String, currentPage: String) throws -> String {
         let localeContent = try localeContent(locale)
@@ -487,6 +498,8 @@ struct SiteRenderer {
         let localeContent = try localeContent(locale)
         let page = localeContent.writing
         let labels = localeContent.labels
+        let themes = page.themes.map(renderContentCard).joined(separator: "\n")
+        let publishingCards = page.publishingCards.map(renderContentCard).joined(separator: "\n")
 
         return """
             <section class="hero hero--page">
@@ -494,6 +507,26 @@ struct SiteRenderer {
                 <span class="eyebrow">\(escapeHTML(page.eyebrow))</span>
                 <h1>\(escapeHTML(page.title))</h1>
                 <p class="hero__lede">\(escapeHTML(page.intro))</p>
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell section-heading">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "current_focus", fallback: "Current focus")))</span>
+                <h2>\(escapeHTML(page.themesHeading))</h2>
+              </div>
+              <div class="shell card-grid card-grid--three">
+                \(themes)
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell section-heading">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "context", fallback: "Context")))</span>
+                <h2>\(escapeHTML(page.publishingHeading))</h2>
+              </div>
+              <div class="shell card-grid card-grid--three">
+                \(publishingCards)
               </div>
             </section>
 
@@ -524,6 +557,9 @@ struct SiteRenderer {
             """
         }.joined(separator: "\n")
 
+        let shelves = page.shelves.map(renderContentCard).joined(separator: "\n")
+        let trackingCards = page.trackingCards.map(renderContentCard).joined(separator: "\n")
+
         return """
             <section class="hero hero--page">
               <div class="shell hero__content hero__content--page">
@@ -536,6 +572,26 @@ struct SiteRenderer {
             <section class="section section--compact">
               <div class="shell stat-grid">
                 \(stats)
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell section-heading">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "featured", fallback: "Featured")))</span>
+                <h2>\(escapeHTML(page.shelvesHeading))</h2>
+              </div>
+              <div class="shell card-grid card-grid--three">
+                \(shelves)
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell section-heading">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "tracking", fallback: "Tracking")))</span>
+                <h2>\(escapeHTML(page.trackingHeading))</h2>
+              </div>
+              <div class="shell card-grid card-grid--three">
+                \(trackingCards)
               </div>
             </section>
 
@@ -566,6 +622,9 @@ struct SiteRenderer {
             """
         }.joined(separator: "\n")
 
+        let sportsCards = page.sportsCards.map(renderContentCard).joined(separator: "\n")
+        let trophyCards = page.trophyCards.map(renderContentCard).joined(separator: "\n")
+
         let socialLinks = payload.site.socials.map {
             #"<a class="button button--secondary" href="\#(escapeHTML($0.href))" rel="noopener noreferrer" target="_blank">\#(escapeHTML($0.label))</a>"#
         }.joined()
@@ -595,17 +654,32 @@ struct SiteRenderer {
             </section>
 
             <section class="section section--compact">
-              <div class="shell card-grid card-grid--two">
-                <article class="card reveal">
+              <div class="shell split-heading">
+                <div>
                   <span class="eyebrow">\(escapeHTML(label(labels, key: "life", fallback: "Life")))</span>
-                  <h3>\(escapeHTML(page.sportsTitle))</h3>
+                  <h2>\(escapeHTML(page.sportsTitle))</h2>
+                </div>
+                <div class="section-copy">
                   <p>\(escapeHTML(page.sportsCopy))</p>
-                </article>
-                <article class="card reveal">
+                </div>
+              </div>
+              <div class="shell card-grid card-grid--three">
+                \(sportsCards)
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell split-heading">
+                <div>
                   <span class="eyebrow">\(escapeHTML(label(labels, key: "milestones", fallback: "Milestones")))</span>
-                  <h3>\(escapeHTML(page.trophiesTitle))</h3>
+                  <h2>\(escapeHTML(page.trophiesTitle))</h2>
+                </div>
+                <div class="section-copy">
                   <p>\(escapeHTML(page.trophiesCopy))</p>
-                </article>
+                </div>
+              </div>
+              <div class="shell card-grid card-grid--three">
+                \(trophyCards)
               </div>
             </section>
 

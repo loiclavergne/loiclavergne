@@ -90,7 +90,8 @@ The v1 architecture includes:
 - work, projects, writing, library, and about pages
 - English and French localization
 - light, dark, and auto appearance modes
-- static placeholders for writing archive, reading stats, sports, trophies, and education where source content is still pending
+- structured static surfaces for writing themes, reading shelves, sports, and trophy curation
+- manual-first content architecture for sections where personal data is still being curated
 
 The following remain intentionally static and manual for now:
 - books and reading stats
