@@ -1,0 +1,848 @@
+{
+  "site": {
+    "base_url": "https://loic.engineer",
+    "name": "Loïc Lavergne",
+    "app_name": "Loic Engineer Portfolio",
+    "lead_title": "Engineering Manager, Mobile Products",
+    "build_date": "2026-03-25",
+    "contact_email": "hello@loic.engineer",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/loiclavergne/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/loiclavergne/"
+      },
+      {
+        "label": "Bluesky",
+        "href": "https://bsky.app/profile/loic.engineer"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/loic.lavergne.tech"
+      }
+    ]
+  },
+  "routes": {
+    "home": {
+      "en": "/",
+      "fr": "/fr/"
+    },
+    "work": {
+      "en": "/work/",
+      "fr": "/fr/travail/"
+    },
+    "projects": {
+      "en": "/projects/",
+      "fr": "/fr/projets/"
+    },
+    "writing": {
+      "en": "/writing/",
+      "fr": "/fr/ecrits/"
+    },
+    "library": {
+      "en": "/library/",
+      "fr": "/fr/bibliotheque/"
+    },
+    "about": {
+      "en": "/about/",
+      "fr": "/fr/a-propos/"
+    }
+  },
+  "pageKeys": [
+    "home",
+    "work",
+    "projects",
+    "writing",
+    "library",
+    "about"
+  ],
+  "locales": {
+    "en": {
+      "html_lang": "en",
+      "locale_code": "en_US",
+      "switch_locale": "fr",
+      "switch_label": "Français",
+      "skip_link": "Skip to content",
+      "nav": {
+        "home": "Home",
+        "work": "Work",
+        "projects": "Projects",
+        "writing": "Writing",
+        "library": "Library",
+        "about": "About"
+      },
+      "labels": {
+        "primary_nav": "Primary",
+        "social_links": "Social links",
+        "highlights": "Highlights",
+        "approach": "Approach",
+        "current_work": "Current Work",
+        "beyond_homepage": "Beyond the homepage",
+        "current_product": "Current Product",
+        "scope": "Scope",
+        "role_today": "Roole today",
+        "career": "Career",
+        "context": "Context",
+        "featured": "Featured",
+        "current_focus": "Current focus",
+        "archive": "Archive",
+        "side_work": "Side Work",
+        "status": "Status",
+        "tracking": "Tracking",
+        "profile": "Profile",
+        "life": "Life",
+        "milestones": "Milestones",
+        "reach_out": "Reach out",
+        "email": "Email"
+      },
+      "footer": {
+        "tagline": "Engineering leadership for mobile products, architecture, and delivery.",
+        "copyright": "All rights reserved."
+      },
+      "theme": {
+        "label": "Appearance",
+        "auto": "Auto",
+        "light": "Light",
+        "dark": "Dark"
+      },
+      "seo": {
+        "site_description": "Loïc Lavergne is an Engineering Manager leading mobile products, architecture, and delivery across Roole Map and Roole Premium.",
+        "og_image": "/assets/img/og/og-default.svg"
+      },
+      "home": {
+        "page_title": "Loïc Lavergne | Engineering Manager, Mobile Products",
+        "description": "Engineering leadership for mobile products, product strategy, architecture, and delivery.",
+        "eyebrow": "Loïc Lavergne",
+        "title": "Engineering leadership for mobile products.",
+        "lede": "I lead mobile product execution across Roole Map and Roole Premium, working at the intersection of roadmap planning, technical architecture, cross-team coordination, and delivery quality.",
+        "cta_primary": {
+          "label": "Explore current work",
+          "route": "work"
+        },
+        "cta_secondary": {
+          "label": "Browse projects",
+          "route": "projects"
+        },
+        "metrics": [
+          {
+            "value": "10+",
+            "label": "years building products on Apple platforms"
+          },
+          {
+            "value": "2",
+            "label": "current mobile products led at Roole"
+          },
+          {
+            "value": "iOS + Android",
+            "label": "delivery scope and coordination"
+          }
+        ],
+        "story_heading": "A calm, systems-level way of building mobile products.",
+        "story_intro": "The homepage should answer three questions quickly: what I do today, what products I am responsible for, and how I lead teams toward predictable, high-quality releases.",
+        "story_steps": [
+          {
+            "id": "today",
+            "eyebrow": "Today",
+            "title": "Engineering Manager at Roole.",
+            "copy": "The role spans strategic planning, technical coordination, and operational delivery for Roole's mobile applications.",
+            "facts": [
+              "Coordinates multiple development teams and Tech Leads.",
+              "Owns product and technical roadmaps with product and backend stakeholders.",
+              "Tracks risks, dependencies, and delivery outcomes."
+            ]
+          },
+          {
+            "id": "products",
+            "eyebrow": "Current Products",
+            "title": "Roole Map and Roole Premium.",
+            "copy": "The work is split between a public mobility product and a member companion application, with shared standards across both teams.",
+            "facts": [
+              "Roole Map focuses on everyday driving, routing, services, and local discovery.",
+              "Roole Premium centralizes member services, benefits, and assistance workflows.",
+              "Both products share architectural and organizational alignment work."
+            ]
+          },
+          {
+            "id": "method",
+            "eyebrow": "Method",
+            "title": "Roadmap, architecture, and delivery stay connected.",
+            "copy": "I work across product, backend, design, and engineering to keep delivery standards coherent without losing execution speed.",
+            "facts": [
+              "Architecture and API integration stay close to roadmap decisions.",
+              "Cross-team practices evolve alongside the products.",
+              "Build quality, tooling, and maintainability remain part of delivery."
+            ]
+          },
+          {
+            "id": "range",
+            "eyebrow": "Range",
+            "title": "Hands-on depth still informs the leadership layer.",
+            "copy": "My background spans Swift, Apple platforms, Android collaboration, backend APIs, applied AI, and product design coordination.",
+            "facts": [
+              "Apple platform specialist across iOS, watchOS, tvOS, and macOS.",
+              "Comfortable with delivery systems, APIs, CI, and product design workflows.",
+              "Building with agentic and AI-assisted engineering is part of the current skill set."
+            ]
+          }
+        ],
+        "featured_projects_heading": "Selected current work",
+        "entry_points_heading": "Explore the rest of the profile",
+        "entry_points": [
+          {
+            "route": "writing",
+            "title": "Writing",
+            "copy": "The publishing system is ready in v1, with the archive to be populated next."
+          },
+          {
+            "route": "library",
+            "title": "Library",
+            "copy": "Books, reading life, and manual yearly and monthly stats are part of the product plan."
+          },
+          {
+            "route": "about",
+            "title": "About",
+            "copy": "Skills, sports, trophy case, contact details, and the broader personal profile live here."
+          }
+        ]
+      },
+      "work": {
+        "page_title": "Work | Loïc Lavergne",
+        "description": "Current role, product leadership scope, and career timeline.",
+        "eyebrow": "Work",
+        "title": "Current leadership scope, then the path that led here.",
+        "intro": "The portfolio should be present-first, but the path matters. This page keeps the current role at the top and then expands into the broader career timeline.",
+        "current_role": {
+          "organization": "Roole",
+          "title": "Engineering Manager",
+          "period": "January 2026 to present",
+          "location": "Boulogne-Billancourt, Île-de-France, France",
+          "summary": "Responsible for strategic planning, technical coordination, and delivery execution across Roole's mobile applications.",
+          "highlights": [
+            "Coordinates multiple development teams and Tech Leads across Roole Map and Roole Premium.",
+            "Defines and maintains product and technical roadmaps with product and backend stakeholders.",
+            "Aligns developers, designers, backend teams, and partners on requirements and quality criteria.",
+            "Oversees architecture, API integration, tooling, and continuous integration practices.",
+            "Improves shared standards and cross-team collaboration across the mobile organization.",
+            "Communicates progress, risks, and milestones to product and executive stakeholders."
+          ]
+        },
+        "product_cards": [
+          {
+            "name": "Roole Map",
+            "summary": "A free mobility application for everyday driving in France, with routing, services, fuel, charging, parking, and localized data."
+          },
+          {
+            "name": "Roole Premium",
+            "summary": "The digital companion application for Roole members, centralizing services, benefits, assistance, and secure access to the broader ecosystem."
+          }
+        ],
+        "experience_heading": "Experience",
+        "experience": [
+          {
+            "title": "Engineering Manager",
+            "organization": "Roole",
+            "period": "Jan 2026 - Present",
+            "summary": "Leads planning, technical coordination, and delivery across Roole's mobile products."
+          },
+          {
+            "title": "Tech Lead Mobile",
+            "organization": "Roole",
+            "period": "Oct 2022 - Dec 2025",
+            "summary": "Led technical design and delivery for Roole Map and helped shape mobile delivery practices."
+          },
+          {
+            "title": "Chief Digital Officer",
+            "organization": "Vialife",
+            "period": "Oct 2020 - Sep 2022",
+            "summary": "Directed Vialife Digital across technical strategy, product evolution, and business alignment."
+          },
+          {
+            "title": "Mobile Project Manager",
+            "organization": "Vialife",
+            "period": "Oct 2018 - Sep 2020",
+            "summary": "Managed cross-platform delivery, technical evolution, backend API work, and R&D initiatives."
+          },
+          {
+            "title": "iOS Developer, Project Manager",
+            "organization": "Things Are Moving",
+            "period": "Sep 2015 - Sep 2018",
+            "summary": "Designed, built, and delivered native Apple platform applications end to end."
+          },
+          {
+            "title": ".NET Developer (Intern)",
+            "organization": "Air Liquide",
+            "period": "Apr 2014 - Sep 2014",
+            "summary": "Contributed to enterprise .NET software implementation and maintenance."
+          },
+          {
+            "title": "Symfony Developer (Intern)",
+            "organization": "Superprof",
+            "period": "Oct 2013 - Mar 2014",
+            "summary": "Worked on Symfony-based backend features and product iteration tasks."
+          },
+          {
+            "title": "Ruby Developer (Intern)",
+            "organization": "Ubudu",
+            "period": "Jun 2012 - Dec 2012",
+            "summary": "Early web product experience on Ruby-based systems in a startup context."
+          }
+        ],
+        "education_heading": "Education",
+        "education_note": "The structure for the education timeline is ready, but the public education details still need to be added in the next content pass."
+      },
+      "projects": {
+        "page_title": "Projects | Loïc Lavergne",
+        "description": "Current, past, and hobby projects across mobile products and digital publishing.",
+        "eyebrow": "Projects",
+        "title": "Products shipped across mobility, publishing, and platform evolution.",
+        "intro": "The project selection mixes current product leadership with earlier native delivery work. The goal is to show range without turning the site into a wall of cards.",
+        "featured": [
+          {
+            "name": "Roole Map",
+            "period": "Oct 2022 - Present",
+            "summary": "Free mobility application for everyday driving across France, covering routing, fuel, charging, parking, nearby services, and localized data.",
+            "details": [
+              "Structured the mobile codebase and drove architectural changes, including a transition toward MVVM with SwiftUI.",
+              "Expanded from hands-on technical leadership into technical roadmap definition and iOS / Android coordination.",
+              "Aligned frontend and backend delivery while evolving architecture, tooling, and process quality."
+            ]
+          },
+          {
+            "name": "Roole Premium",
+            "period": "Sep 2025 - Present",
+            "summary": "Digital companion application for Roole members, centralizing services, benefits, contract access, and assistance features.",
+            "details": [
+              "Coordinates mobile delivery alongside Roole Map under shared standards.",
+              "Aligns process, architecture, and collaboration patterns across multiple teams.",
+              "Helps tighten the connection between product roadmaps and engineering execution."
+            ]
+          }
+        ],
+        "archive_heading": "Selected earlier work",
+        "archive": [
+          {
+            "name": "Vialife Digital",
+            "period": "Oct 2020 - Sep 2022",
+            "summary": "Digital press platform spanning APIs, mobile and web readers, content transformation, audio, and voice integrations."
+          },
+          {
+            "name": "Digital Press Applications",
+            "period": "Oct 2018 - Aug 2022",
+            "summary": "Suite of branded mobile newsstand applications built on a shared architecture and reading framework."
+          },
+          {
+            "name": "MyViapresse",
+            "period": "Aug 2015 - Aug 2022",
+            "summary": "Consumer press application combining subscriptions, single-issue purchases, and offline reading."
+          },
+          {
+            "name": "Dakar Presse",
+            "period": "Nov 2015 - Jul 2022",
+            "summary": "Mobile access to Senegalese daily newspapers for readers in Senegal and abroad."
+          },
+          {
+            "name": "Le Moniteur des Pharmacies",
+            "period": "Mar 2017 - Sep 2018",
+            "summary": "Native iOS application for pharmacists combining news, training, and professional reference tools."
+          },
+          {
+            "name": "Le Point Vétérinaire.fr",
+            "period": "Mar 2017 - Sep 2018",
+            "summary": "Native iOS application for veterinarians with information access, practical tools, and training content."
+          }
+        ],
+        "hobby_heading": "Hobby and internal side projects",
+        "hobby": [
+          {
+            "name": "loic.engineer",
+            "summary": "This portfolio itself, designed as a static-first product with bilingual architecture and editorial presentation."
+          },
+          {
+            "name": "Templated Mobile Starter",
+            "summary": "A reusable app foundation for faster mobile product kickoffs with shared architectural conventions."
+          }
+        ]
+      },
+      "writing": {
+        "page_title": "Writing | Loïc Lavergne",
+        "description": "Blog architecture and future writing archive.",
+        "eyebrow": "Writing",
+        "title": "The publishing system is ready before the archive goes live.",
+        "intro": "Writing is part of the long-term structure of the portfolio, but the v1 launch keeps the archive intentionally empty until the first pieces are ready.",
+        "status_title": "Ready for first publication",
+        "status_copy": "Post pages, metadata, and archive structure are part of the architecture. The first public essays will be added in a later content pass."
+      },
+      "library": {
+        "page_title": "Library | Loïc Lavergne",
+        "description": "Books, reading life, and manual reading stats.",
+        "eyebrow": "Library",
+        "title": "Reading should feel like a product surface, not a spreadsheet.",
+        "intro": "The library area is designed for manually curated reading data. It will eventually show current shelves, recent reads, and yearly/monthly counts.",
+        "stats": [
+          {
+            "label": "Books this year",
+            "value": "--"
+          },
+          {
+            "label": "Books this month",
+            "value": "--"
+          },
+          {
+            "label": "Currently reading",
+            "value": "--"
+          }
+        ],
+        "status_title": "Manual tracking for v1",
+        "status_copy": "Stats, bookshelves, and notes remain static in the first release. No external reading service is required for the site to work."
+      },
+      "about": {
+        "page_title": "About | Loïc Lavergne",
+        "description": "Skills, broader profile, sports, trophies, and contact.",
+        "eyebrow": "About",
+        "title": "Technical depth, leadership range, and the personal layers around the work.",
+        "intro": "This page brings together the broader profile: skills, tools, sports, trophies, and the contact surface for the site.",
+        "bio": "I build at the intersection of mobile product strategy, hands-on technical depth, and delivery systems. Over time the role has expanded from native iOS engineering into broader leadership across architecture, planning, and cross-team execution.",
+        "skills_heading": "Selected skills",
+        "skill_groups": [
+          {
+            "title": "Leadership and product delivery",
+            "items": [
+              "Engineering management",
+              "Roadmap planning",
+              "Technical coordination",
+              "Project management",
+              "Team leadership"
+            ]
+          },
+          {
+            "title": "Mobile and Apple platforms",
+            "items": [
+              "Swift",
+              "SwiftUI",
+              "iOS",
+              "watchOS",
+              "tvOS",
+              "macOS",
+              "Objective-C",
+              "Kotlin"
+            ]
+          },
+          {
+            "title": "Systems, tooling, and adjacent domains",
+            "items": [
+              "APIs",
+              "CI / tooling",
+              "Databases",
+              "PHP",
+              "Python",
+              "JavaScript",
+              "AI / LLMs",
+              "Agentic engineering"
+            ]
+          }
+        ],
+        "sports_title": "Sports",
+        "sports_copy": "The sports profile is part of the product plan for this site and will be added with user-provided details in a later pass.",
+        "trophies_title": "Trophy case",
+        "trophies_copy": "Apple Watch rewards and personal milestones will be curated manually in v1. No live sync is required for the section to exist.",
+        "contact_title": "Contact",
+        "contact_copy": "For now the contact path stays static and lightweight: email plus public profiles."
+      }
+    },
+    "fr": {
+      "html_lang": "fr",
+      "locale_code": "fr_FR",
+      "switch_locale": "en",
+      "switch_label": "English",
+      "skip_link": "Aller au contenu",
+      "nav": {
+        "home": "Accueil",
+        "work": "Travail",
+        "projects": "Projets",
+        "writing": "Écrits",
+        "library": "Bibliothèque",
+        "about": "À propos"
+      },
+      "labels": {
+        "primary_nav": "Navigation principale",
+        "social_links": "Liens sociaux",
+        "highlights": "Temps forts",
+        "approach": "Approche",
+        "current_work": "Travail actuel",
+        "beyond_homepage": "Au-delà de l'accueil",
+        "current_product": "Produit actuel",
+        "scope": "Périmètre",
+        "role_today": "Roole aujourd'hui",
+        "career": "Parcours",
+        "context": "Contexte",
+        "featured": "Sélection",
+        "current_focus": "Focus actuel",
+        "archive": "Archive",
+        "side_work": "Travail parallèle",
+        "status": "Statut",
+        "tracking": "Suivi",
+        "profile": "Profil",
+        "life": "Vie perso",
+        "milestones": "Jalons",
+        "reach_out": "Contact",
+        "email": "Email"
+      },
+      "footer": {
+        "tagline": "Leadership d'ingénierie pour les produits mobiles, l'architecture et la delivery.",
+        "copyright": "Tous droits réservés."
+      },
+      "theme": {
+        "label": "Apparence",
+        "auto": "Auto",
+        "light": "Clair",
+        "dark": "Sombre"
+      },
+      "seo": {
+        "site_description": "Loïc Lavergne est Engineering Manager et pilote la stratégie, l'architecture et la delivery mobile de Roole Map et Roole Premium.",
+        "og_image": "/assets/img/og/og-default.svg"
+      },
+      "home": {
+        "page_title": "Loïc Lavergne | Engineering Manager, produits mobiles",
+        "description": "Leadership d'ingénierie pour les produits mobiles, la stratégie produit, l'architecture et la delivery.",
+        "eyebrow": "Loïc Lavergne",
+        "title": "Leadership d'ingénierie pour les produits mobiles.",
+        "lede": "Je pilote l'exécution mobile de Roole Map et Roole Premium, à la croisée de la roadmap, de l'architecture technique, de la coordination transverse et de la qualité de delivery.",
+        "cta_primary": {
+          "label": "Voir le travail actuel",
+          "route": "work"
+        },
+        "cta_secondary": {
+          "label": "Parcourir les projets",
+          "route": "projects"
+        },
+        "metrics": [
+          {
+            "value": "10+",
+            "label": "années à construire des produits sur les plateformes Apple"
+          },
+          {
+            "value": "2",
+            "label": "produits mobiles actuellement pilotés chez Roole"
+          },
+          {
+            "value": "iOS + Android",
+            "label": "périmètre de delivery et de coordination"
+          }
+        ],
+        "story_heading": "Une manière calme et systémique de construire des produits mobiles.",
+        "story_intro": "La page d'accueil doit répondre rapidement à trois questions : ce que je fais aujourd'hui, quels produits je pilote, et comment j'emmène les équipes vers des livraisons prévisibles et de haute qualité.",
+        "story_steps": [
+          {
+            "id": "today",
+            "eyebrow": "Aujourd'hui",
+            "title": "Engineering Manager chez Roole.",
+            "copy": "Le rôle couvre la planification stratégique, la coordination technique et la delivery opérationnelle des applications mobiles de Roole.",
+            "facts": [
+              "Coordination de plusieurs équipes de développement et de Tech Leads.",
+              "Pilotage des roadmaps produit et technique avec le produit et le backend.",
+              "Suivi des risques, dépendances et résultats de delivery."
+            ]
+          },
+          {
+            "id": "products",
+            "eyebrow": "Produits actuels",
+            "title": "Roole Map et Roole Premium.",
+            "copy": "Le travail se répartit entre un produit de mobilité grand public et une application compagnon pour les membres, avec des standards partagés.",
+            "facts": [
+              "Roole Map simplifie la conduite au quotidien avec navigation, services et données locales.",
+              "Roole Premium centralise services, avantages et parcours d'assistance.",
+              "Les deux produits partagent un travail d'alignement architectural et organisationnel."
+            ]
+          },
+          {
+            "id": "method",
+            "eyebrow": "Méthode",
+            "title": "Roadmap, architecture et delivery restent connectées.",
+            "copy": "Je travaille entre produit, backend, design et engineering pour garder des standards cohérents sans ralentir l'exécution.",
+            "facts": [
+              "L'architecture et les API restent proches des décisions de roadmap.",
+              "Les pratiques transverses évoluent avec les produits.",
+              "La qualité de build, l'outillage et la maintenabilité restent dans le périmètre de delivery."
+            ]
+          },
+          {
+            "id": "range",
+            "eyebrow": "Amplitude",
+            "title": "La profondeur technique continue d'alimenter la couche de leadership.",
+            "copy": "Mon parcours couvre Swift, les plateformes Apple, la collaboration Android, les API backend, l'IA appliquée et la coordination produit / design.",
+            "facts": [
+              "Spécialisation Apple platforms sur iOS, watchOS, tvOS et macOS.",
+              "Maîtrise des systèmes de delivery, des API, de la CI et des workflows design produit.",
+              "L'ingénierie agentique et les pratiques assistées par l'IA font partie des compétences actuelles."
+            ]
+          }
+        ],
+        "featured_projects_heading": "Travail actuel sélectionné",
+        "entry_points_heading": "Explorer le reste du profil",
+        "entry_points": [
+          {
+            "route": "writing",
+            "title": "Écrits",
+            "copy": "Le système de publication est prêt en v1, l'archive sera alimentée ensuite."
+          },
+          {
+            "route": "library",
+            "title": "Bibliothèque",
+            "copy": "Livres, vie de lecteur et statistiques mensuelles / annuelles font partie du plan produit."
+          },
+          {
+            "route": "about",
+            "title": "À propos",
+            "copy": "Compétences, sport, trophées, contact et profil plus personnel vivent ici."
+          }
+        ]
+      },
+      "work": {
+        "page_title": "Travail | Loïc Lavergne",
+        "description": "Rôle actuel, périmètre de leadership produit et parcours professionnel.",
+        "eyebrow": "Travail",
+        "title": "Le périmètre actuel d'abord, puis le chemin qui y mène.",
+        "intro": "Le portfolio doit partir du présent, mais le parcours compte. Cette page garde le rôle actuel en tête puis déroule la trajectoire professionnelle.",
+        "current_role": {
+          "organization": "Roole",
+          "title": "Engineering Manager",
+          "period": "Janvier 2026 à aujourd'hui",
+          "location": "Boulogne-Billancourt, Île-de-France, France",
+          "summary": "Responsable de la planification stratégique, de la coordination technique et de la delivery des applications mobiles de Roole.",
+          "highlights": [
+            "Coordonne plusieurs équipes de développement et Tech Leads sur Roole Map et Roole Premium.",
+            "Définit et maintient les roadmaps produit et technique avec le produit et le backend.",
+            "Aligne développeurs, designers, backend et partenaires sur les exigences et critères de qualité.",
+            "Supervise l'architecture, les intégrations API, l'outillage et la CI.",
+            "Renforce les standards partagés et la collaboration transverse dans l'organisation mobile.",
+            "Aligne les parties prenantes produit et exécutives sur les progrès, risques et jalons clés."
+          ]
+        },
+        "product_cards": [
+          {
+            "name": "Roole Map",
+            "summary": "Application de mobilité gratuite pour la conduite au quotidien en France, avec navigation, services, carburant, recharge, parking et données locales."
+          },
+          {
+            "name": "Roole Premium",
+            "summary": "Application compagnon pour les membres Roole, centralisant services, avantages, assistance et accès sécurisé à l'écosystème."
+          }
+        ],
+        "experience_heading": "Expérience",
+        "experience": [
+          {
+            "title": "Engineering Manager",
+            "organization": "Roole",
+            "period": "Jan 2026 - Aujourd'hui",
+            "summary": "Pilote la planification, la coordination technique et la delivery des produits mobiles de Roole."
+          },
+          {
+            "title": "Tech Lead Mobile",
+            "organization": "Roole",
+            "period": "Oct 2022 - Déc 2025",
+            "summary": "A piloté la conception technique et la delivery de Roole Map et structuré les pratiques mobile."
+          },
+          {
+            "title": "Chief Digital Officer",
+            "organization": "Vialife",
+            "period": "Oct 2020 - Sep 2022",
+            "summary": "A dirigé Vialife Digital sur la stratégie technique, l'évolution produit et l'alignement business."
+          },
+          {
+            "title": "Mobile Project Manager",
+            "organization": "Vialife",
+            "period": "Oct 2018 - Sep 2020",
+            "summary": "A piloté la delivery multi-plateforme, l'évolution technique, les API backend et la R&D."
+          },
+          {
+            "title": "iOS Developer, Project Manager",
+            "organization": "Things Are Moving",
+            "period": "Sep 2015 - Sep 2018",
+            "summary": "A conçu, développé et livré des applications natives Apple de bout en bout."
+          },
+          {
+            "title": ".NET Developer (Stage)",
+            "organization": "Air Liquide",
+            "period": "Avr 2014 - Sep 2014",
+            "summary": "A contribué à l'implémentation et à la maintenance de logiciels .NET en environnement entreprise."
+          },
+          {
+            "title": "Symfony Developer (Stage)",
+            "organization": "Superprof",
+            "period": "Oct 2013 - Mar 2014",
+            "summary": "A travaillé sur des fonctionnalités backend Symfony et l'itération produit."
+          },
+          {
+            "title": "Ruby Developer (Stage)",
+            "organization": "Ubudu",
+            "period": "Juin 2012 - Déc 2012",
+            "summary": "Première expérience produit web sur des systèmes Ruby en contexte startup."
+          }
+        ],
+        "education_heading": "Formation",
+        "education_note": "La structure de la chronologie de formation est prête, mais les détails publics doivent encore être ajoutés dans un prochain passage contenu."
+      },
+      "projects": {
+        "page_title": "Projets | Loïc Lavergne",
+        "description": "Projets actuels, passés et personnels autour des produits mobiles et de l'édition numérique.",
+        "eyebrow": "Projets",
+        "title": "Des produits livrés entre mobilité, édition numérique et évolution de plateformes.",
+        "intro": "La sélection mélange leadership produit actuel et projets natifs plus anciens. L'objectif est de montrer l'amplitude sans transformer le site en mur de cartes.",
+        "featured": [
+          {
+            "name": "Roole Map",
+            "period": "Oct 2022 - Aujourd'hui",
+            "summary": "Application de mobilité gratuite pour la conduite au quotidien en France, avec navigation, carburant, recharge, parking, services et données locales.",
+            "details": [
+              "A structuré le codebase mobile et conduit des évolutions d'architecture, dont une transition vers MVVM avec SwiftUI.",
+              "A évolué d'un leadership technique très hands-on vers la roadmap technique et la coordination iOS / Android.",
+              "A aligné delivery frontend et backend tout en faisant progresser architecture, outillage et processus."
+            ]
+          },
+          {
+            "name": "Roole Premium",
+            "period": "Sep 2025 - Aujourd'hui",
+            "summary": "Application compagnon pour les membres Roole, centralisant services, avantages, contrats et parcours d'assistance.",
+            "details": [
+              "Coordonne la delivery mobile en parallèle de Roole Map sous des standards partagés.",
+              "Aligne processus, architecture et collaboration entre plusieurs équipes.",
+              "Resserre le lien entre roadmaps produit et exécution engineering."
+            ]
+          }
+        ],
+        "archive_heading": "Travaux antérieurs sélectionnés",
+        "archive": [
+          {
+            "name": "Vialife Digital",
+            "period": "Oct 2020 - Sep 2022",
+            "summary": "Plateforme de presse numérique couvrant API, lecteurs web et mobile, transformation de contenu, audio et assistants vocaux."
+          },
+          {
+            "name": "Digital Press Applications",
+            "period": "Oct 2018 - Août 2022",
+            "summary": "Suite d'applications kiosque bâties sur une architecture commune et un framework de lecture partagé."
+          },
+          {
+            "name": "MyViapresse",
+            "period": "Août 2015 - Août 2022",
+            "summary": "Application presse grand public mêlant abonnements, achats à l'unité et lecture hors ligne."
+          },
+          {
+            "name": "Dakar Presse",
+            "period": "Nov 2015 - Juil 2022",
+            "summary": "Accès mobile à la presse quotidienne sénégalaise pour les lecteurs au Sénégal et à l'international."
+          },
+          {
+            "name": "Le Moniteur des Pharmacies",
+            "period": "Mar 2017 - Sep 2018",
+            "summary": "Application iOS native pour pharmaciens mêlant actualités, formation et outils de référence métier."
+          },
+          {
+            "name": "Le Point Vétérinaire.fr",
+            "period": "Mar 2017 - Sep 2018",
+            "summary": "Application iOS native pour vétérinaires, réunissant information, outils pratiques et contenus de formation."
+          }
+        ],
+        "hobby_heading": "Projets personnels et internes",
+        "hobby": [
+          {
+            "name": "loic.engineer",
+            "summary": "Ce portfolio lui-même, conçu comme un produit statique bilingue avec narration éditoriale."
+          },
+          {
+            "name": "Templated Mobile Starter",
+            "summary": "Une base réutilisable pour lancer plus vite des produits mobiles avec des conventions d'architecture partagées."
+          }
+        ]
+      },
+      "writing": {
+        "page_title": "Écrits | Loïc Lavergne",
+        "description": "Architecture du blog et futur archive d'articles.",
+        "eyebrow": "Écrits",
+        "title": "Le système de publication est prêt avant l'ouverture de l'archive.",
+        "intro": "L'écriture fait partie de la structure long terme du portfolio, mais le lancement v1 garde volontairement l'archive vide tant que les premiers textes ne sont pas prêts.",
+        "status_title": "Prêt pour la première publication",
+        "status_copy": "Les pages d'article, les métadonnées et la structure d'archive font partie de l'architecture. Les premiers textes publics seront ajoutés dans un prochain passage contenu."
+      },
+      "library": {
+        "page_title": "Bibliothèque | Loïc Lavergne",
+        "description": "Livres, vie de lecteur et statistiques de lecture manuelles.",
+        "eyebrow": "Bibliothèque",
+        "title": "La lecture doit ressembler à une surface produit, pas à un tableur.",
+        "intro": "La zone bibliothèque est pensée pour des données de lecture mises à jour manuellement. Elle affichera à terme la lecture en cours, les livres récents et les compteurs annuels et mensuels.",
+        "stats": [
+          {
+            "label": "Livres cette année",
+            "value": "--"
+          },
+          {
+            "label": "Livres ce mois-ci",
+            "value": "--"
+          },
+          {
+            "label": "Lecture en cours",
+            "value": "--"
+          }
+        ],
+        "status_title": "Suivi manuel en v1",
+        "status_copy": "Les statistiques, étagères et notes restent statiques dans la première version. Aucun service de lecture externe n'est nécessaire pour faire fonctionner le site."
+      },
+      "about": {
+        "page_title": "À propos | Loïc Lavergne",
+        "description": "Compétences, profil élargi, sport, trophées et contact.",
+        "eyebrow": "À propos",
+        "title": "Profondeur technique, amplitude de leadership et couches personnelles autour du travail.",
+        "intro": "Cette page réunit le profil plus large : compétences, outils, sport, trophées et surface de contact du site.",
+        "bio": "Je construis à l'intersection de la stratégie produit mobile, de la profondeur technique et des systèmes de delivery. Avec le temps, le rôle s'est étendu du développement iOS natif vers un leadership plus large sur l'architecture, la planification et l'exécution transverse.",
+        "skills_heading": "Compétences sélectionnées",
+        "skill_groups": [
+          {
+            "title": "Leadership et delivery produit",
+            "items": [
+              "Engineering management",
+              "Roadmap planning",
+              "Coordination technique",
+              "Project management",
+              "Team leadership"
+            ]
+          },
+          {
+            "title": "Mobile et plateformes Apple",
+            "items": [
+              "Swift",
+              "SwiftUI",
+              "iOS",
+              "watchOS",
+              "tvOS",
+              "macOS",
+              "Objective-C",
+              "Kotlin"
+            ]
+          },
+          {
+            "title": "Systèmes, outillage et domaines adjacents",
+            "items": [
+              "APIs",
+              "CI / outillage",
+              "Bases de données",
+              "PHP",
+              "Python",
+              "JavaScript",
+              "IA / LLMs",
+              "Ingénierie agentique"
+            ]
+          }
+        ],
+        "sports_title": "Sport",
+        "sports_copy": "Le profil sportif fait partie du plan produit du site et sera ajouté avec des détails fournis par l'utilisateur dans une prochaine passe.",
+        "trophies_title": "Vitrine de trophées",
+        "trophies_copy": "Les récompenses Apple Watch et autres jalons personnels seront organisés manuellement en v1. Aucune synchronisation live n'est nécessaire.",
+        "contact_title": "Contact",
+        "contact_copy": "Pour l'instant, le contact reste simple et statique : email plus profils publics."
+      }
+    }
+  }
+}

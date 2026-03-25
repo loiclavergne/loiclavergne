@@ -1,0 +1,224 @@
+<!--
+  projects.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Current, past, and hobby projects across mobile products and digital publishing.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Projects | Loïc Lavergne">
+  <meta property="og:description" content="Current, past, and hobby projects across mobile products and digital publishing.">
+  <meta property="og:url" content="https://loic.engineer/projects/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects | Loïc Lavergne">
+  <meta name="twitter:description" content="Current, past, and hobby projects across mobile products and digital publishing.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/projects/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projets/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Projects | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "en_US",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "en_US",
+      "name" : "Projects | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/projects\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="projects">
+  <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="site-nav__link" href="/">Home</a><a class="site-nav__link" href="/work/">Work</a><a class="site-nav__link" href="/projects/" aria-current="page">Projects</a><a class="site-nav__link" href="/writing/">Writing</a><a class="site-nav__link" href="/library/">Library</a><a class="site-nav__link" href="/about/">About</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Appearance">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Light</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Dark</button>
+          </div>
+          <a class="locale-link" hreflang="fr" href="/fr/projets/">Français</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <span class="eyebrow">Projects</span>
+        <h1>Products shipped across mobility, publishing, and platform evolution.</h1>
+        <p class="hero__lede">The project selection mixes current product leadership with earlier native delivery work. The goal is to show range without turning the site into a wall of cards.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell section-heading">
+        <span class="eyebrow">Featured</span>
+        <h2>Current focus</h2>
+      </div>
+      <div class="shell card-grid card-grid--two">
+        <article class="card card--project reveal">
+  <span class="eyebrow">Oct 2022 - Present</span>
+  <h3>Roole Map</h3>
+  <p>Free mobility application for everyday driving across France, covering routing, fuel, charging, parking, nearby services, and localized data.</p>
+  <ul class="detail-list"><li>Structured the mobile codebase and drove architectural changes, including a transition toward MVVM with SwiftUI.</li><li>Expanded from hands-on technical leadership into technical roadmap definition and iOS / Android coordination.</li><li>Aligned frontend and backend delivery while evolving architecture, tooling, and process quality.</li></ul>
+</article>
+<article class="card card--project reveal">
+  <span class="eyebrow">Sep 2025 - Present</span>
+  <h3>Roole Premium</h3>
+  <p>Digital companion application for Roole members, centralizing services, benefits, contract access, and assistance features.</p>
+  <ul class="detail-list"><li>Coordinates mobile delivery alongside Roole Map under shared standards.</li><li>Aligns process, architecture, and collaboration patterns across multiple teams.</li><li>Helps tighten the connection between product roadmaps and engineering execution.</li></ul>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell section-heading">
+        <span class="eyebrow">Archive</span>
+        <h2>Selected earlier work</h2>
+      </div>
+      <div class="shell card-grid card-grid--three">
+        <article class="card reveal">
+  <span class="eyebrow">Oct 2020 - Sep 2022</span>
+  <h3>Vialife Digital</h3>
+  <p>Digital press platform spanning APIs, mobile and web readers, content transformation, audio, and voice integrations.</p>
+</article>
+<article class="card reveal">
+  <span class="eyebrow">Oct 2018 - Aug 2022</span>
+  <h3>Digital Press Applications</h3>
+  <p>Suite of branded mobile newsstand applications built on a shared architecture and reading framework.</p>
+</article>
+<article class="card reveal">
+  <span class="eyebrow">Aug 2015 - Aug 2022</span>
+  <h3>MyViapresse</h3>
+  <p>Consumer press application combining subscriptions, single-issue purchases, and offline reading.</p>
+</article>
+<article class="card reveal">
+  <span class="eyebrow">Nov 2015 - Jul 2022</span>
+  <h3>Dakar Presse</h3>
+  <p>Mobile access to Senegalese daily newspapers for readers in Senegal and abroad.</p>
+</article>
+<article class="card reveal">
+  <span class="eyebrow">Mar 2017 - Sep 2018</span>
+  <h3>Le Moniteur des Pharmacies</h3>
+  <p>Native iOS application for pharmacists combining news, training, and professional reference tools.</p>
+</article>
+<article class="card reveal">
+  <span class="eyebrow">Mar 2017 - Sep 2018</span>
+  <h3>Le Point Vétérinaire.fr</h3>
+  <p>Native iOS application for veterinarians with information access, practical tools, and training content.</p>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell section-heading">
+        <span class="eyebrow">Side Work</span>
+        <h2>Hobby and internal side projects</h2>
+      </div>
+      <div class="shell card-grid card-grid--two">
+        <article class="card reveal">
+  <span class="eyebrow">Hobby</span>
+  <h3>loic.engineer</h3>
+  <p>This portfolio itself, designed as a static-first product with bilingual architecture and editorial presentation.</p>
+</article>
+<article class="card reveal">
+  <span class="eyebrow">Hobby</span>
+  <h3>Templated Mobile Starter</h3>
+  <p>A reusable app foundation for faster mobile product kickoffs with shared architectural conventions.</p>
+</article>
+      </div>
+    </section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Engineering leadership for mobile products, architecture, and delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. All rights reserved.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

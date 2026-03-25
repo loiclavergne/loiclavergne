@@ -2,8 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://loic.engineer/</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/about/</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/a-propos/</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/bibliotheque/</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/ecrits/</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projets/</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/travail/</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/library/</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/work/</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/writing/</loc>
+    <lastmod>2026-03-25</lastmod>
   </url>
 </urlset>

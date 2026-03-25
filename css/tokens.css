@@ -1,0 +1,96 @@
+/*
+ *  tokens.css
+ *  Loic Engineer Portfolio
+ *
+ *  Created by Loïc Lavergne on 25/03/2026
+ *  Copyright © 2026 Loïc Lavergne. All rights reserved.
+ */
+
+:root {
+  color-scheme: light;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+
+  --page-background: #f5f5f7;
+  --page-background-elevated: rgba(255, 255, 255, 0.68);
+  --page-background-strong: rgba(255, 255, 255, 0.84);
+  --page-background-muted: rgba(245, 245, 247, 0.88);
+  --page-background-contrast: #0b1018;
+  --surface-border: rgba(15, 23, 42, 0.08);
+  --surface-border-strong: rgba(15, 23, 42, 0.14);
+  --text-primary: #10131a;
+  --text-secondary: rgba(16, 19, 26, 0.72);
+  --text-tertiary: rgba(16, 19, 26, 0.52);
+  --text-inverse: rgba(255, 255, 255, 0.94);
+  --accent: #0071e3;
+  --accent-hover: #0a84ff;
+  --accent-soft: rgba(0, 113, 227, 0.12);
+  --accent-secondary: #5ac8fa;
+  --mint: #30d158;
+  --warm: #ff9f0a;
+  --violet: #8e8ef0;
+  --hero-aurora-1: rgba(0, 113, 227, 0.28);
+  --hero-aurora-2: rgba(255, 159, 10, 0.22);
+  --hero-aurora-3: rgba(90, 200, 250, 0.18);
+
+  --shadow-subtle: 0 24px 60px rgba(15, 23, 42, 0.08);
+  --shadow-strong: 0 32px 80px rgba(15, 23, 42, 0.14);
+  --shadow-focus: 0 0 0 4px rgba(0, 113, 227, 0.2);
+
+  --radius-xs: 14px;
+  --radius-sm: 20px;
+  --radius-md: 28px;
+  --radius-lg: 40px;
+  --radius-round: 999px;
+
+  --space-2xs: 0.375rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+  --space-3xl: 7rem;
+  --space-4xl: 10rem;
+
+  --shell-width: min(1200px, calc(100vw - 2rem));
+  --shell-width-wide: min(1320px, calc(100vw - 2rem));
+  --header-height: 72px;
+
+  --duration-fast: 160ms;
+  --duration-medium: 280ms;
+  --duration-slow: 560ms;
+  --easing-standard: cubic-bezier(0.28, 0.11, 0.32, 1);
+  --easing-emphasis: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html[data-resolved-theme="dark"] {
+  color-scheme: dark;
+  --page-background: #05080d;
+  --page-background-elevated: rgba(10, 14, 22, 0.72);
+  --page-background-strong: rgba(13, 17, 28, 0.86);
+  --page-background-muted: rgba(15, 20, 32, 0.92);
+  --page-background-contrast: #f5f5f7;
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --surface-border-strong: rgba(255, 255, 255, 0.14);
+  --text-primary: rgba(255, 255, 255, 0.96);
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+  --text-inverse: #10131a;
+  --accent: #0a84ff;
+  --accent-hover: #4aa8ff;
+  --accent-soft: rgba(10, 132, 255, 0.16);
+  --accent-secondary: #64d2ff;
+  --mint: #32d74b;
+  --warm: #ffb340;
+  --violet: #a89cff;
+  --hero-aurora-1: rgba(10, 132, 255, 0.34);
+  --hero-aurora-2: rgba(255, 179, 64, 0.18);
+  --hero-aurora-3: rgba(100, 210, 255, 0.2);
+  --shadow-subtle: 0 24px 60px rgba(0, 0, 0, 0.32);
+  --shadow-strong: 0 32px 80px rgba(0, 0, 0, 0.42);
+  --shadow-focus: 0 0 0 4px rgba(10, 132, 255, 0.24);
+}
+

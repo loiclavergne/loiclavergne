@@ -1,72 +1,104 @@
-# Loic Lavergne Portfolio
+# Loic Engineer Portfolio
 
 ## Overview
-This repository contains Loic Lavergne's portfolio website as a fully static site.
 
-The site is data-driven:
-- `index.html` defines the page shell and section structure.
-- `assets/data.json` stores profile content (intro, timeline, skills, projects, socials).
-- `js/main.js` renders content from JSON into the UI.
+This repository contains the source and generated output for `https://loic.engineer`.
 
-No build step is required.
+The site is:
+- static-first
+- bilingual from day one (`/` in English, `/fr/` in French)
+- deployable on GitHub Pages
+- privacy-friendly by default
+- intentionally lightweight at runtime
+
+The current iteration replaces the earlier single-page Bootstrap portfolio with a
+multi-page Apple-inspired editorial experience built from local source files.
 
 ## Stack
+
+Shipped website:
 - HTML5
-- CSS3 (modular stylesheets in `css/`)
-- Vanilla JavaScript ES modules (in `js/`)
-- Bootstrap 5 (local vendor files)
+- CSS custom properties and modern layout primitives
+- vanilla JavaScript ES modules
+- SVG assets
 
-## Project Structure
-- `index.html`: semantic layout and static containers
-- `assets/data.json`: portfolio content source
-- `css/`: component and system styles (`style`, `sections`, `tile`, `colors`, etc.)
-- `js/`: rendering and interaction logic
-- `vendor/`: Bootstrap, Bootstrap Icons, Normalize
+Build tooling:
+- Swift toolchain and Swift Package Manager
 
-## Key Systems
-- Appearance system (`js/appearance.js`):
-  - supports Light / Dark / Auto modes
-  - persists preference to `localStorage`
-  - updates CSS custom properties for contrast and glass surfaces
-- Animation system (`js/animations.js`):
-  - section entrance animations
-  - mobile navbar collapse transitions
-  - tile overlay open/close interactions
-- Media fallback system (`js/lib.js`):
-  - replaces failed images/videos with local placeholders
+There are no required external package dependencies for the current build.
+
+## Architecture
+
+Core source files:
+- `Package.swift`: Swift package manifest for the local generator
+- `Sources/SiteBuilder/Resources/site.json`: bilingual content, localized routes, metadata, and content model
+- `Sources/SiteBuilder/SiteModels.swift`: typed content loading
+- `Sources/SiteBuilder/SiteRenderer.swift`: shared renderers for pages, navigation, footer, and SEO tags
+- `Sources/SiteBuilder/main.swift`: generates static HTML files and `sitemap.xml`
+- `Sources/SiteServer/main.swift`: local Swift static file server for browser previews
+- `css/tokens.css`: design tokens, themes, and motion settings
+- `css/site.css`: layout, components, responsive rules, and page styling
+- `js/site.js`: appearance switching, reveal behavior, and homepage story activation
+
+Generated output:
+- `index.html`
+- `fr/**/index.html`
+- `work/index.html`
+- `projects/index.html`
+- `writing/index.html`
+- `library/index.html`
+- `about/index.html`
+- `sitemap.xml`
 
 Detailed notes:
 - `docs/ARCHITECTURE.md`
 
-## SEO and Accessibility
-- SEO metadata and social cards are declared in `index.html`.
-- Structured data (`Person`) is embedded as JSON-LD in `index.html`.
-- Crawl support files:
-  - `robots.txt`
-  - `sitemap.xml`
-- Accessibility enhancements include:
-  - skip link
-  - semantic landmarks (`nav`, `main`, `section`, `footer`)
-  - ARIA labels for interactive icon controls
-  - keyboard-accessible appearance toggle and tile expand controls
-
 ## Local Development
-Use a local HTTP server (required for ES modules and `fetch`):
+
+Rebuild the site:
 
 ```bash
-cd /Users/loki/Developer/website
-python3 -m http.server 8080
+swift run SiteBuilder
+```
+
+Compile the generator:
+
+```bash
+swift build
+```
+
+Serve locally:
+
+```bash
+swift run SiteServer
 ```
 
 Open:
 
 `http://localhost:8080`
 
-## Hosting
-This site is static and can be hosted directly on GitHub Pages.
+## Product Scope In V1
 
-Typical Pages setup:
-1. Push repository to GitHub.
-2. Open repository settings.
-3. Go to Pages.
-4. Set source to your branch root (`/`).
+The v1 architecture includes:
+- homepage storytelling focused on current professional work
+- work, projects, writing, library, and about pages
+- English and French localization
+- light, dark, and auto appearance modes
+- static placeholders for writing archive, reading stats, sports, trophies, and education where source content is still pending
+
+The following remain intentionally static and manual for now:
+- books and reading stats
+- sports profile
+- trophy case
+- contact via `mailto:`
+
+## Deployment
+
+The generated site is plain static output and can be hosted directly on GitHub
+Pages.
+
+If a future feature truly requires live processing, the preferred escalation
+path is:
+1. keep the public site static
+2. add the smallest possible optional runtime
+3. isolate it behind a clearly bounded integration

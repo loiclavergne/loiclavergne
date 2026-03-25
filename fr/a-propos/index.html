@@ -1,0 +1,200 @@
+<!--
+  about.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compétences, profil élargi, sport, trophées et contact.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="À propos | Loïc Lavergne">
+  <meta property="og:description" content="Compétences, profil élargi, sport, trophées et contact.">
+  <meta property="og:url" content="https://loic.engineer/fr/a-propos/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="À propos | Loïc Lavergne">
+  <meta name="twitter:description" content="Compétences, profil élargi, sport, trophées et contact.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/fr/a-propos/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/about/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/a-propos/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/about/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>À propos | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/fr\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "fr_FR",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "fr_FR",
+      "name" : "À propos | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/fr\/a-propos\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="about">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/fr/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a class="site-nav__link" href="/fr/">Accueil</a><a class="site-nav__link" href="/fr/travail/">Travail</a><a class="site-nav__link" href="/fr/projets/">Projets</a><a class="site-nav__link" href="/fr/ecrits/">Écrits</a><a class="site-nav__link" href="/fr/bibliotheque/">Bibliothèque</a><a class="site-nav__link" href="/fr/a-propos/" aria-current="page">À propos</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Apparence">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Clair</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Sombre</button>
+          </div>
+          <a class="locale-link" hreflang="en" href="/about/">English</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <span class="eyebrow">À propos</span>
+        <h1>Profondeur technique, amplitude de leadership et couches personnelles autour du travail.</h1>
+        <p class="hero__lede">Cette page réunit le profil plus large : compétences, outils, sport, trophées et surface de contact du site.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell split-heading">
+        <div>
+          <span class="eyebrow">Profil</span>
+          <h2>Compétences sélectionnées</h2>
+        </div>
+        <div class="section-copy">
+          <p>Je construis à l&#x27;intersection de la stratégie produit mobile, de la profondeur technique et des systèmes de delivery. Avec le temps, le rôle s&#x27;est étendu du développement iOS natif vers un leadership plus large sur l&#x27;architecture, la planification et l&#x27;exécution transverse.</p>
+        </div>
+      </div>
+      <div class="shell card-grid card-grid--three">
+        <article class="card reveal">
+  <span class="eyebrow">Leadership et delivery produit</span>
+  <ul class="tag-list"><li>Engineering management</li><li>Roadmap planning</li><li>Coordination technique</li><li>Project management</li><li>Team leadership</li></ul>
+</article>
+<article class="card reveal">
+  <span class="eyebrow">Mobile et plateformes Apple</span>
+  <ul class="tag-list"><li>Swift</li><li>SwiftUI</li><li>iOS</li><li>watchOS</li><li>tvOS</li><li>macOS</li><li>Objective-C</li><li>Kotlin</li></ul>
+</article>
+<article class="card reveal">
+  <span class="eyebrow">Systèmes, outillage et domaines adjacents</span>
+  <ul class="tag-list"><li>APIs</li><li>CI / outillage</li><li>Bases de données</li><li>PHP</li><li>Python</li><li>JavaScript</li><li>IA / LLMs</li><li>Ingénierie agentique</li></ul>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell card-grid card-grid--two">
+        <article class="card reveal">
+          <span class="eyebrow">Vie perso</span>
+          <h3>Sport</h3>
+          <p>Le profil sportif fait partie du plan produit du site et sera ajouté avec des détails fournis par l&#x27;utilisateur dans une prochaine passe.</p>
+        </article>
+        <article class="card reveal">
+          <span class="eyebrow">Jalons</span>
+          <h3>Vitrine de trophées</h3>
+          <p>Les récompenses Apple Watch et autres jalons personnels seront organisés manuellement en v1. Aucune synchronisation live n&#x27;est nécessaire.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>Contact</h2>
+          <p>Pour l&#x27;instant, le contact reste simple et statique : email plus profils publics.</p>
+          <div class="button-row">
+            <a class="button button--primary" href="mailto:hello@loic.engineer">Email</a>
+            <a class="button button--secondary" href="https://www.linkedin.com/in/loiclavergne/" rel="noopener noreferrer" target="_blank">LinkedIn</a><a class="button button--secondary" href="https://github.com/loiclavergne/" rel="noopener noreferrer" target="_blank">GitHub</a><a class="button button--secondary" href="https://bsky.app/profile/loic.engineer" rel="noopener noreferrer" target="_blank">Bluesky</a><a class="button button--secondary" href="https://www.instagram.com/loic.lavergne.tech" rel="noopener noreferrer" target="_blank">Instagram</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Leadership d&#x27;ingénierie pour les produits mobiles, l&#x27;architecture et la delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. Tous droits réservés.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Liens sociaux">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

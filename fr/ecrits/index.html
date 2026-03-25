@@ -1,0 +1,155 @@
+<!--
+  writing.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Architecture du blog et futur archive d&#x27;articles.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Écrits | Loïc Lavergne">
+  <meta property="og:description" content="Architecture du blog et futur archive d&#x27;articles.">
+  <meta property="og:url" content="https://loic.engineer/fr/ecrits/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Écrits | Loïc Lavergne">
+  <meta name="twitter:description" content="Architecture du blog et futur archive d&#x27;articles.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/fr/ecrits/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/writing/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/ecrits/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/writing/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Écrits | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/fr\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "fr_FR",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "fr_FR",
+      "name" : "Écrits | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/fr\/ecrits\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="writing">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/fr/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a class="site-nav__link" href="/fr/">Accueil</a><a class="site-nav__link" href="/fr/travail/">Travail</a><a class="site-nav__link" href="/fr/projets/">Projets</a><a class="site-nav__link" href="/fr/ecrits/" aria-current="page">Écrits</a><a class="site-nav__link" href="/fr/bibliotheque/">Bibliothèque</a><a class="site-nav__link" href="/fr/a-propos/">À propos</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Apparence">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Clair</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Sombre</button>
+          </div>
+          <a class="locale-link" hreflang="en" href="/writing/">English</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <span class="eyebrow">Écrits</span>
+        <h1>Le système de publication est prêt avant l&#x27;ouverture de l&#x27;archive.</h1>
+        <p class="hero__lede">L&#x27;écriture fait partie de la structure long terme du portfolio, mais le lancement v1 garde volontairement l&#x27;archive vide tant que les premiers textes ne sont pas prêts.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--empty reveal">
+          <span class="eyebrow">Statut</span>
+          <h2>Prêt pour la première publication</h2>
+          <p>Les pages d&#x27;article, les métadonnées et la structure d&#x27;archive font partie de l&#x27;architecture. Les premiers textes publics seront ajoutés dans un prochain passage contenu.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Leadership d&#x27;ingénierie pour les produits mobiles, l&#x27;architecture et la delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. Tous droits réservés.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Liens sociaux">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>
