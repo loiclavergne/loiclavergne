@@ -35,6 +35,7 @@ Primary source files:
 
 Generated output:
 - `index.html`
+- `404.html`
 - `fr/**/index.html`
 - `work/index.html`
 - `projects/index.html`
@@ -54,6 +55,10 @@ Generated output:
 - Keep localized route structures consistent. Locale copy may differ, but code,
   folders, file names, and slugs should stay English unless there is a strong
   technical reason not to.
+- Use the root `404.html` for broken-link recovery instead of reintroducing
+  locale-specific folder aliases when a host-level redirect rule is unavailable.
+- Keep the local Swift preview server aligned with production-like behavior
+  where feasible; missing routes should surface the root `404.html`.
 - Keep accessibility, privacy, and performance as first-class constraints.
 - Avoid third-party fonts, analytics, trackers, and unnecessary dependencies.
 - Preserve Safari-first quality while keeping modern Chromium browsers fully

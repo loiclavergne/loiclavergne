@@ -34,7 +34,8 @@ Rendering flow:
 3. `Sources/SiteBuilder/SiteModels.swift` decodes the content into typed Swift structures.
 4. `Sources/SiteBuilder/SiteRenderer.swift` renders complete HTML documents for each page and locale.
 5. `Sources/SiteBuilder/main.swift` writes generated `index.html` files into the route folders and regenerates `sitemap.xml`.
-6. `swift run SiteServer` can serve the generated output locally for browser previews without Ruby, Node, or Python.
+6. `swift run SiteServer` can serve the generated output locally for browser previews without Ruby, Node, or Python, including the root `404.html` on missing routes.
+7. `404.html` provides a static fallback page with localized recovery links for missing routes.
 
 This keeps the shipped site fully static while avoiding duplicated hand-written
 HTML for every locale and page combination.

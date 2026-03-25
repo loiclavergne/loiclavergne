@@ -188,7 +188,7 @@ struct StaticSiteResponder {
         } catch {
             if let cocoaError = error as? CocoaError, cocoaError.code == .fileReadNoSuchFile {
                 log("\(method) \(request.target) -> 404")
-                return errorResponse(statusCode: 404, reasonPhrase: "Not Found", message: "File not found.")
+                return notFoundResponse()
             }
 
             if case SiteServerError.invalidRoot = error {
@@ -204,6 +204,25 @@ struct StaticSiteResponder {
             log("\(method) \(request.target) -> 500 (\(error.localizedDescription))")
             return errorResponse(statusCode: 500, reasonPhrase: "Internal Server Error", message: "Static file lookup failed.")
         }
+    }
+
+    /// Return the custom site 404 page when available, otherwise fall back to plain text.
+    private func notFoundResponse() -> HTTPResponse {
+        let fallbackURL = rootURL.appendingPathComponent("404.html")
+
+        if let body = try? Data(contentsOf: fallbackURL) {
+            return HTTPResponse(
+                statusCode: 404,
+                reasonPhrase: "Not Found",
+                headers: defaultHeaders(
+                    contentType: "text/html; charset=utf-8",
+                    contentLength: body.count
+                ),
+                body: body
+            )
+        }
+
+        return errorResponse(statusCode: 404, reasonPhrase: "Not Found", message: "File not found.")
     }
 
     /// Resolve a request target into a safe file path inside the site root.

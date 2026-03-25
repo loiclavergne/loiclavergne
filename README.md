@@ -42,6 +42,7 @@ Core source files:
 
 Generated output:
 - `index.html`
+- `404.html`
 - `fr/**/index.html`
 - `work/index.html`
 - `projects/index.html`
@@ -72,6 +73,9 @@ Serve locally:
 ```bash
 swift run SiteServer
 ```
+
+The local server also serves the root `404.html` for missing routes, so broken
+link recovery can be previewed locally.
 
 If port `8080` is already in use:
 

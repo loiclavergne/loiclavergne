@@ -1,0 +1,205 @@
+<!--
+  404.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    .error-card {
+      gap: 1.25rem;
+    }
+
+    .error-card h1 {
+      max-width: 10ch;
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .route-link {
+      display: grid;
+      gap: 0.3rem;
+      padding: 1rem 1.1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--surface-border);
+      background: var(--page-background-strong);
+      transition:
+        transform var(--duration-fast) var(--easing-standard),
+        border-color var(--duration-fast) var(--easing-standard),
+        background var(--duration-fast) var(--easing-standard);
+    }
+
+    .route-link:hover {
+      transform: translateY(-1px);
+      border-color: var(--surface-border-strong);
+    }
+
+    .route-link__label {
+      color: var(--text-primary);
+      font-weight: 590;
+      letter-spacing: -0.01em;
+    }
+
+    .route-link__path {
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    .error-note {
+      color: var(--text-tertiary);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 760px) {
+      .route-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <title>Page not found | Loïc Lavergne</title>
+</head>
+<body data-page="not-found">
+  <main class="error-page" id="main">
+    <section class="shell">
+      <article class="card card--featured error-card">
+        <span class="eyebrow" id="error-code">404</span>
+        <h1 id="error-title">Page not found.</h1>
+        <p class="hero__lede" id="error-copy">
+          The page you requested does not exist, or the URL has changed.
+        </p>
+        <div class="button-row">
+          <a class="button button--primary" id="home-link" href="/">Go home</a>
+          <a class="button button--secondary" id="primary-link" href="/work/">Open work</a>
+        </div>
+        <div class="route-grid" id="route-grid" aria-label="Suggested destinations"></div>
+        <p class="error-note" id="error-note">
+          Use the links below to return to the current site structure.
+        </p>
+      </article>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const translations = {
+        en: {
+          documentTitle: "Page not found | Loïc Lavergne",
+          title: "Page not found.",
+          copy: "The page you requested does not exist, or the URL has changed.",
+          home: "Go home",
+          primary: "Open work",
+          note: "Use the links below to return to the portfolio.",
+          routes: [
+            { href: "/", label: "Home" },
+            { href: "/work/", label: "Work" },
+            { href: "/projects/", label: "Projects" },
+            { href: "/writing/", label: "Writing" },
+            { href: "/library/", label: "Library" },
+            { href: "/about/", label: "About" }
+          ]
+        },
+        fr: {
+          documentTitle: "Page introuvable | Loïc Lavergne",
+          title: "Page introuvable.",
+          copy: "La page demandée n'existe pas, ou son URL a changé.",
+          home: "Retour à l'accueil",
+          primary: "Ouvrir le travail",
+          note: "Utilisez les liens ci-dessous pour revenir au portfolio.",
+          routes: [
+            { href: "/fr/", label: "Accueil" },
+            { href: "/fr/work/", label: "Travail" },
+            { href: "/fr/projects/", label: "Projets" },
+            { href: "/fr/writing/", label: "Écrits" },
+            { href: "/fr/library/", label: "Bibliothèque" },
+            { href: "/fr/about/", label: "À propos" }
+          ]
+        }
+      };
+
+      function normalizePathname(pathname) {
+        let normalized = pathname || "/";
+        normalized = normalized.replace(/index\.html$/, "");
+        if (!normalized.endsWith("/")) {
+          normalized += "/";
+        }
+        return normalized;
+      }
+
+      const normalizedPathname = normalizePathname(window.location.pathname);
+      const locale = normalizedPathname.startsWith("/fr/") ? "fr" : "en";
+      const content = translations[locale];
+      const primaryRoute = content.routes[1];
+
+      document.documentElement.lang = locale;
+      document.title = content.documentTitle;
+      document.getElementById("error-title").textContent = content.title;
+      document.getElementById("error-copy").textContent = content.copy;
+      document.getElementById("error-note").textContent = content.note;
+
+      const homeLink = document.getElementById("home-link");
+      homeLink.href = content.routes[0].href;
+      homeLink.textContent = content.home;
+
+      const primaryLink = document.getElementById("primary-link");
+      primaryLink.href = primaryRoute.href;
+      primaryLink.textContent = content.primary;
+
+      const routeGrid = document.getElementById("route-grid");
+      routeGrid.replaceChildren(...content.routes.map((route) => {
+        const link = document.createElement("a");
+        link.className = "route-link";
+        link.href = route.href;
+
+        const label = document.createElement("span");
+        label.className = "route-link__label";
+        label.textContent = route.label;
+
+        const path = document.createElement("span");
+        path.className = "route-link__path";
+        path.textContent = route.href;
+
+        link.append(label, path);
+        return link;
+      }));
+    })();
+  </script>
+</body>
+</html>
