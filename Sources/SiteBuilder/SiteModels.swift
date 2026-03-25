@@ -146,6 +146,7 @@ struct ExperienceItem: Decodable {
     let organization: String
     let period: String
     let summary: String
+    let highlights: [String]?
 }
 
 struct WorkPage: Decodable {
@@ -173,6 +174,7 @@ struct SummaryProject: Decodable {
     let name: String
     let period: String?
     let summary: String
+    let details: [String]?
 }
 
 struct ProjectsPage: Decodable {

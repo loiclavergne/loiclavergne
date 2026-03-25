@@ -245,49 +245,83 @@
             "title": "Engineering Manager",
             "organization": "Roole",
             "period": "Jan 2026 - Present",
-            "summary": "Leads planning, technical coordination, and delivery across Roole's mobile products."
+            "summary": "Leads planning, technical coordination, and delivery across Roole's mobile products.",
+            "highlights": [
+              "Coordinates multiple development teams and Tech Leads across Roole Map and Roole Premium.",
+              "Defines product and technical roadmaps with product and backend stakeholders.",
+              "Aligns mobile, design, backend, and partner delivery around shared quality criteria."
+            ]
           },
           {
             "title": "Tech Lead Mobile",
             "organization": "Roole",
             "period": "Oct 2022 - Dec 2025",
-            "summary": "Led technical design and delivery for Roole Map and helped shape mobile delivery practices."
+            "summary": "Led technical design and delivery for Roole Map and helped shape mobile delivery practices.",
+            "highlights": [
+              "Led technical design and day-to-day development of Roole Map.",
+              "Helped establish the technical foundations, mobile organization, and delivery practices for the Factory.",
+              "Worked closely with design, product, and backend teams on architecture and feature execution."
+            ]
           },
           {
             "title": "Chief Digital Officer",
             "organization": "Vialife",
             "period": "Oct 2020 - Sep 2022",
-            "summary": "Directed Vialife Digital across technical strategy, product evolution, and business alignment."
+            "summary": "Directed Vialife Digital across technical strategy, product evolution, and business alignment.",
+            "highlights": [
+              "Directed Vialife Digital across APIs, readers, content transformation, audio, and voice products.",
+              "Combined technical leadership with product strategy and business development support for publishers.",
+              "Aligned digital execution with long-term platform evolution and adoption."
+            ]
           },
           {
             "title": "Mobile Project Manager",
             "organization": "Vialife",
             "period": "Oct 2018 - Sep 2020",
-            "summary": "Managed cross-platform delivery, technical evolution, backend API work, and R&D initiatives."
+            "summary": "Managed cross-platform delivery, technical evolution, backend API work, and R&D initiatives.",
+            "highlights": [
+              "Led the mobile team across iOS and Android delivery, publication, and technical decisions.",
+              "Contributed hands-on to Apple platform development across iOS, watchOS, tvOS, macOS, and CarPlay.",
+              "Worked on backend APIs, Firebase integrations, in-app purchases, and R&D formats including VR and audio."
+            ]
           },
           {
             "title": "iOS Developer, Project Manager",
             "organization": "Things Are Moving",
             "period": "Sep 2015 - Sep 2018",
-            "summary": "Designed, built, and delivered native Apple platform applications end to end."
+            "summary": "Designed, built, and delivered native Apple platform applications end to end.",
+            "highlights": [
+              "Built native iOS, watchOS, tvOS, and macOS apps in Swift from design through App Store release.",
+              "Combined hands-on implementation with project coordination and visual integration.",
+              "Worked with Core Data, Core Location, Core Animation, In-App Purchases, and GameKit."
+            ]
           },
           {
             "title": ".NET Developer (Intern)",
             "organization": "Air Liquide",
             "period": "Apr 2014 - Sep 2014",
-            "summary": "Contributed to enterprise .NET software implementation and maintenance."
+            "summary": "Contributed to enterprise .NET software implementation and maintenance.",
+            "highlights": [
+              "Internship focused on enterprise .NET implementation in French Guiana."
+            ]
           },
           {
             "title": "Symfony Developer (Intern)",
             "organization": "Superprof",
             "period": "Oct 2013 - Mar 2014",
-            "summary": "Worked on Symfony-based backend features and product iteration tasks."
+            "summary": "Worked on Symfony-based backend features and product iteration tasks.",
+            "highlights": [
+              "Internship focused on Symfony backend feature work in a fast product environment."
+            ]
           },
           {
             "title": "Ruby Developer (Intern)",
             "organization": "Ubudu",
             "period": "Jun 2012 - Dec 2012",
-            "summary": "Early web product experience on Ruby-based systems in a startup context."
+            "summary": "Early web product experience on Ruby-based systems in a startup context.",
+            "highlights": [
+              "Early startup experience on Ruby-based products."
+            ]
           }
         ],
         "education_heading": "Education",
@@ -326,43 +360,79 @@
           {
             "name": "Vialife Digital",
             "period": "Oct 2020 - Sep 2022",
-            "summary": "Digital press platform spanning APIs, mobile and web readers, content transformation, audio, and voice integrations."
+            "summary": "Digital press platform spanning APIs, mobile and web readers, content transformation, audio, and voice integrations.",
+            "details": [
+              "Combined APIs, native readers, PDF-to-article extraction, audio generation, and voice-assistant integrations.",
+              "Supported publishers across web, mobile, and emerging channels from a unified platform.",
+              "Built with security, authenticated service-to-service communication, and long-term scalability in mind."
+            ]
           },
           {
             "name": "Digital Press Applications",
             "period": "Oct 2018 - Aug 2022",
-            "summary": "Suite of branded mobile newsstand applications built on a shared architecture and reading framework."
+            "summary": "Suite of branded mobile newsstand applications built on a shared architecture and reading framework.",
+            "details": [
+              "Shared architecture powering Discover Press, Hotel Presse, Salon Presse, Comptoir Presse, Big Press, and Hello Press.",
+              "Full ownership across project management, product design in Sketch, and native iOS delivery in Swift.",
+              "Kept reading experience, authentication, and catalog behavior consistent while supporting different access models."
+            ]
           },
           {
             "name": "MyViapresse",
             "period": "Aug 2015 - Aug 2022",
-            "summary": "Consumer press application combining subscriptions, single-issue purchases, and offline reading."
+            "summary": "Consumer press application combining subscriptions, single-issue purchases, and offline reading.",
+            "details": [
+              "Evolved from Titanium hybrid origins to a native Swift implementation and later full rewrite.",
+              "Added single-issue and auto-renewable subscription flows with a proprietary reading framework.",
+              "Delivered catalog browsing, previews, offline reading, and cross-device access."
+            ]
           },
           {
             "name": "Dakar Presse",
             "period": "Nov 2015 - Jul 2022",
-            "summary": "Mobile access to Senegalese daily newspapers for readers in Senegal and abroad."
+            "summary": "Mobile access to Senegalese daily newspapers for readers in Senegal and abroad.",
+            "details": [
+              "Served Senegalese readers locally and abroad with subscriptions, notifications, and offline reading.",
+              "Fully owned product design, project management, and iOS implementation on top of a custom Swift reading framework.",
+              "Focused on secure subscription flows and reliable access for a geographically distributed audience."
+            ]
           },
           {
             "name": "Le Moniteur des Pharmacies",
             "period": "Mar 2017 - Sep 2018",
-            "summary": "Native iOS application for pharmacists combining news, training, and professional reference tools."
+            "summary": "Native iOS application for pharmacists combining news, training, and professional reference tools.",
+            "details": [
+              "Aggregated news, PDF and article reading, training resources, and reference databases for pharmacists.",
+              "Focused on frequent professional use with complex content types inside one native iOS product."
+            ]
           },
           {
             "name": "Le Point Vétérinaire.fr",
             "period": "Mar 2017 - Sep 2018",
-            "summary": "Native iOS application for veterinarians with information access, practical tools, and training content."
+            "summary": "Native iOS application for veterinarians with information access, practical tools, and training content.",
+            "details": [
+              "Combined news, training, practical tools, directories, and veterinary drug data in one app.",
+              "Designed for recurring professional use with unified access to reference and operational tools."
+            ]
           }
         ],
         "hobby_heading": "Hobby and internal side projects",
         "hobby": [
           {
             "name": "loic.engineer",
-            "summary": "This portfolio itself, designed as a static-first product with bilingual architecture and editorial presentation."
+            "summary": "This portfolio itself, designed as a static-first product with bilingual architecture and editorial presentation.",
+            "details": [
+              "Bilingual static architecture generated with Swift and shipped as plain HTML.",
+              "Designed around Apple-inspired editorial pacing, privacy, and accessibility."
+            ]
           },
           {
             "name": "Templated Mobile Starter",
-            "summary": "A reusable app foundation for faster mobile product kickoffs with shared architectural conventions."
+            "summary": "A reusable app foundation for faster mobile product kickoffs with shared architectural conventions.",
+            "details": [
+              "Internal starter focused on shared architecture, delivery conventions, and faster product setup.",
+              "Useful for keeping code organization and tooling consistent across new mobile efforts."
+            ]
           }
         ]
       },
@@ -414,7 +484,8 @@
               "Roadmap planning",
               "Technical coordination",
               "Project management",
-              "Team leadership"
+              "Team management",
+              "Stakeholder alignment"
             ]
           },
           {
@@ -426,21 +497,53 @@
               "watchOS",
               "tvOS",
               "macOS",
+              "Xcode",
               "Objective-C",
-              "Kotlin"
+              "Cocoa",
+              "Cocoa Touch"
             ]
           },
           {
-            "title": "Systems, tooling, and adjacent domains",
+            "title": "Cross-platform, backend, and tooling",
             "items": [
+              "Android",
+              "Kotlin",
               "APIs",
+              "Git",
+              "Firebase",
               "CI / tooling",
               "Databases",
+              "SQL",
+              "MySQL",
               "PHP",
               "Python",
+              "Unix shell",
               "JavaScript",
-              "AI / LLMs",
-              "Agentic engineering"
+              "HTML",
+              "CSS"
+            ]
+          },
+          {
+            "title": "AI, ML, and emerging technologies",
+            "items": [
+              "Core ML",
+              "Machine learning",
+              "Artificial intelligence",
+              "Large language models",
+              "Agentic engineering",
+              "Agentic AI development",
+              "Augmented reality",
+              "ARKit"
+            ]
+          },
+          {
+            "title": "Design and creative tooling",
+            "items": [
+              "Figma",
+              "Sketch",
+              "Adobe Creative Suite",
+              "Unity3D",
+              "Blender"
             ]
           }
         ],
@@ -637,49 +740,83 @@
             "title": "Engineering Manager",
             "organization": "Roole",
             "period": "Jan 2026 - Aujourd'hui",
-            "summary": "Pilote la planification, la coordination technique et la delivery des produits mobiles de Roole."
+            "summary": "Pilote la planification, la coordination technique et la delivery des produits mobiles de Roole.",
+            "highlights": [
+              "Coordonne plusieurs équipes de développement et Tech Leads sur Roole Map et Roole Premium.",
+              "Définit les roadmaps produit et technique avec les équipes produit et backend.",
+              "Aligne mobile, design, backend et partenaires autour de critères de qualité partagés."
+            ]
           },
           {
             "title": "Tech Lead Mobile",
             "organization": "Roole",
             "period": "Oct 2022 - Déc 2025",
-            "summary": "A piloté la conception technique et la delivery de Roole Map et structuré les pratiques mobile."
+            "summary": "A piloté la conception technique et la delivery de Roole Map et structuré les pratiques mobile.",
+            "highlights": [
+              "A piloté la conception technique et le développement quotidien de Roole Map.",
+              "A posé les bases techniques, l'organisation mobile et les pratiques de delivery de la Factory.",
+              "A travaillé avec design, produit et backend sur l'architecture et l'exécution des fonctionnalités."
+            ]
           },
           {
             "title": "Chief Digital Officer",
             "organization": "Vialife",
             "period": "Oct 2020 - Sep 2022",
-            "summary": "A dirigé Vialife Digital sur la stratégie technique, l'évolution produit et l'alignement business."
+            "summary": "A dirigé Vialife Digital sur la stratégie technique, l'évolution produit et l'alignement business.",
+            "highlights": [
+              "A dirigé Vialife Digital autour des API, lecteurs, transformation de contenu, audio et produits vocaux.",
+              "A combiné leadership technique, stratégie produit et soutien au développement business pour les éditeurs.",
+              "A aligné l'exécution digitale, l'adoption et l'évolution long terme de la plateforme."
+            ]
           },
           {
             "title": "Mobile Project Manager",
             "organization": "Vialife",
             "period": "Oct 2018 - Sep 2020",
-            "summary": "A piloté la delivery multi-plateforme, l'évolution technique, les API backend et la R&D."
+            "summary": "A piloté la delivery multi-plateforme, l'évolution technique, les API backend et la R&D.",
+            "highlights": [
+              "A encadré l'équipe mobile sur la delivery iOS / Android, la publication et les choix techniques.",
+              "A contribué directement aux plateformes Apple sur iOS, watchOS, tvOS, macOS et CarPlay.",
+              "A travaillé sur les API backend, Firebase, les achats intégrés et des formats R&D comme la VR et l'audio."
+            ]
           },
           {
             "title": "iOS Developer, Project Manager",
             "organization": "Things Are Moving",
             "period": "Sep 2015 - Sep 2018",
-            "summary": "A conçu, développé et livré des applications natives Apple de bout en bout."
+            "summary": "A conçu, développé et livré des applications natives Apple de bout en bout.",
+            "highlights": [
+              "A livré des apps iOS, watchOS, tvOS et macOS en Swift du design à la mise en ligne.",
+              "A combiné implémentation hands-on, coordination projet et intégration visuelle.",
+              "A utilisé Core Data, Core Location, Core Animation, In-App Purchases et GameKit."
+            ]
           },
           {
             "title": ".NET Developer (Stage)",
             "organization": "Air Liquide",
             "period": "Avr 2014 - Sep 2014",
-            "summary": "A contribué à l'implémentation et à la maintenance de logiciels .NET en environnement entreprise."
+            "summary": "A contribué à l'implémentation et à la maintenance de logiciels .NET en environnement entreprise.",
+            "highlights": [
+              "Stage centré sur l'implémentation .NET en contexte entreprise en Guyane française."
+            ]
           },
           {
             "title": "Symfony Developer (Stage)",
             "organization": "Superprof",
             "period": "Oct 2013 - Mar 2014",
-            "summary": "A travaillé sur des fonctionnalités backend Symfony et l'itération produit."
+            "summary": "A travaillé sur des fonctionnalités backend Symfony et l'itération produit.",
+            "highlights": [
+              "Stage centré sur le backend Symfony dans un environnement produit rapide."
+            ]
           },
           {
             "title": "Ruby Developer (Stage)",
             "organization": "Ubudu",
             "period": "Juin 2012 - Déc 2012",
-            "summary": "Première expérience produit web sur des systèmes Ruby en contexte startup."
+            "summary": "Première expérience produit web sur des systèmes Ruby en contexte startup.",
+            "highlights": [
+              "Première expérience startup sur des produits Ruby."
+            ]
           }
         ],
         "education_heading": "Formation",
@@ -718,43 +855,79 @@
           {
             "name": "Vialife Digital",
             "period": "Oct 2020 - Sep 2022",
-            "summary": "Plateforme de presse numérique couvrant API, lecteurs web et mobile, transformation de contenu, audio et assistants vocaux."
+            "summary": "Plateforme de presse numérique couvrant API, lecteurs web et mobile, transformation de contenu, audio et assistants vocaux.",
+            "details": [
+              "Combinait API, lecteurs natifs, extraction d'articles depuis des PDF, génération audio et intégrations avec les assistants vocaux.",
+              "Accompagnait les éditeurs sur le web, le mobile et des canaux émergents depuis une plateforme unifiée.",
+              "Pensée avec sécurité, authentification inter-services et scalabilité long terme."
+            ]
           },
           {
             "name": "Digital Press Applications",
             "period": "Oct 2018 - Août 2022",
-            "summary": "Suite d'applications kiosque bâties sur une architecture commune et un framework de lecture partagé."
+            "summary": "Suite d'applications kiosque bâties sur une architecture commune et un framework de lecture partagé.",
+            "details": [
+              "Architecture partagée pour Discover Press, Hôtel Presse, Salon Presse, Comptoir Presse, Big Press et Hello Press.",
+              "Responsabilité complète sur le pilotage projet, le design produit sous Sketch et la delivery iOS native en Swift.",
+              "Maintenait une expérience de lecture, une authentification et un comportement catalogue cohérents malgré des modèles d'accès différents."
+            ]
           },
           {
             "name": "MyViapresse",
             "period": "Août 2015 - Août 2022",
-            "summary": "Application presse grand public mêlant abonnements, achats à l'unité et lecture hors ligne."
+            "summary": "Application presse grand public mêlant abonnements, achats à l'unité et lecture hors ligne.",
+            "details": [
+              "A évolué d'une base hybride Titanium vers une implémentation native Swift puis une réécriture complète.",
+              "A intégré les achats à l'unité et les abonnements auto-renouvelables avec un framework de lecture propriétaire.",
+              "Livrait catalogue, aperçus, lecture hors ligne et accès synchronisé entre appareils."
+            ]
           },
           {
             "name": "Dakar Presse",
             "period": "Nov 2015 - Juil 2022",
-            "summary": "Accès mobile à la presse quotidienne sénégalaise pour les lecteurs au Sénégal et à l'international."
+            "summary": "Accès mobile à la presse quotidienne sénégalaise pour les lecteurs au Sénégal et à l'international.",
+            "details": [
+              "Servait les lecteurs sénégalais sur place et à l'étranger avec abonnements, notifications et lecture hors ligne.",
+              "Responsabilité complète sur le design produit, le pilotage projet et l'implémentation iOS sur un framework de lecture Swift.",
+              "Accent mis sur des parcours d'abonnement sûrs et un accès fiable pour une audience distribuée."
+            ]
           },
           {
             "name": "Le Moniteur des Pharmacies",
             "period": "Mar 2017 - Sep 2018",
-            "summary": "Application iOS native pour pharmaciens mêlant actualités, formation et outils de référence métier."
+            "summary": "Application iOS native pour pharmaciens mêlant actualités, formation et outils de référence métier.",
+            "details": [
+              "Rassemblait actualités, lecture PDF et article, ressources de formation et bases de référence pour pharmaciens.",
+              "Pensée pour un usage professionnel fréquent avec plusieurs types de contenu dans un seul produit iOS natif."
+            ]
           },
           {
             "name": "Le Point Vétérinaire.fr",
             "period": "Mar 2017 - Sep 2018",
-            "summary": "Application iOS native pour vétérinaires, réunissant information, outils pratiques et contenus de formation."
+            "summary": "Application iOS native pour vétérinaires, réunissant information, outils pratiques et contenus de formation.",
+            "details": [
+              "Réunissait actualités, formation, outils pratiques, annuaires et données médicaments vétérinaires dans une seule app.",
+              "Conçue pour un usage professionnel récurrent avec un accès unifié aux outils de référence et d'exploitation."
+            ]
           }
         ],
         "hobby_heading": "Projets personnels et internes",
         "hobby": [
           {
             "name": "loic.engineer",
-            "summary": "Ce portfolio lui-même, conçu comme un produit statique bilingue avec narration éditoriale."
+            "summary": "Ce portfolio lui-même, conçu comme un produit statique bilingue avec narration éditoriale.",
+            "details": [
+              "Architecture statique bilingue générée en Swift et livrée en HTML simple.",
+              "Conçu autour d'un rythme éditorial inspiré d'Apple, de la confidentialité et de l'accessibilité."
+            ]
           },
           {
             "name": "Templated Mobile Starter",
-            "summary": "Une base réutilisable pour lancer plus vite des produits mobiles avec des conventions d'architecture partagées."
+            "summary": "Une base réutilisable pour lancer plus vite des produits mobiles avec des conventions d'architecture partagées.",
+            "details": [
+              "Socle interne orienté architecture partagée, conventions de delivery et démarrage plus rapide.",
+              "Utile pour garder une organisation de code et un outillage cohérents sur de nouveaux produits mobiles."
+            ]
           }
         ]
       },
@@ -803,10 +976,11 @@
             "title": "Leadership et delivery produit",
             "items": [
               "Engineering management",
-              "Roadmap planning",
+              "Pilotage de roadmap",
               "Coordination technique",
-              "Project management",
-              "Team leadership"
+              "Delivery produit",
+              "Team management",
+              "Alignement parties prenantes"
             ]
           },
           {
@@ -818,21 +992,53 @@
               "watchOS",
               "tvOS",
               "macOS",
+              "Xcode",
               "Objective-C",
-              "Kotlin"
+              "Cocoa",
+              "Cocoa Touch"
             ]
           },
           {
-            "title": "Systèmes, outillage et domaines adjacents",
+            "title": "Cross-platform, backend et outillage",
             "items": [
+              "Android",
+              "Kotlin",
               "APIs",
+              "Git",
+              "Firebase",
               "CI / outillage",
               "Bases de données",
+              "SQL",
+              "MySQL",
               "PHP",
               "Python",
+              "Unix shell",
               "JavaScript",
-              "IA / LLMs",
-              "Ingénierie agentique"
+              "HTML",
+              "CSS"
+            ]
+          },
+          {
+            "title": "IA, ML et technologies émergentes",
+            "items": [
+              "Core ML",
+              "Machine learning",
+              "Intelligence artificielle",
+              "Large language models",
+              "Ingénierie agentique",
+              "Agentic AI development",
+              "Réalité augmentée",
+              "ARKit"
+            ]
+          },
+          {
+            "title": "Design et outillage créatif",
+            "items": [
+              "Figma",
+              "Sketch",
+              "Adobe Creative Suite",
+              "Unity3D",
+              "Blender"
             ]
           }
         ],

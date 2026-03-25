@@ -120,6 +120,15 @@ struct SiteRenderer {
         return #"<ul class="\#(className)">\#(content)</ul>"#
     }
 
+    /// Render a list only when items are present.
+    func renderOptionalList(_ items: [String]?, className: String = "detail-list") -> String {
+        guard let items, !items.isEmpty else {
+            return ""
+        }
+
+        return renderList(items, className: className)
+    }
+
     /// Render the localized header navigation.
     func renderNav(locale: String, currentPage: String) throws -> String {
         let localeContent = try localeContent(locale)
@@ -332,6 +341,7 @@ struct SiteRenderer {
               </div>
               <h3>\(escapeHTML($0.title))</h3>
               <p>\(escapeHTML($0.summary))</p>
+              \(renderOptionalList($0.highlights))
             </article>
             """
         }.joined(separator: "\n")
@@ -415,6 +425,7 @@ struct SiteRenderer {
               <span class="eyebrow">\(escapeHTML($0.period ?? ""))</span>
               <h3>\(escapeHTML($0.name))</h3>
               <p>\(escapeHTML($0.summary))</p>
+              \(renderOptionalList($0.details))
             </article>
             """
         }.joined(separator: "\n")
@@ -425,6 +436,7 @@ struct SiteRenderer {
               <span class="eyebrow">\(escapeHTML(hobbyLabel))</span>
               <h3>\(escapeHTML($0.name))</h3>
               <p>\(escapeHTML($0.summary))</p>
+              \(renderOptionalList($0.details))
             </article>
             """
         }.joined(separator: "\n")
@@ -453,7 +465,7 @@ struct SiteRenderer {
                 <span class="eyebrow">\(escapeHTML(label(labels, key: "archive", fallback: "Archive")))</span>
                 <h2>\(escapeHTML(page.archiveHeading))</h2>
               </div>
-              <div class="shell card-grid card-grid--three">
+              <div class="shell card-grid card-grid--two">
                 \(archive)
               </div>
             </section>

@@ -37,6 +37,7 @@ node_modules/
 # Build, test, and preview outputs
 dist/
 build/
+.build/
 out/
 coverage/
 
