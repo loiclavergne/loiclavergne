@@ -204,6 +204,31 @@ struct SiteRenderer {
         """
     }
 
+    /// Render a summary project card with an optional detail-page action.
+    func renderSummaryProjectCard(_ project: SummaryProject, locale: String, localeContent: LocaleContent, eyebrow: String) throws -> String {
+        let actionMarkup: String
+
+        if let route = project.route {
+            actionMarkup = """
+              <div class="button-row">
+                <a class="button button--secondary" href="\(try pagePath(route, locale: locale))">\(escapeHTML(label(localeContent.labels, key: "view_project", fallback: "View project")))</a>
+              </div>
+            """
+        } else {
+            actionMarkup = ""
+        }
+
+        return """
+        <article class="card reveal">
+          <span class="eyebrow">\(escapeHTML(project.period ?? eyebrow))</span>
+          <h3>\(escapeHTML(project.name))</h3>
+          <p>\(escapeHTML(project.summary))</p>
+          \(renderOptionalList(project.details))
+          \(actionMarkup)
+        </article>
+        """
+    }
+
     /// Render the localized header navigation.
     func renderNav(locale: String, currentPage: String) throws -> String {
         let localeContent = try localeContent(locale)
@@ -486,26 +511,12 @@ struct SiteRenderer {
             try renderFeaturedProjectCard($0, locale: locale, localeContent: localeContent)
         }.joined(separator: "\n")
 
-        let archive = page.archive.map {
-            """
-            <article class="card reveal">
-              <span class="eyebrow">\(escapeHTML($0.period ?? ""))</span>
-              <h3>\(escapeHTML($0.name))</h3>
-              <p>\(escapeHTML($0.summary))</p>
-              \(renderOptionalList($0.details))
-            </article>
-            """
+        let archive = try page.archive.map {
+            try renderSummaryProjectCard($0, locale: locale, localeContent: localeContent, eyebrow: "")
         }.joined(separator: "\n")
 
-        let hobby = page.hobby.map {
-            """
-            <article class="card reveal">
-              <span class="eyebrow">\(escapeHTML(hobbyLabel))</span>
-              <h3>\(escapeHTML($0.name))</h3>
-              <p>\(escapeHTML($0.summary))</p>
-              \(renderOptionalList($0.details))
-            </article>
-            """
+        let hobby = try page.hobby.map {
+            try renderSummaryProjectCard($0, locale: locale, localeContent: localeContent, eyebrow: hobbyLabel)
         }.joined(separator: "\n")
 
         return """

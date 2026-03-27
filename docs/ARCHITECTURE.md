@@ -14,6 +14,8 @@ English routes:
 - `/projects/`
 - `/projects/roole-map/`
 - `/projects/roole-premium/`
+- `/projects/vialife-digital/`
+- `/projects/myviapresse/`
 - `/writing/`
 - `/library/`
 - `/about/`
@@ -24,6 +26,8 @@ French routes:
 - `/fr/projects/`
 - `/fr/projects/roole-map/`
 - `/fr/projects/roole-premium/`
+- `/fr/projects/vialife-digital/`
+- `/fr/projects/myviapresse/`
 - `/fr/writing/`
 - `/fr/library/`
 - `/fr/about/`

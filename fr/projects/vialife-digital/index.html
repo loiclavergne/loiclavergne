@@ -1,0 +1,260 @@
+<!--
+  project-vialife-digital.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Page projet Vialife Digital sur les API, lecteurs, transformations de contenu, audio, voix et stratégie plateforme pour les éditeurs.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Vialife Digital | Projets | Loïc Lavergne">
+  <meta property="og:description" content="Page projet Vialife Digital sur les API, lecteurs, transformations de contenu, audio, voix et stratégie plateforme pour les éditeurs.">
+  <meta property="og:url" content="https://loic.engineer/fr/projects/vialife-digital/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vialife Digital | Projets | Loïc Lavergne">
+  <meta name="twitter:description" content="Page projet Vialife Digital sur les API, lecteurs, transformations de contenu, audio, voix et stratégie plateforme pour les éditeurs.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/fr/projects/vialife-digital/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/vialife-digital/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/vialife-digital/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/vialife-digital/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Vialife Digital | Projets | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/fr\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "fr_FR",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "fr_FR",
+      "name" : "Vialife Digital | Projets | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/fr\/projects\/vialife-digital\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-vialife-digital">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/fr/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a class="site-nav__link" href="/fr/">Accueil</a><a class="site-nav__link" href="/fr/work/">Travail</a><a class="site-nav__link" href="/fr/projects/" aria-current="page">Projets</a><a class="site-nav__link" href="/fr/writing/">Écrits</a><a class="site-nav__link" href="/fr/library/">Bibliothèque</a><a class="site-nav__link" href="/fr/about/">À propos</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Apparence">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Clair</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Sombre</button>
+          </div>
+          <a class="locale-link" hreflang="en" href="/projects/vialife-digital/">English</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/fr/projects/">Retour aux projets</a>
+        <span class="eyebrow">Vialife Digital</span>
+        <h1>Une plateforme d&#x27;édition numérique pensée à travers produits, formats et canaux.</h1>
+        <p class="hero__lede">Vialife Digital a été conçu pour aider les éditeurs de presse à gérer, distribuer et faire évoluer leurs contenus sur le web, le mobile, l&#x27;audio et la voix. Le travail combinait direction technique, design produit et alignement business autour d&#x27;une plateforme plutôt que d&#x27;une seule application.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Vialife</span>
+          <h2>Chief Digital Officer</h2>
+          <p class="card__meta">Octobre 2020 - Septembre 2022</p>
+          <p>A dirigé la conception, le développement et la direction technique de Vialife Digital tout en contribuant au business development et à la stratégie produit pour des éditeurs allant au-delà de la distribution PDF traditionnelle.</p>
+          <ul class="detail-list"><li>A piloté la plateforme autour des API, des lecteurs web et natifs, de la transformation de contenu, de la génération audio et des intégrations vocales.</li><li>A aligné l&#x27;évolution produit avec les besoins commerciaux et ceux des éditeurs au lieu de séparer engineering et adoption.</li><li>A gardé sécurité, scalabilité et maintenabilité au centre à mesure que la surface plateforme s&#x27;élargissait.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">API + readers</span>
+  <span class="stat-card__label">périmètre plateforme entre couche service et couche expérience</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Audio + voix</span>
+  <span class="stat-card__label">distribution au-delà des surfaces de lecture traditionnelles</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">iOS + Android</span>
+  <span class="stat-card__label">empreinte de delivery sur frameworks natifs et lecteurs</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Plateforme</span>
+      <h2>Le produit était un système, pas une interface isolée.</h2>
+    </div>
+    <div class="section-copy">
+      <p>La valeur venait de la connexion entre ingestion, transformation, distribution et lecture dans une plateforme cohérente que les éditeurs pouvaient réellement opérer.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Une plateforme d&#x27;édition unifiée</h3>
+  <p>Vialife Digital réunissait API, lecteurs, gestion de catalogue et surfaces de distribution afin d&#x27;offrir aux éditeurs une base numérique plus cohérente.</p>
+  <ul class="detail-list"><li>La plateforme reliait les couches opérationnelles et les couches d&#x27;expérience.</li><li>La vision produit dépassait un canal ou un appareil unique.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Transformation du contenu</h3>
+  <p>Une partie clé du produit consistait à transformer des sources comme des PDF en formats numériques plus riches capables de mieux servir lecture et distribution.</p>
+  <ul class="detail-list"><li>L&#x27;extraction en articles aidait à dépasser la simple lecture fac-similé.</li><li>Les capacités de transformation ouvraient la voie à des formats plus accessibles.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Lecteurs web et natifs</h3>
+  <p>La plateforme comprenait des expériences de lecture web et mobile ainsi que des frameworks natifs destinés à réutiliser les mêmes briques dans différents produits.</p>
+  <ul class="detail-list"><li>L&#x27;expérience lecteur devait rester cohérente entre surfaces.</li><li>La réutilisation comptait pour l&#x27;économie long terme du produit.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Expansion</span>
+      <h2>La plateforme allait au-delà de l&#x27;application de lecture classique.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Le travail explorait comment le contenu de presse pouvait être décliné vers l&#x27;audio, les assistants vocaux et des formats émergents tout en gardant la maîtrise du système d&#x27;édition sous-jacent.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Génération audio</h3>
+  <p>La plateforme explorait la transformation audio automatisée pour permettre aux éditeurs d&#x27;étendre leurs catalogues vers l&#x27;écoute avec moins d&#x27;effort de production manuelle.</p>
+  <ul class="detail-list"><li>Le machine learning entrait par un problème concret de transformation.</li><li>L&#x27;audio était traité comme une extension de l&#x27;édition, pas comme une expérimentation isolée.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Intégrations vocales</h3>
+  <p>Les intégrations avec Siri, Alexa et Google Assistant étendaient le modèle de distribution vers des usages pilotés par la voix.</p>
+  <ul class="detail-list"><li>La même plateforme devait servir plusieurs modèles d&#x27;interaction.</li><li>La distribution du contenu devait rester cohérente malgré la diversité des canaux.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>R&amp;D orientée futur</h3>
+  <p>La roadmap explorait aussi la réalité augmentée et la réalité virtuelle pour anticiper de nouveaux comportements de lecture et de nouvelles opportunités de distribution.</p>
+  <ul class="detail-list"><li>L&#x27;exploration restait reliée à la stratégie produit.</li><li>La R&amp;D avait de la valeur parce qu&#x27;elle restait connectée à la direction long terme de la plateforme.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Exécution</span>
+      <h2>La direction technique devait rester proche de la réalité des éditeurs.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Le rôle combinait architecture, stratégie produit et alignement business, ce qui imposait une plateforme techniquement solide et commercialement utile en même temps.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Sécurité et accès contrôlé</h3>
+  <p>L&#x27;authentification inter-services, le chiffrement du stockage et le contrôle d&#x27;accès aux actifs numériques faisaient partie de la plateforme dès le départ.</p>
+  <ul class="detail-list"><li>La sécurité faisait partie de la promesse produit aux éditeurs.</li><li>La distribution de contenus sensibles demandait une discipline opérationnelle plus forte.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Scalabilité et maintenabilité</h3>
+  <p>La plateforme devait rester suffisamment flexible pour servir plusieurs contextes éditeurs et plusieurs canaux sans devenir fragile.</p>
+  <ul class="detail-list"><li>L&#x27;évolution long terme comptait plus qu&#x27;un patchwork court terme.</li><li>Les choix d&#x27;architecture étaient façonnés par la durée de vie plateforme.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Produit et business ensemble</h3>
+  <p>L&#x27;exécution technique restait alignée avec le business development et l&#x27;adoption côté éditeurs pour faire évoluer la plateforme dans des directions à la fois faisables et utiles.</p>
+  <ul class="detail-list"><li>Le rôle se situait entre profondeur engineering et utilité commerciale.</li><li>La stratégie plateforme fonctionnait parce qu&#x27;elle restait attachée à des besoins éditeurs réels.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Leadership d&#x27;ingénierie pour les produits mobiles, l&#x27;architecture et la delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. Tous droits réservés.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Liens sociaux">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

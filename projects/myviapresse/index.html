@@ -1,0 +1,260 @@
+<!--
+  project-myviapresse.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MyViapresse case study covering native iOS evolution, subscriptions, offline reading, and long-lived consumer product delivery.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="MyViapresse | Projects | Loïc Lavergne">
+  <meta property="og:description" content="MyViapresse case study covering native iOS evolution, subscriptions, offline reading, and long-lived consumer product delivery.">
+  <meta property="og:url" content="https://loic.engineer/projects/myviapresse/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MyViapresse | Projects | Loïc Lavergne">
+  <meta name="twitter:description" content="MyViapresse case study covering native iOS evolution, subscriptions, offline reading, and long-lived consumer product delivery.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/projects/myviapresse/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/myviapresse/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/myviapresse/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/myviapresse/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>MyViapresse | Projects | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "en_US",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "en_US",
+      "name" : "MyViapresse | Projects | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/projects\/myviapresse\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-myviapresse">
+  <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="site-nav__link" href="/">Home</a><a class="site-nav__link" href="/work/">Work</a><a class="site-nav__link" href="/projects/" aria-current="page">Projects</a><a class="site-nav__link" href="/writing/">Writing</a><a class="site-nav__link" href="/library/">Library</a><a class="site-nav__link" href="/about/">About</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Appearance">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Light</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Dark</button>
+          </div>
+          <a class="locale-link" hreflang="fr" href="/fr/projects/myviapresse/">Français</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/projects/">Back to projects</a>
+        <span class="eyebrow">MyViapresse</span>
+        <h1>A long-lived consumer press product through several technical generations.</h1>
+        <p class="hero__lede">MyViapresse was a consumer mobile application for accessing a large catalog of magazines and newspapers through purchases and subscriptions. The project spanned multiple technical eras, making it a strong example of product continuity through architectural change.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Vialife</span>
+          <h2>Project management and native iOS leadership</h2>
+          <p class="card__meta">August 2015 - August 2022</p>
+          <p>Owned the application across project management, product design, and native iOS development while guiding its evolution from a hybrid base to a modern Swift codebase with subscriptions, offline reading, and a proprietary reader framework.</p>
+          <ul class="detail-list"><li>Took the product through several technical generations, from Titanium origins to native Swift and later a full rewrite.</li><li>Introduced monetization flows for single-issue purchases and auto-renewable subscriptions.</li><li>Built on top of a proprietary reading framework designed for performance, consistency, and offline access.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">400+</span>
+  <span class="stat-card__label">press titles available through the catalog</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Hybrid to native</span>
+  <span class="stat-card__label">major technical evolution across product lifetime</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">IAP + subscriptions</span>
+  <span class="stat-card__label">consumer monetization model delivered in-app</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Product</span>
+      <h2>A consumer reading product had to stay simple despite a large catalog.</h2>
+    </div>
+    <div class="section-copy">
+      <p>The application served magazine and newspaper readers directly, so catalog clarity, reading continuity, and purchase confidence had to coexist in one mobile experience.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Large catalog, clear access</h3>
+  <p>The product exposed hundreds of titles while still needing to feel approachable for discovery, sampling, and repeat reading.</p>
+  <ul class="detail-list"><li>Catalog breadth could not overwhelm the product surface.</li><li>Discovery and direct purchase had to coexist cleanly.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Reading continuity</h3>
+  <p>Offline reading and synchronized access across devices were part of making the product feel dependable instead of transactional.</p>
+  <ul class="detail-list"><li>The value of a press app continues after the purchase moment.</li><li>Continuity matters for recurring reader habits.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Editorial commerce</h3>
+  <p>The application had to support both free discovery moments and paid conversion through individual purchases or subscriptions.</p>
+  <ul class="detail-list"><li>Sampling and monetization were both first-class product concerns.</li><li>The experience needed to feel commercial without becoming heavy.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Engineering</span>
+      <h2>The project crossed several major implementation phases.</h2>
+    </div>
+    <div class="section-copy">
+      <p>A meaningful part of the work was preserving product continuity while modernizing the stack, which made technical transitions a central product responsibility.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>From Titanium to Swift</h3>
+  <p>The application started from a hybrid Titanium implementation and later moved into native Swift as the product and quality expectations evolved.</p>
+  <ul class="detail-list"><li>The transition created room for better performance and maintainability.</li><li>Native implementation improved control over the reading experience.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>A full rewrite when needed</h3>
+  <p>Later versions required a more complete rewrite in newer Xcode and Swift environments so the app could stay viable over time.</p>
+  <ul class="detail-list"><li>The product was not kept alive through small patches alone.</li><li>Durability sometimes required deeper technical resets.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Proprietary reading framework</h3>
+  <p>A custom Swift reading framework gave the product a more consistent and performant base for content presentation and offline use.</p>
+  <ul class="detail-list"><li>The reader was a core capability, not just a screen.</li><li>Reusable internal tooling improved the long-term technical base.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Monetization</span>
+      <h2>Commerce flows had to be credible, simple, and durable.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Subscriptions and single-issue purchases were not peripheral features. They were central to product viability, which meant the in-app commerce layer had to feel trustworthy and operationally stable.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Single issues and subscriptions</h3>
+  <p>The app supported both one-off purchases and auto-renewable subscriptions, which required a careful balance between flexibility and clarity.</p>
+  <ul class="detail-list"><li>Different reader behaviors needed distinct purchase paths.</li><li>The product had to stay understandable around pricing and access.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Store-driven product constraints</h3>
+  <p>Implementing monetization meant working with the realities of in-app purchase systems, entitlement handling, and long-term maintainability.</p>
+  <ul class="detail-list"><li>Commerce was tied to technical correctness as much as UI.</li><li>The business model depended on reliable operational flows.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Consumer product durability</h3>
+  <p>Because the application lived for years, monetization and reading systems both had to survive stack changes, catalog growth, and product iteration.</p>
+  <ul class="detail-list"><li>Longevity was part of the engineering challenge.</li><li>The strongest technical choices were the ones the product could keep carrying forward.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Engineering leadership for mobile products, architecture, and delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. All rights reserved.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

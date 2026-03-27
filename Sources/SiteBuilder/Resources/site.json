@@ -46,6 +46,14 @@
       "en": "/projects/roole-premium/",
       "fr": "/fr/projects/roole-premium/"
     },
+    "project-vialife-digital": {
+      "en": "/projects/vialife-digital/",
+      "fr": "/fr/projects/vialife-digital/"
+    },
+    "project-myviapresse": {
+      "en": "/projects/myviapresse/",
+      "fr": "/fr/projects/myviapresse/"
+    },
     "writing": {
       "en": "/writing/",
       "fr": "/fr/writing/"
@@ -65,6 +73,8 @@
     "projects",
     "project-roole-map",
     "project-roole-premium",
+    "project-vialife-digital",
+    "project-myviapresse",
     "writing",
     "library",
     "about"
@@ -406,7 +416,8 @@
               "Combined APIs, native readers, PDF-to-article extraction, audio generation, and voice-assistant integrations.",
               "Supported publishers across web, mobile, and emerging channels from a unified platform.",
               "Built with security, authenticated service-to-service communication, and long-term scalability in mind."
-            ]
+            ],
+            "route": "project-vialife-digital"
           },
           {
             "name": "Digital Press Applications",
@@ -426,7 +437,8 @@
               "Evolved from Titanium hybrid origins to a native Swift implementation and later full rewrite.",
               "Added single-issue and auto-renewable subscription flows with a proprietary reading framework.",
               "Delivered catalog browsing, previews, offline reading, and cross-device access."
-            ]
+            ],
+            "route": "project-myviapresse"
           },
           {
             "name": "Dakar Presse",
@@ -722,6 +734,256 @@
                   "items": [
                     "The work should compound over time.",
                     "The best process changes are the ones teams keep using."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-vialife-digital": {
+          "page_title": "Vialife Digital | Projects | Loïc Lavergne",
+          "description": "Vialife Digital case study covering APIs, readers, content transformation, audio, voice, and platform strategy for publishers.",
+          "eyebrow": "Vialife Digital",
+          "title": "A digital publishing platform built across products, formats, and channels.",
+          "intro": "Vialife Digital was designed to help press publishers manage, distribute, and evolve their digital content across web, mobile, audio, and voice surfaces. The work combined technical direction, product design, and business alignment around a platform rather than a single app.",
+          "role_title": "Chief Digital Officer",
+          "organization": "Vialife",
+          "period": "October 2020 - September 2022",
+          "summary": "Directed the design, development, and technical direction of Vialife Digital while contributing to business development and product strategy for publishers moving beyond traditional PDF distribution.",
+          "highlights": [
+            "Led the platform across APIs, web and native readers, content transformation, audio generation, and voice integrations.",
+            "Aligned product evolution with commercial and publisher needs instead of treating engineering as a separate track.",
+            "Kept security, scalability, and maintainability central as the platform surface expanded."
+          ],
+          "metrics": [
+            {
+              "value": "APIs + readers",
+              "label": "platform scope across service and experience layers"
+            },
+            {
+              "value": "Audio + voice",
+              "label": "distribution beyond traditional reading surfaces"
+            },
+            {
+              "value": "iOS + Android",
+              "label": "native framework and reader delivery footprint"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Platform",
+              "title": "The product was a system, not a single interface.",
+              "intro": "The value came from connecting content ingestion, transformation, distribution, and reading experiences into one coherent platform that publishers could actually operate.",
+              "cards": [
+                {
+                  "title": "Unified publishing platform",
+                  "copy": "Vialife Digital brought together APIs, readers, catalog management, and distribution surfaces so publishers could work from a more consistent digital base.",
+                  "items": [
+                    "The platform connected operational and end-user layers.",
+                    "The product vision was broader than one channel or one device."
+                  ]
+                },
+                {
+                  "title": "Content transformation",
+                  "copy": "A key part of the platform was turning source material such as PDFs into richer digital formats that could support better reading and distribution experiences.",
+                  "items": [
+                    "Article extraction helped move beyond static facsimile reading.",
+                    "Transformation capabilities created room for more accessible formats."
+                  ]
+                },
+                {
+                  "title": "Native and web reading surfaces",
+                  "copy": "The platform included both web and mobile reading experiences, plus native frameworks intended to package the platform capabilities into reusable delivery tools.",
+                  "items": [
+                    "The reader experience had to stay coherent across surfaces.",
+                    "Reuse mattered for long-term product economics."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Expansion",
+              "title": "The platform pushed beyond classic reading apps.",
+              "intro": "The work explored how press content could be repurposed for audio, voice assistants, and emerging consumption formats without losing control of the publishing system underneath.",
+              "cards": [
+                {
+                  "title": "Audio generation",
+                  "copy": "The platform explored automated audio transformations so publishers could extend their catalogs into listening experiences with less manual production effort.",
+                  "items": [
+                    "Machine learning entered the product through practical transformation problems.",
+                    "Audio was treated as an extension of publishing, not a disconnected experiment."
+                  ]
+                },
+                {
+                  "title": "Voice assistant integrations",
+                  "copy": "Integrations with Siri, Alexa, and Google Assistant extended the distribution model into voice-driven usage patterns.",
+                  "items": [
+                    "The same platform needed to serve different interaction models.",
+                    "Content distribution had to stay consistent despite channel differences."
+                  ]
+                },
+                {
+                  "title": "Forward-looking R&D",
+                  "copy": "The roadmap also looked at augmented and virtual reality formats to stay ahead of changing reader behaviors and distribution opportunities.",
+                  "items": [
+                    "Exploration stayed tied to product strategy.",
+                    "R&D remained useful because it was connected to the platform's long-term direction."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Execution",
+              "title": "Technical direction had to stay close to publisher reality.",
+              "intro": "The role combined architecture, product strategy, and business alignment, which meant the platform had to be technically sound and commercially useful at the same time.",
+              "cards": [
+                {
+                  "title": "Security and controlled access",
+                  "copy": "Authenticated service-to-service communication, encrypted storage, and controlled access to digital assets were built into the platform rather than added later.",
+                  "items": [
+                    "Security was part of the product promise to publishers.",
+                    "Sensitive content distribution required stronger operational discipline."
+                  ]
+                },
+                {
+                  "title": "Scalability and maintainability",
+                  "copy": "The platform had to stay flexible enough to support multiple publisher contexts and delivery channels without becoming brittle.",
+                  "items": [
+                    "Long-term evolution mattered more than short-term patchwork.",
+                    "Architecture choices were shaped by platform lifespan."
+                  ]
+                },
+                {
+                  "title": "Product and business together",
+                  "copy": "Technical execution was continuously aligned with business development and publisher adoption so the platform could evolve in directions that were both feasible and valuable.",
+                  "items": [
+                    "The role sat between engineering depth and commercial usefulness.",
+                    "Platform strategy worked because it stayed tied to real publisher needs."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-myviapresse": {
+          "page_title": "MyViapresse | Projects | Loïc Lavergne",
+          "description": "MyViapresse case study covering native iOS evolution, subscriptions, offline reading, and long-lived consumer product delivery.",
+          "eyebrow": "MyViapresse",
+          "title": "A long-lived consumer press product through several technical generations.",
+          "intro": "MyViapresse was a consumer mobile application for accessing a large catalog of magazines and newspapers through purchases and subscriptions. The project spanned multiple technical eras, making it a strong example of product continuity through architectural change.",
+          "role_title": "Project management and native iOS leadership",
+          "organization": "Vialife",
+          "period": "August 2015 - August 2022",
+          "summary": "Owned the application across project management, product design, and native iOS development while guiding its evolution from a hybrid base to a modern Swift codebase with subscriptions, offline reading, and a proprietary reader framework.",
+          "highlights": [
+            "Took the product through several technical generations, from Titanium origins to native Swift and later a full rewrite.",
+            "Introduced monetization flows for single-issue purchases and auto-renewable subscriptions.",
+            "Built on top of a proprietary reading framework designed for performance, consistency, and offline access."
+          ],
+          "metrics": [
+            {
+              "value": "400+",
+              "label": "press titles available through the catalog"
+            },
+            {
+              "value": "Hybrid to native",
+              "label": "major technical evolution across product lifetime"
+            },
+            {
+              "value": "IAP + subscriptions",
+              "label": "consumer monetization model delivered in-app"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Product",
+              "title": "A consumer reading product had to stay simple despite a large catalog.",
+              "intro": "The application served magazine and newspaper readers directly, so catalog clarity, reading continuity, and purchase confidence had to coexist in one mobile experience.",
+              "cards": [
+                {
+                  "title": "Large catalog, clear access",
+                  "copy": "The product exposed hundreds of titles while still needing to feel approachable for discovery, sampling, and repeat reading.",
+                  "items": [
+                    "Catalog breadth could not overwhelm the product surface.",
+                    "Discovery and direct purchase had to coexist cleanly."
+                  ]
+                },
+                {
+                  "title": "Reading continuity",
+                  "copy": "Offline reading and synchronized access across devices were part of making the product feel dependable instead of transactional.",
+                  "items": [
+                    "The value of a press app continues after the purchase moment.",
+                    "Continuity matters for recurring reader habits."
+                  ]
+                },
+                {
+                  "title": "Editorial commerce",
+                  "copy": "The application had to support both free discovery moments and paid conversion through individual purchases or subscriptions.",
+                  "items": [
+                    "Sampling and monetization were both first-class product concerns.",
+                    "The experience needed to feel commercial without becoming heavy."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Engineering",
+              "title": "The project crossed several major implementation phases.",
+              "intro": "A meaningful part of the work was preserving product continuity while modernizing the stack, which made technical transitions a central product responsibility.",
+              "cards": [
+                {
+                  "title": "From Titanium to Swift",
+                  "copy": "The application started from a hybrid Titanium implementation and later moved into native Swift as the product and quality expectations evolved.",
+                  "items": [
+                    "The transition created room for better performance and maintainability.",
+                    "Native implementation improved control over the reading experience."
+                  ]
+                },
+                {
+                  "title": "A full rewrite when needed",
+                  "copy": "Later versions required a more complete rewrite in newer Xcode and Swift environments so the app could stay viable over time.",
+                  "items": [
+                    "The product was not kept alive through small patches alone.",
+                    "Durability sometimes required deeper technical resets."
+                  ]
+                },
+                {
+                  "title": "Proprietary reading framework",
+                  "copy": "A custom Swift reading framework gave the product a more consistent and performant base for content presentation and offline use.",
+                  "items": [
+                    "The reader was a core capability, not just a screen.",
+                    "Reusable internal tooling improved the long-term technical base."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Monetization",
+              "title": "Commerce flows had to be credible, simple, and durable.",
+              "intro": "Subscriptions and single-issue purchases were not peripheral features. They were central to product viability, which meant the in-app commerce layer had to feel trustworthy and operationally stable.",
+              "cards": [
+                {
+                  "title": "Single issues and subscriptions",
+                  "copy": "The app supported both one-off purchases and auto-renewable subscriptions, which required a careful balance between flexibility and clarity.",
+                  "items": [
+                    "Different reader behaviors needed distinct purchase paths.",
+                    "The product had to stay understandable around pricing and access."
+                  ]
+                },
+                {
+                  "title": "Store-driven product constraints",
+                  "copy": "Implementing monetization meant working with the realities of in-app purchase systems, entitlement handling, and long-term maintainability.",
+                  "items": [
+                    "Commerce was tied to technical correctness as much as UI.",
+                    "The business model depended on reliable operational flows."
+                  ]
+                },
+                {
+                  "title": "Consumer product durability",
+                  "copy": "Because the application lived for years, monetization and reading systems both had to survive stack changes, catalog growth, and product iteration.",
+                  "items": [
+                    "Longevity was part of the engineering challenge.",
+                    "The strongest technical choices were the ones the product could keep carrying forward."
                   ]
                 }
               ]
@@ -1308,7 +1570,8 @@
               "Combinait API, lecteurs natifs, extraction d'articles depuis des PDF, génération audio et intégrations avec les assistants vocaux.",
               "Accompagnait les éditeurs sur le web, le mobile et des canaux émergents depuis une plateforme unifiée.",
               "Pensée avec sécurité, authentification inter-services et scalabilité long terme."
-            ]
+            ],
+            "route": "project-vialife-digital"
           },
           {
             "name": "Digital Press Applications",
@@ -1328,7 +1591,8 @@
               "A évolué d'une base hybride Titanium vers une implémentation native Swift puis une réécriture complète.",
               "A intégré les achats à l'unité et les abonnements auto-renouvelables avec un framework de lecture propriétaire.",
               "Livrait catalogue, aperçus, lecture hors ligne et accès synchronisé entre appareils."
-            ]
+            ],
+            "route": "project-myviapresse"
           },
           {
             "name": "Dakar Presse",
@@ -1624,6 +1888,256 @@
                   "items": [
                     "Le travail doit se cumuler dans le temps.",
                     "Les meilleurs changements de process sont ceux que les équipes continuent d'utiliser."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-vialife-digital": {
+          "page_title": "Vialife Digital | Projets | Loïc Lavergne",
+          "description": "Page projet Vialife Digital sur les API, lecteurs, transformations de contenu, audio, voix et stratégie plateforme pour les éditeurs.",
+          "eyebrow": "Vialife Digital",
+          "title": "Une plateforme d'édition numérique pensée à travers produits, formats et canaux.",
+          "intro": "Vialife Digital a été conçu pour aider les éditeurs de presse à gérer, distribuer et faire évoluer leurs contenus sur le web, le mobile, l'audio et la voix. Le travail combinait direction technique, design produit et alignement business autour d'une plateforme plutôt que d'une seule application.",
+          "role_title": "Chief Digital Officer",
+          "organization": "Vialife",
+          "period": "Octobre 2020 - Septembre 2022",
+          "summary": "A dirigé la conception, le développement et la direction technique de Vialife Digital tout en contribuant au business development et à la stratégie produit pour des éditeurs allant au-delà de la distribution PDF traditionnelle.",
+          "highlights": [
+            "A piloté la plateforme autour des API, des lecteurs web et natifs, de la transformation de contenu, de la génération audio et des intégrations vocales.",
+            "A aligné l'évolution produit avec les besoins commerciaux et ceux des éditeurs au lieu de séparer engineering et adoption.",
+            "A gardé sécurité, scalabilité et maintenabilité au centre à mesure que la surface plateforme s'élargissait."
+          ],
+          "metrics": [
+            {
+              "value": "API + readers",
+              "label": "périmètre plateforme entre couche service et couche expérience"
+            },
+            {
+              "value": "Audio + voix",
+              "label": "distribution au-delà des surfaces de lecture traditionnelles"
+            },
+            {
+              "value": "iOS + Android",
+              "label": "empreinte de delivery sur frameworks natifs et lecteurs"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Plateforme",
+              "title": "Le produit était un système, pas une interface isolée.",
+              "intro": "La valeur venait de la connexion entre ingestion, transformation, distribution et lecture dans une plateforme cohérente que les éditeurs pouvaient réellement opérer.",
+              "cards": [
+                {
+                  "title": "Une plateforme d'édition unifiée",
+                  "copy": "Vialife Digital réunissait API, lecteurs, gestion de catalogue et surfaces de distribution afin d'offrir aux éditeurs une base numérique plus cohérente.",
+                  "items": [
+                    "La plateforme reliait les couches opérationnelles et les couches d'expérience.",
+                    "La vision produit dépassait un canal ou un appareil unique."
+                  ]
+                },
+                {
+                  "title": "Transformation du contenu",
+                  "copy": "Une partie clé du produit consistait à transformer des sources comme des PDF en formats numériques plus riches capables de mieux servir lecture et distribution.",
+                  "items": [
+                    "L'extraction en articles aidait à dépasser la simple lecture fac-similé.",
+                    "Les capacités de transformation ouvraient la voie à des formats plus accessibles."
+                  ]
+                },
+                {
+                  "title": "Lecteurs web et natifs",
+                  "copy": "La plateforme comprenait des expériences de lecture web et mobile ainsi que des frameworks natifs destinés à réutiliser les mêmes briques dans différents produits.",
+                  "items": [
+                    "L'expérience lecteur devait rester cohérente entre surfaces.",
+                    "La réutilisation comptait pour l'économie long terme du produit."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Expansion",
+              "title": "La plateforme allait au-delà de l'application de lecture classique.",
+              "intro": "Le travail explorait comment le contenu de presse pouvait être décliné vers l'audio, les assistants vocaux et des formats émergents tout en gardant la maîtrise du système d'édition sous-jacent.",
+              "cards": [
+                {
+                  "title": "Génération audio",
+                  "copy": "La plateforme explorait la transformation audio automatisée pour permettre aux éditeurs d'étendre leurs catalogues vers l'écoute avec moins d'effort de production manuelle.",
+                  "items": [
+                    "Le machine learning entrait par un problème concret de transformation.",
+                    "L'audio était traité comme une extension de l'édition, pas comme une expérimentation isolée."
+                  ]
+                },
+                {
+                  "title": "Intégrations vocales",
+                  "copy": "Les intégrations avec Siri, Alexa et Google Assistant étendaient le modèle de distribution vers des usages pilotés par la voix.",
+                  "items": [
+                    "La même plateforme devait servir plusieurs modèles d'interaction.",
+                    "La distribution du contenu devait rester cohérente malgré la diversité des canaux."
+                  ]
+                },
+                {
+                  "title": "R&D orientée futur",
+                  "copy": "La roadmap explorait aussi la réalité augmentée et la réalité virtuelle pour anticiper de nouveaux comportements de lecture et de nouvelles opportunités de distribution.",
+                  "items": [
+                    "L'exploration restait reliée à la stratégie produit.",
+                    "La R&D avait de la valeur parce qu'elle restait connectée à la direction long terme de la plateforme."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Exécution",
+              "title": "La direction technique devait rester proche de la réalité des éditeurs.",
+              "intro": "Le rôle combinait architecture, stratégie produit et alignement business, ce qui imposait une plateforme techniquement solide et commercialement utile en même temps.",
+              "cards": [
+                {
+                  "title": "Sécurité et accès contrôlé",
+                  "copy": "L'authentification inter-services, le chiffrement du stockage et le contrôle d'accès aux actifs numériques faisaient partie de la plateforme dès le départ.",
+                  "items": [
+                    "La sécurité faisait partie de la promesse produit aux éditeurs.",
+                    "La distribution de contenus sensibles demandait une discipline opérationnelle plus forte."
+                  ]
+                },
+                {
+                  "title": "Scalabilité et maintenabilité",
+                  "copy": "La plateforme devait rester suffisamment flexible pour servir plusieurs contextes éditeurs et plusieurs canaux sans devenir fragile.",
+                  "items": [
+                    "L'évolution long terme comptait plus qu'un patchwork court terme.",
+                    "Les choix d'architecture étaient façonnés par la durée de vie plateforme."
+                  ]
+                },
+                {
+                  "title": "Produit et business ensemble",
+                  "copy": "L'exécution technique restait alignée avec le business development et l'adoption côté éditeurs pour faire évoluer la plateforme dans des directions à la fois faisables et utiles.",
+                  "items": [
+                    "Le rôle se situait entre profondeur engineering et utilité commerciale.",
+                    "La stratégie plateforme fonctionnait parce qu'elle restait attachée à des besoins éditeurs réels."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-myviapresse": {
+          "page_title": "MyViapresse | Projets | Loïc Lavergne",
+          "description": "Page projet MyViapresse sur l'évolution iOS native, les abonnements, la lecture hors ligne et la delivery produit grand public dans la durée.",
+          "eyebrow": "MyViapresse",
+          "title": "Un produit presse grand public qui a traversé plusieurs générations techniques.",
+          "intro": "MyViapresse était une application mobile grand public donnant accès à un large catalogue de magazines et journaux via achats et abonnements. Le projet a traversé plusieurs ères techniques, ce qui en fait un bon exemple de continuité produit à travers des changements d'architecture.",
+          "role_title": "Pilotage projet et leadership iOS natif",
+          "organization": "Vialife",
+          "period": "Août 2015 - Août 2022",
+          "summary": "Responsabilité de l'application sur le pilotage projet, le design produit et le développement iOS natif, tout en accompagnant son évolution depuis une base hybride vers un codebase Swift moderne avec abonnements, lecture hors ligne et framework lecteur propriétaire.",
+          "highlights": [
+            "A fait traverser au produit plusieurs générations techniques, depuis Titanium jusqu'à Swift natif puis une réécriture complète.",
+            "A introduit les parcours de monétisation pour achat à l'unité et abonnements auto-renouvelables.",
+            "A construit le produit sur un framework de lecture propriétaire pensé pour la performance, la cohérence et le hors ligne."
+          ],
+          "metrics": [
+            {
+              "value": "400+",
+              "label": "titres de presse disponibles dans le catalogue"
+            },
+            {
+              "value": "Hybride vers natif",
+              "label": "évolution technique majeure sur toute la durée du produit"
+            },
+            {
+              "value": "IAP + abonnements",
+              "label": "modèle de monétisation grand public livré dans l'app"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Produit",
+              "title": "Un produit lecteur grand public devait rester simple malgré la largeur du catalogue.",
+              "intro": "L'application s'adressait directement aux lecteurs de magazines et de journaux. Clarté du catalogue, continuité de lecture et confiance dans l'achat devaient coexister dans une même expérience mobile.",
+              "cards": [
+                {
+                  "title": "Grand catalogue, accès clair",
+                  "copy": "Le produit exposait plusieurs centaines de titres tout en devant rester abordable pour la découverte, l'aperçu et la lecture récurrente.",
+                  "items": [
+                    "La largeur du catalogue ne pouvait pas submerger la surface produit.",
+                    "Découverte et achat direct devaient cohabiter proprement."
+                  ]
+                },
+                {
+                  "title": "Continuité de lecture",
+                  "copy": "La lecture hors ligne et l'accès synchronisé entre appareils faisaient partie de ce qui rendait le produit fiable au-delà du simple moment d'achat.",
+                  "items": [
+                    "La valeur d'une app de presse continue après la transaction.",
+                    "La continuité compte pour des habitudes de lecture récurrentes."
+                  ]
+                },
+                {
+                  "title": "Commerce éditorial",
+                  "copy": "L'application devait supporter à la fois des moments de découverte gratuite et une conversion payante via achat à l'unité ou abonnement.",
+                  "items": [
+                    "Aperçu et monétisation étaient deux sujets produit de premier plan.",
+                    "L'expérience devait rester commerciale sans devenir lourde."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Engineering",
+              "title": "Le projet a traversé plusieurs phases d'implémentation majeures.",
+              "intro": "Une part importante du travail a consisté à préserver la continuité produit tout en modernisant la stack, ce qui faisait des transitions techniques une responsabilité produit à part entière.",
+              "cards": [
+                {
+                  "title": "De Titanium à Swift",
+                  "copy": "L'application partait d'une implémentation hybride Titanium avant d'évoluer vers Swift natif à mesure que les attentes produit et qualité progressaient.",
+                  "items": [
+                    "La transition ouvrait la voie à de meilleures performances et à une meilleure maintenabilité.",
+                    "Le natif donnait davantage de contrôle sur l'expérience de lecture."
+                  ]
+                },
+                {
+                  "title": "Une réécriture quand nécessaire",
+                  "copy": "Les versions suivantes ont demandé une réécriture plus complète dans des environnements Xcode et Swift plus récents afin de garder le produit viable dans le temps.",
+                  "items": [
+                    "Le produit n'a pas été maintenu seulement par petits correctifs.",
+                    "La durabilité demandait parfois des remises à plat plus profondes."
+                  ]
+                },
+                {
+                  "title": "Framework lecteur propriétaire",
+                  "copy": "Un framework de lecture Swift dédié donnait au produit une base plus cohérente et plus performante pour l'affichage du contenu et le mode hors ligne.",
+                  "items": [
+                    "Le lecteur était une capacité cœur, pas juste un écran.",
+                    "L'outillage réutilisable améliorait la base technique long terme."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Monétisation",
+              "title": "Les parcours de commerce devaient être crédibles, simples et durables.",
+              "intro": "Les abonnements et achats à l'unité n'étaient pas périphériques. Ils étaient centraux pour la viabilité du produit, ce qui imposait une couche commerce fiable et opérationnellement stable.",
+              "cards": [
+                {
+                  "title": "Achats à l'unité et abonnements",
+                  "copy": "L'application supportait à la fois l'achat ponctuel et les abonnements auto-renouvelables, ce qui demandait un équilibre précis entre flexibilité et clarté.",
+                  "items": [
+                    "Des comportements lecteurs différents appelaient des parcours distincts.",
+                    "Le produit devait rester compréhensible sur le prix et les droits d'accès."
+                  ]
+                },
+                {
+                  "title": "Contraintes produit liées aux stores",
+                  "copy": "Mettre en place la monétisation signifiait travailler avec la réalité des systèmes d'in-app purchase, des droits d'accès et de la maintenabilité dans le temps.",
+                  "items": [
+                    "Le commerce dépendait autant de la justesse technique que de l'UI.",
+                    "Le modèle économique reposait sur des flux opérationnels fiables."
+                  ]
+                },
+                {
+                  "title": "Durabilité d'un produit grand public",
+                  "copy": "Parce que l'application a vécu plusieurs années, systèmes de monétisation et systèmes de lecture devaient tous deux survivre aux changements de stack, à la croissance du catalogue et à l'itération produit.",
+                  "items": [
+                    "La longévité faisait partie du défi engineering.",
+                    "Les meilleurs choix techniques étaient ceux que le produit pouvait continuer à porter."
                   ]
                 }
               ]

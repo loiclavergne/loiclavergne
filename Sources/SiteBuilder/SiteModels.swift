@@ -178,6 +178,7 @@ struct SummaryProject: Decodable {
     let period: String?
     let summary: String
     let details: [String]?
+    let route: String?
 }
 
 struct ProjectsPage: Decodable {
