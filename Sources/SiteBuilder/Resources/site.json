@@ -4,7 +4,7 @@
     "name": "Loïc Lavergne",
     "app_name": "Loic Engineer Portfolio",
     "lead_title": "Engineering Manager, Mobile Products",
-    "build_date": "2026-03-25",
+    "build_date": "2026-03-27",
     "contact_email": "hello@loic.engineer",
     "socials": [
       {
@@ -38,6 +38,14 @@
       "en": "/projects/",
       "fr": "/fr/projects/"
     },
+    "project-roole-map": {
+      "en": "/projects/roole-map/",
+      "fr": "/fr/projects/roole-map/"
+    },
+    "project-roole-premium": {
+      "en": "/projects/roole-premium/",
+      "fr": "/fr/projects/roole-premium/"
+    },
     "writing": {
       "en": "/writing/",
       "fr": "/fr/writing/"
@@ -55,6 +63,8 @@
     "home",
     "work",
     "projects",
+    "project-roole-map",
+    "project-roole-premium",
     "writing",
     "library",
     "about"
@@ -88,6 +98,8 @@
         "context": "Context",
         "featured": "Featured",
         "current_focus": "Current focus",
+        "view_project": "View project",
+        "back_to_projects": "Back to projects",
         "archive": "Archive",
         "side_work": "Side Work",
         "status": "Status",
@@ -369,7 +381,8 @@
               "Structured the mobile codebase and drove architectural changes, including a transition toward MVVM with SwiftUI.",
               "Expanded from hands-on technical leadership into technical roadmap definition and iOS / Android coordination.",
               "Aligned frontend and backend delivery while evolving architecture, tooling, and process quality."
-            ]
+            ],
+            "route": "project-roole-map"
           },
           {
             "name": "Roole Premium",
@@ -379,7 +392,8 @@
               "Coordinates mobile delivery alongside Roole Map under shared standards.",
               "Aligns process, architecture, and collaboration patterns across multiple teams.",
               "Helps tighten the connection between product roadmaps and engineering execution."
-            ]
+            ],
+            "route": "project-roole-premium"
           }
         ],
         "archive_heading": "Selected earlier work",
@@ -462,6 +476,258 @@
             ]
           }
         ]
+      },
+      "project_details": {
+        "project-roole-map": {
+          "page_title": "Roole Map | Projects | Loïc Lavergne",
+          "description": "Roole Map case study covering mobile foundations, architecture evolution, and multi-team delivery.",
+          "eyebrow": "Roole Map",
+          "title": "From mobile foundation to multi-team product delivery.",
+          "intro": "Roole Map is a free mobility application designed to simplify everyday driving across France. My involvement started with hands-on technical leadership and grew into a broader role spanning roadmap alignment, architecture evolution, and cross-team delivery.",
+          "role_title": "Tech Lead Mobile, then Engineering Manager",
+          "organization": "Roole",
+          "period": "October 2022 - Present",
+          "summary": "Built the first technical foundations of the product, then expanded the role into broader coordination across architecture, iOS and Android delivery, tooling, and shared operating standards.",
+          "highlights": [
+            "Structured the mobile codebase and led major architectural changes, including a move toward MVVM with SwiftUI.",
+            "Expanded from hands-on technical leadership into roadmap definition and cross-team delivery coordination.",
+            "Aligned frontend, backend, design, and product work while improving maintainability and delivery quality."
+          ],
+          "metrics": [
+            {
+              "value": "France",
+              "label": "territory-scale mobility product for everyday drivers"
+            },
+            {
+              "value": "MVVM + SwiftUI",
+              "label": "major mobile architecture evolution"
+            },
+            {
+              "value": "iOS + Android",
+              "label": "delivery coordination across both platforms"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Product",
+              "title": "A driver utility product grounded in real territory data.",
+              "intro": "The product is meant to be practical first: routing, fuel, charging, parking, nearby services, and place discovery all need to feel reliable in a single everyday experience.",
+              "cards": [
+                {
+                  "title": "Driver utility first",
+                  "copy": "The app is designed around frequent driving needs rather than novelty, which keeps the product surface concrete and useful.",
+                  "items": [
+                    "Routing and mobility services stay central.",
+                    "The user value is immediate and recurring."
+                  ]
+                },
+                {
+                  "title": "Territory-aware information",
+                  "copy": "Public and partner datasets are combined to expose localized information such as fuel shortages, service availability, and nearby points of interest.",
+                  "items": [
+                    "Reliability depends on aggregation and contextual presentation.",
+                    "The French territory is part of the product's specificity."
+                  ]
+                },
+                {
+                  "title": "Navigation without lock-in",
+                  "copy": "The product can guide users toward relevant destinations while still handing off to their preferred navigation tools when appropriate.",
+                  "items": [
+                    "The experience stays helpful without forcing one navigation pattern.",
+                    "Interoperability matters as much as interface polish."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Engineering",
+              "title": "The mobile foundation had to evolve while the product kept shipping.",
+              "intro": "The role began with direct technical ownership of the application and later widened into architecture stewardship across a growing delivery surface.",
+              "cards": [
+                {
+                  "title": "Foundations first",
+                  "copy": "Early work focused on structuring the mobile codebase so the product could keep growing without accumulating delivery friction.",
+                  "items": [
+                    "Code organization and ownership had to become clearer.",
+                    "The technical baseline needed to support iteration speed."
+                  ]
+                },
+                {
+                  "title": "Architecture evolution",
+                  "copy": "A significant part of the work was guiding the application toward an MVVM architecture with SwiftUI while keeping maintainability and team readability high.",
+                  "items": [
+                    "Architecture changes were tied to real delivery needs.",
+                    "The goal was durability, not framework fashion."
+                  ]
+                },
+                {
+                  "title": "Tooling and quality",
+                  "copy": "Builds, integration practices, and development workflows were treated as part of product quality rather than as side concerns.",
+                  "items": [
+                    "Continuous integration and tooling help stabilize delivery.",
+                    "Maintainability is part of release predictability."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Delivery",
+              "title": "The project became a coordination problem as much as a coding problem.",
+              "intro": "As the role widened, the work shifted toward keeping roadmap, backend dependencies, mobile execution, and shared standards aligned across teams.",
+              "cards": [
+                {
+                  "title": "Roadmap and engineering together",
+                  "copy": "Technical direction stayed connected to product priorities so architecture decisions could support delivery rather than drift away from it.",
+                  "items": [
+                    "Risks and dependencies stay visible earlier.",
+                    "Planning becomes more credible when engineering is fully in the loop."
+                  ]
+                },
+                {
+                  "title": "Cross-platform alignment",
+                  "copy": "The work now includes coordination across iOS and Android so product execution stays coherent even when implementation details differ.",
+                  "items": [
+                    "Shared standards reduce unnecessary divergence.",
+                    "The coordination layer matters as the product grows."
+                  ]
+                },
+                {
+                  "title": "Frontend and backend rhythm",
+                  "copy": "A meaningful part of the role is keeping frontend and backend delivery in sync so product changes remain feasible, maintainable, and testable.",
+                  "items": [
+                    "API integration is part of product planning.",
+                    "Execution quality depends on inter-team rhythm."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-roole-premium": {
+          "page_title": "Roole Premium | Projects | Loïc Lavergne",
+          "description": "Roole Premium case study covering member product delivery, cross-app standards, and shared mobile operating practices.",
+          "eyebrow": "Roole Premium",
+          "title": "Coordinating a member product with shared mobile standards.",
+          "intro": "Roole Premium is the digital companion for Roole members, bringing together services, benefits, assistance features, and secure access to the broader ecosystem. The work sits at the intersection of member experience, delivery coordination, and consistency across Roole's mobile applications.",
+          "role_title": "Engineering Manager",
+          "organization": "Roole",
+          "period": "September 2025 - Present",
+          "summary": "Coordinates product delivery alongside Roole Map while aligning architecture, process, and team collaboration patterns across applications with overlapping mobile standards.",
+          "highlights": [
+            "Leads delivery coordination for a member-facing application tied to Roole's broader service ecosystem.",
+            "Aligns process and architecture decisions across multiple mobile teams and products.",
+            "Strengthens the link between product roadmaps, engineering execution, and shared quality expectations."
+          ],
+          "metrics": [
+            {
+              "value": "Members",
+              "label": "service and benefits companion application"
+            },
+            {
+              "value": "Shared standards",
+              "label": "mobile alignment across parallel products"
+            },
+            {
+              "value": "Multi-team",
+              "label": "coordination across delivery streams"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Product",
+              "title": "A secure entry point into the Roole member ecosystem.",
+              "intro": "The application centralizes member-facing services, which means the product has to feel clear, dependable, and trustworthy while supporting practical service flows.",
+              "cards": [
+                {
+                  "title": "Member services in one place",
+                  "copy": "Roole Premium acts as the mobile entry point for benefits, contracts, services, and assistance-related journeys.",
+                  "items": [
+                    "The product surface needs to stay legible despite service breadth.",
+                    "Clarity matters as much as feature presence."
+                  ]
+                },
+                {
+                  "title": "Secure ecosystem access",
+                  "copy": "Because the app touches member identity and service relationships, access patterns and integration choices need to remain robust and predictable.",
+                  "items": [
+                    "The mobile product is tied to trusted service access.",
+                    "Architecture decisions need to support that trust."
+                  ]
+                },
+                {
+                  "title": "Service experience over feature sprawl",
+                  "copy": "The challenge is not only to add capabilities, but to keep the member experience coherent as the ecosystem grows.",
+                  "items": [
+                    "Product consistency is a delivery concern.",
+                    "Restraint is part of a premium experience."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Organization",
+              "title": "The delivery problem spans more than one app.",
+              "intro": "Roole Premium is not isolated work. It is coordinated in parallel with Roole Map, which makes shared standards and operating habits especially important.",
+              "cards": [
+                {
+                  "title": "Parallel product coordination",
+                  "copy": "Delivery decisions are made with awareness of multiple mobile products, teams, and dependencies instead of in a single-app bubble.",
+                  "items": [
+                    "Coordination helps remove avoidable misalignment.",
+                    "The products can evolve independently without fragmenting the organization."
+                  ]
+                },
+                {
+                  "title": "Shared standards",
+                  "copy": "Architecture, process, and quality criteria are aligned where it makes sense so the mobile organization can move with more consistency.",
+                  "items": [
+                    "Standards reduce operational friction.",
+                    "Common expectations help scale delivery quality."
+                  ]
+                },
+                {
+                  "title": "Roadmap connection",
+                  "copy": "A central part of the role is keeping product intent, technical planning, and execution timing closely connected across stakeholders.",
+                  "items": [
+                    "Dependencies stay visible earlier.",
+                    "Delivery tradeoffs become easier to explain and manage."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Execution",
+              "title": "Quality comes from process, architecture, and rhythm together.",
+              "intro": "The value of the work is not only in individual features, but in making the delivery system more predictable across teams and releases.",
+              "cards": [
+                {
+                  "title": "Architecture and APIs",
+                  "copy": "Application structure and API integration practices are part of the ongoing enablement work needed for maintainable delivery.",
+                  "items": [
+                    "Technical quality supports long-term product evolution.",
+                    "Integration work is part of operating reliability."
+                  ]
+                },
+                {
+                  "title": "Operational cadence",
+                  "copy": "Execution improves when product, design, backend, and mobile teams share the same understanding of timing, risk, and release quality.",
+                  "items": [
+                    "Cadence is as important as roadmap intent.",
+                    "Predictability is built through shared operating habits."
+                  ]
+                },
+                {
+                  "title": "Scalable delivery practices",
+                  "copy": "The broader goal is to leave the mobile organization with processes and technical habits that remain useful beyond one application cycle.",
+                  "items": [
+                    "The work should compound over time.",
+                    "The best process changes are the ones teams keep using."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       },
       "writing": {
         "page_title": "Writing | Loïc Lavergne",
@@ -734,6 +1000,8 @@
         "context": "Contexte",
         "featured": "Sélection",
         "current_focus": "Focus actuel",
+        "view_project": "Voir le projet",
+        "back_to_projects": "Retour aux projets",
         "archive": "Archive",
         "side_work": "Travail parallèle",
         "status": "Statut",
@@ -1015,7 +1283,8 @@
               "A structuré le codebase mobile et conduit des évolutions d'architecture, dont une transition vers MVVM avec SwiftUI.",
               "A évolué d'un leadership technique très hands-on vers la roadmap technique et la coordination iOS / Android.",
               "A aligné delivery frontend et backend tout en faisant progresser architecture, outillage et processus."
-            ]
+            ],
+            "route": "project-roole-map"
           },
           {
             "name": "Roole Premium",
@@ -1025,7 +1294,8 @@
               "Coordonne la delivery mobile en parallèle de Roole Map sous des standards partagés.",
               "Aligne processus, architecture et collaboration entre plusieurs équipes.",
               "Resserre le lien entre roadmaps produit et exécution engineering."
-            ]
+            ],
+            "route": "project-roole-premium"
           }
         ],
         "archive_heading": "Travaux antérieurs sélectionnés",
@@ -1108,6 +1378,258 @@
             ]
           }
         ]
+      },
+      "project_details": {
+        "project-roole-map": {
+          "page_title": "Roole Map | Projets | Loïc Lavergne",
+          "description": "Page projet Roole Map sur le socle mobile, l'évolution d'architecture et la delivery multi-équipes.",
+          "eyebrow": "Roole Map",
+          "title": "Du socle mobile initial à une delivery produit multi-équipes.",
+          "intro": "Roole Map est une application de mobilité gratuite pensée pour simplifier la conduite du quotidien partout en France. Mon intervention a commencé par un rôle très hands-on de leadership technique avant de s'élargir vers l'alignement roadmap, l'évolution d'architecture et la coordination transverse.",
+          "role_title": "Tech Lead Mobile, puis Engineering Manager",
+          "organization": "Roole",
+          "period": "Octobre 2022 - Aujourd'hui",
+          "summary": "A posé les premières fondations techniques du produit, puis a élargi le rôle vers la coordination plus large de l'architecture, de la delivery iOS et Android, de l'outillage et des standards de fonctionnement partagés.",
+          "highlights": [
+            "A structuré les premières fondations techniques du produit et conduit des évolutions majeures d'architecture, dont une orientation vers MVVM avec SwiftUI.",
+            "A fait évoluer le rôle d'un leadership technique hands-on vers la définition de roadmap et la coordination de delivery entre équipes.",
+            "A aligné frontend, backend, design et produit tout en améliorant maintenabilité et qualité de livraison."
+          ],
+          "metrics": [
+            {
+              "value": "France",
+              "label": "produit de mobilité à l'échelle du territoire pour les conducteurs du quotidien"
+            },
+            {
+              "value": "MVVM + SwiftUI",
+              "label": "évolution d'architecture mobile structurante"
+            },
+            {
+              "value": "iOS + Android",
+              "label": "coordination de delivery sur les deux plateformes"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Produit",
+              "title": "Un produit utile aux conducteurs, ancré dans des données réelles de terrain.",
+              "intro": "Le produit doit d'abord être pratique : itinéraires, carburant, recharge, parking, services de proximité et découverte locale doivent former une expérience quotidienne fiable dans une seule application.",
+              "cards": [
+                {
+                  "title": "L'utilité conducteur d'abord",
+                  "copy": "L'application est pensée autour de besoins de conduite fréquents plutôt que d'effets de nouveauté, ce qui garde la surface produit concrète et utile.",
+                  "items": [
+                    "L'itinéraire et les services de mobilité restent centraux.",
+                    "La valeur utilisateur doit être immédiate et récurrente."
+                  ]
+                },
+                {
+                  "title": "Une information liée au territoire",
+                  "copy": "Des données publiques et partenaires sont combinées pour exposer des informations localisées comme les pénuries de carburant, la disponibilité de services ou les points d'intérêt proches.",
+                  "items": [
+                    "La fiabilité dépend de l'agrégation et de la bonne mise en contexte.",
+                    "Le territoire français fait partie de la singularité du produit."
+                  ]
+                },
+                {
+                  "title": "Navigation sans enfermement",
+                  "copy": "Le produit peut guider l'utilisateur vers la bonne destination tout en s'intégrant à ses outils de navigation préférés quand c'est pertinent.",
+                  "items": [
+                    "L'expérience reste utile sans imposer un seul mode de navigation.",
+                    "L'interopérabilité compte autant que le polish d'interface."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Engineering",
+              "title": "Le socle mobile a dû évoluer pendant que le produit continuait à livrer.",
+              "intro": "Le rôle a commencé par une responsabilité technique directe sur l'application avant de s'élargir vers une stewardship d'architecture sur une surface de delivery plus large.",
+              "cards": [
+                {
+                  "title": "Les fondations avant tout",
+                  "copy": "Le travail initial a consisté à structurer le codebase mobile pour permettre au produit de croître sans accumuler de friction de delivery.",
+                  "items": [
+                    "L'organisation du code et les responsabilités devaient devenir plus claires.",
+                    "La base technique devait soutenir la vitesse d'itération."
+                  ]
+                },
+                {
+                  "title": "Évolution d'architecture",
+                  "copy": "Une part importante du travail a été d'accompagner l'application vers une architecture MVVM avec SwiftUI tout en gardant maintenabilité et lisibilité d'équipe.",
+                  "items": [
+                    "Les changements d'architecture répondaient à des besoins concrets de delivery.",
+                    "L'objectif était la durabilité, pas l'effet de mode."
+                  ]
+                },
+                {
+                  "title": "Outillage et qualité",
+                  "copy": "Les builds, les pratiques d'intégration et les workflows de développement ont été traités comme une partie du produit, pas comme un sujet annexe.",
+                  "items": [
+                    "La CI et l'outillage stabilisent la delivery.",
+                    "La maintenabilité fait partie de la prévisibilité des releases."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Delivery",
+              "title": "Le projet est devenu autant un sujet de coordination qu'un sujet de code.",
+              "intro": "À mesure que le rôle s'est élargi, le travail a consisté à garder alignés roadmap, dépendances backend, exécution mobile et standards partagés entre équipes.",
+              "cards": [
+                {
+                  "title": "Roadmap et engineering ensemble",
+                  "copy": "La direction technique est restée connectée aux priorités produit pour que les décisions d'architecture servent la delivery au lieu de s'en éloigner.",
+                  "items": [
+                    "Les risques et dépendances deviennent visibles plus tôt.",
+                    "Le planning devient plus crédible quand l'engineering est pleinement dans la boucle."
+                  ]
+                },
+                {
+                  "title": "Alignement cross-platform",
+                  "copy": "Le travail inclut maintenant la coordination entre iOS et Android afin que l'exécution produit reste cohérente même lorsque les détails d'implémentation diffèrent.",
+                  "items": [
+                    "Des standards partagés limitent les divergences inutiles.",
+                    "La couche de coordination prend de la valeur à mesure que le produit grandit."
+                  ]
+                },
+                {
+                  "title": "Rythme frontend et backend",
+                  "copy": "Une part importante du rôle consiste à garder frontend et backend synchronisés pour que les évolutions produit restent faisables, maintenables et testables.",
+                  "items": [
+                    "L'intégration API fait partie de la planification produit.",
+                    "La qualité d'exécution dépend du rythme inter-équipes."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-roole-premium": {
+          "page_title": "Roole Premium | Projets | Loïc Lavergne",
+          "description": "Page projet Roole Premium sur la delivery produit membre, les standards mobiles partagés et les pratiques multi-applications.",
+          "eyebrow": "Roole Premium",
+          "title": "Coordonner un produit membre avec des standards mobiles partagés.",
+          "intro": "Roole Premium est l'application compagnon des membres Roole, réunissant services, avantages, fonctionnalités d'assistance et accès sécurisé à l'écosystème plus large. Le travail se situe à l'intersection de l'expérience membre, de la coordination de delivery et de la cohérence entre applications mobiles de Roole.",
+          "role_title": "Engineering Manager",
+          "organization": "Roole",
+          "period": "Septembre 2025 - Aujourd'hui",
+          "summary": "Coordonne la delivery produit en parallèle de Roole Map tout en alignant architecture, process et modes de collaboration entre plusieurs applications partageant des standards mobiles communs.",
+          "highlights": [
+            "Pilote la coordination de delivery d'une application membre liée à l'écosystème de services Roole.",
+            "Aligne process et décisions d'architecture entre plusieurs équipes et plusieurs produits mobiles.",
+            "Renforce le lien entre roadmaps produit, exécution engineering et attentes de qualité partagées."
+          ],
+          "metrics": [
+            {
+              "value": "Membres",
+              "label": "application compagnon orientée services et avantages"
+            },
+            {
+              "value": "Standards partagés",
+              "label": "alignement mobile entre produits parallèles"
+            },
+            {
+              "value": "Multi-équipes",
+              "label": "coordination entre plusieurs flux de delivery"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Produit",
+              "title": "Une porte d'entrée sécurisée dans l'écosystème membre de Roole.",
+              "intro": "L'application centralise des services destinés aux membres, ce qui impose une expérience claire, fiable et rassurante, tout en supportant des parcours de services concrets.",
+              "cards": [
+                {
+                  "title": "Les services membres réunis",
+                  "copy": "Roole Premium agit comme point d'entrée mobile pour les avantages, contrats, services et parcours d'assistance.",
+                  "items": [
+                    "La surface produit doit rester lisible malgré la largeur fonctionnelle.",
+                    "La clarté compte autant que la présence des fonctionnalités."
+                  ]
+                },
+                {
+                  "title": "Un accès sécurisé à l'écosystème",
+                  "copy": "Comme l'application touche à l'identité membre et à la relation de service, les patterns d'accès et les choix d'intégration doivent rester robustes et prévisibles.",
+                  "items": [
+                    "Le produit mobile est lié à un accès de confiance aux services.",
+                    "Les décisions d'architecture doivent soutenir cette confiance."
+                  ]
+                },
+                {
+                  "title": "L'expérience de service avant la dispersion fonctionnelle",
+                  "copy": "L'enjeu n'est pas seulement d'ajouter des capacités, mais de garder une expérience membre cohérente à mesure que l'écosystème s'étend.",
+                  "items": [
+                    "La cohérence produit est aussi un sujet de delivery.",
+                    "La retenue fait partie d'une expérience premium."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Organisation",
+              "title": "Le sujet de delivery dépasse une seule application.",
+              "intro": "Roole Premium n'est pas un travail isolé. La coordination se fait en parallèle de Roole Map, ce qui rend les standards partagés et les habitudes de fonctionnement particulièrement importants.",
+              "cards": [
+                {
+                  "title": "Coordination entre produits parallèles",
+                  "copy": "Les décisions de delivery se prennent avec la conscience de plusieurs produits mobiles, équipes et dépendances, et non dans une bulle mono-app.",
+                  "items": [
+                    "La coordination évite des désalignements inutiles.",
+                    "Les produits peuvent évoluer indépendamment sans fragmenter l'organisation."
+                  ]
+                },
+                {
+                  "title": "Standards partagés",
+                  "copy": "Architecture, process et critères de qualité sont alignés quand c'est pertinent afin que l'organisation mobile gagne en cohérence.",
+                  "items": [
+                    "Les standards réduisent la friction opérationnelle.",
+                    "Des attentes communes aident à faire grandir la qualité de delivery."
+                  ]
+                },
+                {
+                  "title": "Connexion à la roadmap",
+                  "copy": "Une part centrale du rôle consiste à garder proches l'intention produit, la planification technique et le tempo d'exécution entre parties prenantes.",
+                  "items": [
+                    "Les dépendances restent visibles plus tôt.",
+                    "Les arbitrages de delivery deviennent plus simples à expliquer et à gérer."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Exécution",
+              "title": "La qualité vient ensemble du process, de l'architecture et du rythme.",
+              "intro": "La valeur du travail ne tient pas seulement aux fonctionnalités livrées, mais aussi à la manière dont le système de delivery devient plus prévisible entre équipes et releases.",
+              "cards": [
+                {
+                  "title": "Architecture et APIs",
+                  "copy": "La structure applicative et les pratiques d'intégration API font partie du travail d'enablement nécessaire à une delivery maintenable.",
+                  "items": [
+                    "La qualité technique soutient l'évolution produit long terme.",
+                    "Le travail d'intégration fait partie de la fiabilité opérationnelle."
+                  ]
+                },
+                {
+                  "title": "Cadence opérationnelle",
+                  "copy": "L'exécution s'améliore lorsque produit, design, backend et mobile partagent la même lecture du timing, du risque et de la qualité de release.",
+                  "items": [
+                    "La cadence compte autant que l'intention de roadmap.",
+                    "La prévisibilité se construit par des habitudes de fonctionnement partagées."
+                  ]
+                },
+                {
+                  "title": "Pratiques de delivery scalables",
+                  "copy": "L'objectif plus large est de laisser à l'organisation mobile des process et des habitudes techniques utiles au-delà d'un seul cycle produit.",
+                  "items": [
+                    "Le travail doit se cumuler dans le temps.",
+                    "Les meilleurs changements de process sont ceux que les équipes continuent d'utiliser."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       },
       "writing": {
         "page_title": "Écrits | Loïc Lavergne",

@@ -2,50 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://loic.engineer/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/about/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/fr/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/fr/about/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/fr/library/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/fr/projects/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/roole-map/</loc>
+    <lastmod>2026-03-27</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/roole-premium/</loc>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/fr/work/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/fr/writing/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/library/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/projects/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/roole-map/</loc>
+    <lastmod>2026-03-27</lastmod>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/roole-premium/</loc>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/work/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
   </url>
   <url>
     <loc>https://loic.engineer/writing/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-27</lastmod>
   </url>
 </urlset>

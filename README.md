@@ -49,6 +49,7 @@ Generated output:
 - `fr/**/index.html`
 - `work/index.html`
 - `projects/index.html`
+- `projects/**/index.html`
 - `writing/index.html`
 - `library/index.html`
 - `about/index.html`
@@ -101,6 +102,7 @@ Open:
 The v1 architecture includes:
 - homepage storytelling focused on current professional work
 - work, projects, writing, library, and about pages
+- bilingual project detail pages for current flagship products
 - English and French localization
 - light, dark, and auto appearance modes
 - structured static education section on the work page

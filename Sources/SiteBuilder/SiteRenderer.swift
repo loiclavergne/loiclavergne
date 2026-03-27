@@ -114,6 +114,45 @@ struct SiteRenderer {
         labels[key] ?? fallback
     }
 
+    /// Map detail pages back to their primary navigation section.
+    func primaryPageKey(for pageKey: String) -> String {
+        if pageKey.hasPrefix("project-") {
+            return "projects"
+        }
+
+        return pageKey
+    }
+
+    /// Resolve a project detail page from the locale payload.
+    func projectDetail(pageKey: String, localeContent: LocaleContent, locale: String) throws -> ProjectDetailPage {
+        guard let page = localeContent.projectDetails[pageKey] else {
+            throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
+        }
+
+        return page
+    }
+
+    /// Resolve shared page metadata for standard and project detail pages.
+    func pageMetadata(pageKey: String, localeContent: LocaleContent, locale: String) throws -> (title: String, description: String) {
+        switch pageKey {
+        case "home":
+            return (localeContent.home.pageTitle, localeContent.home.description)
+        case "work":
+            return (localeContent.work.pageTitle, localeContent.work.description)
+        case "projects":
+            return (localeContent.projects.pageTitle, localeContent.projects.description)
+        case "writing":
+            return (localeContent.writing.pageTitle, localeContent.writing.description)
+        case "library":
+            return (localeContent.library.pageTitle, localeContent.library.description)
+        case "about":
+            return (localeContent.about.pageTitle, localeContent.about.description)
+        default:
+            let detailPage = try projectDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
+            return (detailPage.pageTitle, detailPage.description)
+        }
+    }
+
     /// Render a simple unordered list.
     func renderList(_ items: [String], className: String = "detail-list") -> String {
         let content = items.map { "<li>\(escapeHTML($0))</li>" }.joined()
@@ -140,6 +179,31 @@ struct SiteRenderer {
         """
     }
 
+    /// Render a featured project card with an optional detail-page action.
+    func renderFeaturedProjectCard(_ project: FeaturedProject, locale: String, localeContent: LocaleContent) throws -> String {
+        let actionMarkup: String
+
+        if let route = project.route {
+            actionMarkup = """
+              <div class="button-row">
+                <a class="button button--secondary" href="\(try pagePath(route, locale: locale))">\(escapeHTML(label(localeContent.labels, key: "view_project", fallback: "View project")))</a>
+              </div>
+            """
+        } else {
+            actionMarkup = ""
+        }
+
+        return """
+        <article class="card card--project reveal">
+          <span class="eyebrow">\(escapeHTML(project.period))</span>
+          <h3>\(escapeHTML(project.name))</h3>
+          <p>\(escapeHTML(project.summary))</p>
+          \(renderList(project.details))
+          \(actionMarkup)
+        </article>
+        """
+    }
+
     /// Render the localized header navigation.
     func renderNav(locale: String, currentPage: String) throws -> String {
         let localeContent = try localeContent(locale)
@@ -147,9 +211,10 @@ struct SiteRenderer {
         let switchLocale = localeContent.switchLocale
         let switchPath = try pagePath(currentPage, locale: switchLocale)
         let orderedPageKeys = ["home", "work", "projects", "writing", "library", "about"]
+        let activePage = primaryPageKey(for: currentPage)
 
         let links = orderedPageKeys.map { pageKey -> String in
-            let currentAttribute = currentPage == pageKey ? #" aria-current="page""# : ""
+            let currentAttribute = activePage == pageKey ? #" aria-current="page""# : ""
             let href = (try? pagePath(pageKey, locale: locale)) ?? "/"
             let text = localeContent.nav[pageKey] ?? pageKey.capitalized
             return #"<a class="site-nav__link" href="\#(href)"\#(currentAttribute)>\#(escapeHTML(text))</a>"#
@@ -241,15 +306,8 @@ struct SiteRenderer {
             """
         }.joined(separator: "\n")
 
-        let featuredMarkup = featured.map {
-            """
-            <article class="card card--project reveal">
-              <span class="eyebrow">\(escapeHTML($0.period))</span>
-              <h3>\(escapeHTML($0.name))</h3>
-              <p>\(escapeHTML($0.summary))</p>
-              \(renderList($0.details))
-            </article>
-            """
+        let featuredMarkup = try featured.map {
+            try renderFeaturedProjectCard($0, locale: locale, localeContent: localeContent)
         }.joined(separator: "\n")
 
         let entryPoints = page.entryPoints.map { item in
@@ -424,15 +482,8 @@ struct SiteRenderer {
         let labels = localeContent.labels
         let hobbyLabel = locale == "fr" ? "Projet perso" : "Hobby"
 
-        let featured = page.featured.map {
-            """
-            <article class="card card--project reveal">
-              <span class="eyebrow">\(escapeHTML($0.period))</span>
-              <h3>\(escapeHTML($0.name))</h3>
-              <p>\(escapeHTML($0.summary))</p>
-              \(renderList($0.details))
-            </article>
-            """
+        let featured = try page.featured.map {
+            try renderFeaturedProjectCard($0, locale: locale, localeContent: localeContent)
         }.joined(separator: "\n")
 
         let archive = page.archive.map {
@@ -495,6 +546,74 @@ struct SiteRenderer {
                 \(hobby)
               </div>
             </section>
+        """
+    }
+
+    /// Render a localized project detail page.
+    func renderProjectDetail(pageKey: String, locale: String) throws -> String {
+        let localeContent = try localeContent(locale)
+        let labels = localeContent.labels
+        let page = try projectDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
+
+        let metrics = page.metrics.map {
+            """
+            <article class="stat-card reveal">
+              <span class="stat-card__value">\(escapeHTML($0.value))</span>
+              <span class="stat-card__label">\(escapeHTML($0.label))</span>
+            </article>
+            """
+        }.joined(separator: "\n")
+
+        let sections = page.sections.map { section -> String in
+            let cards = section.cards.map(renderContentCard).joined(separator: "\n")
+
+            return """
+            <section class="section section--compact">
+              <div class="shell split-heading">
+                <div>
+                  <span class="eyebrow">\(escapeHTML(section.eyebrow))</span>
+                  <h2>\(escapeHTML(section.title))</h2>
+                </div>
+                <div class="section-copy">
+                  <p>\(escapeHTML(section.intro))</p>
+                </div>
+              </div>
+              <div class="shell card-grid card-grid--three">
+                \(cards)
+              </div>
+            </section>
+            """
+        }.joined(separator: "\n")
+
+        return """
+            <section class="hero hero--page">
+              <div class="shell hero__content hero__content--page">
+                <a class="context-link" href="\(try pagePath("projects", locale: locale))">\(escapeHTML(label(labels, key: "back_to_projects", fallback: "Back to projects")))</a>
+                <span class="eyebrow">\(escapeHTML(page.eyebrow))</span>
+                <h1>\(escapeHTML(page.title))</h1>
+                <p class="hero__lede">\(escapeHTML(page.intro))</p>
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell">
+                <article class="card card--featured reveal">
+                  <span class="eyebrow">\(escapeHTML(page.organization))</span>
+                  <h2>\(escapeHTML(page.roleTitle))</h2>
+                  <p class="card__meta">\(escapeHTML(page.period))</p>
+                  <p>\(escapeHTML(page.summary))</p>
+                  \(renderList(page.highlights))
+                </article>
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell stat-grid">
+                \(metrics)
+              </div>
+            </section>
+
+            \(sections)
         """
     }
 
@@ -720,31 +839,14 @@ struct SiteRenderer {
         case "about":
             return try renderAbout(locale: locale)
         default:
-            throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
+            return try renderProjectDetail(pageKey: pageKey, locale: locale)
         }
     }
 
     /// Build the JSON-LD payload for the page.
     func renderStructuredData(pageKey: String, locale: String) throws -> String {
         let localeContent = try localeContent(locale)
-        let pageTitle: String
-
-        switch pageKey {
-        case "home":
-            pageTitle = localeContent.home.pageTitle
-        case "work":
-            pageTitle = localeContent.work.pageTitle
-        case "projects":
-            pageTitle = localeContent.projects.pageTitle
-        case "writing":
-            pageTitle = localeContent.writing.pageTitle
-        case "library":
-            pageTitle = localeContent.library.pageTitle
-        case "about":
-            pageTitle = localeContent.about.pageTitle
-        default:
-            throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
-        }
+        let pageTitle = try pageMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale).title
 
         let graph: [[String: Any]] = [
             [
@@ -796,31 +898,9 @@ struct SiteRenderer {
         let canonicalPath = try pagePath(pageKey, locale: locale)
         let alternateEN = absoluteURL(for: try pagePath(pageKey, locale: "en"))
         let alternateFR = absoluteURL(for: try pagePath(pageKey, locale: "fr"))
-        let pageTitle: String
-        let description: String
-
-        switch pageKey {
-        case "home":
-            pageTitle = localeContent.home.pageTitle
-            description = localeContent.home.description
-        case "work":
-            pageTitle = localeContent.work.pageTitle
-            description = localeContent.work.description
-        case "projects":
-            pageTitle = localeContent.projects.pageTitle
-            description = localeContent.projects.description
-        case "writing":
-            pageTitle = localeContent.writing.pageTitle
-            description = localeContent.writing.description
-        case "library":
-            pageTitle = localeContent.library.pageTitle
-            description = localeContent.library.description
-        case "about":
-            pageTitle = localeContent.about.pageTitle
-            description = localeContent.about.description
-        default:
-            throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
-        }
+        let metadata = try pageMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale)
+        let pageTitle = metadata.title
+        let description = metadata.description
 
         let ogImage = absoluteURL(for: localeContent.seo.ogImage)
 

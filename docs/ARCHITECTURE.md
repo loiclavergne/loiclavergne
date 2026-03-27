@@ -12,6 +12,8 @@ English routes:
 - `/`
 - `/work/`
 - `/projects/`
+- `/projects/roole-map/`
+- `/projects/roole-premium/`
 - `/writing/`
 - `/library/`
 - `/about/`
@@ -20,6 +22,8 @@ French routes:
 - `/fr/`
 - `/fr/work/`
 - `/fr/projects/`
+- `/fr/projects/roole-map/`
+- `/fr/projects/roole-premium/`
 - `/fr/writing/`
 - `/fr/library/`
 - `/fr/about/`
@@ -32,7 +36,7 @@ Rendering flow:
 1. `swift run SiteBuilder` launches the local Swift package executable.
 2. `Sources/SiteBuilder/Resources/site.json` provides localized routes, page metadata, and page data.
 3. `Sources/SiteBuilder/SiteModels.swift` decodes the content into typed Swift structures.
-4. `Sources/SiteBuilder/SiteRenderer.swift` renders complete HTML documents for each page and locale.
+4. `Sources/SiteBuilder/SiteRenderer.swift` renders complete HTML documents for each page, locale, and project detail route.
 5. `Sources/SiteBuilder/main.swift` writes generated `index.html` files into the route folders and regenerates `sitemap.xml`.
 6. `swift run SiteServer` can serve the generated output locally for browser previews without Ruby, Node, or Python, including the root `404.html` on missing routes.
 7. `404.html` provides a static fallback page with localized recovery links for missing routes.
@@ -90,6 +94,9 @@ URL. This is intentional because it is better for:
 
 The locale switcher simply moves users to the equivalent route in the other
 language.
+
+Localized project detail pages use the same English slugs in both locales, for
+example `/projects/roole-map/` and `/fr/projects/roole-map/`.
 
 ## Appearance And Motion
 

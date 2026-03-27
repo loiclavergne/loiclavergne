@@ -64,6 +64,7 @@ struct LocaleContent: Decodable {
     let home: HomePage
     let work: WorkPage
     let projects: ProjectsPage
+    let projectDetails: [String: ProjectDetailPage]
     let writing: WritingPage
     let library: LibraryPage
     let about: AboutPage
@@ -169,6 +170,7 @@ struct FeaturedProject: Decodable {
     let period: String
     let summary: String
     let details: [String]
+    let route: String?
 }
 
 struct SummaryProject: Decodable {
@@ -189,6 +191,28 @@ struct ProjectsPage: Decodable {
     let archive: [SummaryProject]
     let hobbyHeading: String
     let hobby: [SummaryProject]
+}
+
+struct ProjectDetailSection: Decodable {
+    let eyebrow: String
+    let title: String
+    let intro: String
+    let cards: [ContentCard]
+}
+
+struct ProjectDetailPage: Decodable {
+    let pageTitle: String
+    let description: String
+    let eyebrow: String
+    let title: String
+    let intro: String
+    let roleTitle: String
+    let organization: String
+    let period: String
+    let summary: String
+    let highlights: [String]
+    let metrics: [MetricItem]
+    let sections: [ProjectDetailSection]
 }
 
 struct ContentCard: Decodable {

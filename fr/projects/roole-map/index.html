@@ -1,0 +1,260 @@
+<!--
+  project-roole-map.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Page projet Roole Map sur le socle mobile, l&#x27;évolution d&#x27;architecture et la delivery multi-équipes.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Roole Map | Projets | Loïc Lavergne">
+  <meta property="og:description" content="Page projet Roole Map sur le socle mobile, l&#x27;évolution d&#x27;architecture et la delivery multi-équipes.">
+  <meta property="og:url" content="https://loic.engineer/fr/projects/roole-map/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Roole Map | Projets | Loïc Lavergne">
+  <meta name="twitter:description" content="Page projet Roole Map sur le socle mobile, l&#x27;évolution d&#x27;architecture et la delivery multi-équipes.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/fr/projects/roole-map/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/roole-map/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/roole-map/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/roole-map/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Roole Map | Projets | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/fr\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "fr_FR",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "fr_FR",
+      "name" : "Roole Map | Projets | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/fr\/projects\/roole-map\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-roole-map">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/fr/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a class="site-nav__link" href="/fr/">Accueil</a><a class="site-nav__link" href="/fr/work/">Travail</a><a class="site-nav__link" href="/fr/projects/" aria-current="page">Projets</a><a class="site-nav__link" href="/fr/writing/">Écrits</a><a class="site-nav__link" href="/fr/library/">Bibliothèque</a><a class="site-nav__link" href="/fr/about/">À propos</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Apparence">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Clair</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Sombre</button>
+          </div>
+          <a class="locale-link" hreflang="en" href="/projects/roole-map/">English</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/fr/projects/">Retour aux projets</a>
+        <span class="eyebrow">Roole Map</span>
+        <h1>Du socle mobile initial à une delivery produit multi-équipes.</h1>
+        <p class="hero__lede">Roole Map est une application de mobilité gratuite pensée pour simplifier la conduite du quotidien partout en France. Mon intervention a commencé par un rôle très hands-on de leadership technique avant de s&#x27;élargir vers l&#x27;alignement roadmap, l&#x27;évolution d&#x27;architecture et la coordination transverse.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Roole</span>
+          <h2>Tech Lead Mobile, puis Engineering Manager</h2>
+          <p class="card__meta">Octobre 2022 - Aujourd&#x27;hui</p>
+          <p>A posé les premières fondations techniques du produit, puis a élargi le rôle vers la coordination plus large de l&#x27;architecture, de la delivery iOS et Android, de l&#x27;outillage et des standards de fonctionnement partagés.</p>
+          <ul class="detail-list"><li>A structuré les premières fondations techniques du produit et conduit des évolutions majeures d&#x27;architecture, dont une orientation vers MVVM avec SwiftUI.</li><li>A fait évoluer le rôle d&#x27;un leadership technique hands-on vers la définition de roadmap et la coordination de delivery entre équipes.</li><li>A aligné frontend, backend, design et produit tout en améliorant maintenabilité et qualité de livraison.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">France</span>
+  <span class="stat-card__label">produit de mobilité à l&#x27;échelle du territoire pour les conducteurs du quotidien</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">MVVM + SwiftUI</span>
+  <span class="stat-card__label">évolution d&#x27;architecture mobile structurante</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">iOS + Android</span>
+  <span class="stat-card__label">coordination de delivery sur les deux plateformes</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Produit</span>
+      <h2>Un produit utile aux conducteurs, ancré dans des données réelles de terrain.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Le produit doit d&#x27;abord être pratique : itinéraires, carburant, recharge, parking, services de proximité et découverte locale doivent former une expérience quotidienne fiable dans une seule application.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>L&#x27;utilité conducteur d&#x27;abord</h3>
+  <p>L&#x27;application est pensée autour de besoins de conduite fréquents plutôt que d&#x27;effets de nouveauté, ce qui garde la surface produit concrète et utile.</p>
+  <ul class="detail-list"><li>L&#x27;itinéraire et les services de mobilité restent centraux.</li><li>La valeur utilisateur doit être immédiate et récurrente.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Une information liée au territoire</h3>
+  <p>Des données publiques et partenaires sont combinées pour exposer des informations localisées comme les pénuries de carburant, la disponibilité de services ou les points d&#x27;intérêt proches.</p>
+  <ul class="detail-list"><li>La fiabilité dépend de l&#x27;agrégation et de la bonne mise en contexte.</li><li>Le territoire français fait partie de la singularité du produit.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Navigation sans enfermement</h3>
+  <p>Le produit peut guider l&#x27;utilisateur vers la bonne destination tout en s&#x27;intégrant à ses outils de navigation préférés quand c&#x27;est pertinent.</p>
+  <ul class="detail-list"><li>L&#x27;expérience reste utile sans imposer un seul mode de navigation.</li><li>L&#x27;interopérabilité compte autant que le polish d&#x27;interface.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Engineering</span>
+      <h2>Le socle mobile a dû évoluer pendant que le produit continuait à livrer.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Le rôle a commencé par une responsabilité technique directe sur l&#x27;application avant de s&#x27;élargir vers une stewardship d&#x27;architecture sur une surface de delivery plus large.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Les fondations avant tout</h3>
+  <p>Le travail initial a consisté à structurer le codebase mobile pour permettre au produit de croître sans accumuler de friction de delivery.</p>
+  <ul class="detail-list"><li>L&#x27;organisation du code et les responsabilités devaient devenir plus claires.</li><li>La base technique devait soutenir la vitesse d&#x27;itération.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Évolution d&#x27;architecture</h3>
+  <p>Une part importante du travail a été d&#x27;accompagner l&#x27;application vers une architecture MVVM avec SwiftUI tout en gardant maintenabilité et lisibilité d&#x27;équipe.</p>
+  <ul class="detail-list"><li>Les changements d&#x27;architecture répondaient à des besoins concrets de delivery.</li><li>L&#x27;objectif était la durabilité, pas l&#x27;effet de mode.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Outillage et qualité</h3>
+  <p>Les builds, les pratiques d&#x27;intégration et les workflows de développement ont été traités comme une partie du produit, pas comme un sujet annexe.</p>
+  <ul class="detail-list"><li>La CI et l&#x27;outillage stabilisent la delivery.</li><li>La maintenabilité fait partie de la prévisibilité des releases.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Delivery</span>
+      <h2>Le projet est devenu autant un sujet de coordination qu&#x27;un sujet de code.</h2>
+    </div>
+    <div class="section-copy">
+      <p>À mesure que le rôle s&#x27;est élargi, le travail a consisté à garder alignés roadmap, dépendances backend, exécution mobile et standards partagés entre équipes.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Roadmap et engineering ensemble</h3>
+  <p>La direction technique est restée connectée aux priorités produit pour que les décisions d&#x27;architecture servent la delivery au lieu de s&#x27;en éloigner.</p>
+  <ul class="detail-list"><li>Les risques et dépendances deviennent visibles plus tôt.</li><li>Le planning devient plus crédible quand l&#x27;engineering est pleinement dans la boucle.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Alignement cross-platform</h3>
+  <p>Le travail inclut maintenant la coordination entre iOS et Android afin que l&#x27;exécution produit reste cohérente même lorsque les détails d&#x27;implémentation diffèrent.</p>
+  <ul class="detail-list"><li>Des standards partagés limitent les divergences inutiles.</li><li>La couche de coordination prend de la valeur à mesure que le produit grandit.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Rythme frontend et backend</h3>
+  <p>Une part importante du rôle consiste à garder frontend et backend synchronisés pour que les évolutions produit restent faisables, maintenables et testables.</p>
+  <ul class="detail-list"><li>L&#x27;intégration API fait partie de la planification produit.</li><li>La qualité d&#x27;exécution dépend du rythme inter-équipes.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Leadership d&#x27;ingénierie pour les produits mobiles, l&#x27;architecture et la delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. Tous droits réservés.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Liens sociaux">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

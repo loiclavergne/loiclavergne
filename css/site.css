@@ -209,7 +209,28 @@ html[data-resolved-theme="dark"] .site-header::before {
   box-shadow: var(--shadow-subtle);
 }
 
+.context-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.55rem 0.8rem;
+  border-radius: var(--radius-round);
+  color: var(--text-secondary);
+  background: var(--page-background-elevated);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--shadow-subtle);
+  transition:
+    color var(--duration-fast) var(--easing-standard),
+    transform var(--duration-fast) var(--easing-standard),
+    background var(--duration-fast) var(--easing-standard);
+}
+
 .locale-link:hover {
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.context-link:hover {
   color: var(--text-primary);
   transform: translateY(-1px);
 }
