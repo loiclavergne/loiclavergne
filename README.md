@@ -102,7 +102,7 @@ Open:
 The v1 architecture includes:
 - homepage storytelling focused on current professional work
 - work, projects, writing, library, and about pages
-- bilingual project detail pages for current and selected archive products
+- bilingual project detail pages for current, archive, and selected hobby products
 - English and French localization
 - light, dark, and auto appearance modes
 - structured static education section on the work page

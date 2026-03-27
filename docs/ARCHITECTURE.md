@@ -20,6 +20,8 @@ English routes:
 - `/projects/dakar-presse/`
 - `/projects/le-moniteur-des-pharmacies/`
 - `/projects/le-point-veterinaire/`
+- `/projects/loic-engineer/`
+- `/projects/templated-mobile-starter/`
 - `/writing/`
 - `/library/`
 - `/about/`
@@ -36,6 +38,8 @@ French routes:
 - `/fr/projects/dakar-presse/`
 - `/fr/projects/le-moniteur-des-pharmacies/`
 - `/fr/projects/le-point-veterinaire/`
+- `/fr/projects/loic-engineer/`
+- `/fr/projects/templated-mobile-starter/`
 - `/fr/writing/`
 - `/fr/library/`
 - `/fr/about/`

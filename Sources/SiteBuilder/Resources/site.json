@@ -70,6 +70,14 @@
       "en": "/projects/le-point-veterinaire/",
       "fr": "/fr/projects/le-point-veterinaire/"
     },
+    "project-loic-engineer": {
+      "en": "/projects/loic-engineer/",
+      "fr": "/fr/projects/loic-engineer/"
+    },
+    "project-templated-mobile-starter": {
+      "en": "/projects/templated-mobile-starter/",
+      "fr": "/fr/projects/templated-mobile-starter/"
+    },
     "writing": {
       "en": "/writing/",
       "fr": "/fr/writing/"
@@ -95,6 +103,8 @@
     "project-dakar-presse",
     "project-le-moniteur-des-pharmacies",
     "project-le-point-veterinaire",
+    "project-loic-engineer",
+    "project-templated-mobile-starter",
     "writing",
     "library",
     "about"
@@ -501,7 +511,8 @@
             "details": [
               "Bilingual static architecture generated with Swift and shipped as plain HTML.",
               "Designed around Apple-inspired editorial pacing, privacy, and accessibility."
-            ]
+            ],
+            "route": "project-loic-engineer"
           },
           {
             "name": "Templated Mobile Starter",
@@ -509,7 +520,8 @@
             "details": [
               "Internal starter focused on shared architecture, delivery conventions, and faster product setup.",
               "Useful for keeping code organization and tooling consistent across new mobile efforts."
-            ]
+            ],
+            "route": "project-templated-mobile-starter"
           }
         ]
       },
@@ -1514,6 +1526,256 @@
             }
           ]
         },
+        "project-loic-engineer": {
+          "page_title": "loic.engineer | Projects | Loïc Lavergne",
+          "description": "Case study for the portfolio itself: a bilingual static-first site treated like a long-term product.",
+          "eyebrow": "loic.engineer",
+          "title": "A portfolio treated like a product, not a profile page.",
+          "intro": "This site is a personal project built with the same care as a product surface: bilingual by design, static-first by default, and intentionally shaped around editorial pacing instead of generic portfolio blocks. The goal is to present current work, long-term craft, and personal systems in a way that feels precise, durable, and unmistakably Apple-aware without copying Apple assets.",
+          "role_title": "Product design, content architecture, and implementation",
+          "organization": "Personal project",
+          "period": "March 2026 - Present",
+          "summary": "Designed and built the site as a Swift-generated static product with localized routing, strong editorial hierarchy, privacy-first defaults, and maintainable content architecture.",
+          "highlights": [
+            "Built a bilingual static architecture generated with Swift and shipped as plain HTML, CSS, and JavaScript.",
+            "Designed the experience around Apple-inspired pacing, restraint, motion, accessibility, and performance.",
+            "Structured the content model so current work, archive projects, writing, reading, sports, and trophies can evolve without rebuilding the architecture."
+          ],
+          "metrics": [
+            {
+              "value": "2 locales",
+              "label": "English and French routes generated from one content source"
+            },
+            {
+              "value": "Swift-generated",
+              "label": "local tooling with static output and no frontend framework"
+            },
+            {
+              "value": "Static-first",
+              "label": "privacy, speed, and GitHub Pages compatibility by default"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Product",
+              "title": "The site was designed as an editorial product, not a résumé dump.",
+              "intro": "The structure prioritizes who I am professionally today, then expands into deeper layers of projects, technical profile, writing, reading, sports, and broader personal systems.",
+              "cards": [
+                {
+                  "title": "Present first",
+                  "copy": "The homepage is centered on current role, current work, and a clear technical profile before opening into deeper archive and personal sections.",
+                  "items": [
+                    "The site answers the present-tense question first.",
+                    "Secondary areas still exist without competing with the core story."
+                  ]
+                },
+                {
+                  "title": "Editorial pacing over generic components",
+                  "copy": "The layout uses restrained spacing, cinematic hierarchy, and progressive reveal rather than a template grid of interchangeable portfolio blocks.",
+                  "items": [
+                    "The design aims for calm precision instead of busyness.",
+                    "Motion supports storytelling rather than decoration."
+                  ]
+                },
+                {
+                  "title": "A durable personal surface",
+                  "copy": "The product is meant to stay maintainable as the career evolves, with room for deeper projects, writing, reading, and manual curation over time.",
+                  "items": [
+                    "The architecture is built for long-term ownership by one engineer.",
+                    "The public surface can evolve without drifting into complexity."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "System",
+              "title": "The architecture stays lightweight without becoming brittle.",
+              "intro": "The public output is plain static HTML, while a local Swift generator handles bilingual routes, metadata, content reuse, and project-detail expansion.",
+              "cards": [
+                {
+                  "title": "One source of truth",
+                  "copy": "Localized copy, routes, metadata, and content structures live in a single content source that the generator turns into final pages.",
+                  "items": [
+                    "This limits duplication across English and French.",
+                    "It keeps content changes separate from rendering concerns."
+                  ]
+                },
+                {
+                  "title": "Static output, modern feel",
+                  "copy": "The site avoids frontend framework runtime costs while still supporting theme switching, reveal behavior, and project storytelling through small progressive-enhancement layers.",
+                  "items": [
+                    "Core content remains available without JavaScript.",
+                    "Interactive behavior is deliberately minimal and recoverable."
+                  ]
+                },
+                {
+                  "title": "Privacy and operational simplicity",
+                  "copy": "No trackers, no external font loading, and no live backend are required for the main product experience.",
+                  "items": [
+                    "The default posture favors user privacy and predictable performance.",
+                    "Deployment remains compatible with simple static hosting."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Execution",
+              "title": "The project is also a testbed for taste and long-term maintenance.",
+              "intro": "Beyond the visible pages, the site is an ongoing exercise in content modeling, bilingual parity, documentation discipline, and shipping a polished experience with minimal moving parts.",
+              "cards": [
+                {
+                  "title": "Documentation kept in step",
+                  "copy": "README, architecture notes, and agent handoff guidance evolve with the implementation so another pass can continue cleanly later.",
+                  "items": [
+                    "The project is structured for continuity, not just launch.",
+                    "Documentation is treated as part of the product system."
+                  ]
+                },
+                {
+                  "title": "Manual curation where it matters",
+                  "copy": "Books, sports, trophies, and writing are modeled as product surfaces first, with manual data expected before any live integration is considered.",
+                  "items": [
+                    "The site avoids unnecessary automation.",
+                    "Static-first choices stay intentional rather than temporary."
+                  ]
+                },
+                {
+                  "title": "A personal benchmark",
+                  "copy": "The site sets a public quality bar for how I think about design, architecture, privacy, and product clarity when I build software.",
+                  "items": [
+                    "The implementation is itself part of the portfolio.",
+                    "Taste and technical discipline are both visible outputs."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-templated-mobile-starter": {
+          "page_title": "Templated Mobile Starter | Projects | Loïc Lavergne",
+          "description": "Case study for an internal reusable mobile starter designed to accelerate new product foundations.",
+          "eyebrow": "Templated Mobile Starter",
+          "title": "A reusable mobile foundation for shipping new products faster.",
+          "intro": "Templated Mobile Starter is an internal foundation project meant to reduce repeated setup work when new mobile efforts begin. It captures architecture conventions, delivery expectations, and baseline tooling so teams can start from a coherent structure instead of rebuilding the same foundations from scratch each time.",
+          "role_title": "Architecture design and foundation work",
+          "organization": "Internal project",
+          "period": "Ongoing",
+          "summary": "Designed a reusable mobile starter around shared architecture, tooling, and delivery conventions so new applications can begin from a stable, maintainable baseline.",
+          "highlights": [
+            "Defined a starter intended to accelerate new mobile product setup without sacrificing architectural clarity.",
+            "Used the project to capture repeatable conventions around code organization, tooling, and delivery standards.",
+            "Treated reuse as a quality problem, not just a speed problem."
+          ],
+          "metrics": [
+            {
+              "value": "Shared baseline",
+              "label": "common architecture and conventions across new projects"
+            },
+            {
+              "value": "Faster kickoff",
+              "label": "less repeated setup work before product delivery starts"
+            },
+            {
+              "value": "Maintainable by design",
+              "label": "reuse shaped around clarity, not copy-paste"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Foundation",
+              "title": "The goal is to start cleaner, not just faster.",
+              "intro": "A starter only creates value if it raises the floor for new projects instead of introducing a rigid template that teams immediately fight against.",
+              "cards": [
+                {
+                  "title": "Conventions from real work",
+                  "copy": "The starter is informed by recurring needs seen across mobile product delivery: folder structure, shared services, environment handling, and predictable project setup.",
+                  "items": [
+                    "Reuse is grounded in repeated practical patterns.",
+                    "The baseline is meant to remove avoidable setup decisions."
+                  ]
+                },
+                {
+                  "title": "Opinionated where it helps",
+                  "copy": "The project favors a coherent starting point over a blank canvas, but keeps that opinionation focused on areas where consistency compounds.",
+                  "items": [
+                    "Some decisions are better made once and reused.",
+                    "The starter should guide without overconstraining."
+                  ]
+                },
+                {
+                  "title": "A foundation for product teams",
+                  "copy": "The intended outcome is not a demo repository but a practical base that helps real products begin with better defaults.",
+                  "items": [
+                    "The starter is useful only if teams can build on it confidently.",
+                    "It should reduce friction early without creating debt later."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Architecture",
+              "title": "The system captures patterns that are expensive to rediscover.",
+              "intro": "Shared architecture, baseline tooling, and delivery rules are packaged so new projects inherit working patterns instead of relearning them under deadline pressure.",
+              "cards": [
+                {
+                  "title": "Code organization",
+                  "copy": "The starter helps keep features, services, and app structure understandable from the first commit onward.",
+                  "items": [
+                    "Early organization influences long-term maintainability.",
+                    "A clear structure reduces unnecessary rework later."
+                  ]
+                },
+                {
+                  "title": "Tooling and delivery defaults",
+                  "copy": "Build settings, conventions, and setup decisions can be carried into new products so teams spend less time on repeat integration work.",
+                  "items": [
+                    "Better defaults improve delivery rhythm.",
+                    "Operational clarity matters from day one."
+                  ]
+                },
+                {
+                  "title": "Reuse without hidden complexity",
+                  "copy": "The starter is useful only if it stays comprehensible. Shared foundations must remain explicit enough for teams to adapt them safely.",
+                  "items": [
+                    "Opaque magic would defeat the purpose.",
+                    "The best abstractions reduce repetition without reducing understanding."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Execution",
+              "title": "The project turns repeatability into a maintainability advantage.",
+              "intro": "Internal foundation work matters because it changes how consistently new products begin, how quickly they reach a stable shape, and how much accidental divergence teams accumulate over time.",
+              "cards": [
+                {
+                  "title": "Less reinvention at kickoff",
+                  "copy": "By carrying forward proven defaults, new mobile initiatives can move faster toward product work instead of rebuilding scaffolding each time.",
+                  "items": [
+                    "Energy shifts from setup to user value sooner.",
+                    "Kickoff quality improves along with speed."
+                  ]
+                },
+                {
+                  "title": "A shared language for teams",
+                  "copy": "Common architectural conventions help engineers, leads, and collaborators reason about new projects with less translation overhead.",
+                  "items": [
+                    "Consistency improves onboarding and review quality.",
+                    "Shared patterns make cross-project support easier."
+                  ]
+                },
+                {
+                  "title": "Internal leverage, not public complexity",
+                  "copy": "The value of the starter is mostly operational and internal, but it still reflects a product mindset: design foundations carefully so future work becomes calmer and more predictable.",
+                  "items": [
+                    "The strongest internal tools reduce noise for everyone else.",
+                    "Good foundations create compound returns over time."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
       },
       "writing": {
         "page_title": "Writing | Loïc Lavergne",
@@ -2159,7 +2421,8 @@
             "details": [
               "Architecture statique bilingue générée en Swift et livrée en HTML simple.",
               "Conçu autour d'un rythme éditorial inspiré d'Apple, de la confidentialité et de l'accessibilité."
-            ]
+            ],
+            "route": "project-loic-engineer"
           },
           {
             "name": "Templated Mobile Starter",
@@ -2167,7 +2430,8 @@
             "details": [
               "Socle interne orienté architecture partagée, conventions de delivery et démarrage plus rapide.",
               "Utile pour garder une organisation de code et un outillage cohérents sur de nouveaux produits mobiles."
-            ]
+            ],
+            "route": "project-templated-mobile-starter"
           }
         ]
       },
@@ -3166,6 +3430,256 @@
                   "items": [
                     "La cohérence relevait autant du produit que de la technique.",
                     "Les meilleures décisions d'implémentation soutenaient les habitudes de travail récurrentes."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-loic-engineer": {
+          "page_title": "loic.engineer | Projets | Loïc Lavergne",
+          "description": "Étude de cas du portfolio lui-même : un site statique bilingue pensé comme un produit dans la durée.",
+          "eyebrow": "loic.engineer",
+          "title": "Un portfolio traité comme un produit, pas comme une simple page profil.",
+          "intro": "Ce site est un projet personnel construit avec le même soin qu'une surface produit : bilingue dès sa conception, statique par défaut, et volontairement structuré autour d'un rythme éditorial plutôt que d'un assemblage générique de blocs portfolio. L'objectif est de présenter le travail actuel, le métier et des systèmes personnels de manière précise, durable et nettement inspirée des standards Apple, sans copier d'actifs Apple.",
+          "role_title": "Design produit, architecture de contenu et implémentation",
+          "organization": "Projet personnel",
+          "period": "Mars 2026 - Aujourd'hui",
+          "summary": "Conception et développement du site comme produit statique généré en Swift, avec routage localisé, hiérarchie éditoriale forte, posture privacy-first et architecture de contenu maintenable.",
+          "highlights": [
+            "Mise en place d'une architecture statique bilingue générée en Swift et livrée en HTML, CSS et JavaScript simples.",
+            "Expérience conçue autour d'un rythme inspiré d'Apple, de retenue visuelle, de motion, d'accessibilité et de performance.",
+            "Structure de contenu pensée pour faire évoluer travail actuel, archive de projets, écrits, lecture, sport et trophées sans reconstruire l'architecture."
+          ],
+          "metrics": [
+            {
+              "value": "2 locales",
+              "label": "routes anglaises et françaises générées depuis une seule source"
+            },
+            {
+              "value": "Généré en Swift",
+              "label": "outillage local avec sortie statique sans framework frontend"
+            },
+            {
+              "value": "Static-first",
+              "label": "confidentialité, vitesse et compatibilité GitHub Pages par défaut"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Produit",
+              "title": "Le site a été conçu comme un produit éditorial, pas comme un CV déversé en ligne.",
+              "intro": "La structure priorise d'abord qui je suis professionnellement aujourd'hui, puis s'ouvre vers des couches plus profondes de projets, profil technique, écrits, lecture, sport et systèmes personnels plus larges.",
+              "cards": [
+                {
+                  "title": "Le présent d'abord",
+                  "copy": "La homepage est centrée sur le rôle actuel, le travail actuel et un profil technique clair avant d'ouvrir vers l'archive et les sections plus personnelles.",
+                  "items": [
+                    "Le site répond d'abord à la question au présent.",
+                    "Les sections secondaires existent sans concurrencer l'histoire principale."
+                  ]
+                },
+                {
+                  "title": "Un rythme éditorial plutôt qu'un assemblage générique",
+                  "copy": "La mise en page utilise une hiérarchie cinématique, des espacements retenus et des révélations progressives plutôt qu'une grille de blocs portfolio interchangeables.",
+                  "items": [
+                    "Le design cherche une précision calme plutôt que l'agitation.",
+                    "La motion soutient le récit au lieu de servir de décoration."
+                  ]
+                },
+                {
+                  "title": "Une surface personnelle durable",
+                  "copy": "Le produit est conçu pour rester maintenable à mesure que la carrière évolue, avec de la place pour des projets plus profonds, des écrits, de la lecture et de la curation manuelle dans le temps.",
+                  "items": [
+                    "L'architecture est pensée pour une possession long terme par un seul ingénieur.",
+                    "La surface publique peut évoluer sans dériver vers la complexité."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Système",
+              "title": "L'architecture reste légère sans devenir fragile.",
+              "intro": "La sortie publique est un HTML statique simple, tandis qu'un générateur local en Swift gère les routes bilingues, les métadonnées, la réutilisation de contenu et les pages détail projet.",
+              "cards": [
+                {
+                  "title": "Une source de vérité unique",
+                  "copy": "Copie localisée, routes, métadonnées et structures de contenu vivent dans une même source que le générateur transforme en pages finales.",
+                  "items": [
+                    "Cela limite la duplication entre anglais et français.",
+                    "Les modifications de contenu restent séparées des préoccupations de rendu."
+                  ]
+                },
+                {
+                  "title": "Sortie statique, sensation moderne",
+                  "copy": "Le site évite les coûts runtime d'un framework frontend tout en gardant changement de thème, reveals et narration projet via de petites couches d'amélioration progressive.",
+                  "items": [
+                    "Le contenu principal reste disponible sans JavaScript.",
+                    "Le comportement interactif reste volontairement minimal et récupérable."
+                  ]
+                },
+                {
+                  "title": "Confidentialité et simplicité opérationnelle",
+                  "copy": "Aucun tracker, aucun chargement de police externe et aucun backend live ne sont nécessaires pour l'expérience principale.",
+                  "items": [
+                    "La posture par défaut favorise confidentialité utilisateur et performance prévisible.",
+                    "Le déploiement reste compatible avec un hébergement statique simple."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Exécution",
+              "title": "Le projet sert aussi de banc d'essai pour le goût et la maintenabilité long terme.",
+              "intro": "Au-delà des pages visibles, le site est un exercice continu de modélisation de contenu, de parité bilingue, de discipline documentaire et de delivery d'une expérience polie avec un minimum de pièces mobiles.",
+              "cards": [
+                {
+                  "title": "Documentation tenue à jour",
+                  "copy": "README, notes d'architecture et consignes de reprise agent évoluent avec l'implémentation afin qu'un prochain passage puisse continuer proprement.",
+                  "items": [
+                    "Le projet est structuré pour la continuité, pas seulement pour le lancement.",
+                    "La documentation est traitée comme une partie du système produit."
+                  ]
+                },
+                {
+                  "title": "Curation manuelle quand elle compte",
+                  "copy": "Livres, sport, trophées et écrits sont d'abord modélisés comme surfaces produit, avec une saisie manuelle attendue avant toute intégration live.",
+                  "items": [
+                    "Le site évite l'automatisation inutile.",
+                    "Les choix static-first restent intentionnels plutôt que temporaires."
+                  ]
+                },
+                {
+                  "title": "Un benchmark personnel",
+                  "copy": "Le site fixe une barre publique sur ma manière de penser design, architecture, confidentialité et clarté produit quand je construis du logiciel.",
+                  "items": [
+                    "L'implémentation fait elle-même partie du portfolio.",
+                    "Le goût et la discipline technique sont tous deux visibles dans le résultat."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-templated-mobile-starter": {
+          "page_title": "Templated Mobile Starter | Projets | Loïc Lavergne",
+          "description": "Étude de cas d'un socle mobile interne réutilisable conçu pour accélérer la création de nouveaux produits.",
+          "eyebrow": "Templated Mobile Starter",
+          "title": "Un socle mobile réutilisable pour lancer de nouveaux produits plus vite.",
+          "intro": "Templated Mobile Starter est un projet de fondation interne pensé pour réduire le travail de setup répété au démarrage de nouveaux efforts mobiles. Il capture conventions d'architecture, attentes de delivery et outillage de base afin que les équipes partent d'une structure cohérente au lieu de reconstruire les mêmes fondations à chaque lancement.",
+          "role_title": "Conception d'architecture et travail de fondation",
+          "organization": "Projet interne",
+          "period": "En continu",
+          "summary": "Conception d'un starter mobile réutilisable autour d'une architecture partagée, d'outillage et de conventions de delivery afin que les nouvelles applications démarrent depuis une base stable et maintenable.",
+          "highlights": [
+            "Définition d'un starter destiné à accélérer le démarrage de nouveaux produits mobiles sans sacrifier la clarté architecturale.",
+            "Usage du projet pour capturer des conventions réutilisables autour de l'organisation du code, de l'outillage et des standards de delivery.",
+            "Traitement de la réutilisation comme un problème de qualité, pas seulement comme un problème de vitesse."
+          ],
+          "metrics": [
+            {
+              "value": "Socle partagé",
+              "label": "architecture et conventions communes sur les nouveaux projets"
+            },
+            {
+              "value": "Démarrage plus rapide",
+              "label": "moins de travail de setup répété avant la delivery produit"
+            },
+            {
+              "value": "Maintenable par design",
+              "label": "réutilisation pensée pour la clarté, pas pour le copier-coller"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Fondation",
+              "title": "L'objectif est de démarrer plus proprement, pas seulement plus vite.",
+              "intro": "Un starter ne crée de valeur que s'il relève le niveau de départ des nouveaux projets au lieu d'introduire un template rigide que les équipes combattent immédiatement.",
+              "cards": [
+                {
+                  "title": "Des conventions venues du travail réel",
+                  "copy": "Le starter est informé par des besoins récurrents observés sur la delivery mobile : structure de dossiers, services partagés, gestion des environnements et setup projet prévisible.",
+                  "items": [
+                    "La réutilisation est ancrée dans des patterns pratiques répétés.",
+                    "Le socle sert à retirer des décisions de setup évitables."
+                  ]
+                },
+                {
+                  "title": "Opinionné là où cela aide",
+                  "copy": "Le projet préfère un point de départ cohérent à une page blanche, mais concentre cette opinion sur les zones où la consistance produit de vrais gains.",
+                  "items": [
+                    "Certaines décisions gagnent à être prises une fois puis réutilisées.",
+                    "Le starter doit guider sans sur-contraindre."
+                  ]
+                },
+                {
+                  "title": "Une fondation pour de vraies équipes produit",
+                  "copy": "Le résultat visé n'est pas un dépôt démo, mais une base concrète qui aide de vrais produits à commencer avec de meilleurs défauts.",
+                  "items": [
+                    "Le starter n'est utile que si les équipes peuvent construire dessus en confiance.",
+                    "Il doit réduire la friction au début sans créer de dette ensuite."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Architecture",
+              "title": "Le système capture des patterns coûteux à redécouvrir.",
+              "intro": "Architecture partagée, outillage de base et règles de delivery sont empaquetés pour que les nouveaux projets héritent de patterns qui fonctionnent au lieu de les réapprendre sous pression.",
+              "cards": [
+                {
+                  "title": "Organisation du code",
+                  "copy": "Le starter aide à garder compréhensibles les features, services et la structure applicative dès le premier commit.",
+                  "items": [
+                    "L'organisation précoce influence directement la maintenabilité future.",
+                    "Une structure claire réduit les reworks inutiles ensuite."
+                  ]
+                },
+                {
+                  "title": "Outillage et défauts de delivery",
+                  "copy": "Réglages de build, conventions et décisions de setup peuvent être transportés vers de nouveaux produits pour réduire le travail d'intégration répété.",
+                  "items": [
+                    "De meilleurs défauts améliorent le rythme de delivery.",
+                    "La clarté opérationnelle compte dès le premier jour."
+                  ]
+                },
+                {
+                  "title": "Réutiliser sans complexité cachée",
+                  "copy": "Le starter n'est utile que s'il reste compréhensible. Les fondations partagées doivent rester suffisamment explicites pour que les équipes les adaptent sans danger.",
+                  "items": [
+                    "La magie opaque irait contre l'objectif recherché.",
+                    "Les meilleures abstractions réduisent la répétition sans réduire la compréhension."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Exécution",
+              "title": "Le projet transforme la répétabilité en avantage de maintenabilité.",
+              "intro": "Le travail de fondation interne compte parce qu'il change la manière dont les nouveaux produits démarrent, la vitesse à laquelle ils atteignent une forme stable et le niveau de divergence accidentelle accumulé dans le temps.",
+              "cards": [
+                {
+                  "title": "Moins de réinvention au kickoff",
+                  "copy": "En transportant des défauts éprouvés, les nouveaux chantiers mobiles peuvent plus vite se concentrer sur le produit au lieu de reconstruire la même infrastructure.",
+                  "items": [
+                    "L'énergie bascule plus tôt vers la valeur utilisateur.",
+                    "La qualité du kickoff progresse en même temps que la vitesse."
+                  ]
+                },
+                {
+                  "title": "Un langage partagé pour les équipes",
+                  "copy": "Des conventions architecturales communes aident ingénieurs, leads et collaborateurs à raisonner sur de nouveaux projets avec moins de coût de traduction.",
+                  "items": [
+                    "La consistance améliore onboarding et qualité de review.",
+                    "Des patterns partagés facilitent le support transverse."
+                  ]
+                },
+                {
+                  "title": "Un levier interne, pas de la complexité publique",
+                  "copy": "La valeur du starter est surtout opérationnelle et interne, mais elle relève tout de même d'un état d'esprit produit : concevoir soigneusement les fondations pour rendre le futur plus calme et plus prévisible.",
+                  "items": [
+                    "Les meilleurs outils internes réduisent le bruit pour tout le reste.",
+                    "De bonnes fondations produisent des retours composés dans le temps."
                   ]
                 }
               ]

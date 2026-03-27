@@ -1,0 +1,260 @@
+<!--
+  project-templated-mobile-starter.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Étude de cas d&#x27;un socle mobile interne réutilisable conçu pour accélérer la création de nouveaux produits.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Templated Mobile Starter | Projets | Loïc Lavergne">
+  <meta property="og:description" content="Étude de cas d&#x27;un socle mobile interne réutilisable conçu pour accélérer la création de nouveaux produits.">
+  <meta property="og:url" content="https://loic.engineer/fr/projects/templated-mobile-starter/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Templated Mobile Starter | Projets | Loïc Lavergne">
+  <meta name="twitter:description" content="Étude de cas d&#x27;un socle mobile interne réutilisable conçu pour accélérer la création de nouveaux produits.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/fr/projects/templated-mobile-starter/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/templated-mobile-starter/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/templated-mobile-starter/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/templated-mobile-starter/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Templated Mobile Starter | Projets | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/fr\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "fr_FR",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "fr_FR",
+      "name" : "Templated Mobile Starter | Projets | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/fr\/projects\/templated-mobile-starter\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-templated-mobile-starter">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/fr/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a class="site-nav__link" href="/fr/">Accueil</a><a class="site-nav__link" href="/fr/work/">Travail</a><a class="site-nav__link" href="/fr/projects/" aria-current="page">Projets</a><a class="site-nav__link" href="/fr/writing/">Écrits</a><a class="site-nav__link" href="/fr/library/">Bibliothèque</a><a class="site-nav__link" href="/fr/about/">À propos</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Apparence">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Clair</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Sombre</button>
+          </div>
+          <a class="locale-link" hreflang="en" href="/projects/templated-mobile-starter/">English</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/fr/projects/">Retour aux projets</a>
+        <span class="eyebrow">Templated Mobile Starter</span>
+        <h1>Un socle mobile réutilisable pour lancer de nouveaux produits plus vite.</h1>
+        <p class="hero__lede">Templated Mobile Starter est un projet de fondation interne pensé pour réduire le travail de setup répété au démarrage de nouveaux efforts mobiles. Il capture conventions d&#x27;architecture, attentes de delivery et outillage de base afin que les équipes partent d&#x27;une structure cohérente au lieu de reconstruire les mêmes fondations à chaque lancement.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Projet interne</span>
+          <h2>Conception d&#x27;architecture et travail de fondation</h2>
+          <p class="card__meta">En continu</p>
+          <p>Conception d&#x27;un starter mobile réutilisable autour d&#x27;une architecture partagée, d&#x27;outillage et de conventions de delivery afin que les nouvelles applications démarrent depuis une base stable et maintenable.</p>
+          <ul class="detail-list"><li>Définition d&#x27;un starter destiné à accélérer le démarrage de nouveaux produits mobiles sans sacrifier la clarté architecturale.</li><li>Usage du projet pour capturer des conventions réutilisables autour de l&#x27;organisation du code, de l&#x27;outillage et des standards de delivery.</li><li>Traitement de la réutilisation comme un problème de qualité, pas seulement comme un problème de vitesse.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">Socle partagé</span>
+  <span class="stat-card__label">architecture et conventions communes sur les nouveaux projets</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Démarrage plus rapide</span>
+  <span class="stat-card__label">moins de travail de setup répété avant la delivery produit</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Maintenable par design</span>
+  <span class="stat-card__label">réutilisation pensée pour la clarté, pas pour le copier-coller</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Fondation</span>
+      <h2>L&#x27;objectif est de démarrer plus proprement, pas seulement plus vite.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Un starter ne crée de valeur que s&#x27;il relève le niveau de départ des nouveaux projets au lieu d&#x27;introduire un template rigide que les équipes combattent immédiatement.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Des conventions venues du travail réel</h3>
+  <p>Le starter est informé par des besoins récurrents observés sur la delivery mobile : structure de dossiers, services partagés, gestion des environnements et setup projet prévisible.</p>
+  <ul class="detail-list"><li>La réutilisation est ancrée dans des patterns pratiques répétés.</li><li>Le socle sert à retirer des décisions de setup évitables.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Opinionné là où cela aide</h3>
+  <p>Le projet préfère un point de départ cohérent à une page blanche, mais concentre cette opinion sur les zones où la consistance produit de vrais gains.</p>
+  <ul class="detail-list"><li>Certaines décisions gagnent à être prises une fois puis réutilisées.</li><li>Le starter doit guider sans sur-contraindre.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Une fondation pour de vraies équipes produit</h3>
+  <p>Le résultat visé n&#x27;est pas un dépôt démo, mais une base concrète qui aide de vrais produits à commencer avec de meilleurs défauts.</p>
+  <ul class="detail-list"><li>Le starter n&#x27;est utile que si les équipes peuvent construire dessus en confiance.</li><li>Il doit réduire la friction au début sans créer de dette ensuite.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Architecture</span>
+      <h2>Le système capture des patterns coûteux à redécouvrir.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Architecture partagée, outillage de base et règles de delivery sont empaquetés pour que les nouveaux projets héritent de patterns qui fonctionnent au lieu de les réapprendre sous pression.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Organisation du code</h3>
+  <p>Le starter aide à garder compréhensibles les features, services et la structure applicative dès le premier commit.</p>
+  <ul class="detail-list"><li>L&#x27;organisation précoce influence directement la maintenabilité future.</li><li>Une structure claire réduit les reworks inutiles ensuite.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Outillage et défauts de delivery</h3>
+  <p>Réglages de build, conventions et décisions de setup peuvent être transportés vers de nouveaux produits pour réduire le travail d&#x27;intégration répété.</p>
+  <ul class="detail-list"><li>De meilleurs défauts améliorent le rythme de delivery.</li><li>La clarté opérationnelle compte dès le premier jour.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Réutiliser sans complexité cachée</h3>
+  <p>Le starter n&#x27;est utile que s&#x27;il reste compréhensible. Les fondations partagées doivent rester suffisamment explicites pour que les équipes les adaptent sans danger.</p>
+  <ul class="detail-list"><li>La magie opaque irait contre l&#x27;objectif recherché.</li><li>Les meilleures abstractions réduisent la répétition sans réduire la compréhension.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Exécution</span>
+      <h2>Le projet transforme la répétabilité en avantage de maintenabilité.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Le travail de fondation interne compte parce qu&#x27;il change la manière dont les nouveaux produits démarrent, la vitesse à laquelle ils atteignent une forme stable et le niveau de divergence accidentelle accumulé dans le temps.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Moins de réinvention au kickoff</h3>
+  <p>En transportant des défauts éprouvés, les nouveaux chantiers mobiles peuvent plus vite se concentrer sur le produit au lieu de reconstruire la même infrastructure.</p>
+  <ul class="detail-list"><li>L&#x27;énergie bascule plus tôt vers la valeur utilisateur.</li><li>La qualité du kickoff progresse en même temps que la vitesse.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Un langage partagé pour les équipes</h3>
+  <p>Des conventions architecturales communes aident ingénieurs, leads et collaborateurs à raisonner sur de nouveaux projets avec moins de coût de traduction.</p>
+  <ul class="detail-list"><li>La consistance améliore onboarding et qualité de review.</li><li>Des patterns partagés facilitent le support transverse.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Un levier interne, pas de la complexité publique</h3>
+  <p>La valeur du starter est surtout opérationnelle et interne, mais elle relève tout de même d&#x27;un état d&#x27;esprit produit : concevoir soigneusement les fondations pour rendre le futur plus calme et plus prévisible.</p>
+  <ul class="detail-list"><li>Les meilleurs outils internes réduisent le bruit pour tout le reste.</li><li>De bonnes fondations produisent des retours composés dans le temps.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Leadership d&#x27;ingénierie pour les produits mobiles, l&#x27;architecture et la delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. Tous droits réservés.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Liens sociaux">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!--
+  project-loic-engineer.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Étude de cas du portfolio lui-même : un site statique bilingue pensé comme un produit dans la durée.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="loic.engineer | Projets | Loïc Lavergne">
+  <meta property="og:description" content="Étude de cas du portfolio lui-même : un site statique bilingue pensé comme un produit dans la durée.">
+  <meta property="og:url" content="https://loic.engineer/fr/projects/loic-engineer/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="loic.engineer | Projets | Loïc Lavergne">
+  <meta name="twitter:description" content="Étude de cas du portfolio lui-même : un site statique bilingue pensé comme un produit dans la durée.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/fr/projects/loic-engineer/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/loic-engineer/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/loic-engineer/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/loic-engineer/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>loic.engineer | Projets | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/fr\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "fr_FR",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "fr_FR",
+      "name" : "loic.engineer | Projets | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/fr\/projects\/loic-engineer\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-loic-engineer">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/fr/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a class="site-nav__link" href="/fr/">Accueil</a><a class="site-nav__link" href="/fr/work/">Travail</a><a class="site-nav__link" href="/fr/projects/" aria-current="page">Projets</a><a class="site-nav__link" href="/fr/writing/">Écrits</a><a class="site-nav__link" href="/fr/library/">Bibliothèque</a><a class="site-nav__link" href="/fr/about/">À propos</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Apparence">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Clair</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Sombre</button>
+          </div>
+          <a class="locale-link" hreflang="en" href="/projects/loic-engineer/">English</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/fr/projects/">Retour aux projets</a>
+        <span class="eyebrow">loic.engineer</span>
+        <h1>Un portfolio traité comme un produit, pas comme une simple page profil.</h1>
+        <p class="hero__lede">Ce site est un projet personnel construit avec le même soin qu&#x27;une surface produit : bilingue dès sa conception, statique par défaut, et volontairement structuré autour d&#x27;un rythme éditorial plutôt que d&#x27;un assemblage générique de blocs portfolio. L&#x27;objectif est de présenter le travail actuel, le métier et des systèmes personnels de manière précise, durable et nettement inspirée des standards Apple, sans copier d&#x27;actifs Apple.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Projet personnel</span>
+          <h2>Design produit, architecture de contenu et implémentation</h2>
+          <p class="card__meta">Mars 2026 - Aujourd&#x27;hui</p>
+          <p>Conception et développement du site comme produit statique généré en Swift, avec routage localisé, hiérarchie éditoriale forte, posture privacy-first et architecture de contenu maintenable.</p>
+          <ul class="detail-list"><li>Mise en place d&#x27;une architecture statique bilingue générée en Swift et livrée en HTML, CSS et JavaScript simples.</li><li>Expérience conçue autour d&#x27;un rythme inspiré d&#x27;Apple, de retenue visuelle, de motion, d&#x27;accessibilité et de performance.</li><li>Structure de contenu pensée pour faire évoluer travail actuel, archive de projets, écrits, lecture, sport et trophées sans reconstruire l&#x27;architecture.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">2 locales</span>
+  <span class="stat-card__label">routes anglaises et françaises générées depuis une seule source</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Généré en Swift</span>
+  <span class="stat-card__label">outillage local avec sortie statique sans framework frontend</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Static-first</span>
+  <span class="stat-card__label">confidentialité, vitesse et compatibilité GitHub Pages par défaut</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Produit</span>
+      <h2>Le site a été conçu comme un produit éditorial, pas comme un CV déversé en ligne.</h2>
+    </div>
+    <div class="section-copy">
+      <p>La structure priorise d&#x27;abord qui je suis professionnellement aujourd&#x27;hui, puis s&#x27;ouvre vers des couches plus profondes de projets, profil technique, écrits, lecture, sport et systèmes personnels plus larges.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Le présent d&#x27;abord</h3>
+  <p>La homepage est centrée sur le rôle actuel, le travail actuel et un profil technique clair avant d&#x27;ouvrir vers l&#x27;archive et les sections plus personnelles.</p>
+  <ul class="detail-list"><li>Le site répond d&#x27;abord à la question au présent.</li><li>Les sections secondaires existent sans concurrencer l&#x27;histoire principale.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Un rythme éditorial plutôt qu&#x27;un assemblage générique</h3>
+  <p>La mise en page utilise une hiérarchie cinématique, des espacements retenus et des révélations progressives plutôt qu&#x27;une grille de blocs portfolio interchangeables.</p>
+  <ul class="detail-list"><li>Le design cherche une précision calme plutôt que l&#x27;agitation.</li><li>La motion soutient le récit au lieu de servir de décoration.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Une surface personnelle durable</h3>
+  <p>Le produit est conçu pour rester maintenable à mesure que la carrière évolue, avec de la place pour des projets plus profonds, des écrits, de la lecture et de la curation manuelle dans le temps.</p>
+  <ul class="detail-list"><li>L&#x27;architecture est pensée pour une possession long terme par un seul ingénieur.</li><li>La surface publique peut évoluer sans dériver vers la complexité.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Système</span>
+      <h2>L&#x27;architecture reste légère sans devenir fragile.</h2>
+    </div>
+    <div class="section-copy">
+      <p>La sortie publique est un HTML statique simple, tandis qu&#x27;un générateur local en Swift gère les routes bilingues, les métadonnées, la réutilisation de contenu et les pages détail projet.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Une source de vérité unique</h3>
+  <p>Copie localisée, routes, métadonnées et structures de contenu vivent dans une même source que le générateur transforme en pages finales.</p>
+  <ul class="detail-list"><li>Cela limite la duplication entre anglais et français.</li><li>Les modifications de contenu restent séparées des préoccupations de rendu.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Sortie statique, sensation moderne</h3>
+  <p>Le site évite les coûts runtime d&#x27;un framework frontend tout en gardant changement de thème, reveals et narration projet via de petites couches d&#x27;amélioration progressive.</p>
+  <ul class="detail-list"><li>Le contenu principal reste disponible sans JavaScript.</li><li>Le comportement interactif reste volontairement minimal et récupérable.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Confidentialité et simplicité opérationnelle</h3>
+  <p>Aucun tracker, aucun chargement de police externe et aucun backend live ne sont nécessaires pour l&#x27;expérience principale.</p>
+  <ul class="detail-list"><li>La posture par défaut favorise confidentialité utilisateur et performance prévisible.</li><li>Le déploiement reste compatible avec un hébergement statique simple.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Exécution</span>
+      <h2>Le projet sert aussi de banc d&#x27;essai pour le goût et la maintenabilité long terme.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Au-delà des pages visibles, le site est un exercice continu de modélisation de contenu, de parité bilingue, de discipline documentaire et de delivery d&#x27;une expérience polie avec un minimum de pièces mobiles.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Documentation tenue à jour</h3>
+  <p>README, notes d&#x27;architecture et consignes de reprise agent évoluent avec l&#x27;implémentation afin qu&#x27;un prochain passage puisse continuer proprement.</p>
+  <ul class="detail-list"><li>Le projet est structuré pour la continuité, pas seulement pour le lancement.</li><li>La documentation est traitée comme une partie du système produit.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Curation manuelle quand elle compte</h3>
+  <p>Livres, sport, trophées et écrits sont d&#x27;abord modélisés comme surfaces produit, avec une saisie manuelle attendue avant toute intégration live.</p>
+  <ul class="detail-list"><li>Le site évite l&#x27;automatisation inutile.</li><li>Les choix static-first restent intentionnels plutôt que temporaires.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Un benchmark personnel</h3>
+  <p>Le site fixe une barre publique sur ma manière de penser design, architecture, confidentialité et clarté produit quand je construis du logiciel.</p>
+  <ul class="detail-list"><li>L&#x27;implémentation fait elle-même partie du portfolio.</li><li>Le goût et la discipline technique sont tous deux visibles dans le résultat.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Leadership d&#x27;ingénierie pour les produits mobiles, l&#x27;architecture et la delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. Tous droits réservés.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Liens sociaux">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

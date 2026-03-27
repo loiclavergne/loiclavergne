@@ -1,0 +1,260 @@
+<!--
+  project-loic-engineer.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Case study for the portfolio itself: a bilingual static-first site treated like a long-term product.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="loic.engineer | Projects | Loïc Lavergne">
+  <meta property="og:description" content="Case study for the portfolio itself: a bilingual static-first site treated like a long-term product.">
+  <meta property="og:url" content="https://loic.engineer/projects/loic-engineer/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="loic.engineer | Projects | Loïc Lavergne">
+  <meta name="twitter:description" content="Case study for the portfolio itself: a bilingual static-first site treated like a long-term product.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/projects/loic-engineer/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/loic-engineer/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/loic-engineer/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/loic-engineer/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>loic.engineer | Projects | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "en_US",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "en_US",
+      "name" : "loic.engineer | Projects | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/projects\/loic-engineer\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-loic-engineer">
+  <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="site-nav__link" href="/">Home</a><a class="site-nav__link" href="/work/">Work</a><a class="site-nav__link" href="/projects/" aria-current="page">Projects</a><a class="site-nav__link" href="/writing/">Writing</a><a class="site-nav__link" href="/library/">Library</a><a class="site-nav__link" href="/about/">About</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Appearance">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Light</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Dark</button>
+          </div>
+          <a class="locale-link" hreflang="fr" href="/fr/projects/loic-engineer/">Français</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/projects/">Back to projects</a>
+        <span class="eyebrow">loic.engineer</span>
+        <h1>A portfolio treated like a product, not a profile page.</h1>
+        <p class="hero__lede">This site is a personal project built with the same care as a product surface: bilingual by design, static-first by default, and intentionally shaped around editorial pacing instead of generic portfolio blocks. The goal is to present current work, long-term craft, and personal systems in a way that feels precise, durable, and unmistakably Apple-aware without copying Apple assets.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Personal project</span>
+          <h2>Product design, content architecture, and implementation</h2>
+          <p class="card__meta">March 2026 - Present</p>
+          <p>Designed and built the site as a Swift-generated static product with localized routing, strong editorial hierarchy, privacy-first defaults, and maintainable content architecture.</p>
+          <ul class="detail-list"><li>Built a bilingual static architecture generated with Swift and shipped as plain HTML, CSS, and JavaScript.</li><li>Designed the experience around Apple-inspired pacing, restraint, motion, accessibility, and performance.</li><li>Structured the content model so current work, archive projects, writing, reading, sports, and trophies can evolve without rebuilding the architecture.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">2 locales</span>
+  <span class="stat-card__label">English and French routes generated from one content source</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Swift-generated</span>
+  <span class="stat-card__label">local tooling with static output and no frontend framework</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Static-first</span>
+  <span class="stat-card__label">privacy, speed, and GitHub Pages compatibility by default</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Product</span>
+      <h2>The site was designed as an editorial product, not a résumé dump.</h2>
+    </div>
+    <div class="section-copy">
+      <p>The structure prioritizes who I am professionally today, then expands into deeper layers of projects, technical profile, writing, reading, sports, and broader personal systems.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Present first</h3>
+  <p>The homepage is centered on current role, current work, and a clear technical profile before opening into deeper archive and personal sections.</p>
+  <ul class="detail-list"><li>The site answers the present-tense question first.</li><li>Secondary areas still exist without competing with the core story.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Editorial pacing over generic components</h3>
+  <p>The layout uses restrained spacing, cinematic hierarchy, and progressive reveal rather than a template grid of interchangeable portfolio blocks.</p>
+  <ul class="detail-list"><li>The design aims for calm precision instead of busyness.</li><li>Motion supports storytelling rather than decoration.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>A durable personal surface</h3>
+  <p>The product is meant to stay maintainable as the career evolves, with room for deeper projects, writing, reading, and manual curation over time.</p>
+  <ul class="detail-list"><li>The architecture is built for long-term ownership by one engineer.</li><li>The public surface can evolve without drifting into complexity.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">System</span>
+      <h2>The architecture stays lightweight without becoming brittle.</h2>
+    </div>
+    <div class="section-copy">
+      <p>The public output is plain static HTML, while a local Swift generator handles bilingual routes, metadata, content reuse, and project-detail expansion.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>One source of truth</h3>
+  <p>Localized copy, routes, metadata, and content structures live in a single content source that the generator turns into final pages.</p>
+  <ul class="detail-list"><li>This limits duplication across English and French.</li><li>It keeps content changes separate from rendering concerns.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Static output, modern feel</h3>
+  <p>The site avoids frontend framework runtime costs while still supporting theme switching, reveal behavior, and project storytelling through small progressive-enhancement layers.</p>
+  <ul class="detail-list"><li>Core content remains available without JavaScript.</li><li>Interactive behavior is deliberately minimal and recoverable.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Privacy and operational simplicity</h3>
+  <p>No trackers, no external font loading, and no live backend are required for the main product experience.</p>
+  <ul class="detail-list"><li>The default posture favors user privacy and predictable performance.</li><li>Deployment remains compatible with simple static hosting.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Execution</span>
+      <h2>The project is also a testbed for taste and long-term maintenance.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Beyond the visible pages, the site is an ongoing exercise in content modeling, bilingual parity, documentation discipline, and shipping a polished experience with minimal moving parts.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Documentation kept in step</h3>
+  <p>README, architecture notes, and agent handoff guidance evolve with the implementation so another pass can continue cleanly later.</p>
+  <ul class="detail-list"><li>The project is structured for continuity, not just launch.</li><li>Documentation is treated as part of the product system.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Manual curation where it matters</h3>
+  <p>Books, sports, trophies, and writing are modeled as product surfaces first, with manual data expected before any live integration is considered.</p>
+  <ul class="detail-list"><li>The site avoids unnecessary automation.</li><li>Static-first choices stay intentional rather than temporary.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>A personal benchmark</h3>
+  <p>The site sets a public quality bar for how I think about design, architecture, privacy, and product clarity when I build software.</p>
+  <ul class="detail-list"><li>The implementation is itself part of the portfolio.</li><li>Taste and technical discipline are both visible outputs.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Engineering leadership for mobile products, architecture, and delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. All rights reserved.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>
