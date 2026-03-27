@@ -27,6 +27,10 @@ let package = Package(
         ),
         .executableTarget(
             name: "SiteServer"
+        ),
+        .testTarget(
+            name: "SiteBuilderTests",
+            dependencies: ["SiteBuilder"]
         )
     ]
 )

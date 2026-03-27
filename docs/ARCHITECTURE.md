@@ -167,6 +167,16 @@ Structured metadata is now page-type aware:
 - writing pages also emit `Blog`
 - non-home pages emit `BreadcrumbList`
 
+## Validation
+
+The Swift package now includes automated tests for:
+- route coverage across locales
+- generator support outputs such as feeds, sitemap, and `robots.txt`
+- structured-data regression checks for major page types
+
+Run them with:
+- `swift test --package-path /Users/loki/Developer/portfolio`
+
 ## Why No Framework
 
 The current build avoids frontend and build-time package dependencies because:

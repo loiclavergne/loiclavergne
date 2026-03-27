@@ -81,6 +81,12 @@ Compile the generator:
 swift build
 ```
 
+Run the validation suite:
+
+```bash
+swift test --package-path /Users/loki/Developer/portfolio
+```
+
 Serve locally:
 
 ```bash
@@ -111,6 +117,7 @@ The v1 architecture includes:
 - real sports and trophy archive surfaces inside the about page
 - localized Atom feeds plus a static `robots.txt`
 - page-type-aware JSON-LD and breadcrumb structured data
+- Swift test coverage for route integrity, support files, and metadata regressions
 - English and French localization
 - light, dark, and auto appearance modes
 - structured static education section on the work page
