@@ -16,6 +16,8 @@ English routes:
 - `/projects/roole-premium/`
 - `/projects/vialife-digital/`
 - `/projects/myviapresse/`
+- `/projects/digital-press-applications/`
+- `/projects/dakar-presse/`
 - `/writing/`
 - `/library/`
 - `/about/`
@@ -28,6 +30,8 @@ French routes:
 - `/fr/projects/roole-premium/`
 - `/fr/projects/vialife-digital/`
 - `/fr/projects/myviapresse/`
+- `/fr/projects/digital-press-applications/`
+- `/fr/projects/dakar-presse/`
 - `/fr/writing/`
 - `/fr/library/`
 - `/fr/about/`

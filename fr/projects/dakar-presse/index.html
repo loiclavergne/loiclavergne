@@ -1,0 +1,260 @@
+<!--
+  project-dakar-presse.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Page projet Dakar Presse sur l&#x27;accès mobile à la presse sénégalaise, les abonnements et une lecture fiable pour une audience distribuée.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Dakar Presse | Projets | Loïc Lavergne">
+  <meta property="og:description" content="Page projet Dakar Presse sur l&#x27;accès mobile à la presse sénégalaise, les abonnements et une lecture fiable pour une audience distribuée.">
+  <meta property="og:url" content="https://loic.engineer/fr/projects/dakar-presse/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dakar Presse | Projets | Loïc Lavergne">
+  <meta name="twitter:description" content="Page projet Dakar Presse sur l&#x27;accès mobile à la presse sénégalaise, les abonnements et une lecture fiable pour une audience distribuée.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/fr/projects/dakar-presse/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/dakar-presse/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/dakar-presse/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/dakar-presse/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Dakar Presse | Projets | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/fr\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "fr_FR",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "fr_FR",
+      "name" : "Dakar Presse | Projets | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/fr\/projects\/dakar-presse\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-dakar-presse">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/fr/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a class="site-nav__link" href="/fr/">Accueil</a><a class="site-nav__link" href="/fr/work/">Travail</a><a class="site-nav__link" href="/fr/projects/" aria-current="page">Projets</a><a class="site-nav__link" href="/fr/writing/">Écrits</a><a class="site-nav__link" href="/fr/library/">Bibliothèque</a><a class="site-nav__link" href="/fr/about/">À propos</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Apparence">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Clair</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Sombre</button>
+          </div>
+          <a class="locale-link" hreflang="en" href="/projects/dakar-presse/">English</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/fr/projects/">Retour aux projets</a>
+        <span class="eyebrow">Dakar Presse</span>
+        <h1>Un produit presse ciblé pour des lecteurs au Sénégal et à l&#x27;étranger.</h1>
+        <p class="hero__lede">Dakar Presse était conçu pour donner accès aux quotidiens sénégalais sur mobile, à la fois localement et auprès de la diaspora. Le produit devait être simple, fiable et bien adapté à une audience géographiquement distribuée avec un usage de lecture récurrent.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Vialife</span>
+          <h2>Pilotage projet, design produit et développement iOS</h2>
+          <p class="card__meta">Novembre 2015 - Juillet 2022</p>
+          <p>Responsabilité de l&#x27;application sur le design produit, le pilotage projet et l&#x27;implémentation iOS sur un framework de lecture Swift, avec un accent sur les abonnements, les notifications, la lecture hors ligne et l&#x27;accès quotidien fiable.</p>
+          <ul class="detail-list"><li>A construit un produit de lecture mobile ciblé sur la presse quotidienne sénégalaise et une audience internationale.</li><li>A porté le design produit, le pilotage projet et l&#x27;implémentation iOS native de bout en bout.</li><li>A priorisé des parcours d&#x27;abonnement sûrs, la lecture hors ligne et un accès fiable pour une audience distribuée.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">Presse quotidienne</span>
+  <span class="stat-card__label">rythme produit façonné par la lecture de journaux au quotidien</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Audience diaspora</span>
+  <span class="stat-card__label">lecteurs servis au Sénégal et à l&#x27;international</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Abonnements + alertes</span>
+  <span class="stat-card__label">modèle central d&#x27;engagement et de monétisation</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Audience</span>
+      <h2>Le produit avait une audience claire et un usage quotidien très identifié.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Contrairement à un kiosque large, Dakar Presse était centré sur un marché de presse national précis et sur des lecteurs cherchant un accès fiable à leurs quotidiens habituels.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Lecteurs au Sénégal et à l&#x27;étranger</h3>
+  <p>L&#x27;application servait autant les lecteurs locaux que les communautés sénégalaises vivant ailleurs, ce qui rendait fiabilité d&#x27;accès et confort mobile particulièrement importants.</p>
+  <ul class="detail-list"><li>Le produit devait relier plusieurs géographies sans perdre en clarté.</li><li>L&#x27;usage diaspora façonnait directement la proposition de valeur.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Une habitude de lecture quotidienne</h3>
+  <p>Parce que le produit tournait autour de quotidiens, fraîcheur, fréquence de retour et accès clair aux éditions courantes comptaient plus qu&#x27;un effet de nouveauté.</p>
+  <ul class="detail-list"><li>Le rythme produit suivait celui de la presse elle-même.</li><li>Les lecteurs avaient besoin d&#x27;un accès rapide aux numéros du jour et récents.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Un scope produit volontairement focalisé</h3>
+  <p>L&#x27;application profitait d&#x27;un périmètre très ciblé autour d&#x27;une audience concrète et d&#x27;un besoin de contenu clairement reconnu.</p>
+  <ul class="detail-list"><li>Le produit pouvait rester direct et lisible.</li><li>Le focus améliorait à la fois l&#x27;UX et les décisions opérationnelles.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Expérience</span>
+      <h2>L&#x27;expérience de lecture devait rester simple et digne de confiance.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Abonnements, découverte des éditions, notifications et lecture hors ligne devaient soutenir un produit du quotidien sans le rendre lourd ou compliqué.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Un accès centré sur l&#x27;abonnement</h3>
+  <p>Les abonnements faisaient partie du cœur de l&#x27;expérience, ce qui imposait des parcours d&#x27;achat et de renouvellement crédibles et faciles à comprendre.</p>
+  <ul class="detail-list"><li>Les modèles d&#x27;accès devaient coller aux comportements réels des lecteurs.</li><li>La confiance dans le parcours d&#x27;abonnement faisait partie de la qualité produit.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Notifications et découverte par les unes</h3>
+  <p>Les notifications programmées et la mise en avant des couvertures quotidiennes aidaient à reconnecter naturellement le produit au rythme de lecture du lecteur.</p>
+  <ul class="detail-list"><li>L&#x27;app devait retrouver une place dans la journée du lecteur.</li><li>La une restait un point d&#x27;entrée significatif.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Fiabilité hors ligne</h3>
+  <p>La lecture hors ligne rendait le produit utile dans des conditions de connexion variables et dans des contextes de mobilité différents.</p>
+  <ul class="detail-list"><li>La fiabilité comptait autant que le polish visuel.</li><li>La lecture mobile devait rester pratique hors connectivité parfaite.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Exécution</span>
+      <h2>L&#x27;ownership end-to-end aidait à garder le produit cohérent.</h2>
+    </div>
+    <div class="section-copy">
+      <p>La combinaison design produit, pilotage projet et implémentation iOS aidait à garder le produit focalisé tout en le faisant évoluer dans le temps.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Design et implémentation ensemble</h3>
+  <p>Le design sous Sketch et le développement iOS en Swift restaient très proches, ce qui aidait le produit final à rester concret et cohérent.</p>
+  <ul class="detail-list"><li>Le produit bénéficiait de moins de pertes entre intention et exécution.</li><li>Les choix visuels et techniques pouvaient évoluer ensemble.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Un socle de lecture sur mesure</h3>
+  <p>L&#x27;application reposait sur un framework de lecture propriétaire réécrit en Swift pour offrir une meilleure base de présentation du contenu et de qualité d&#x27;usage.</p>
+  <ul class="detail-list"><li>La couche de lecture était un différenciateur produit.</li><li>Un socle réutilisable améliorait le contrôle technique dans la durée.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Une exploitation produit fiable</h3>
+  <p>L&#x27;objectif n&#x27;était pas seulement de sortir des fonctionnalités, mais de garder l&#x27;application fiable pour une audience revenant lire jour après jour.</p>
+  <ul class="detail-list"><li>La fiabilité opérationnelle faisait partie de la promesse publique du produit.</li><li>Les meilleures décisions étaient celles qui soutenaient l&#x27;usage répété dans le temps.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Leadership d&#x27;ingénierie pour les produits mobiles, l&#x27;architecture et la delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. Tous droits réservés.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Liens sociaux">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

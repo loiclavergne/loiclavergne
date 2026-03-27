@@ -1,0 +1,260 @@
+<!--
+  project-dakar-presse.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dakar Presse case study covering mobile access to Senegalese newspapers, subscriptions, and reliable reading for a distributed audience.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Dakar Presse | Projects | Loïc Lavergne">
+  <meta property="og:description" content="Dakar Presse case study covering mobile access to Senegalese newspapers, subscriptions, and reliable reading for a distributed audience.">
+  <meta property="og:url" content="https://loic.engineer/projects/dakar-presse/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dakar Presse | Projects | Loïc Lavergne">
+  <meta name="twitter:description" content="Dakar Presse case study covering mobile access to Senegalese newspapers, subscriptions, and reliable reading for a distributed audience.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/projects/dakar-presse/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/dakar-presse/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/dakar-presse/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/dakar-presse/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Dakar Presse | Projects | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "en_US",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "en_US",
+      "name" : "Dakar Presse | Projects | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/projects\/dakar-presse\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-dakar-presse">
+  <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="site-nav__link" href="/">Home</a><a class="site-nav__link" href="/work/">Work</a><a class="site-nav__link" href="/projects/" aria-current="page">Projects</a><a class="site-nav__link" href="/writing/">Writing</a><a class="site-nav__link" href="/library/">Library</a><a class="site-nav__link" href="/about/">About</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Appearance">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Light</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Dark</button>
+          </div>
+          <a class="locale-link" hreflang="fr" href="/fr/projects/dakar-presse/">Français</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/projects/">Back to projects</a>
+        <span class="eyebrow">Dakar Presse</span>
+        <h1>A focused press product for readers in Senegal and abroad.</h1>
+        <p class="hero__lede">Dakar Presse was designed to give readers access to Senegalese daily newspapers on mobile, both locally and across the diaspora. The product needed to feel simple, dependable, and well adapted to a geographically distributed audience with recurring reading habits.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Vialife</span>
+          <h2>Project management, product design, and iOS development</h2>
+          <p class="card__meta">November 2015 - July 2022</p>
+          <p>Owned the application across product design, project management, and iOS implementation on top of a custom Swift reading framework, with a focus on subscriptions, notifications, offline reading, and dependable daily access.</p>
+          <ul class="detail-list"><li>Built a focused mobile reading product for Senegalese newspapers and an international reader base.</li><li>Handled product design, project leadership, and native iOS implementation end to end.</li><li>Prioritized secure subscription flows, offline reading, and reliable access for a distributed audience.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">Daily press</span>
+  <span class="stat-card__label">product rhythm shaped by recurring newspaper reading</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Diaspora audience</span>
+  <span class="stat-card__label">served readers in Senegal and abroad</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Subscriptions + alerts</span>
+  <span class="stat-card__label">core engagement and monetization model</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Audience</span>
+      <h2>The product had a clear audience and a clear daily use case.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Unlike a broad multi-title kiosk, Dakar Presse was focused on a specific national press market and on readers who wanted dependable access to familiar daily content.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Readers in Senegal and abroad</h3>
+  <p>The app served local readers as well as Senegalese communities living elsewhere, which made access reliability and mobile convenience especially important.</p>
+  <ul class="detail-list"><li>The product had to bridge geography without losing clarity.</li><li>Diaspora usage shaped the value proposition directly.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>A daily reading habit</h3>
+  <p>Because the product centered on daily newspapers, freshness, repeat visits, and a clear issue-based reading flow mattered more than novelty.</p>
+  <ul class="detail-list"><li>The product rhythm followed the cadence of the press itself.</li><li>Readers needed fast access to current and recent editions.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Focused product scope</h3>
+  <p>The app benefited from being tightly scoped around a concrete audience and a recognizable content need.</p>
+  <ul class="detail-list"><li>The product could stay direct and purposeful.</li><li>Focus improved both UX and operational decisions.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Experience</span>
+      <h2>The reading experience had to remain simple and trustworthy.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Subscription access, issue discovery, notifications, and offline reading all needed to support a daily-use product without making the app feel heavy or complicated.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Subscription-centered access</h3>
+  <p>Flexible subscriptions were part of the core experience, so the purchase and renewal logic had to feel credible and easy to understand.</p>
+  <ul class="detail-list"><li>Access models had to match real reader behavior.</li><li>Trust in the subscription flow was part of product quality.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Notifications and cover discovery</h3>
+  <p>Scheduled notifications and daily cover discovery helped connect the product to a recurring reading routine instead of a one-time download model.</p>
+  <ul class="detail-list"><li>The app needed to re-enter the reader&#x27;s day naturally.</li><li>The front page remained a meaningful entry point.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Offline reliability</h3>
+  <p>Offline reading helped the product stay useful across variable connection conditions and different usage contexts.</p>
+  <ul class="detail-list"><li>Dependability mattered as much as visual polish.</li><li>Mobile reading had to remain practical outside perfect connectivity.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Execution</span>
+      <h2>End-to-end ownership kept the product coherent.</h2>
+    </div>
+    <div class="section-copy">
+      <p>The combination of product design, project leadership, and iOS implementation helped keep the product focused while it evolved over time.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Design and implementation together</h3>
+  <p>Design work in Sketch and iOS development in Swift were closely connected, which helped the final product stay practical and consistent.</p>
+  <ul class="detail-list"><li>The product benefited from fewer translation gaps.</li><li>Visual and technical choices could evolve together.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Custom reading foundation</h3>
+  <p>The application relied on a proprietary reading framework rewritten in Swift to provide a stronger base for content presentation and usability.</p>
+  <ul class="detail-list"><li>The reading layer was a product differentiator.</li><li>A reusable foundation improved long-term technical control.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Reliable product operation</h3>
+  <p>The broader goal was not just to ship features, but to keep the application dependable for a real audience returning day after day.</p>
+  <ul class="detail-list"><li>Operational reliability was part of the public product promise.</li><li>The strongest decisions were the ones that supported repeated use over time.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Engineering leadership for mobile products, architecture, and delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. All rights reserved.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

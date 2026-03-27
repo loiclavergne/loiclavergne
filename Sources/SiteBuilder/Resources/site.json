@@ -54,6 +54,14 @@
       "en": "/projects/myviapresse/",
       "fr": "/fr/projects/myviapresse/"
     },
+    "project-digital-press-applications": {
+      "en": "/projects/digital-press-applications/",
+      "fr": "/fr/projects/digital-press-applications/"
+    },
+    "project-dakar-presse": {
+      "en": "/projects/dakar-presse/",
+      "fr": "/fr/projects/dakar-presse/"
+    },
     "writing": {
       "en": "/writing/",
       "fr": "/fr/writing/"
@@ -75,6 +83,8 @@
     "project-roole-premium",
     "project-vialife-digital",
     "project-myviapresse",
+    "project-digital-press-applications",
+    "project-dakar-presse",
     "writing",
     "library",
     "about"
@@ -427,7 +437,8 @@
               "Shared architecture powering Discover Press, Hotel Presse, Salon Presse, Comptoir Presse, Big Press, and Hello Press.",
               "Full ownership across project management, product design in Sketch, and native iOS delivery in Swift.",
               "Kept reading experience, authentication, and catalog behavior consistent while supporting different access models."
-            ]
+            ],
+            "route": "project-digital-press-applications"
           },
           {
             "name": "MyViapresse",
@@ -448,7 +459,8 @@
               "Served Senegalese readers locally and abroad with subscriptions, notifications, and offline reading.",
               "Fully owned product design, project management, and iOS implementation on top of a custom Swift reading framework.",
               "Focused on secure subscription flows and reliable access for a geographically distributed audience."
-            ]
+            ],
+            "route": "project-dakar-presse"
           },
           {
             "name": "Le Moniteur des Pharmacies",
@@ -989,7 +1001,257 @@
               ]
             }
           ]
-        }
+        },
+        "project-digital-press-applications": {
+          "page_title": "Digital Press Applications | Projects | Loïc Lavergne",
+          "description": "Digital Press Applications case study covering a shared mobile foundation for multiple branded press products and access models.",
+          "eyebrow": "Digital Press Applications",
+          "title": "One shared mobile foundation, several distribution models.",
+          "intro": "This suite grouped several digital newsstand applications built on a common technical and product base. The work required balancing consistency, customization, and delivery efficiency across products aimed at very different audiences and business contexts.",
+          "role_title": "Mobile Project Manager and native iOS lead",
+          "organization": "Vialife",
+          "period": "October 2018 - August 2022",
+          "summary": "Owned the applications across project management, product design, and native iOS development while maintaining a shared architecture that could support distinct access models, brands, and content strategies.",
+          "highlights": [
+            "Built and maintained a shared mobile foundation for Discover Press, Hôtel Presse, Salon Presse, Comptoir Presse, Big Press, and Hello Press.",
+            "Handled project management, product design in Sketch, and native iOS delivery in Swift.",
+            "Kept reading, authentication, and catalog behaviors consistent while adapting each product to a different distribution context."
+          ],
+          "metrics": [
+            {
+              "value": "6",
+              "label": "distinct branded applications on a shared base"
+            },
+            {
+              "value": "Shared architecture",
+              "label": "core foundation reused across product variants"
+            },
+            {
+              "value": "B2B + consumer contexts",
+              "label": "distribution models served by one system"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "System",
+              "title": "The challenge was scale through structure, not duplication.",
+              "intro": "The suite only worked if the common foundation stayed strong enough to carry multiple products without forcing every new application to become a rewrite.",
+              "cards": [
+                {
+                  "title": "A shared technical base",
+                  "copy": "The applications were built on one templated architecture and one reading foundation so the core behaviors could be reused instead of rebuilt.",
+                  "items": [
+                    "Core features needed to stay stable across brands.",
+                    "Reuse was essential to delivery speed and long-term maintenance."
+                  ]
+                },
+                {
+                  "title": "Variation without fragmentation",
+                  "copy": "Each application still had to support its own access rules, audience, and context without breaking the coherence of the shared system.",
+                  "items": [
+                    "Customization had to stay bounded.",
+                    "The suite needed flexibility without dissolving into six unrelated apps."
+                  ]
+                },
+                {
+                  "title": "Reading consistency",
+                  "copy": "Catalog discovery, authentication, and reading flows needed to feel dependable regardless of the application's specific business model.",
+                  "items": [
+                    "The reading experience was a common product promise.",
+                    "Consistency mattered more than surface-level visual variation."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Product",
+              "title": "Different access models shaped the design problem.",
+              "intro": "The suite covered corporate, hospitality, event-based, and more general distribution use cases, which meant product design had to be modular but still understandable.",
+              "cards": [
+                {
+                  "title": "Organizational distribution",
+                  "copy": "Some applications were designed for companies, partners, or membership contexts where access came through organizational authentication rather than an individual storefront.",
+                  "items": [
+                    "The product model changed with the client context.",
+                    "Access logic shaped both UX and delivery requirements."
+                  ]
+                },
+                {
+                  "title": "Hospitality and event usage",
+                  "copy": "Other products targeted hotels, salons, or temporary event scenarios where convenience, lightweight onboarding, and controlled access mattered most.",
+                  "items": [
+                    "The same reading core had to work in transient contexts.",
+                    "The onboarding expectations differed from standard consumer apps."
+                  ]
+                },
+                {
+                  "title": "A family of products, not one clone",
+                  "copy": "The goal was not to stamp out copies mechanically, but to build a coherent family of products that could express different distribution strategies on top of the same foundation.",
+                  "items": [
+                    "The architecture had to support product nuance.",
+                    "Template work still needed product judgment."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Delivery",
+              "title": "Ownership combined design, implementation, and operational clarity.",
+              "intro": "Because the suite lived across several products, the work demanded end-to-end ownership rather than isolated implementation tasks.",
+              "cards": [
+                {
+                  "title": "Project management and iOS delivery",
+                  "copy": "The role covered coordination, specification, and native iOS implementation, which helped keep product intent and execution tightly connected.",
+                  "items": [
+                    "The work moved from design decisions to shipped code directly.",
+                    "Fewer handoff gaps meant more coherent outcomes."
+                  ]
+                },
+                {
+                  "title": "Design with implementation awareness",
+                  "copy": "Product design in Sketch was informed by the realities of the shared mobile framework, which helped keep the suite ambitious but realistic.",
+                  "items": [
+                    "Design decisions stayed close to implementation constraints.",
+                    "Shared components benefited from repeated product use."
+                  ]
+                },
+                {
+                  "title": "Operational efficiency",
+                  "copy": "A reusable suite only creates value if it also reduces delivery friction, release effort, and long-term maintenance costs across products.",
+                  "items": [
+                    "The system had to compound over time.",
+                    "Efficiency was part of the product strategy, not just an engineering preference."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-dakar-presse": {
+          "page_title": "Dakar Presse | Projects | Loïc Lavergne",
+          "description": "Dakar Presse case study covering mobile access to Senegalese newspapers, subscriptions, and reliable reading for a distributed audience.",
+          "eyebrow": "Dakar Presse",
+          "title": "A focused press product for readers in Senegal and abroad.",
+          "intro": "Dakar Presse was designed to give readers access to Senegalese daily newspapers on mobile, both locally and across the diaspora. The product needed to feel simple, dependable, and well adapted to a geographically distributed audience with recurring reading habits.",
+          "role_title": "Project management, product design, and iOS development",
+          "organization": "Vialife",
+          "period": "November 2015 - July 2022",
+          "summary": "Owned the application across product design, project management, and iOS implementation on top of a custom Swift reading framework, with a focus on subscriptions, notifications, offline reading, and dependable daily access.",
+          "highlights": [
+            "Built a focused mobile reading product for Senegalese newspapers and an international reader base.",
+            "Handled product design, project leadership, and native iOS implementation end to end.",
+            "Prioritized secure subscription flows, offline reading, and reliable access for a distributed audience."
+          ],
+          "metrics": [
+            {
+              "value": "Daily press",
+              "label": "product rhythm shaped by recurring newspaper reading"
+            },
+            {
+              "value": "Diaspora audience",
+              "label": "served readers in Senegal and abroad"
+            },
+            {
+              "value": "Subscriptions + alerts",
+              "label": "core engagement and monetization model"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Audience",
+              "title": "The product had a clear audience and a clear daily use case.",
+              "intro": "Unlike a broad multi-title kiosk, Dakar Presse was focused on a specific national press market and on readers who wanted dependable access to familiar daily content.",
+              "cards": [
+                {
+                  "title": "Readers in Senegal and abroad",
+                  "copy": "The app served local readers as well as Senegalese communities living elsewhere, which made access reliability and mobile convenience especially important.",
+                  "items": [
+                    "The product had to bridge geography without losing clarity.",
+                    "Diaspora usage shaped the value proposition directly."
+                  ]
+                },
+                {
+                  "title": "A daily reading habit",
+                  "copy": "Because the product centered on daily newspapers, freshness, repeat visits, and a clear issue-based reading flow mattered more than novelty.",
+                  "items": [
+                    "The product rhythm followed the cadence of the press itself.",
+                    "Readers needed fast access to current and recent editions."
+                  ]
+                },
+                {
+                  "title": "Focused product scope",
+                  "copy": "The app benefited from being tightly scoped around a concrete audience and a recognizable content need.",
+                  "items": [
+                    "The product could stay direct and purposeful.",
+                    "Focus improved both UX and operational decisions."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Experience",
+              "title": "The reading experience had to remain simple and trustworthy.",
+              "intro": "Subscription access, issue discovery, notifications, and offline reading all needed to support a daily-use product without making the app feel heavy or complicated.",
+              "cards": [
+                {
+                  "title": "Subscription-centered access",
+                  "copy": "Flexible subscriptions were part of the core experience, so the purchase and renewal logic had to feel credible and easy to understand.",
+                  "items": [
+                    "Access models had to match real reader behavior.",
+                    "Trust in the subscription flow was part of product quality."
+                  ]
+                },
+                {
+                  "title": "Notifications and cover discovery",
+                  "copy": "Scheduled notifications and daily cover discovery helped connect the product to a recurring reading routine instead of a one-time download model.",
+                  "items": [
+                    "The app needed to re-enter the reader's day naturally.",
+                    "The front page remained a meaningful entry point."
+                  ]
+                },
+                {
+                  "title": "Offline reliability",
+                  "copy": "Offline reading helped the product stay useful across variable connection conditions and different usage contexts.",
+                  "items": [
+                    "Dependability mattered as much as visual polish.",
+                    "Mobile reading had to remain practical outside perfect connectivity."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Execution",
+              "title": "End-to-end ownership kept the product coherent.",
+              "intro": "The combination of product design, project leadership, and iOS implementation helped keep the product focused while it evolved over time.",
+              "cards": [
+                {
+                  "title": "Design and implementation together",
+                  "copy": "Design work in Sketch and iOS development in Swift were closely connected, which helped the final product stay practical and consistent.",
+                  "items": [
+                    "The product benefited from fewer translation gaps.",
+                    "Visual and technical choices could evolve together."
+                  ]
+                },
+                {
+                  "title": "Custom reading foundation",
+                  "copy": "The application relied on a proprietary reading framework rewritten in Swift to provide a stronger base for content presentation and usability.",
+                  "items": [
+                    "The reading layer was a product differentiator.",
+                    "A reusable foundation improved long-term technical control."
+                  ]
+                },
+                {
+                  "title": "Reliable product operation",
+                  "copy": "The broader goal was not just to ship features, but to keep the application dependable for a real audience returning day after day.",
+                  "items": [
+                    "Operational reliability was part of the public product promise.",
+                    "The strongest decisions were the ones that supported repeated use over time."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
       },
       "writing": {
         "page_title": "Writing | Loïc Lavergne",
@@ -1581,7 +1843,8 @@
               "Architecture partagée pour Discover Press, Hôtel Presse, Salon Presse, Comptoir Presse, Big Press et Hello Press.",
               "Responsabilité complète sur le pilotage projet, le design produit sous Sketch et la delivery iOS native en Swift.",
               "Maintenait une expérience de lecture, une authentification et un comportement catalogue cohérents malgré des modèles d'accès différents."
-            ]
+            ],
+            "route": "project-digital-press-applications"
           },
           {
             "name": "MyViapresse",
@@ -1602,7 +1865,8 @@
               "Servait les lecteurs sénégalais sur place et à l'étranger avec abonnements, notifications et lecture hors ligne.",
               "Responsabilité complète sur le design produit, le pilotage projet et l'implémentation iOS sur un framework de lecture Swift.",
               "Accent mis sur des parcours d'abonnement sûrs et un accès fiable pour une audience distribuée."
-            ]
+            ],
+            "route": "project-dakar-presse"
           },
           {
             "name": "Le Moniteur des Pharmacies",
@@ -2138,6 +2402,256 @@
                   "items": [
                     "La longévité faisait partie du défi engineering.",
                     "Les meilleurs choix techniques étaient ceux que le produit pouvait continuer à porter."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-digital-press-applications": {
+          "page_title": "Digital Press Applications | Projets | Loïc Lavergne",
+          "description": "Page projet Digital Press Applications sur un socle mobile partagé au service de plusieurs produits presse et modèles d'accès.",
+          "eyebrow": "Digital Press Applications",
+          "title": "Un socle mobile partagé, plusieurs modèles de distribution.",
+          "intro": "Cette suite regroupait plusieurs applications de kiosque numérique construites sur une base produit et technique commune. Le travail consistait à équilibrer cohérence, personnalisation et efficacité de delivery entre des produits destinés à des publics et des contextes business très différents.",
+          "role_title": "Mobile Project Manager et lead iOS natif",
+          "organization": "Vialife",
+          "period": "Octobre 2018 - Août 2022",
+          "summary": "Responsabilité des applications sur le pilotage projet, le design produit et le développement iOS natif tout en maintenant une architecture partagée capable de supporter des marques, des modèles d'accès et des stratégies de contenu distincts.",
+          "highlights": [
+            "A construit et maintenu un socle mobile partagé pour Discover Press, Hôtel Presse, Salon Presse, Comptoir Presse, Big Press et Hello Press.",
+            "A combiné pilotage projet, design produit sous Sketch et delivery iOS native en Swift.",
+            "A gardé une cohérence de lecture, d'authentification et de catalogue tout en adaptant chaque produit à un contexte de distribution différent."
+          ],
+          "metrics": [
+            {
+              "value": "6",
+              "label": "applications distinctes sur une base commune"
+            },
+            {
+              "value": "Architecture partagée",
+              "label": "socle réutilisé sur l'ensemble de la suite"
+            },
+            {
+              "value": "B2B + contextes grand public",
+              "label": "modèles de distribution servis par un même système"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Système",
+              "title": "L'enjeu était de scaler par la structure, pas par la duplication.",
+              "intro": "La suite n'avait de valeur que si le socle commun restait assez solide pour porter plusieurs produits sans transformer chaque nouvelle application en réécriture.",
+              "cards": [
+                {
+                  "title": "Une base technique commune",
+                  "copy": "Les applications étaient construites sur une architecture templatisée et un socle de lecture partagé afin de réutiliser les comportements clés plutôt que de les rebâtir.",
+                  "items": [
+                    "Les fonctionnalités centrales devaient rester stables d'une marque à l'autre.",
+                    "La réutilisation était essentielle pour la vitesse de delivery et la maintenance long terme."
+                  ]
+                },
+                {
+                  "title": "Varier sans fragmenter",
+                  "copy": "Chaque application devait pourtant supporter ses propres règles d'accès, son audience et son contexte sans casser la cohérence du système commun.",
+                  "items": [
+                    "La personnalisation devait rester cadrée.",
+                    "La suite devait rester flexible sans devenir six apps sans lien."
+                  ]
+                },
+                {
+                  "title": "Une lecture cohérente",
+                  "copy": "Découverte du catalogue, authentification et lecture devaient rester fiables quelle que soit la déclinaison du produit.",
+                  "items": [
+                    "L'expérience de lecture était une promesse commune.",
+                    "La cohérence comptait plus qu'une variation de surface."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Produit",
+              "title": "Les modèles d'accès changeaient la nature même du problème design.",
+              "intro": "La suite couvrait des usages entreprise, hôtellerie, événementiel ou plus généralistes, ce qui obligeait à un design modulaire mais toujours lisible.",
+              "cards": [
+                {
+                  "title": "Distribution organisationnelle",
+                  "copy": "Certaines applications étaient pensées pour des entreprises, partenaires ou contextes de membres où l'accès passait par une authentification organisationnelle plutôt que par une logique de storefront individuel.",
+                  "items": [
+                    "Le modèle produit variait selon le contexte client.",
+                    "La logique d'accès influençait autant l'UX que la delivery."
+                  ]
+                },
+                {
+                  "title": "Usage hôtellerie et événementiel",
+                  "copy": "D'autres produits visaient l'hôtel, le salon ou l'événementiel, avec des attentes fortes sur la simplicité d'onboarding et le contrôle de l'accès.",
+                  "items": [
+                    "Le même cœur de lecture devait fonctionner dans des contextes transitoires.",
+                    "Les attentes d'entrée dans le produit différaient d'une app grand public classique."
+                  ]
+                },
+                {
+                  "title": "Une famille de produits, pas un clone répété",
+                  "copy": "L'objectif n'était pas de décliner mécaniquement des copies, mais de bâtir une famille cohérente de produits capables de porter des stratégies de distribution différentes.",
+                  "items": [
+                    "L'architecture devait supporter de la nuance produit.",
+                    "Le travail de template restait un travail de jugement produit."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Delivery",
+              "title": "L'ownership mêlait design, implémentation et clarté opérationnelle.",
+              "intro": "Parce que la suite vivait sur plusieurs produits, le travail demandait une responsabilité end-to-end plutôt qu'une simple exécution isolée.",
+              "cards": [
+                {
+                  "title": "Pilotage projet et delivery iOS",
+                  "copy": "Le rôle couvrait coordination, cadrage et implémentation iOS native, ce qui gardait l'intention produit proche de l'exécution.",
+                  "items": [
+                    "Le travail allait directement des décisions produit au code livré.",
+                    "Moins de ruptures de transmission donnaient des résultats plus cohérents."
+                  ]
+                },
+                {
+                  "title": "Design pensé avec l'implémentation",
+                  "copy": "Le design produit sous Sketch restait informé par les réalités du framework mobile partagé, ce qui gardait la suite ambitieuse mais réaliste.",
+                  "items": [
+                    "Les décisions design restaient proches des contraintes d'implémentation.",
+                    "Les composants partagés bénéficiaient d'usages répétés sur plusieurs produits."
+                  ]
+                },
+                {
+                  "title": "Efficacité opérationnelle",
+                  "copy": "Une suite réutilisable n'a de valeur que si elle réduit aussi la friction de delivery, l'effort de release et les coûts de maintenance à travers les produits.",
+                  "items": [
+                    "Le système devait créer un effet cumulatif dans le temps.",
+                    "L'efficacité faisait partie de la stratégie produit, pas seulement d'une préférence engineering."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-dakar-presse": {
+          "page_title": "Dakar Presse | Projets | Loïc Lavergne",
+          "description": "Page projet Dakar Presse sur l'accès mobile à la presse sénégalaise, les abonnements et une lecture fiable pour une audience distribuée.",
+          "eyebrow": "Dakar Presse",
+          "title": "Un produit presse ciblé pour des lecteurs au Sénégal et à l'étranger.",
+          "intro": "Dakar Presse était conçu pour donner accès aux quotidiens sénégalais sur mobile, à la fois localement et auprès de la diaspora. Le produit devait être simple, fiable et bien adapté à une audience géographiquement distribuée avec un usage de lecture récurrent.",
+          "role_title": "Pilotage projet, design produit et développement iOS",
+          "organization": "Vialife",
+          "period": "Novembre 2015 - Juillet 2022",
+          "summary": "Responsabilité de l'application sur le design produit, le pilotage projet et l'implémentation iOS sur un framework de lecture Swift, avec un accent sur les abonnements, les notifications, la lecture hors ligne et l'accès quotidien fiable.",
+          "highlights": [
+            "A construit un produit de lecture mobile ciblé sur la presse quotidienne sénégalaise et une audience internationale.",
+            "A porté le design produit, le pilotage projet et l'implémentation iOS native de bout en bout.",
+            "A priorisé des parcours d'abonnement sûrs, la lecture hors ligne et un accès fiable pour une audience distribuée."
+          ],
+          "metrics": [
+            {
+              "value": "Presse quotidienne",
+              "label": "rythme produit façonné par la lecture de journaux au quotidien"
+            },
+            {
+              "value": "Audience diaspora",
+              "label": "lecteurs servis au Sénégal et à l'international"
+            },
+            {
+              "value": "Abonnements + alertes",
+              "label": "modèle central d'engagement et de monétisation"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Audience",
+              "title": "Le produit avait une audience claire et un usage quotidien très identifié.",
+              "intro": "Contrairement à un kiosque large, Dakar Presse était centré sur un marché de presse national précis et sur des lecteurs cherchant un accès fiable à leurs quotidiens habituels.",
+              "cards": [
+                {
+                  "title": "Lecteurs au Sénégal et à l'étranger",
+                  "copy": "L'application servait autant les lecteurs locaux que les communautés sénégalaises vivant ailleurs, ce qui rendait fiabilité d'accès et confort mobile particulièrement importants.",
+                  "items": [
+                    "Le produit devait relier plusieurs géographies sans perdre en clarté.",
+                    "L'usage diaspora façonnait directement la proposition de valeur."
+                  ]
+                },
+                {
+                  "title": "Une habitude de lecture quotidienne",
+                  "copy": "Parce que le produit tournait autour de quotidiens, fraîcheur, fréquence de retour et accès clair aux éditions courantes comptaient plus qu'un effet de nouveauté.",
+                  "items": [
+                    "Le rythme produit suivait celui de la presse elle-même.",
+                    "Les lecteurs avaient besoin d'un accès rapide aux numéros du jour et récents."
+                  ]
+                },
+                {
+                  "title": "Un scope produit volontairement focalisé",
+                  "copy": "L'application profitait d'un périmètre très ciblé autour d'une audience concrète et d'un besoin de contenu clairement reconnu.",
+                  "items": [
+                    "Le produit pouvait rester direct et lisible.",
+                    "Le focus améliorait à la fois l'UX et les décisions opérationnelles."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Expérience",
+              "title": "L'expérience de lecture devait rester simple et digne de confiance.",
+              "intro": "Abonnements, découverte des éditions, notifications et lecture hors ligne devaient soutenir un produit du quotidien sans le rendre lourd ou compliqué.",
+              "cards": [
+                {
+                  "title": "Un accès centré sur l'abonnement",
+                  "copy": "Les abonnements faisaient partie du cœur de l'expérience, ce qui imposait des parcours d'achat et de renouvellement crédibles et faciles à comprendre.",
+                  "items": [
+                    "Les modèles d'accès devaient coller aux comportements réels des lecteurs.",
+                    "La confiance dans le parcours d'abonnement faisait partie de la qualité produit."
+                  ]
+                },
+                {
+                  "title": "Notifications et découverte par les unes",
+                  "copy": "Les notifications programmées et la mise en avant des couvertures quotidiennes aidaient à reconnecter naturellement le produit au rythme de lecture du lecteur.",
+                  "items": [
+                    "L'app devait retrouver une place dans la journée du lecteur.",
+                    "La une restait un point d'entrée significatif."
+                  ]
+                },
+                {
+                  "title": "Fiabilité hors ligne",
+                  "copy": "La lecture hors ligne rendait le produit utile dans des conditions de connexion variables et dans des contextes de mobilité différents.",
+                  "items": [
+                    "La fiabilité comptait autant que le polish visuel.",
+                    "La lecture mobile devait rester pratique hors connectivité parfaite."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Exécution",
+              "title": "L'ownership end-to-end aidait à garder le produit cohérent.",
+              "intro": "La combinaison design produit, pilotage projet et implémentation iOS aidait à garder le produit focalisé tout en le faisant évoluer dans le temps.",
+              "cards": [
+                {
+                  "title": "Design et implémentation ensemble",
+                  "copy": "Le design sous Sketch et le développement iOS en Swift restaient très proches, ce qui aidait le produit final à rester concret et cohérent.",
+                  "items": [
+                    "Le produit bénéficiait de moins de pertes entre intention et exécution.",
+                    "Les choix visuels et techniques pouvaient évoluer ensemble."
+                  ]
+                },
+                {
+                  "title": "Un socle de lecture sur mesure",
+                  "copy": "L'application reposait sur un framework de lecture propriétaire réécrit en Swift pour offrir une meilleure base de présentation du contenu et de qualité d'usage.",
+                  "items": [
+                    "La couche de lecture était un différenciateur produit.",
+                    "Un socle réutilisable améliorait le contrôle technique dans la durée."
+                  ]
+                },
+                {
+                  "title": "Une exploitation produit fiable",
+                  "copy": "L'objectif n'était pas seulement de sortir des fonctionnalités, mais de garder l'application fiable pour une audience revenant lire jour après jour.",
+                  "items": [
+                    "La fiabilité opérationnelle faisait partie de la promesse publique du produit.",
+                    "Les meilleures décisions étaient celles qui soutenaient l'usage répété dans le temps."
                   ]
                 }
               ]
