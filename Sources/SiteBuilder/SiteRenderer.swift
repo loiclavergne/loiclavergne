@@ -1286,21 +1286,248 @@ struct SiteRenderer {
         }
     }
 
+    /// Build a schema.org organization object.
+    func organizationSchema(name: String) -> [String: Any] {
+        [
+            "@type": "Organization",
+            "name": name
+        ]
+    }
+
+    /// Build a breadcrumb graph node for non-home pages.
+    func breadcrumbGraph(pageKey: String, locale: String, localeContent: LocaleContent) throws -> [String: Any]? {
+        guard pageKey != "home" else {
+            return nil
+        }
+
+        let homeURL = absoluteURL(for: try pagePath("home", locale: locale))
+        var elements: [[String: Any]] = [[
+            "@type": "ListItem",
+            "position": 1,
+            "name": localeContent.nav["home"] ?? "Home",
+            "item": homeURL
+        ]]
+
+        var position = 2
+
+        if pageKey.hasPrefix("project-") {
+            let projectsURL = absoluteURL(for: try pagePath("projects", locale: locale))
+            let detailPage = try projectDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
+            elements.append([
+                "@type": "ListItem",
+                "position": position,
+                "name": localeContent.nav["projects"] ?? "Projects",
+                "item": projectsURL
+            ])
+            position += 1
+            elements.append([
+                "@type": "ListItem",
+                "position": position,
+                "name": detailPage.eyebrow,
+                "item": absoluteURL(for: try pagePath(pageKey, locale: locale))
+            ])
+        } else if pageKey.hasPrefix("post-") {
+            let writingURL = absoluteURL(for: try pagePath("writing", locale: locale))
+            let detailPage = try writingDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
+            elements.append([
+                "@type": "ListItem",
+                "position": position,
+                "name": localeContent.nav["writing"] ?? "Writing",
+                "item": writingURL
+            ])
+            position += 1
+            elements.append([
+                "@type": "ListItem",
+                "position": position,
+                "name": detailPage.title,
+                "item": absoluteURL(for: try pagePath(pageKey, locale: locale))
+            ])
+        } else if pageKey.hasPrefix("book-") {
+            let libraryURL = absoluteURL(for: try pagePath("library", locale: locale))
+            let detailPage = try libraryDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
+            elements.append([
+                "@type": "ListItem",
+                "position": position,
+                "name": localeContent.nav["library"] ?? "Library",
+                "item": libraryURL
+            ])
+            position += 1
+            elements.append([
+                "@type": "ListItem",
+                "position": position,
+                "name": detailPage.title,
+                "item": absoluteURL(for: try pagePath(pageKey, locale: locale))
+            ])
+        } else {
+            let metadata = try pageMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale)
+            let pageName = localeContent.nav[pageKey] ?? metadata.title
+            elements.append([
+                "@type": "ListItem",
+                "position": position,
+                "name": pageName,
+                "item": absoluteURL(for: try pagePath(pageKey, locale: locale))
+            ])
+        }
+
+        return [
+            "@type": "BreadcrumbList",
+            "itemListElement": elements
+        ]
+    }
+
+    /// Build page-specific structured data nodes.
+    func pageSpecificStructuredData(
+        pageKey: String,
+        locale: String,
+        localeContent: LocaleContent,
+        canonicalURL: String,
+        personID: String,
+        websiteID: String
+    ) throws -> [[String: Any]] {
+        let commonPage: [String: Any] = [
+            "url": canonicalURL,
+            "inLanguage": localeContent.localeCode,
+            "isPartOf": ["@id": websiteID],
+            "about": ["@id": personID]
+        ]
+
+        switch pageKey {
+        case "home":
+            return [[
+                "@type": "ProfilePage",
+                "name": payload.site.name,
+                "description": localeContent.home.description,
+                "mainEntity": ["@id": personID]
+            ].merging(commonPage, uniquingKeysWith: { _, new in new })]
+        case "work":
+            return [[
+                "@type": "AboutPage",
+                "name": localeContent.work.pageTitle,
+                "description": localeContent.work.description
+            ].merging(commonPage, uniquingKeysWith: { _, new in new })]
+        case "projects":
+            return [[
+                "@type": "CollectionPage",
+                "name": localeContent.projects.pageTitle,
+                "description": localeContent.projects.description
+            ].merging(commonPage, uniquingKeysWith: { _, new in new })]
+        case "writing":
+            return [
+                [
+                    "@type": "CollectionPage",
+                    "name": localeContent.writing.pageTitle,
+                    "description": localeContent.writing.description
+                ].merging(commonPage, uniquingKeysWith: { _, new in new }),
+                [
+                    "@type": "Blog",
+                    "name": localeContent.writing.eyebrow,
+                    "description": localeContent.writing.description,
+                    "url": canonicalURL,
+                    "inLanguage": localeContent.localeCode,
+                    "author": ["@id": personID],
+                    "publisher": ["@id": personID]
+                ]
+            ]
+        case "library":
+            return [[
+                "@type": "CollectionPage",
+                "name": localeContent.library.pageTitle,
+                "description": localeContent.library.description
+            ].merging(commonPage, uniquingKeysWith: { _, new in new })]
+        case "about":
+            return [[
+                "@type": "AboutPage",
+                "name": localeContent.about.pageTitle,
+                "description": localeContent.about.description,
+                "mainEntity": ["@id": personID]
+            ].merging(commonPage, uniquingKeysWith: { _, new in new })]
+        default:
+            if let detailPage = localeContent.projectDetails[pageKey] {
+                return [
+                    [
+                        "@type": "WebPage",
+                        "name": detailPage.pageTitle,
+                        "description": detailPage.description,
+                        "mainEntity": ["@id": canonicalURL + "#project"]
+                    ].merging(commonPage, uniquingKeysWith: { _, new in new }),
+                    [
+                        "@type": "CreativeWork",
+                        "@id": canonicalURL + "#project",
+                        "name": detailPage.eyebrow,
+                        "description": detailPage.description,
+                        "creator": ["@id": personID],
+                        "publisher": organizationSchema(name: detailPage.organization),
+                        "inLanguage": localeContent.localeCode,
+                        "url": canonicalURL
+                    ]
+                ]
+            }
+
+            if let detailPage = localeContent.writingDetails[pageKey] {
+                return [
+                    [
+                        "@type": "WebPage",
+                        "name": detailPage.pageTitle,
+                        "description": detailPage.description,
+                        "mainEntity": ["@id": canonicalURL + "#article"]
+                    ].merging(commonPage, uniquingKeysWith: { _, new in new }),
+                    [
+                        "@type": "BlogPosting",
+                        "@id": canonicalURL + "#article",
+                        "headline": detailPage.title,
+                        "description": detailPage.description,
+                        "author": ["@id": personID],
+                        "publisher": ["@id": personID],
+                        "mainEntityOfPage": canonicalURL,
+                        "inLanguage": localeContent.localeCode,
+                        "url": canonicalURL
+                    ]
+                ]
+            }
+
+            if let detailPage = localeContent.libraryDetails[pageKey] {
+                return [
+                    [
+                        "@type": "WebPage",
+                        "name": detailPage.pageTitle,
+                        "description": detailPage.description,
+                        "mainEntity": ["@id": canonicalURL + "#entry"]
+                    ].merging(commonPage, uniquingKeysWith: { _, new in new }),
+                    [
+                        "@type": "CreativeWork",
+                        "@id": canonicalURL + "#entry",
+                        "name": detailPage.title,
+                        "description": detailPage.description,
+                        "creator": ["@id": personID],
+                        "inLanguage": localeContent.localeCode,
+                        "url": canonicalURL
+                    ]
+                ]
+            }
+
+            return [[
+                "@type": "WebPage",
+                "name": try pageMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale).title,
+                "description": try pageMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale).description
+            ].merging(commonPage, uniquingKeysWith: { _, new in new })]
+        }
+    }
+
     /// Build the JSON-LD payload for the page.
     func renderStructuredData(pageKey: String, locale: String) throws -> String {
         let localeContent = try localeContent(locale)
-        let pageTitle = try pageMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale).title
+        let canonicalURL = absoluteURL(for: try pagePath(pageKey, locale: locale))
+        let personID = payload.site.baseUrl + "/#person"
+        let websiteID = payload.site.baseUrl + "/#website"
 
-        let graph: [[String: Any]] = [
+        var graph: [[String: Any]] = [
             [
                 "@type": "Person",
+                "@id": personID,
                 "name": payload.site.name,
                 "url": absoluteURL(for: try pagePath("home", locale: locale)),
                 "jobTitle": payload.site.leadTitle,
-                "worksFor": [
-                    "@type": "Organization",
-                    "name": "Roole"
-                ],
+                "worksFor": organizationSchema(name: "Roole"),
                 "sameAs": payload.site.socials.map(\.href),
                 "knowsAbout": [
                     "Mobile Engineering",
@@ -1314,17 +1541,26 @@ struct SiteRenderer {
             ],
             [
                 "@type": "WebSite",
+                "@id": websiteID,
                 "name": payload.site.name,
                 "url": payload.site.baseUrl + "/",
-                "inLanguage": localeContent.localeCode
-            ],
-            [
-                "@type": "WebPage",
-                "name": pageTitle,
-                "url": absoluteURL(for: try pagePath(pageKey, locale: locale)),
-                "inLanguage": localeContent.localeCode
+                "inLanguage": localeContent.localeCode,
+                "publisher": ["@id": personID]
             ]
         ]
+
+        graph.append(contentsOf: try pageSpecificStructuredData(
+            pageKey: pageKey,
+            locale: locale,
+            localeContent: localeContent,
+            canonicalURL: canonicalURL,
+            personID: personID,
+            websiteID: websiteID
+        ))
+
+        if let breadcrumb = try breadcrumbGraph(pageKey: pageKey, locale: locale, localeContent: localeContent) {
+            graph.append(breadcrumb)
+        }
 
         let object: [String: Any] = [
             "@context": "https://schema.org",

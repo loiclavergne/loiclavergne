@@ -61,6 +61,7 @@
   "@context" : "https:\/\/schema.org",
   "@graph" : [
     {
+      "@id" : "https:\/\/loic.engineer\/#person",
       "@type" : "Person",
       "jobTitle" : "Engineering Manager, Mobile Products",
       "knowsAbout" : [
@@ -86,16 +87,68 @@
       }
     },
     {
+      "@id" : "https:\/\/loic.engineer\/#website",
       "@type" : "WebSite",
       "inLanguage" : "en_US",
       "name" : "Loïc Lavergne",
+      "publisher" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
       "url" : "https:\/\/loic.engineer\/"
     },
     {
       "@type" : "WebPage",
+      "about" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Case study for the portfolio itself: a bilingual static-first site treated like a long-term product.",
       "inLanguage" : "en_US",
+      "isPartOf" : {
+        "@id" : "https:\/\/loic.engineer\/#website"
+      },
+      "mainEntity" : {
+        "@id" : "https:\/\/loic.engineer\/projects\/loic-engineer\/#project"
+      },
       "name" : "loic.engineer | Projects | Loïc Lavergne",
       "url" : "https:\/\/loic.engineer\/projects\/loic-engineer\/"
+    },
+    {
+      "@id" : "https:\/\/loic.engineer\/projects\/loic-engineer\/#project",
+      "@type" : "CreativeWork",
+      "creator" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Case study for the portfolio itself: a bilingual static-first site treated like a long-term product.",
+      "inLanguage" : "en_US",
+      "name" : "loic.engineer",
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "Personal project"
+      },
+      "url" : "https:\/\/loic.engineer\/projects\/loic-engineer\/"
+    },
+    {
+      "@type" : "BreadcrumbList",
+      "itemListElement" : [
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/",
+          "name" : "Home",
+          "position" : 1
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/projects\/",
+          "name" : "Projects",
+          "position" : 2
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/projects\/loic-engineer\/",
+          "name" : "loic.engineer",
+          "position" : 3
+        }
+      ]
     }
   ]
 }

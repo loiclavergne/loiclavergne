@@ -61,6 +61,7 @@
   "@context" : "https:\/\/schema.org",
   "@graph" : [
     {
+      "@id" : "https:\/\/loic.engineer\/#person",
       "@type" : "Person",
       "jobTitle" : "Engineering Manager, Mobile Products",
       "knowsAbout" : [
@@ -86,16 +87,68 @@
       }
     },
     {
+      "@id" : "https:\/\/loic.engineer\/#website",
       "@type" : "WebSite",
       "inLanguage" : "en_US",
       "name" : "Loïc Lavergne",
+      "publisher" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
       "url" : "https:\/\/loic.engineer\/"
     },
     {
       "@type" : "WebPage",
+      "about" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Dakar Presse case study covering mobile access to Senegalese newspapers, subscriptions, and reliable reading for a distributed audience.",
       "inLanguage" : "en_US",
+      "isPartOf" : {
+        "@id" : "https:\/\/loic.engineer\/#website"
+      },
+      "mainEntity" : {
+        "@id" : "https:\/\/loic.engineer\/projects\/dakar-presse\/#project"
+      },
       "name" : "Dakar Presse | Projects | Loïc Lavergne",
       "url" : "https:\/\/loic.engineer\/projects\/dakar-presse\/"
+    },
+    {
+      "@id" : "https:\/\/loic.engineer\/projects\/dakar-presse\/#project",
+      "@type" : "CreativeWork",
+      "creator" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Dakar Presse case study covering mobile access to Senegalese newspapers, subscriptions, and reliable reading for a distributed audience.",
+      "inLanguage" : "en_US",
+      "name" : "Dakar Presse",
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "Vialife"
+      },
+      "url" : "https:\/\/loic.engineer\/projects\/dakar-presse\/"
+    },
+    {
+      "@type" : "BreadcrumbList",
+      "itemListElement" : [
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/",
+          "name" : "Home",
+          "position" : 1
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/projects\/",
+          "name" : "Projects",
+          "position" : 2
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/projects\/dakar-presse\/",
+          "name" : "Dakar Presse",
+          "position" : 3
+        }
+      ]
     }
   ]
 }

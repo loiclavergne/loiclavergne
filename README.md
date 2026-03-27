@@ -110,6 +110,7 @@ The v1 architecture includes:
 - a real library archive with empty-state support and future book-page scaffolding
 - real sports and trophy archive surfaces inside the about page
 - localized Atom feeds plus a static `robots.txt`
+- page-type-aware JSON-LD and breadcrumb structured data
 - English and French localization
 - light, dark, and auto appearance modes
 - structured static education section on the work page

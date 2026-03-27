@@ -61,6 +61,7 @@
   "@context" : "https:\/\/schema.org",
   "@graph" : [
     {
+      "@id" : "https:\/\/loic.engineer\/#person",
       "@type" : "Person",
       "jobTitle" : "Engineering Manager, Mobile Products",
       "knowsAbout" : [
@@ -86,16 +87,57 @@
       }
     },
     {
+      "@id" : "https:\/\/loic.engineer\/#website",
       "@type" : "WebSite",
       "inLanguage" : "en_US",
       "name" : "Loïc Lavergne",
+      "publisher" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
       "url" : "https:\/\/loic.engineer\/"
     },
     {
-      "@type" : "WebPage",
+      "@type" : "CollectionPage",
+      "about" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Blog architecture and future writing archive.",
       "inLanguage" : "en_US",
+      "isPartOf" : {
+        "@id" : "https:\/\/loic.engineer\/#website"
+      },
       "name" : "Writing | Loïc Lavergne",
       "url" : "https:\/\/loic.engineer\/writing\/"
+    },
+    {
+      "@type" : "Blog",
+      "author" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Blog architecture and future writing archive.",
+      "inLanguage" : "en_US",
+      "name" : "Writing",
+      "publisher" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "url" : "https:\/\/loic.engineer\/writing\/"
+    },
+    {
+      "@type" : "BreadcrumbList",
+      "itemListElement" : [
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/",
+          "name" : "Home",
+          "position" : 1
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/writing\/",
+          "name" : "Writing",
+          "position" : 2
+        }
+      ]
     }
   ]
 }

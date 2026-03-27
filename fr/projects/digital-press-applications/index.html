@@ -61,6 +61,7 @@
   "@context" : "https:\/\/schema.org",
   "@graph" : [
     {
+      "@id" : "https:\/\/loic.engineer\/#person",
       "@type" : "Person",
       "jobTitle" : "Engineering Manager, Mobile Products",
       "knowsAbout" : [
@@ -86,16 +87,68 @@
       }
     },
     {
+      "@id" : "https:\/\/loic.engineer\/#website",
       "@type" : "WebSite",
       "inLanguage" : "fr_FR",
       "name" : "Loïc Lavergne",
+      "publisher" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
       "url" : "https:\/\/loic.engineer\/"
     },
     {
       "@type" : "WebPage",
+      "about" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Page projet Digital Press Applications sur un socle mobile partagé au service de plusieurs produits presse et modèles d'accès.",
       "inLanguage" : "fr_FR",
+      "isPartOf" : {
+        "@id" : "https:\/\/loic.engineer\/#website"
+      },
+      "mainEntity" : {
+        "@id" : "https:\/\/loic.engineer\/fr\/projects\/digital-press-applications\/#project"
+      },
       "name" : "Digital Press Applications | Projets | Loïc Lavergne",
       "url" : "https:\/\/loic.engineer\/fr\/projects\/digital-press-applications\/"
+    },
+    {
+      "@id" : "https:\/\/loic.engineer\/fr\/projects\/digital-press-applications\/#project",
+      "@type" : "CreativeWork",
+      "creator" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Page projet Digital Press Applications sur un socle mobile partagé au service de plusieurs produits presse et modèles d'accès.",
+      "inLanguage" : "fr_FR",
+      "name" : "Digital Press Applications",
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "Vialife"
+      },
+      "url" : "https:\/\/loic.engineer\/fr\/projects\/digital-press-applications\/"
+    },
+    {
+      "@type" : "BreadcrumbList",
+      "itemListElement" : [
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/fr\/",
+          "name" : "Accueil",
+          "position" : 1
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/fr\/projects\/",
+          "name" : "Projets",
+          "position" : 2
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/fr\/projects\/digital-press-applications\/",
+          "name" : "Digital Press Applications",
+          "position" : 3
+        }
+      ]
     }
   ]
 }

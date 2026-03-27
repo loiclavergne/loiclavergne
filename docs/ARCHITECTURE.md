@@ -160,6 +160,13 @@ simple placeholder cards:
 - both sections launch with localized empty states until curated public entries
   are ready
 
+Structured metadata is now page-type aware:
+- the homepage emits `ProfilePage`
+- section indexes emit `CollectionPage` or `AboutPage` depending on purpose
+- project detail pages emit `CreativeWork`
+- writing pages also emit `Blog`
+- non-home pages emit `BreadcrumbList`
+
 ## Why No Framework
 
 The current build avoids frontend and build-time package dependencies because:

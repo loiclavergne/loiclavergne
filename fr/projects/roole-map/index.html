@@ -61,6 +61,7 @@
   "@context" : "https:\/\/schema.org",
   "@graph" : [
     {
+      "@id" : "https:\/\/loic.engineer\/#person",
       "@type" : "Person",
       "jobTitle" : "Engineering Manager, Mobile Products",
       "knowsAbout" : [
@@ -86,16 +87,68 @@
       }
     },
     {
+      "@id" : "https:\/\/loic.engineer\/#website",
       "@type" : "WebSite",
       "inLanguage" : "fr_FR",
       "name" : "Loïc Lavergne",
+      "publisher" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
       "url" : "https:\/\/loic.engineer\/"
     },
     {
       "@type" : "WebPage",
+      "about" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Page projet Roole Map sur le socle mobile, l'évolution d'architecture et la delivery multi-équipes.",
       "inLanguage" : "fr_FR",
+      "isPartOf" : {
+        "@id" : "https:\/\/loic.engineer\/#website"
+      },
+      "mainEntity" : {
+        "@id" : "https:\/\/loic.engineer\/fr\/projects\/roole-map\/#project"
+      },
       "name" : "Roole Map | Projets | Loïc Lavergne",
       "url" : "https:\/\/loic.engineer\/fr\/projects\/roole-map\/"
+    },
+    {
+      "@id" : "https:\/\/loic.engineer\/fr\/projects\/roole-map\/#project",
+      "@type" : "CreativeWork",
+      "creator" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Page projet Roole Map sur le socle mobile, l'évolution d'architecture et la delivery multi-équipes.",
+      "inLanguage" : "fr_FR",
+      "name" : "Roole Map",
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      },
+      "url" : "https:\/\/loic.engineer\/fr\/projects\/roole-map\/"
+    },
+    {
+      "@type" : "BreadcrumbList",
+      "itemListElement" : [
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/fr\/",
+          "name" : "Accueil",
+          "position" : 1
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/fr\/projects\/",
+          "name" : "Projets",
+          "position" : 2
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/fr\/projects\/roole-map\/",
+          "name" : "Roole Map",
+          "position" : 3
+        }
+      ]
     }
   ]
 }

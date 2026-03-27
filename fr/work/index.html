@@ -61,6 +61,7 @@
   "@context" : "https:\/\/schema.org",
   "@graph" : [
     {
+      "@id" : "https:\/\/loic.engineer\/#person",
       "@type" : "Person",
       "jobTitle" : "Engineering Manager, Mobile Products",
       "knowsAbout" : [
@@ -86,16 +87,44 @@
       }
     },
     {
+      "@id" : "https:\/\/loic.engineer\/#website",
       "@type" : "WebSite",
       "inLanguage" : "fr_FR",
       "name" : "Loïc Lavergne",
+      "publisher" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
       "url" : "https:\/\/loic.engineer\/"
     },
     {
-      "@type" : "WebPage",
+      "@type" : "AboutPage",
+      "about" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Rôle actuel, périmètre de leadership produit et parcours professionnel.",
       "inLanguage" : "fr_FR",
+      "isPartOf" : {
+        "@id" : "https:\/\/loic.engineer\/#website"
+      },
       "name" : "Travail | Loïc Lavergne",
       "url" : "https:\/\/loic.engineer\/fr\/work\/"
+    },
+    {
+      "@type" : "BreadcrumbList",
+      "itemListElement" : [
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/fr\/",
+          "name" : "Accueil",
+          "position" : 1
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/fr\/work\/",
+          "name" : "Travail",
+          "position" : 2
+        }
+      ]
     }
   ]
 }

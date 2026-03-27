@@ -61,6 +61,7 @@
   "@context" : "https:\/\/schema.org",
   "@graph" : [
     {
+      "@id" : "https:\/\/loic.engineer\/#person",
       "@type" : "Person",
       "jobTitle" : "Engineering Manager, Mobile Products",
       "knowsAbout" : [
@@ -86,16 +87,68 @@
       }
     },
     {
+      "@id" : "https:\/\/loic.engineer\/#website",
       "@type" : "WebSite",
       "inLanguage" : "en_US",
       "name" : "Loïc Lavergne",
+      "publisher" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
       "url" : "https:\/\/loic.engineer\/"
     },
     {
       "@type" : "WebPage",
+      "about" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Le Point Vétérinaire.fr case study covering native iOS delivery for veterinarians across news, training, practical tools, and reference data.",
       "inLanguage" : "en_US",
+      "isPartOf" : {
+        "@id" : "https:\/\/loic.engineer\/#website"
+      },
+      "mainEntity" : {
+        "@id" : "https:\/\/loic.engineer\/projects\/le-point-veterinaire\/#project"
+      },
       "name" : "Le Point Vétérinaire.fr | Projects | Loïc Lavergne",
       "url" : "https:\/\/loic.engineer\/projects\/le-point-veterinaire\/"
+    },
+    {
+      "@id" : "https:\/\/loic.engineer\/projects\/le-point-veterinaire\/#project",
+      "@type" : "CreativeWork",
+      "creator" : {
+        "@id" : "https:\/\/loic.engineer\/#person"
+      },
+      "description" : "Le Point Vétérinaire.fr case study covering native iOS delivery for veterinarians across news, training, practical tools, and reference data.",
+      "inLanguage" : "en_US",
+      "name" : "Le Point Vétérinaire.fr",
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "Things Are Moving"
+      },
+      "url" : "https:\/\/loic.engineer\/projects\/le-point-veterinaire\/"
+    },
+    {
+      "@type" : "BreadcrumbList",
+      "itemListElement" : [
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/",
+          "name" : "Home",
+          "position" : 1
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/projects\/",
+          "name" : "Projects",
+          "position" : 2
+        },
+        {
+          "@type" : "ListItem",
+          "item" : "https:\/\/loic.engineer\/projects\/le-point-veterinaire\/",
+          "name" : "Le Point Vétérinaire.fr",
+          "position" : 3
+        }
+      ]
     }
   ]
 }
