@@ -143,6 +143,8 @@
         "back_to_projects": "Back to projects",
         "back_to_writing": "Back to writing",
         "archive": "Archive",
+        "view_book": "View book",
+        "back_to_library": "Back to library",
         "side_work": "Side Work",
         "status": "Status",
         "tracking": "Tracking",
@@ -1910,6 +1912,11 @@
             ]
           }
         ],
+        "archive_heading": "A real reading archive, ready for curation",
+        "archive_intro": "The library now has a proper archive surface and future-ready detail support for individual books or reading notes. It still launches without real entries, but the page no longer depends on placeholder-only structure.",
+        "books": [],
+        "empty_state_title": "No books published yet",
+        "empty_state_copy": "The reading archive is ready for real titles, notes, and localized book pages. Entries can be added manually later without changing the renderer or deployment model.",
         "tracking_heading": "Tracking model",
         "tracking_cards": [
           {
@@ -1925,9 +1932,37 @@
             "copy": "All shelves and counts can be updated manually in the content file without introducing external services, accounts, or background jobs."
           }
         ],
+        "system_heading": "Library system",
+        "system_cards": [
+          {
+            "title": "Future-ready book pages",
+            "copy": "The library can support dedicated pages for books, notes, and reading context once real entries exist.",
+            "items": [
+              "Localized detail pages can be added without redesigning the page architecture.",
+              "A single static generator still controls the archive shape."
+            ]
+          },
+          {
+            "title": "Manual curation stays intentional",
+            "copy": "The reading area is designed for selected titles and lightweight notes rather than for mirroring a third-party tracking service.",
+            "items": [
+              "The signal should stay editorial rather than exhaustive.",
+              "Manual control preserves privacy and long-term clarity."
+            ]
+          },
+          {
+            "title": "Static-first reading log",
+            "copy": "Counts, current reads, and future notes remain editable in the content source with no sync jobs, accounts, or background processing.",
+            "items": [
+              "The public site stays lightweight and private.",
+              "Reading data can evolve without creating operational complexity."
+            ]
+          }
+        ],
         "status_title": "Manual tracking for v1",
         "status_copy": "As soon as real books and counts are ready, this page can shift from scaffolding to a curated library without changing the architecture."
       },
+      "library_details": {},
       "about": {
         "page_title": "About | Loïc Lavergne",
         "description": "Skills, broader profile, sports, trophies, and contact.",
@@ -2088,6 +2123,8 @@
         "back_to_projects": "Retour aux projets",
         "back_to_writing": "Retour aux écrits",
         "archive": "Archive",
+        "view_book": "Voir le livre",
+        "back_to_library": "Retour à la bibliothèque",
         "side_work": "Travail parallèle",
         "status": "Statut",
         "tracking": "Suivi",
@@ -3855,6 +3892,11 @@
             ]
           }
         ],
+        "archive_heading": "Une vraie archive de lecture, prête à être curée",
+        "archive_intro": "La bibliothèque dispose maintenant d'une vraie surface d'archive et d'un support prêt pour de futures pages détail de livres ou de notes de lecture. Elle se lance toujours sans entrées réelles, mais la page ne repose plus sur une simple structure placeholder.",
+        "books": [],
+        "empty_state_title": "Aucun livre publié pour l'instant",
+        "empty_state_copy": "L'archive de lecture est prête pour de vrais titres, des notes et des pages de livre localisées. Les entrées pourront être ajoutées manuellement plus tard sans changer le renderer ni le modèle de déploiement.",
         "tracking_heading": "Modèle de suivi",
         "tracking_cards": [
           {
@@ -3870,9 +3912,37 @@
             "copy": "Les étagères et les compteurs peuvent être mis à jour directement dans le contenu sans services externes, comptes ou jobs en arrière-plan."
           }
         ],
+        "system_heading": "Système de bibliothèque",
+        "system_cards": [
+          {
+            "title": "Pages de livre prêtes pour plus tard",
+            "copy": "La bibliothèque pourra accueillir des pages dédiées pour les livres, les notes et le contexte de lecture dès que de vraies entrées existeront.",
+            "items": [
+              "Des pages détail localisées pourront être ajoutées sans redessiner l'architecture.",
+              "Un seul générateur statique continue de piloter la forme de l'archive."
+            ]
+          },
+          {
+            "title": "Une curation manuelle assumée",
+            "copy": "La zone lecture est pensée pour des titres sélectionnés et des notes légères plutôt que pour copier un service tiers de tracking.",
+            "items": [
+              "Le signal doit rester éditorial plutôt qu'exhaustif.",
+              "Le contrôle manuel préserve confidentialité et clarté long terme."
+            ]
+          },
+          {
+            "title": "Un journal de lecture static-first",
+            "copy": "Compteurs, lectures en cours et futures notes restent éditables dans la source de contenu sans synchronisation, comptes ni traitement en arrière-plan.",
+            "items": [
+              "Le site public reste léger et respectueux de la vie privée.",
+              "Les données de lecture peuvent évoluer sans créer de complexité opérationnelle."
+            ]
+          }
+        ],
         "status_title": "Suivi manuel en v1",
         "status_copy": "Dès que de vrais livres et compteurs sont prêts, cette page peut passer d'une structure d'accueil à une bibliothèque éditorialisée sans changer l'architecture."
       },
+      "library_details": {},
       "about": {
         "page_title": "À propos | Loïc Lavergne",
         "description": "Compétences, profil élargi, sport, trophées et contact.",

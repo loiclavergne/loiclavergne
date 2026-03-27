@@ -124,6 +124,10 @@ struct SiteRenderer {
             return "writing"
         }
 
+        if pageKey.hasPrefix("book-") {
+            return "library"
+        }
+
         return pageKey
     }
 
@@ -139,6 +143,15 @@ struct SiteRenderer {
     /// Resolve a writing detail page from the locale payload.
     func writingDetail(pageKey: String, localeContent: LocaleContent, locale: String) throws -> WritingPostPage {
         guard let page = localeContent.writingDetails[pageKey] else {
+            throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
+        }
+
+        return page
+    }
+
+    /// Resolve a library detail page from the locale payload.
+    func libraryDetail(pageKey: String, localeContent: LocaleContent, locale: String) throws -> LibraryEntryPage {
+        guard let page = localeContent.libraryDetails[pageKey] else {
             throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
         }
 
@@ -166,6 +179,10 @@ struct SiteRenderer {
             }
 
             if let detailPage = localeContent.writingDetails[pageKey] {
+                return (detailPage.pageTitle, detailPage.description)
+            }
+
+            if let detailPage = localeContent.libraryDetails[pageKey] {
                 return (detailPage.pageTitle, detailPage.description)
             }
 
@@ -268,6 +285,30 @@ struct SiteRenderer {
           <h3>\(escapeHTML(post.title))</h3>
           <p>\(escapeHTML(post.summary))</p>
           \(renderOptionalList(post.details))
+          \(actionMarkup)
+        </article>
+        """
+    }
+
+    /// Render a library archive card with an optional detail-page action.
+    func renderLibraryEntryCard(_ entry: LibraryEntrySummary, locale: String, localeContent: LocaleContent) throws -> String {
+        let actionMarkup: String
+
+        if let route = entry.route {
+            actionMarkup = """
+              <div class="button-row">
+                <a class="button button--secondary" href="\(try pagePath(route, locale: locale))">\(escapeHTML(label(localeContent.labels, key: "view_book", fallback: "View book")))</a>
+              </div>
+            """
+        } else {
+            actionMarkup = ""
+        }
+
+        return """
+        <article class="card reveal">
+          <h3>\(escapeHTML(entry.title))</h3>
+          <p>\(escapeHTML(entry.summary))</p>
+          \(renderOptionalList(entry.details))
           \(actionMarkup)
         </article>
         """
@@ -833,7 +874,22 @@ struct SiteRenderer {
         }.joined(separator: "\n")
 
         let shelves = page.shelves.map(renderContentCard).joined(separator: "\n")
+        let archiveMarkup: String
+        if page.books.isEmpty {
+            archiveMarkup = """
+              <article class="card card--empty reveal">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "status", fallback: "Status")))</span>
+                <h3>\(escapeHTML(page.emptyStateTitle))</h3>
+                <p>\(escapeHTML(page.emptyStateCopy))</p>
+              </article>
+            """
+        } else {
+            archiveMarkup = try page.books.map {
+                try renderLibraryEntryCard($0, locale: locale, localeContent: localeContent)
+            }.joined(separator: "\n")
+        }
         let trackingCards = page.trackingCards.map(renderContentCard).joined(separator: "\n")
+        let systemCards = page.systemCards.map(renderContentCard).joined(separator: "\n")
 
         return """
             <section class="hero hero--page">
@@ -861,12 +917,37 @@ struct SiteRenderer {
             </section>
 
             <section class="section section--compact">
+              <div class="shell split-heading">
+                <div>
+                  <span class="eyebrow">\(escapeHTML(label(labels, key: "archive", fallback: "Archive")))</span>
+                  <h2>\(escapeHTML(page.archiveHeading))</h2>
+                </div>
+                <div class="section-copy">
+                  <p>\(escapeHTML(page.archiveIntro))</p>
+                </div>
+              </div>
+              <div class="shell card-grid card-grid--two">
+                \(archiveMarkup)
+              </div>
+            </section>
+
+            <section class="section section--compact">
               <div class="shell section-heading">
                 <span class="eyebrow">\(escapeHTML(label(labels, key: "tracking", fallback: "Tracking")))</span>
                 <h2>\(escapeHTML(page.trackingHeading))</h2>
               </div>
               <div class="shell card-grid card-grid--three">
                 \(trackingCards)
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell section-heading">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "approach", fallback: "Approach")))</span>
+                <h2>\(escapeHTML(page.systemHeading))</h2>
+              </div>
+              <div class="shell card-grid card-grid--three">
+                \(systemCards)
               </div>
             </section>
 
@@ -879,6 +960,60 @@ struct SiteRenderer {
                 </article>
               </div>
             </section>
+        """
+    }
+
+    /// Render a localized library entry page.
+    func renderLibraryEntry(pageKey: String, locale: String) throws -> String {
+        let localeContent = try localeContent(locale)
+        let page = try libraryDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
+        let labels = localeContent.labels
+
+        let metaCards = page.metrics.map {
+            """
+            <article class="stat-card reveal">
+              <span class="stat-card__value">\(escapeHTML($0.value))</span>
+              <span class="stat-card__label">\(escapeHTML($0.label))</span>
+            </article>
+            """
+        }.joined(separator: "\n")
+
+        let sections = page.sections.map { section -> String in
+            let paragraphs = section.paragraphs.map { "<p>\(escapeHTML($0))</p>" }.joined(separator: "\n")
+
+            return """
+            <section class="section section--compact">
+              <div class="shell split-heading">
+                <div>
+                  <span class="eyebrow">\(escapeHTML(section.eyebrow))</span>
+                  <h2>\(escapeHTML(section.title))</h2>
+                </div>
+                <div class="section-copy">
+                  \(paragraphs)
+                  \(renderOptionalList(section.items))
+                </div>
+              </div>
+            </section>
+            """
+        }.joined(separator: "\n")
+
+        return """
+            <section class="hero hero--page">
+              <div class="shell hero__content hero__content--page">
+                <a class="context-link" href="\(try pagePath("library", locale: locale))">\(escapeHTML(label(labels, key: "back_to_library", fallback: "Back to library")))</a>
+                <span class="eyebrow">\(escapeHTML(page.eyebrow))</span>
+                <h1>\(escapeHTML(page.title))</h1>
+                <p class="hero__lede">\(escapeHTML(page.intro))</p>
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell stat-grid stat-grid--two">
+                \(metaCards)
+              </div>
+            </section>
+
+            \(sections)
         """
     }
 
@@ -998,6 +1133,10 @@ struct SiteRenderer {
 
             if localeContent.writingDetails[pageKey] != nil {
                 return try renderWritingPost(pageKey: pageKey, locale: locale)
+            }
+
+            if localeContent.libraryDetails[pageKey] != nil {
+                return try renderLibraryEntry(pageKey: pageKey, locale: locale)
             }
 
             throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)

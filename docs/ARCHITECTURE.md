@@ -141,6 +141,12 @@ The writing area now also has:
 - future-ready article detail support in the generator via localized `writing_details`
   content blocks and route keys
 
+The library area now also has:
+- a dedicated archive surface on the `/library/` and `/fr/library/` pages
+- localized empty-state handling for when no public books are listed yet
+- future-ready book detail support in the generator via localized `library_details`
+  content blocks and route keys
+
 ## Why No Framework
 
 The current build avoids frontend and build-time package dependencies because:
