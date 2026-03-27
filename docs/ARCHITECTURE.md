@@ -18,6 +18,8 @@ English routes:
 - `/projects/myviapresse/`
 - `/projects/digital-press-applications/`
 - `/projects/dakar-presse/`
+- `/projects/le-moniteur-des-pharmacies/`
+- `/projects/le-point-veterinaire/`
 - `/writing/`
 - `/library/`
 - `/about/`
@@ -32,6 +34,8 @@ French routes:
 - `/fr/projects/myviapresse/`
 - `/fr/projects/digital-press-applications/`
 - `/fr/projects/dakar-presse/`
+- `/fr/projects/le-moniteur-des-pharmacies/`
+- `/fr/projects/le-point-veterinaire/`
 - `/fr/writing/`
 - `/fr/library/`
 - `/fr/about/`

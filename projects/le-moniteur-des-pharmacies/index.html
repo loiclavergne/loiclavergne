@@ -1,0 +1,260 @@
+<!--
+  project-le-moniteur-des-pharmacies.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Le Moniteur des Pharmacies case study covering native iOS delivery for pharmacists across news, training, and reference tools.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Le Moniteur des Pharmacies | Projects | Loïc Lavergne">
+  <meta property="og:description" content="Le Moniteur des Pharmacies case study covering native iOS delivery for pharmacists across news, training, and reference tools.">
+  <meta property="og:url" content="https://loic.engineer/projects/le-moniteur-des-pharmacies/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le Moniteur des Pharmacies | Projects | Loïc Lavergne">
+  <meta name="twitter:description" content="Le Moniteur des Pharmacies case study covering native iOS delivery for pharmacists across news, training, and reference tools.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/projects/le-moniteur-des-pharmacies/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/le-moniteur-des-pharmacies/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/le-moniteur-des-pharmacies/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/le-moniteur-des-pharmacies/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Le Moniteur des Pharmacies | Projects | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "en_US",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "en_US",
+      "name" : "Le Moniteur des Pharmacies | Projects | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/projects\/le-moniteur-des-pharmacies\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-le-moniteur-des-pharmacies">
+  <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="site-nav__link" href="/">Home</a><a class="site-nav__link" href="/work/">Work</a><a class="site-nav__link" href="/projects/" aria-current="page">Projects</a><a class="site-nav__link" href="/writing/">Writing</a><a class="site-nav__link" href="/library/">Library</a><a class="site-nav__link" href="/about/">About</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Appearance">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Light</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Dark</button>
+          </div>
+          <a class="locale-link" hreflang="fr" href="/fr/projects/le-moniteur-des-pharmacies/">Français</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/projects/">Back to projects</a>
+        <span class="eyebrow">Le Moniteur des Pharmacies</span>
+        <h1>A professional iOS product designed for dense, recurring pharmacist workflows.</h1>
+        <p class="hero__lede">Le Moniteur des Pharmacies brought together professional news, training resources, digital magazines, job listings, and reference tools for pharmacists in one native iOS application. The challenge was less about a single feature than about making a broad professional surface feel useful and navigable in daily practice.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Things Are Moving</span>
+          <h2>Native iOS development</h2>
+          <p class="card__meta">March 2017 - September 2018</p>
+          <p>Built the application natively in Swift with responsibility for feature implementation, data presentation, and user experience across news, learning, and professional reference use cases.</p>
+          <ul class="detail-list"><li>Delivered a native iOS application aggregating multiple professional content types in one product.</li><li>Worked on feature implementation, data presentation, and overall usability in a dense information environment.</li><li>Helped turn professional resources into a practical day-to-day mobile tool for pharmacists.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">Pharmacists</span>
+  <span class="stat-card__label">specialized professional audience and usage context</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">News + training + reference</span>
+  <span class="stat-card__label">multiple content systems inside one product</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">iOS native</span>
+  <span class="stat-card__label">single-platform execution focused on reliability and clarity</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Product</span>
+      <h2>The app had to unite several professional needs without feeling fragmented.</h2>
+    </div>
+    <div class="section-copy">
+      <p>The product mixed news, magazines, education, recruitment, and reference data, which meant the application needed to remain understandable even as the information surface grew.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Professional news and reading</h3>
+  <p>The app combined real-time professional news with digital magazine access in both PDF and article formats.</p>
+  <ul class="detail-list"><li>The product had to support both quick updates and deeper reading sessions.</li><li>Different content modes needed to coexist cleanly.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Learning and career content</h3>
+  <p>Training resources, educational media, and job listings extended the product beyond information lookup into a broader professional companion.</p>
+  <ul class="detail-list"><li>The application supported recurring professional development.</li><li>Career and learning content added another layer to the product surface.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>One professional hub</h3>
+  <p>The overall challenge was to make the application feel like a unified professional tool instead of a loose collection of services.</p>
+  <ul class="detail-list"><li>Information architecture mattered as much as implementation.</li><li>The value came from a coherent whole, not isolated features.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Reference</span>
+      <h2>Reference depth was part of the product&#x27;s usefulness.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Pharmaceutical data, veterinary medicine references, and supporting databases had to remain accessible and practical within a mobile interface built for regular use.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Drug reference access</h3>
+  <p>The application surfaced pharmaceutical data across large reference sets so pharmacists could use the product as a working tool, not just a reading destination.</p>
+  <ul class="detail-list"><li>Depth of reference content shaped the product design.</li><li>Practical lookup had to stay fast and reliable.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Dense information presentation</h3>
+  <p>A key part of the work was presenting professional data clearly enough to remain useful on mobile even when the underlying information was complex.</p>
+  <ul class="detail-list"><li>Data presentation was a product responsibility.</li><li>Mobile constraints had to be respected without oversimplifying the content.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Regular-use ergonomics</h3>
+  <p>Because the product was built for recurring professional consultation, navigation and content access had to support repeat usage over time.</p>
+  <ul class="detail-list"><li>The interface had to reward familiarity.</li><li>Efficiency mattered more than novelty.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Execution</span>
+      <h2>Native implementation helped keep a broad product coherent.</h2>
+    </div>
+    <div class="section-copy">
+      <p>The work was grounded in hands-on Swift development, which kept product experience, content complexity, and technical implementation closely connected.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Swift-based delivery</h3>
+  <p>Native iOS implementation made it easier to keep the application responsive and to shape interactions around the realities of frequent professional use.</p>
+  <ul class="detail-list"><li>Performance and clarity supported trust in the product.</li><li>Native delivery improved control over the user experience.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Feature work with product awareness</h3>
+  <p>Implementation was not limited to isolated screens; it required understanding how different professional needs fit together inside one application.</p>
+  <ul class="detail-list"><li>Technical work stayed tied to information design.</li><li>Usability was part of the engineering responsibility.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>A practical professional tool</h3>
+  <p>The end goal was to help pharmacists return to the app regularly for information, learning, and reference needs without friction.</p>
+  <ul class="detail-list"><li>The product needed to earn repeated use.</li><li>Success depended on reliability and practical value.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Engineering leadership for mobile products, architecture, and delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. All rights reserved.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

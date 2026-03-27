@@ -1,0 +1,260 @@
+<!--
+  project-le-point-veterinaire.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Étude de cas sur Le Point Vétérinaire.fr, produit iOS natif pour les vétérinaires entre actualités, formation, outils pratiques et données de référence.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Le Point Vétérinaire.fr | Projets | Loïc Lavergne">
+  <meta property="og:description" content="Étude de cas sur Le Point Vétérinaire.fr, produit iOS natif pour les vétérinaires entre actualités, formation, outils pratiques et données de référence.">
+  <meta property="og:url" content="https://loic.engineer/fr/projects/le-point-veterinaire/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le Point Vétérinaire.fr | Projets | Loïc Lavergne">
+  <meta name="twitter:description" content="Étude de cas sur Le Point Vétérinaire.fr, produit iOS natif pour les vétérinaires entre actualités, formation, outils pratiques et données de référence.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/fr/projects/le-point-veterinaire/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/le-point-veterinaire/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/le-point-veterinaire/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/le-point-veterinaire/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Le Point Vétérinaire.fr | Projets | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/fr\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "fr_FR",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "fr_FR",
+      "name" : "Le Point Vétérinaire.fr | Projets | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/fr\/projects\/le-point-veterinaire\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-le-point-veterinaire">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/fr/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a class="site-nav__link" href="/fr/">Accueil</a><a class="site-nav__link" href="/fr/work/">Travail</a><a class="site-nav__link" href="/fr/projects/" aria-current="page">Projets</a><a class="site-nav__link" href="/fr/writing/">Écrits</a><a class="site-nav__link" href="/fr/library/">Bibliothèque</a><a class="site-nav__link" href="/fr/about/">À propos</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Apparence">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Clair</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Sombre</button>
+          </div>
+          <a class="locale-link" hreflang="en" href="/projects/le-point-veterinaire/">English</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/fr/projects/">Retour aux projets</a>
+        <span class="eyebrow">Le Point Vétérinaire.fr</span>
+        <h1>Un produit vétérinaire mêlant information, outils et support opérationnel au quotidien.</h1>
+        <p class="hero__lede">Le Point Vétérinaire.fr était conçu pour donner aux vétérinaires un produit mobile unique réunissant actualités professionnelles, contenus de formation, outils pratiques, annuaires et données de référence. Sa valeur venait de la réunion de plusieurs besoins du quotidien dans une application restant utile sous un usage professionnel régulier.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Things Are Moving</span>
+          <h2>Développement iOS natif</h2>
+          <p class="card__meta">Mars 2017 - Septembre 2018</p>
+          <p>Développement de l&#x27;application en Swift avec responsabilité sur l&#x27;implémentation des fonctionnalités, l&#x27;accès au contenu et l&#x27;expérience utilisateur à travers des couches d&#x27;information, de formation et d&#x27;utilité métier.</p>
+          <ul class="detail-list"><li>Livraison d&#x27;un produit iOS natif réunissant information métier, outils pratiques et contenus d&#x27;apprentissage pour les vétérinaires.</li><li>Travail sur les fonctionnalités, les patterns d&#x27;accès au contenu et l&#x27;expérience utilisateur dans une application professionnelle à plusieurs surfaces.</li><li>Contribution à unifier données de référence, outils et mises à jour régulières dans un même workflow mobile.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">Vétérinaires</span>
+  <span class="stat-card__label">audience métier spécialisée avec besoins d&#x27;information récurrents</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Outils + annuaires + données</span>
+  <span class="stat-card__label">utilité opérationnelle intégrée au produit</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">iOS natif</span>
+  <span class="stat-card__label">exécution mobile centrée sur un usage métier concret</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Produit</span>
+      <h2>L&#x27;application devait soutenir à la fois la lecture et l&#x27;action.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Les actualités et contenus de formation étaient importants, mais le produit devait aussi fonctionner comme un point d&#x27;accès à des outils, annuaires et contenus de référence réellement actionnables.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Information et formation ensemble</h3>
+  <p>L&#x27;application réunissait actualités en temps réel, contenus pédagogiques et publications numériques afin que les vétérinaires puissent rester informés et apprendre dans le même produit.</p>
+  <ul class="detail-list"><li>Le produit devait supporter à la fois la consultation rapide et l&#x27;étude plus approfondie.</li><li>Les différents types de contenu devaient rester cohérents dans la même interface.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Une couche d&#x27;utilité pratique</h3>
+  <p>Annuaires, outils de calcul, éléments d&#x27;aide à la décision et fonctions de gestion faisaient de l&#x27;application bien plus qu&#x27;un simple lecteur de publication.</p>
+  <ul class="detail-list"><li>L&#x27;utilité était au cœur de la valeur métier quotidienne.</li><li>Le produit devait sembler actionnable, pas seulement informatif.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Un compagnon métier quotidien</h3>
+  <p>L&#x27;objectif de conception était de rendre l&#x27;application digne d&#x27;être revisitée dans le cadre du vrai travail vétérinaire, et non comme une bibliothèque de contenus statique.</p>
+  <ul class="detail-list"><li>L&#x27;usage répété guidait les décisions produit.</li><li>L&#x27;application devait rester utile au-delà d&#x27;une seule session de lecture.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Référence</span>
+      <h2>Les données de référence et les outils devaient rester accessibles sur mobile.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Les données sur les médicaments vétérinaires, les annuaires professionnels et fournisseurs ainsi que les outils associés créaient une surface plus opérationnelle qui devait rester utilisable sur téléphone.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Information médicamenteuse vétérinaire</h3>
+  <p>Le produit incluait des données de référence qui devaient rester découvrables et lisibles dans une interface mobile contrainte.</p>
+  <ul class="detail-list"><li>La profondeur de la référence influençait navigation et présentation.</li><li>L&#x27;interface devait respecter à la fois vitesse et précision.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Outils opérationnels</h3>
+  <p>Les outils de calcul, annuaires et fonctions d&#x27;aide à la décision rendaient l&#x27;application pertinente pour le travail concret, pas seulement pour la lecture.</p>
+  <ul class="detail-list"><li>L&#x27;application servait des besoins opérationnels autant qu&#x27;éditoriaux.</li><li>Les fonctions pratiques renforçaient la valeur récurrente du produit.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Accès unifié</h3>
+  <p>L&#x27;un des enjeux principaux consistait à garder ces différentes ressources accessibles via une structure produit unique et compréhensible dans le temps.</p>
+  <ul class="detail-list"><li>L&#x27;architecture de l&#x27;information devait absorber la complexité.</li><li>La cohérence était essentielle à l&#x27;usage répété.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Exécution</span>
+      <h2>Le delivery natif gardait le produit ancré dans les usages réels.</h2>
+    </div>
+    <div class="section-copy">
+      <p>L&#x27;implémentation en Swift aidait à transformer une surface métier complexe en application réactive, claire et maintenable.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Implémentation fonctionnelle avec contexte</h3>
+  <p>Développer les fonctionnalités demandait de comprendre comment s&#x27;imbriquaient informations, outils et workflows plutôt que de traiter chaque écran indépendamment.</p>
+  <ul class="detail-list"><li>L&#x27;implémentation restait proche de la logique produit.</li><li>L&#x27;application bénéficiait de décisions prises à l&#x27;échelle du système.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Accès au contenu et ergonomie</h3>
+  <p>Rendre contenus et outils faciles à atteindre comptait autant que leur présence, surtout pour un usage professionnel répété.</p>
+  <ul class="detail-list"><li>L&#x27;ergonomie faisait partie de la promesse produit.</li><li>Les contraintes mobiles devaient soutenir la rapidité, pas la freiner.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Un workflow métier cohérent</h3>
+  <p>Le produit fonctionnait au mieux lorsqu&#x27;il ressemblait à une surface de travail fiable plutôt qu&#x27;à un empilement de ressources sans lien.</p>
+  <ul class="detail-list"><li>La cohérence relevait autant du produit que de la technique.</li><li>Les meilleures décisions d&#x27;implémentation soutenaient les habitudes de travail récurrentes.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Leadership d&#x27;ingénierie pour les produits mobiles, l&#x27;architecture et la delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. Tous droits réservés.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Liens sociaux">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

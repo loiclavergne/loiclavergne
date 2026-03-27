@@ -1,0 +1,260 @@
+<!--
+  project-le-moniteur-des-pharmacies.html
+  Loic Engineer Portfolio
+
+  Created by Loïc Lavergne on 25/03/2026
+  Copyright © 2026 Loïc Lavergne. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Étude de cas sur Le Moniteur des Pharmacies, produit iOS natif pour les pharmaciens entre actualités, formation et outils de référence.">
+  <meta name="author" content="Loïc Lavergne">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta property="og:site_name" content="Loïc Lavergne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Le Moniteur des Pharmacies | Projets | Loïc Lavergne">
+  <meta property="og:description" content="Étude de cas sur Le Moniteur des Pharmacies, produit iOS natif pour les pharmaciens entre actualités, formation et outils de référence.">
+  <meta property="og:url" content="https://loic.engineer/fr/projects/le-moniteur-des-pharmacies/">
+  <meta property="og:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le Moniteur des Pharmacies | Projets | Loïc Lavergne">
+  <meta name="twitter:description" content="Étude de cas sur Le Moniteur des Pharmacies, produit iOS natif pour les pharmaciens entre actualités, formation et outils de référence.">
+  <meta name="twitter:image" content="https://loic.engineer/assets/img/og/og-default.svg">
+  <link rel="canonical" href="https://loic.engineer/fr/projects/le-moniteur-des-pharmacies/">
+  <link rel="alternate" hreflang="en" href="https://loic.engineer/projects/le-moniteur-des-pharmacies/">
+  <link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/le-moniteur-des-pharmacies/">
+  <link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/le-moniteur-des-pharmacies/">
+  <link rel="me" href="https://github.com/loiclavergne/">
+  <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
+  <link rel="me" href="https://bsky.app/profile/loic.engineer">
+  <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
+  <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      let stored = null;
+      try {
+        stored = window.localStorage.getItem("loic.engineer.theme");
+      } catch (error) {
+        stored = null;
+      }
+      const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.resolvedTheme = resolved;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Le Moniteur des Pharmacies | Projets | Loïc Lavergne</title>
+  <script type="application/ld+json">
+{
+  "@context" : "https:\/\/schema.org",
+  "@graph" : [
+    {
+      "@type" : "Person",
+      "jobTitle" : "Engineering Manager, Mobile Products",
+      "knowsAbout" : [
+        "Mobile Engineering",
+        "Engineering Management",
+        "iOS Development",
+        "SwiftUI",
+        "Technical Architecture",
+        "Product Delivery",
+        "Agentic Engineering"
+      ],
+      "name" : "Loïc Lavergne",
+      "sameAs" : [
+        "https:\/\/www.linkedin.com\/in\/loiclavergne\/",
+        "https:\/\/github.com\/loiclavergne\/",
+        "https:\/\/bsky.app\/profile\/loic.engineer",
+        "https:\/\/www.instagram.com\/loic.lavergne.tech"
+      ],
+      "url" : "https:\/\/loic.engineer\/fr\/",
+      "worksFor" : {
+        "@type" : "Organization",
+        "name" : "Roole"
+      }
+    },
+    {
+      "@type" : "WebSite",
+      "inLanguage" : "fr_FR",
+      "name" : "Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/"
+    },
+    {
+      "@type" : "WebPage",
+      "inLanguage" : "fr_FR",
+      "name" : "Le Moniteur des Pharmacies | Projets | Loïc Lavergne",
+      "url" : "https:\/\/loic.engineer\/fr\/projects\/le-moniteur-des-pharmacies\/"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-page="project-le-moniteur-des-pharmacies">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="site-brand" href="/fr/">
+          <span class="site-brand__name">Loïc Lavergne</span>
+          <span class="site-brand__role">Engineering Manager, Mobile Products</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a class="site-nav__link" href="/fr/">Accueil</a><a class="site-nav__link" href="/fr/work/">Travail</a><a class="site-nav__link" href="/fr/projects/" aria-current="page">Projets</a><a class="site-nav__link" href="/fr/writing/">Écrits</a><a class="site-nav__link" href="/fr/library/">Bibliothèque</a><a class="site-nav__link" href="/fr/about/">À propos</a>
+        </nav>
+        <div class="site-header__controls">
+          <div class="theme-switcher" aria-label="Apparence">
+            <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="light">Clair</button>
+            <button class="theme-switcher__button" type="button" data-theme-control="dark">Sombre</button>
+          </div>
+          <a class="locale-link" hreflang="en" href="/projects/le-moniteur-des-pharmacies/">English</a>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="shell hero__content hero__content--page">
+        <a class="context-link" href="/fr/projects/">Retour aux projets</a>
+        <span class="eyebrow">Le Moniteur des Pharmacies</span>
+        <h1>Un produit iOS professionnel pensé pour des usages métier denses et récurrents.</h1>
+        <p class="hero__lede">Le Moniteur des Pharmacies réunissait actualités professionnelles, ressources de formation, magazines numériques, offres d&#x27;emploi et outils de référence dans une même application iOS native. L&#x27;enjeu n&#x27;était pas une fonctionnalité isolée, mais la capacité à rendre une surface métier large réellement utile et navigable au quotidien.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell">
+        <article class="card card--featured reveal">
+          <span class="eyebrow">Things Are Moving</span>
+          <h2>Développement iOS natif</h2>
+          <p class="card__meta">Mars 2017 - Septembre 2018</p>
+          <p>Développement natif en Swift avec responsabilité sur l&#x27;implémentation des fonctionnalités, la présentation des données et l&#x27;expérience utilisateur autour d&#x27;usages d&#x27;information, d&#x27;apprentissage et de consultation métier.</p>
+          <ul class="detail-list"><li>Livraison d&#x27;une application iOS native agrégeant plusieurs types de contenus professionnels dans un même produit.</li><li>Travail sur l&#x27;implémentation, la présentation de données et l&#x27;ergonomie dans un environnement informationnel dense.</li><li>Contribution à transformer des ressources métier en outil mobile réellement utile pour les pharmaciens.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="shell stat-grid">
+        <article class="stat-card reveal">
+  <span class="stat-card__value">Pharmaciens</span>
+  <span class="stat-card__label">audience métier spécialisée et contexte d&#x27;usage précis</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">Actualités + formation + référence</span>
+  <span class="stat-card__label">plusieurs systèmes de contenu dans un même produit</span>
+</article>
+<article class="stat-card reveal">
+  <span class="stat-card__value">iOS natif</span>
+  <span class="stat-card__label">exécution mono-plateforme centrée sur fiabilité et clarté</span>
+</article>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Produit</span>
+      <h2>L&#x27;application devait réunir plusieurs besoins métier sans se fragmenter.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Le produit mêlait actualités, magazines, formation, recrutement et données de référence, ce qui imposait de garder l&#x27;ensemble lisible même à mesure que la surface d&#x27;information grandissait.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Actualités métier et lecture</h3>
+  <p>L&#x27;application combinait actualités professionnelles en temps réel et accès aux magazines numériques en formats PDF et article.</p>
+  <ul class="detail-list"><li>Le produit devait supporter à la fois la consultation rapide et la lecture plus approfondie.</li><li>Les différents modes de contenu devaient coexister proprement.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Formation et évolution professionnelle</h3>
+  <p>Les contenus pédagogiques, médias de formation et offres d&#x27;emploi étendaient le produit au-delà de la simple consultation d&#x27;information vers un compagnon professionnel plus large.</p>
+  <ul class="detail-list"><li>L&#x27;application soutenait un développement professionnel récurrent.</li><li>Les contenus carrière et formation ajoutaient une autre couche à la surface produit.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Un hub métier cohérent</h3>
+  <p>L&#x27;enjeu global était de faire ressentir l&#x27;application comme un outil professionnel unifié plutôt qu&#x27;un assemblage lâche de services.</p>
+  <ul class="detail-list"><li>L&#x27;architecture de l&#x27;information comptait autant que l&#x27;implémentation.</li><li>La valeur venait de la cohérence d&#x27;ensemble, pas de fonctionnalités isolées.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Référence</span>
+      <h2>La profondeur de référence faisait partie de l&#x27;utilité produit.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Les données pharmaceutiques, références sur les médicaments vétérinaires et bases associées devaient rester accessibles et pratiques dans une interface mobile conçue pour un usage régulier.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Accès aux données de référence</h3>
+  <p>L&#x27;application donnait accès à de larges ensembles de données pharmaceutiques afin que les pharmaciens puissent l&#x27;utiliser comme un véritable outil de travail, pas seulement comme une destination éditoriale.</p>
+  <ul class="detail-list"><li>La profondeur de la référence influençait directement le design produit.</li><li>La consultation devait rester rapide et fiable.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Présentation d&#x27;information dense</h3>
+  <p>Une partie importante du travail consistait à présenter des données métier complexes de manière suffisamment claire pour rester utiles sur mobile.</p>
+  <ul class="detail-list"><li>La présentation des données relevait d&#x27;une responsabilité produit.</li><li>Les contraintes mobiles devaient être respectées sans simplifier à l&#x27;excès.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Ergonomie d&#x27;usage régulier</h3>
+  <p>Parce que le produit était pensé pour une consultation professionnelle répétée, navigation et accès au contenu devaient favoriser l&#x27;usage dans la durée.</p>
+  <ul class="detail-list"><li>L&#x27;interface devait récompenser la familiarité.</li><li>L&#x27;efficacité comptait davantage que l&#x27;effet de nouveauté.</li></ul>
+</article>
+  </div>
+</section>
+<section class="section section--compact">
+  <div class="shell split-heading">
+    <div>
+      <span class="eyebrow">Exécution</span>
+      <h2>L&#x27;implémentation native aidait à garder un produit large cohérent.</h2>
+    </div>
+    <div class="section-copy">
+      <p>Le travail reposait sur un développement Swift concret, ce qui gardait l&#x27;expérience produit, la complexité du contenu et l&#x27;exécution technique étroitement liées.</p>
+    </div>
+  </div>
+  <div class="shell card-grid card-grid--three">
+    <article class="card reveal">
+  <h3>Delivery en Swift</h3>
+  <p>L&#x27;implémentation iOS native facilitait une application réactive et des interactions adaptées à la réalité d&#x27;un usage professionnel fréquent.</p>
+  <ul class="detail-list"><li>Performance et clarté soutenaient la confiance dans le produit.</li><li>Le natif améliorait le niveau de contrôle sur l&#x27;expérience utilisateur.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Implémentation avec conscience produit</h3>
+  <p>Le travail n&#x27;était pas limité à des écrans isolés ; il fallait comprendre comment les différents besoins métier s&#x27;imbriquaient dans une même application.</p>
+  <ul class="detail-list"><li>Le travail technique restait lié à la structure de l&#x27;information.</li><li>L&#x27;ergonomie faisait partie de la responsabilité d&#x27;ingénierie.</li></ul>
+</article>
+<article class="card reveal">
+  <h3>Un outil métier réellement pratique</h3>
+  <p>L&#x27;objectif final était d&#x27;aider les pharmaciens à revenir régulièrement dans l&#x27;application pour leurs besoins d&#x27;information, d&#x27;apprentissage et de référence sans friction.</p>
+  <ul class="detail-list"><li>Le produit devait mériter un usage répété.</li><li>La réussite dépendait de la fiabilité et de la valeur pratique.</li></ul>
+</article>
+  </div>
+</section>
+  </main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="site-footer__tagline">Leadership d&#x27;ingénierie pour les produits mobiles, l&#x27;architecture et la delivery.</p>
+          <p class="site-footer__copyright">© 2026 Loïc Lavergne. Tous droits réservés.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Liens sociaux">
+          <a href="https://www.linkedin.com/in/loiclavergne/" rel="me noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/loiclavergne/" rel="me noopener noreferrer" target="_blank">GitHub</a><a href="https://bsky.app/profile/loic.engineer" rel="me noopener noreferrer" target="_blank">Bluesky</a><a href="https://www.instagram.com/loic.lavergne.tech" rel="me noopener noreferrer" target="_blank">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  <script type="module" src="/js/site.js"></script>
+</body>
+</html>

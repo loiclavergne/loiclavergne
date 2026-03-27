@@ -62,6 +62,14 @@
       "en": "/projects/dakar-presse/",
       "fr": "/fr/projects/dakar-presse/"
     },
+    "project-le-moniteur-des-pharmacies": {
+      "en": "/projects/le-moniteur-des-pharmacies/",
+      "fr": "/fr/projects/le-moniteur-des-pharmacies/"
+    },
+    "project-le-point-veterinaire": {
+      "en": "/projects/le-point-veterinaire/",
+      "fr": "/fr/projects/le-point-veterinaire/"
+    },
     "writing": {
       "en": "/writing/",
       "fr": "/fr/writing/"
@@ -85,6 +93,8 @@
     "project-myviapresse",
     "project-digital-press-applications",
     "project-dakar-presse",
+    "project-le-moniteur-des-pharmacies",
+    "project-le-point-veterinaire",
     "writing",
     "library",
     "about"
@@ -469,7 +479,8 @@
             "details": [
               "Aggregated news, PDF and article reading, training resources, and reference databases for pharmacists.",
               "Focused on frequent professional use with complex content types inside one native iOS product."
-            ]
+            ],
+            "route": "project-le-moniteur-des-pharmacies"
           },
           {
             "name": "Le Point Vétérinaire.fr",
@@ -478,7 +489,8 @@
             "details": [
               "Combined news, training, practical tools, directories, and veterinary drug data in one app.",
               "Designed for recurring professional use with unified access to reference and operational tools."
-            ]
+            ],
+            "route": "project-le-point-veterinaire"
           }
         ],
         "hobby_heading": "Hobby and internal side projects",
@@ -1252,6 +1264,256 @@
             }
           ]
         },
+        "project-le-moniteur-des-pharmacies": {
+          "page_title": "Le Moniteur des Pharmacies | Projects | Loïc Lavergne",
+          "description": "Le Moniteur des Pharmacies case study covering native iOS delivery for pharmacists across news, training, and reference tools.",
+          "eyebrow": "Le Moniteur des Pharmacies",
+          "title": "A professional iOS product designed for dense, recurring pharmacist workflows.",
+          "intro": "Le Moniteur des Pharmacies brought together professional news, training resources, digital magazines, job listings, and reference tools for pharmacists in one native iOS application. The challenge was less about a single feature than about making a broad professional surface feel useful and navigable in daily practice.",
+          "role_title": "Native iOS development",
+          "organization": "Things Are Moving",
+          "period": "March 2017 - September 2018",
+          "summary": "Built the application natively in Swift with responsibility for feature implementation, data presentation, and user experience across news, learning, and professional reference use cases.",
+          "highlights": [
+            "Delivered a native iOS application aggregating multiple professional content types in one product.",
+            "Worked on feature implementation, data presentation, and overall usability in a dense information environment.",
+            "Helped turn professional resources into a practical day-to-day mobile tool for pharmacists."
+          ],
+          "metrics": [
+            {
+              "value": "Pharmacists",
+              "label": "specialized professional audience and usage context"
+            },
+            {
+              "value": "News + training + reference",
+              "label": "multiple content systems inside one product"
+            },
+            {
+              "value": "iOS native",
+              "label": "single-platform execution focused on reliability and clarity"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Product",
+              "title": "The app had to unite several professional needs without feeling fragmented.",
+              "intro": "The product mixed news, magazines, education, recruitment, and reference data, which meant the application needed to remain understandable even as the information surface grew.",
+              "cards": [
+                {
+                  "title": "Professional news and reading",
+                  "copy": "The app combined real-time professional news with digital magazine access in both PDF and article formats.",
+                  "items": [
+                    "The product had to support both quick updates and deeper reading sessions.",
+                    "Different content modes needed to coexist cleanly."
+                  ]
+                },
+                {
+                  "title": "Learning and career content",
+                  "copy": "Training resources, educational media, and job listings extended the product beyond information lookup into a broader professional companion.",
+                  "items": [
+                    "The application supported recurring professional development.",
+                    "Career and learning content added another layer to the product surface."
+                  ]
+                },
+                {
+                  "title": "One professional hub",
+                  "copy": "The overall challenge was to make the application feel like a unified professional tool instead of a loose collection of services.",
+                  "items": [
+                    "Information architecture mattered as much as implementation.",
+                    "The value came from a coherent whole, not isolated features."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Reference",
+              "title": "Reference depth was part of the product's usefulness.",
+              "intro": "Pharmaceutical data, veterinary medicine references, and supporting databases had to remain accessible and practical within a mobile interface built for regular use.",
+              "cards": [
+                {
+                  "title": "Drug reference access",
+                  "copy": "The application surfaced pharmaceutical data across large reference sets so pharmacists could use the product as a working tool, not just a reading destination.",
+                  "items": [
+                    "Depth of reference content shaped the product design.",
+                    "Practical lookup had to stay fast and reliable."
+                  ]
+                },
+                {
+                  "title": "Dense information presentation",
+                  "copy": "A key part of the work was presenting professional data clearly enough to remain useful on mobile even when the underlying information was complex.",
+                  "items": [
+                    "Data presentation was a product responsibility.",
+                    "Mobile constraints had to be respected without oversimplifying the content."
+                  ]
+                },
+                {
+                  "title": "Regular-use ergonomics",
+                  "copy": "Because the product was built for recurring professional consultation, navigation and content access had to support repeat usage over time.",
+                  "items": [
+                    "The interface had to reward familiarity.",
+                    "Efficiency mattered more than novelty."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Execution",
+              "title": "Native implementation helped keep a broad product coherent.",
+              "intro": "The work was grounded in hands-on Swift development, which kept product experience, content complexity, and technical implementation closely connected.",
+              "cards": [
+                {
+                  "title": "Swift-based delivery",
+                  "copy": "Native iOS implementation made it easier to keep the application responsive and to shape interactions around the realities of frequent professional use.",
+                  "items": [
+                    "Performance and clarity supported trust in the product.",
+                    "Native delivery improved control over the user experience."
+                  ]
+                },
+                {
+                  "title": "Feature work with product awareness",
+                  "copy": "Implementation was not limited to isolated screens; it required understanding how different professional needs fit together inside one application.",
+                  "items": [
+                    "Technical work stayed tied to information design.",
+                    "Usability was part of the engineering responsibility."
+                  ]
+                },
+                {
+                  "title": "A practical professional tool",
+                  "copy": "The end goal was to help pharmacists return to the app regularly for information, learning, and reference needs without friction.",
+                  "items": [
+                    "The product needed to earn repeated use.",
+                    "Success depended on reliability and practical value."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-le-point-veterinaire": {
+          "page_title": "Le Point Vétérinaire.fr | Projects | Loïc Lavergne",
+          "description": "Le Point Vétérinaire.fr case study covering native iOS delivery for veterinarians across news, training, practical tools, and reference data.",
+          "eyebrow": "Le Point Vétérinaire.fr",
+          "title": "A veterinary product combining information, tools, and daily operational support.",
+          "intro": "Le Point Vétérinaire.fr was built to give veterinarians a single mobile product for professional news, training content, practical tools, directories, and reference data. The value came from bringing multiple everyday needs together in a product that stayed useful under regular professional use.",
+          "role_title": "Native iOS development",
+          "organization": "Things Are Moving",
+          "period": "March 2017 - September 2018",
+          "summary": "Built the application in Swift with responsibility for feature implementation, content access, and user experience across veterinary information, training, and operational utility layers.",
+          "highlights": [
+            "Delivered a native iOS product that combined professional information, practical tools, and learning content for veterinarians.",
+            "Worked on features, content access patterns, and user experience in a multi-surface professional app.",
+            "Helped unify reference data, tools, and regular updates into one mobile workflow."
+          ],
+          "metrics": [
+            {
+              "value": "Veterinarians",
+              "label": "specialized professional audience with recurring information needs"
+            },
+            {
+              "value": "Tools + directories + data",
+              "label": "operational utility layered into the product"
+            },
+            {
+              "value": "iOS native",
+              "label": "mobile execution centered on practical professional use"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Product",
+              "title": "The app had to support both reading and action.",
+              "intro": "Professional news and training content were important, but the product also needed to function as a place to find tools, directories, and actionable reference material.",
+              "cards": [
+                {
+                  "title": "Information and training together",
+                  "copy": "The app unified real-time news, training content, and digital publications so veterinarians could move between staying informed and learning in one product.",
+                  "items": [
+                    "The product needed to support both quick consultation and deeper study.",
+                    "Different content types had to remain coherent inside the same interface."
+                  ]
+                },
+                {
+                  "title": "Practical utility layer",
+                  "copy": "Directories, calculations, decision-support elements, and management tools made the application more than a publication reader.",
+                  "items": [
+                    "Utility was central to daily professional value.",
+                    "The product had to feel actionable, not just informative."
+                  ]
+                },
+                {
+                  "title": "A daily professional companion",
+                  "copy": "The broader design goal was to make the app feel worth revisiting as part of real veterinary work rather than as a static content library.",
+                  "items": [
+                    "Repeat use shaped the product decisions.",
+                    "The app needed to remain useful beyond one content session."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Reference",
+              "title": "Reference data and tools had to stay accessible on mobile.",
+              "intro": "Veterinary drug data, supplier and professional directories, and supporting tools created a more operational product surface that had to remain usable on a phone.",
+              "cards": [
+                {
+                  "title": "Veterinary drug information",
+                  "copy": "The product included reference data that needed to stay discoverable and readable inside a constrained mobile interface.",
+                  "items": [
+                    "Reference depth shaped navigation and presentation choices.",
+                    "The interface had to respect both speed and precision."
+                  ]
+                },
+                {
+                  "title": "Operational tools",
+                  "copy": "Calculation tools, directories, and decision-support functions made the app relevant to practical professional work, not only to reading.",
+                  "items": [
+                    "The app served operational needs as well as editorial ones.",
+                    "Practical features improved the product's recurring value."
+                  ]
+                },
+                {
+                  "title": "Unified access",
+                  "copy": "A core challenge was keeping these different resources reachable through one product structure that remained understandable over time.",
+                  "items": [
+                    "The information architecture had to absorb complexity.",
+                    "Consistency was essential to repeated use."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Execution",
+              "title": "Native delivery kept the product grounded in real usage.",
+              "intro": "Swift-based implementation helped translate a complex professional surface into an app that stayed responsive, clear, and maintainable.",
+              "cards": [
+                {
+                  "title": "Feature implementation with context",
+                  "copy": "Building features for the app meant understanding how information, tools, and workflows fit together instead of treating each screen in isolation.",
+                  "items": [
+                    "Implementation stayed close to product logic.",
+                    "The app benefited from decisions made at the system level."
+                  ]
+                },
+                {
+                  "title": "Content access and usability",
+                  "copy": "Making content and tools easy to reach was as important as adding them in the first place, especially for repeat professional use.",
+                  "items": [
+                    "Usability was part of the product promise.",
+                    "Mobile constraints had to support speed, not hinder it."
+                  ]
+                },
+                {
+                  "title": "A coherent professional workflow",
+                  "copy": "The product worked best when it felt like one dependable workflow surface rather than a stack of unrelated resources.",
+                  "items": [
+                    "Coherence was a technical and product responsibility.",
+                    "The strongest implementation choices supported recurring work habits."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
       },
       "writing": {
         "page_title": "Writing | Loïc Lavergne",
@@ -1875,7 +2137,8 @@
             "details": [
               "Rassemblait actualités, lecture PDF et article, ressources de formation et bases de référence pour pharmaciens.",
               "Pensée pour un usage professionnel fréquent avec plusieurs types de contenu dans un seul produit iOS natif."
-            ]
+            ],
+            "route": "project-le-moniteur-des-pharmacies"
           },
           {
             "name": "Le Point Vétérinaire.fr",
@@ -1884,7 +2147,8 @@
             "details": [
               "Réunissait actualités, formation, outils pratiques, annuaires et données médicaments vétérinaires dans une seule app.",
               "Conçue pour un usage professionnel récurrent avec un accès unifié aux outils de référence et d'exploitation."
-            ]
+            ],
+            "route": "project-le-point-veterinaire"
           }
         ],
         "hobby_heading": "Projets personnels et internes",
@@ -2652,6 +2916,256 @@
                   "items": [
                     "La fiabilité opérationnelle faisait partie de la promesse publique du produit.",
                     "Les meilleures décisions étaient celles qui soutenaient l'usage répété dans le temps."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-le-moniteur-des-pharmacies": {
+          "page_title": "Le Moniteur des Pharmacies | Projets | Loïc Lavergne",
+          "description": "Étude de cas sur Le Moniteur des Pharmacies, produit iOS natif pour les pharmaciens entre actualités, formation et outils de référence.",
+          "eyebrow": "Le Moniteur des Pharmacies",
+          "title": "Un produit iOS professionnel pensé pour des usages métier denses et récurrents.",
+          "intro": "Le Moniteur des Pharmacies réunissait actualités professionnelles, ressources de formation, magazines numériques, offres d'emploi et outils de référence dans une même application iOS native. L'enjeu n'était pas une fonctionnalité isolée, mais la capacité à rendre une surface métier large réellement utile et navigable au quotidien.",
+          "role_title": "Développement iOS natif",
+          "organization": "Things Are Moving",
+          "period": "Mars 2017 - Septembre 2018",
+          "summary": "Développement natif en Swift avec responsabilité sur l'implémentation des fonctionnalités, la présentation des données et l'expérience utilisateur autour d'usages d'information, d'apprentissage et de consultation métier.",
+          "highlights": [
+            "Livraison d'une application iOS native agrégeant plusieurs types de contenus professionnels dans un même produit.",
+            "Travail sur l'implémentation, la présentation de données et l'ergonomie dans un environnement informationnel dense.",
+            "Contribution à transformer des ressources métier en outil mobile réellement utile pour les pharmaciens."
+          ],
+          "metrics": [
+            {
+              "value": "Pharmaciens",
+              "label": "audience métier spécialisée et contexte d'usage précis"
+            },
+            {
+              "value": "Actualités + formation + référence",
+              "label": "plusieurs systèmes de contenu dans un même produit"
+            },
+            {
+              "value": "iOS natif",
+              "label": "exécution mono-plateforme centrée sur fiabilité et clarté"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Produit",
+              "title": "L'application devait réunir plusieurs besoins métier sans se fragmenter.",
+              "intro": "Le produit mêlait actualités, magazines, formation, recrutement et données de référence, ce qui imposait de garder l'ensemble lisible même à mesure que la surface d'information grandissait.",
+              "cards": [
+                {
+                  "title": "Actualités métier et lecture",
+                  "copy": "L'application combinait actualités professionnelles en temps réel et accès aux magazines numériques en formats PDF et article.",
+                  "items": [
+                    "Le produit devait supporter à la fois la consultation rapide et la lecture plus approfondie.",
+                    "Les différents modes de contenu devaient coexister proprement."
+                  ]
+                },
+                {
+                  "title": "Formation et évolution professionnelle",
+                  "copy": "Les contenus pédagogiques, médias de formation et offres d'emploi étendaient le produit au-delà de la simple consultation d'information vers un compagnon professionnel plus large.",
+                  "items": [
+                    "L'application soutenait un développement professionnel récurrent.",
+                    "Les contenus carrière et formation ajoutaient une autre couche à la surface produit."
+                  ]
+                },
+                {
+                  "title": "Un hub métier cohérent",
+                  "copy": "L'enjeu global était de faire ressentir l'application comme un outil professionnel unifié plutôt qu'un assemblage lâche de services.",
+                  "items": [
+                    "L'architecture de l'information comptait autant que l'implémentation.",
+                    "La valeur venait de la cohérence d'ensemble, pas de fonctionnalités isolées."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Référence",
+              "title": "La profondeur de référence faisait partie de l'utilité produit.",
+              "intro": "Les données pharmaceutiques, références sur les médicaments vétérinaires et bases associées devaient rester accessibles et pratiques dans une interface mobile conçue pour un usage régulier.",
+              "cards": [
+                {
+                  "title": "Accès aux données de référence",
+                  "copy": "L'application donnait accès à de larges ensembles de données pharmaceutiques afin que les pharmaciens puissent l'utiliser comme un véritable outil de travail, pas seulement comme une destination éditoriale.",
+                  "items": [
+                    "La profondeur de la référence influençait directement le design produit.",
+                    "La consultation devait rester rapide et fiable."
+                  ]
+                },
+                {
+                  "title": "Présentation d'information dense",
+                  "copy": "Une partie importante du travail consistait à présenter des données métier complexes de manière suffisamment claire pour rester utiles sur mobile.",
+                  "items": [
+                    "La présentation des données relevait d'une responsabilité produit.",
+                    "Les contraintes mobiles devaient être respectées sans simplifier à l'excès."
+                  ]
+                },
+                {
+                  "title": "Ergonomie d'usage régulier",
+                  "copy": "Parce que le produit était pensé pour une consultation professionnelle répétée, navigation et accès au contenu devaient favoriser l'usage dans la durée.",
+                  "items": [
+                    "L'interface devait récompenser la familiarité.",
+                    "L'efficacité comptait davantage que l'effet de nouveauté."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Exécution",
+              "title": "L'implémentation native aidait à garder un produit large cohérent.",
+              "intro": "Le travail reposait sur un développement Swift concret, ce qui gardait l'expérience produit, la complexité du contenu et l'exécution technique étroitement liées.",
+              "cards": [
+                {
+                  "title": "Delivery en Swift",
+                  "copy": "L'implémentation iOS native facilitait une application réactive et des interactions adaptées à la réalité d'un usage professionnel fréquent.",
+                  "items": [
+                    "Performance et clarté soutenaient la confiance dans le produit.",
+                    "Le natif améliorait le niveau de contrôle sur l'expérience utilisateur."
+                  ]
+                },
+                {
+                  "title": "Implémentation avec conscience produit",
+                  "copy": "Le travail n'était pas limité à des écrans isolés ; il fallait comprendre comment les différents besoins métier s'imbriquaient dans une même application.",
+                  "items": [
+                    "Le travail technique restait lié à la structure de l'information.",
+                    "L'ergonomie faisait partie de la responsabilité d'ingénierie."
+                  ]
+                },
+                {
+                  "title": "Un outil métier réellement pratique",
+                  "copy": "L'objectif final était d'aider les pharmaciens à revenir régulièrement dans l'application pour leurs besoins d'information, d'apprentissage et de référence sans friction.",
+                  "items": [
+                    "Le produit devait mériter un usage répété.",
+                    "La réussite dépendait de la fiabilité et de la valeur pratique."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "project-le-point-veterinaire": {
+          "page_title": "Le Point Vétérinaire.fr | Projets | Loïc Lavergne",
+          "description": "Étude de cas sur Le Point Vétérinaire.fr, produit iOS natif pour les vétérinaires entre actualités, formation, outils pratiques et données de référence.",
+          "eyebrow": "Le Point Vétérinaire.fr",
+          "title": "Un produit vétérinaire mêlant information, outils et support opérationnel au quotidien.",
+          "intro": "Le Point Vétérinaire.fr était conçu pour donner aux vétérinaires un produit mobile unique réunissant actualités professionnelles, contenus de formation, outils pratiques, annuaires et données de référence. Sa valeur venait de la réunion de plusieurs besoins du quotidien dans une application restant utile sous un usage professionnel régulier.",
+          "role_title": "Développement iOS natif",
+          "organization": "Things Are Moving",
+          "period": "Mars 2017 - Septembre 2018",
+          "summary": "Développement de l'application en Swift avec responsabilité sur l'implémentation des fonctionnalités, l'accès au contenu et l'expérience utilisateur à travers des couches d'information, de formation et d'utilité métier.",
+          "highlights": [
+            "Livraison d'un produit iOS natif réunissant information métier, outils pratiques et contenus d'apprentissage pour les vétérinaires.",
+            "Travail sur les fonctionnalités, les patterns d'accès au contenu et l'expérience utilisateur dans une application professionnelle à plusieurs surfaces.",
+            "Contribution à unifier données de référence, outils et mises à jour régulières dans un même workflow mobile."
+          ],
+          "metrics": [
+            {
+              "value": "Vétérinaires",
+              "label": "audience métier spécialisée avec besoins d'information récurrents"
+            },
+            {
+              "value": "Outils + annuaires + données",
+              "label": "utilité opérationnelle intégrée au produit"
+            },
+            {
+              "value": "iOS natif",
+              "label": "exécution mobile centrée sur un usage métier concret"
+            }
+          ],
+          "sections": [
+            {
+              "eyebrow": "Produit",
+              "title": "L'application devait soutenir à la fois la lecture et l'action.",
+              "intro": "Les actualités et contenus de formation étaient importants, mais le produit devait aussi fonctionner comme un point d'accès à des outils, annuaires et contenus de référence réellement actionnables.",
+              "cards": [
+                {
+                  "title": "Information et formation ensemble",
+                  "copy": "L'application réunissait actualités en temps réel, contenus pédagogiques et publications numériques afin que les vétérinaires puissent rester informés et apprendre dans le même produit.",
+                  "items": [
+                    "Le produit devait supporter à la fois la consultation rapide et l'étude plus approfondie.",
+                    "Les différents types de contenu devaient rester cohérents dans la même interface."
+                  ]
+                },
+                {
+                  "title": "Une couche d'utilité pratique",
+                  "copy": "Annuaires, outils de calcul, éléments d'aide à la décision et fonctions de gestion faisaient de l'application bien plus qu'un simple lecteur de publication.",
+                  "items": [
+                    "L'utilité était au cœur de la valeur métier quotidienne.",
+                    "Le produit devait sembler actionnable, pas seulement informatif."
+                  ]
+                },
+                {
+                  "title": "Un compagnon métier quotidien",
+                  "copy": "L'objectif de conception était de rendre l'application digne d'être revisitée dans le cadre du vrai travail vétérinaire, et non comme une bibliothèque de contenus statique.",
+                  "items": [
+                    "L'usage répété guidait les décisions produit.",
+                    "L'application devait rester utile au-delà d'une seule session de lecture."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Référence",
+              "title": "Les données de référence et les outils devaient rester accessibles sur mobile.",
+              "intro": "Les données sur les médicaments vétérinaires, les annuaires professionnels et fournisseurs ainsi que les outils associés créaient une surface plus opérationnelle qui devait rester utilisable sur téléphone.",
+              "cards": [
+                {
+                  "title": "Information médicamenteuse vétérinaire",
+                  "copy": "Le produit incluait des données de référence qui devaient rester découvrables et lisibles dans une interface mobile contrainte.",
+                  "items": [
+                    "La profondeur de la référence influençait navigation et présentation.",
+                    "L'interface devait respecter à la fois vitesse et précision."
+                  ]
+                },
+                {
+                  "title": "Outils opérationnels",
+                  "copy": "Les outils de calcul, annuaires et fonctions d'aide à la décision rendaient l'application pertinente pour le travail concret, pas seulement pour la lecture.",
+                  "items": [
+                    "L'application servait des besoins opérationnels autant qu'éditoriaux.",
+                    "Les fonctions pratiques renforçaient la valeur récurrente du produit."
+                  ]
+                },
+                {
+                  "title": "Accès unifié",
+                  "copy": "L'un des enjeux principaux consistait à garder ces différentes ressources accessibles via une structure produit unique et compréhensible dans le temps.",
+                  "items": [
+                    "L'architecture de l'information devait absorber la complexité.",
+                    "La cohérence était essentielle à l'usage répété."
+                  ]
+                }
+              ]
+            },
+            {
+              "eyebrow": "Exécution",
+              "title": "Le delivery natif gardait le produit ancré dans les usages réels.",
+              "intro": "L'implémentation en Swift aidait à transformer une surface métier complexe en application réactive, claire et maintenable.",
+              "cards": [
+                {
+                  "title": "Implémentation fonctionnelle avec contexte",
+                  "copy": "Développer les fonctionnalités demandait de comprendre comment s'imbriquaient informations, outils et workflows plutôt que de traiter chaque écran indépendamment.",
+                  "items": [
+                    "L'implémentation restait proche de la logique produit.",
+                    "L'application bénéficiait de décisions prises à l'échelle du système."
+                  ]
+                },
+                {
+                  "title": "Accès au contenu et ergonomie",
+                  "copy": "Rendre contenus et outils faciles à atteindre comptait autant que leur présence, surtout pour un usage professionnel répété.",
+                  "items": [
+                    "L'ergonomie faisait partie de la promesse produit.",
+                    "Les contraintes mobiles devaient soutenir la rapidité, pas la freiner."
+                  ]
+                },
+                {
+                  "title": "Un workflow métier cohérent",
+                  "copy": "Le produit fonctionnait au mieux lorsqu'il ressemblait à une surface de travail fiable plutôt qu'à un empilement de ressources sans lien.",
+                  "items": [
+                    "La cohérence relevait autant du produit que de la technique.",
+                    "Les meilleures décisions d'implémentation soutenaient les habitudes de travail récurrentes."
                   ]
                 }
               ]
