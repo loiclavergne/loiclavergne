@@ -55,6 +55,78 @@ struct SiteRenderer {
         try xml.write(to: rootURL.appendingPathComponent("sitemap.xml"), atomically: true, encoding: .utf8)
     }
 
+    /// Write localized Atom feeds for the writing section.
+    func buildFeeds() throws {
+        for locale in payload.locales.keys.sorted() {
+            let localeContent = try localeContent(locale)
+            let feedURL = absoluteFeedURL(for: locale)
+            let writingURL = absoluteURL(for: try pagePath("writing", locale: locale))
+            let updated = payload.site.buildDate + "T00:00:00Z"
+
+            let entries = localeContent.writing.posts.compactMap { post -> String? in
+                guard let route = post.route else {
+                    return nil
+                }
+
+                guard let path = try? pagePath(route, locale: locale) else {
+                    return nil
+                }
+
+                let postURL = absoluteURL(for: path)
+                let summary = escapeHTML(post.summary)
+
+                return """
+                  <entry>
+                    <title>\(escapeHTML(post.title))</title>
+                    <link href="\(escapeHTML(postURL))"/>
+                    <id>\(escapeHTML(postURL))</id>
+                    <updated>\(updated)</updated>
+                    <summary>\(summary)</summary>
+                  </entry>
+                """
+            }.joined(separator: "\n")
+
+            let feed = """
+            <?xml version="1.0" encoding="utf-8"?>
+            <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="\(escapeHTML(localeContent.htmlLang))">
+              <title>\(escapeHTML(payload.site.name)) \(escapeHTML(localeContent.writing.eyebrow))</title>
+              <subtitle>\(escapeHTML(localeContent.writing.description))</subtitle>
+              <link href="\(escapeHTML(feedURL))" rel="self" type="application/atom+xml"/>
+              <link href="\(escapeHTML(writingURL))" rel="alternate" type="text/html"/>
+              <id>\(escapeHTML(feedURL))</id>
+              <updated>\(updated)</updated>
+              <author>
+                <name>\(escapeHTML(payload.site.name))</name>
+                <email>\(escapeHTML(payload.site.contactEmail))</email>
+              </author>
+            \(entries.isEmpty ? "" : entries)
+            </feed>
+            """
+
+            let outputURL = locale == "fr"
+                ? rootURL.appendingPathComponent("fr/feed.xml")
+                : rootURL.appendingPathComponent("feed.xml")
+
+            try FileManager.default.createDirectory(
+                at: outputURL.deletingLastPathComponent(),
+                withIntermediateDirectories: true
+            )
+            try feed.write(to: outputURL, atomically: true, encoding: .utf8)
+        }
+    }
+
+    /// Write the root robots.txt file.
+    func buildRobots() throws {
+        let robots = """
+        User-agent: *
+        Allow: /
+
+        Sitemap: \(payload.site.baseUrl)/sitemap.xml
+        """
+
+        try robots.write(to: rootURL.appendingPathComponent("robots.txt"), atomically: true, encoding: .utf8)
+    }
+
     /// Resolve a localized route for the page.
     func pagePath(_ pageKey: String, locale: String) throws -> String {
         guard let localizedRoutes = payload.routes[pageKey], let path = localizedRoutes[locale] else {
@@ -77,6 +149,15 @@ struct SiteRenderer {
             return payload.site.baseUrl + "/"
         }
         return payload.site.baseUrl + path
+    }
+
+    /// Build an absolute feed URL from a locale.
+    func absoluteFeedURL(for locale: String) -> String {
+        if locale == "fr" {
+            return payload.site.baseUrl + "/fr/feed.xml"
+        }
+
+        return payload.site.baseUrl + "/feed.xml"
     }
 
     /// Map a route like `/fr/projects/` to the generated output file.
@@ -1265,6 +1346,8 @@ struct SiteRenderer {
         let description = metadata.description
 
         let ogImage = absoluteURL(for: localeContent.seo.ogImage)
+        let englishFeed = absoluteFeedURL(for: "en")
+        let frenchFeed = absoluteFeedURL(for: "fr")
 
         return """
         <!--
@@ -1299,6 +1382,8 @@ struct SiteRenderer {
           <link rel="alternate" hreflang="en" href="\(escapeHTML(alternateEN))">
           <link rel="alternate" hreflang="fr" href="\(escapeHTML(alternateFR))">
           <link rel="alternate" hreflang="x-default" href="\(escapeHTML(alternateEN))">
+          <link rel="alternate" type="application/atom+xml" title="\(escapeHTML(payload.site.name)) Writing" href="\(escapeHTML(englishFeed))">
+          <link rel="alternate" type="application/atom+xml" title="\(escapeHTML(payload.site.name)) Écrits" href="\(escapeHTML(frenchFeed))">
           <link rel="me" href="https://github.com/loiclavergne/">
           <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
           <link rel="me" href="https://bsky.app/profile/loic.engineer">

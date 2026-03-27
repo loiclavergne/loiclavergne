@@ -53,7 +53,7 @@ Rendering flow:
 2. `Sources/SiteBuilder/Resources/site.json` provides localized routes, page metadata, and page data.
 3. `Sources/SiteBuilder/SiteModels.swift` decodes the content into typed Swift structures.
 4. `Sources/SiteBuilder/SiteRenderer.swift` renders complete HTML documents for each page, locale, and project detail route.
-5. `Sources/SiteBuilder/main.swift` writes generated `index.html` files into the route folders and regenerates `sitemap.xml`.
+5. `Sources/SiteBuilder/main.swift` writes generated `index.html` files into the route folders and regenerates `sitemap.xml`, localized Atom feeds, and `robots.txt`.
 6. `swift run SiteServer` can serve the generated output locally for browser previews without Ruby, Node, or Python, including the root `404.html` on missing routes.
 7. `404.html` provides a static fallback page with localized recovery links for missing routes.
 
@@ -94,6 +94,12 @@ The generated site currently depends on only four shared frontend assets:
 - `css/site.css`
 - `js/site.js`
 - `assets/img/og/og-default.svg`
+
+In addition to HTML pages, the generator also produces:
+- `sitemap.xml`
+- `robots.txt`
+- `feed.xml`
+- `fr/feed.xml`
 
 If a new asset is added, it should have a clear purpose in the generated site.
 Do not reintroduce unused vendor bundles or archive-era media into the runtime

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Loïc Lavergne Writing</title>
+  <subtitle>Blog architecture and future writing archive.</subtitle>
+  <link href="https://loic.engineer/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://loic.engineer/writing/" rel="alternate" type="text/html"/>
+  <id>https://loic.engineer/feed.xml</id>
+  <updated>2026-03-27T00:00:00Z</updated>
+  <author>
+    <name>Loïc Lavergne</name>
+    <email>hello@loic.engineer</email>
+  </author>
+
+</feed>

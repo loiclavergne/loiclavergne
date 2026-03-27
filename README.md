@@ -46,6 +46,8 @@ Core source files:
 Generated output:
 - `index.html`
 - `404.html`
+- `feed.xml`
+- `fr/feed.xml`
 - `fr/**/index.html`
 - `work/index.html`
 - `projects/index.html`
@@ -53,6 +55,7 @@ Generated output:
 - `writing/index.html`
 - `library/index.html`
 - `about/index.html`
+- `robots.txt`
 - `sitemap.xml`
 
 Detailed notes:
@@ -106,6 +109,7 @@ The v1 architecture includes:
 - a real writing archive with empty-state support and future article-page scaffolding
 - a real library archive with empty-state support and future book-page scaffolding
 - real sports and trophy archive surfaces inside the about page
+- localized Atom feeds plus a static `robots.txt`
 - English and French localization
 - light, dark, and auto appearance modes
 - structured static education section on the work page
