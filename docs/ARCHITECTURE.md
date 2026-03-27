@@ -135,6 +135,12 @@ This matters because:
 - future content can be added by editing localized JSON without changing the renderer
 - the architecture stays static-first while leaving room for richer manual curation
 
+The writing area now also has:
+- a dedicated archive surface on the `/writing/` and `/fr/writing/` pages
+- localized empty-state handling for when no public essays are available yet
+- future-ready article detail support in the generator via localized `writing_details`
+  content blocks and route keys
+
 ## Why No Framework
 
 The current build avoids frontend and build-time package dependencies because:

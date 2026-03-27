@@ -103,6 +103,7 @@ The v1 architecture includes:
 - homepage storytelling focused on current professional work
 - work, projects, writing, library, and about pages
 - bilingual project detail pages for current, archive, and selected hobby products
+- a real writing archive with empty-state support and future article-page scaffolding
 - English and French localization
 - light, dark, and auto appearance modes
 - structured static education section on the work page

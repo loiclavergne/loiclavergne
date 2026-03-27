@@ -139,7 +139,9 @@
         "featured": "Featured",
         "current_focus": "Current focus",
         "view_project": "View project",
+        "read_post": "Read post",
         "back_to_projects": "Back to projects",
+        "back_to_writing": "Back to writing",
         "archive": "Archive",
         "side_work": "Side Work",
         "status": "Status",
@@ -1810,6 +1812,11 @@
             ]
           }
         ],
+        "archive_heading": "A real archive surface, ready for publication",
+        "archive_intro": "The writing area now has an actual archive model, localized post-page support, and a dedicated empty state. It launches without public essays on purpose, but the system is no longer just placeholder copy.",
+        "posts": [],
+        "empty_state_title": "No essays published yet",
+        "empty_state_copy": "The archive, metadata, and future article pages are already part of the site architecture. The first texts will appear here when they are ready for public release.",
         "publishing_heading": "Publishing model",
         "publishing_cards": [
           {
@@ -1825,9 +1832,37 @@
             "copy": "The archive is already built on a localized content model, so publishing in English and French can follow the same static-first structure."
           }
         ],
+        "system_heading": "Post system",
+        "system_cards": [
+          {
+            "title": "Localized post routes",
+            "copy": "Future essays can have dedicated English and French pages with their own metadata, alternates, and canonical routes.",
+            "items": [
+              "The structure already supports localized article detail pages.",
+              "Language parity can be kept without hand-building duplicate templates."
+            ]
+          },
+          {
+            "title": "Editorial metadata built in",
+            "copy": "The article system is ready for page titles, descriptions, reading-time metadata, and long-form section structure without changing the renderer later.",
+            "items": [
+              "Posts can ship with the same quality bar as project pages.",
+              "SEO and structure are considered before content volume exists."
+            ]
+          },
+          {
+            "title": "Static by default",
+            "copy": "The archive remains fully static and manually curated until there is a clear reason to add more complexity.",
+            "items": [
+              "No CMS, no external service, and no runtime backend are required.",
+              "Publishing can stay calm, private, and maintainable."
+            ]
+          }
+        ],
         "status_title": "Ready for first publication",
         "status_copy": "Post pages, metadata, and archive structure are part of the architecture. The first public essays will be added in a later content pass."
       },
+      "writing_details": {},
       "library": {
         "page_title": "Library | Loïc Lavergne",
         "description": "Books, reading life, and manual reading stats.",
@@ -2049,7 +2084,9 @@
         "featured": "Sélection",
         "current_focus": "Focus actuel",
         "view_project": "Voir le projet",
+        "read_post": "Lire l'article",
         "back_to_projects": "Retour aux projets",
+        "back_to_writing": "Retour aux écrits",
         "archive": "Archive",
         "side_work": "Travail parallèle",
         "status": "Statut",
@@ -3720,6 +3757,11 @@
             ]
           }
         ],
+        "archive_heading": "Une vraie surface d'archive, prête à publier",
+        "archive_intro": "La zone écrits dispose maintenant d'un vrai modèle d'archive, d'un support pour les pages d'article localisées et d'un état vide dédié. Elle se lance volontairement sans essai public, mais le système n'est plus un simple placeholder.",
+        "posts": [],
+        "empty_state_title": "Aucun essai publié pour l'instant",
+        "empty_state_copy": "L'archive, les métadonnées et les futures pages d'article font déjà partie de l'architecture du site. Les premiers textes apparaîtront ici lorsqu'ils seront prêts à être publiés.",
         "publishing_heading": "Modèle de publication",
         "publishing_cards": [
           {
@@ -3735,9 +3777,37 @@
             "copy": "L'archive repose déjà sur un modèle de contenu localisé, donc publier en français et en anglais peut suivre la même structure statique."
           }
         ],
+        "system_heading": "Système d'articles",
+        "system_cards": [
+          {
+            "title": "Routes d'article localisées",
+            "copy": "Les futurs essais peuvent avoir des pages dédiées en français et en anglais avec leurs propres métadonnées, alternates et routes canoniques.",
+            "items": [
+              "La structure supporte déjà des pages détail d'article localisées.",
+              "La parité linguistique peut rester propre sans dupliquer des templates à la main."
+            ]
+          },
+          {
+            "title": "Métadonnées éditoriales intégrées",
+            "copy": "Le système d'article est prêt pour les titres de page, descriptions, temps de lecture et structure longue sans modifier le renderer plus tard.",
+            "items": [
+              "Les articles pourront sortir avec le même niveau de qualité que les pages projet.",
+              "SEO et structure sont pensés avant même que le volume de contenu existe."
+            ]
+          },
+          {
+            "title": "Statique par défaut",
+            "copy": "L'archive reste entièrement statique et manuellement éditée tant qu'aucune raison claire ne justifie d'ajouter plus de complexité.",
+            "items": [
+              "Aucun CMS, aucun service externe et aucun backend runtime ne sont nécessaires.",
+              "La publication peut rester calme, privée et maintenable."
+            ]
+          }
+        ],
         "status_title": "Prêt pour la première publication",
         "status_copy": "Les pages d'article, les métadonnées et la structure d'archive font partie de l'architecture. Les premiers textes publics seront ajoutés dans un prochain passage contenu."
       },
+      "writing_details": {},
       "library": {
         "page_title": "Bibliothèque | Loïc Lavergne",
         "description": "Livres, vie de lecteur et statistiques de lecture manuelles.",

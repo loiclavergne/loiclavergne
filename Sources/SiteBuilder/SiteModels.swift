@@ -66,6 +66,7 @@ struct LocaleContent: Decodable {
     let projects: ProjectsPage
     let projectDetails: [String: ProjectDetailPage]
     let writing: WritingPage
+    let writingDetails: [String: WritingPostPage]
     let library: LibraryPage
     let about: AboutPage
 }
@@ -230,10 +231,44 @@ struct WritingPage: Decodable {
     let intro: String
     let themesHeading: String
     let themes: [ContentCard]
+    let archiveHeading: String
+    let archiveIntro: String
+    let posts: [WritingPostSummary]
+    let emptyStateTitle: String
+    let emptyStateCopy: String
     let publishingHeading: String
     let publishingCards: [ContentCard]
+    let systemHeading: String
+    let systemCards: [ContentCard]
     let statusTitle: String
     let statusCopy: String
+}
+
+struct WritingPostSummary: Decodable {
+    let title: String
+    let summary: String
+    let details: [String]?
+    let route: String?
+}
+
+struct WritingPostSection: Decodable {
+    let eyebrow: String
+    let title: String
+    let paragraphs: [String]
+    let items: [String]?
+}
+
+struct WritingPostPage: Decodable {
+    let pageTitle: String
+    let description: String
+    let eyebrow: String
+    let title: String
+    let intro: String
+    let publishedLabel: String
+    let publishedValue: String
+    let readingTimeLabel: String
+    let readingTimeValue: String
+    let sections: [WritingPostSection]
 }
 
 struct ReadingStat: Decodable {

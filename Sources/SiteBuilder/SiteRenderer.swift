@@ -120,12 +120,25 @@ struct SiteRenderer {
             return "projects"
         }
 
+        if pageKey.hasPrefix("post-") {
+            return "writing"
+        }
+
         return pageKey
     }
 
     /// Resolve a project detail page from the locale payload.
     func projectDetail(pageKey: String, localeContent: LocaleContent, locale: String) throws -> ProjectDetailPage {
         guard let page = localeContent.projectDetails[pageKey] else {
+            throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
+        }
+
+        return page
+    }
+
+    /// Resolve a writing detail page from the locale payload.
+    func writingDetail(pageKey: String, localeContent: LocaleContent, locale: String) throws -> WritingPostPage {
+        guard let page = localeContent.writingDetails[pageKey] else {
             throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
         }
 
@@ -148,8 +161,15 @@ struct SiteRenderer {
         case "about":
             return (localeContent.about.pageTitle, localeContent.about.description)
         default:
-            let detailPage = try projectDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
-            return (detailPage.pageTitle, detailPage.description)
+            if let detailPage = localeContent.projectDetails[pageKey] {
+                return (detailPage.pageTitle, detailPage.description)
+            }
+
+            if let detailPage = localeContent.writingDetails[pageKey] {
+                return (detailPage.pageTitle, detailPage.description)
+            }
+
+            throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
         }
     }
 
@@ -224,6 +244,30 @@ struct SiteRenderer {
           <h3>\(escapeHTML(project.name))</h3>
           <p>\(escapeHTML(project.summary))</p>
           \(renderOptionalList(project.details))
+          \(actionMarkup)
+        </article>
+        """
+    }
+
+    /// Render a writing archive card with an optional detail-page action.
+    func renderWritingPostCard(_ post: WritingPostSummary, locale: String, localeContent: LocaleContent) throws -> String {
+        let actionMarkup: String
+
+        if let route = post.route {
+            actionMarkup = """
+              <div class="button-row">
+                <a class="button button--secondary" href="\(try pagePath(route, locale: locale))">\(escapeHTML(label(localeContent.labels, key: "read_post", fallback: "Read post")))</a>
+              </div>
+            """
+        } else {
+            actionMarkup = ""
+        }
+
+        return """
+        <article class="card reveal">
+          <h3>\(escapeHTML(post.title))</h3>
+          <p>\(escapeHTML(post.summary))</p>
+          \(renderOptionalList(post.details))
           \(actionMarkup)
         </article>
         """
@@ -634,7 +678,22 @@ struct SiteRenderer {
         let page = localeContent.writing
         let labels = localeContent.labels
         let themes = page.themes.map(renderContentCard).joined(separator: "\n")
+        let archiveMarkup: String
+        if page.posts.isEmpty {
+            archiveMarkup = """
+              <article class="card card--empty reveal">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "status", fallback: "Status")))</span>
+                <h3>\(escapeHTML(page.emptyStateTitle))</h3>
+                <p>\(escapeHTML(page.emptyStateCopy))</p>
+              </article>
+            """
+        } else {
+            archiveMarkup = try page.posts.map {
+                try renderWritingPostCard($0, locale: locale, localeContent: localeContent)
+            }.joined(separator: "\n")
+        }
         let publishingCards = page.publishingCards.map(renderContentCard).joined(separator: "\n")
+        let systemCards = page.systemCards.map(renderContentCard).joined(separator: "\n")
 
         return """
             <section class="hero hero--page">
@@ -656,12 +715,37 @@ struct SiteRenderer {
             </section>
 
             <section class="section section--compact">
+              <div class="shell split-heading">
+                <div>
+                  <span class="eyebrow">\(escapeHTML(label(labels, key: "archive", fallback: "Archive")))</span>
+                  <h2>\(escapeHTML(page.archiveHeading))</h2>
+                </div>
+                <div class="section-copy">
+                  <p>\(escapeHTML(page.archiveIntro))</p>
+                </div>
+              </div>
+              <div class="shell card-grid card-grid--two">
+                \(archiveMarkup)
+              </div>
+            </section>
+
+            <section class="section section--compact">
               <div class="shell section-heading">
                 <span class="eyebrow">\(escapeHTML(label(labels, key: "context", fallback: "Context")))</span>
                 <h2>\(escapeHTML(page.publishingHeading))</h2>
               </div>
               <div class="shell card-grid card-grid--three">
                 \(publishingCards)
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell section-heading">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "approach", fallback: "Approach")))</span>
+                <h2>\(escapeHTML(page.systemHeading))</h2>
+              </div>
+              <div class="shell card-grid card-grid--three">
+                \(systemCards)
               </div>
             </section>
 
@@ -674,6 +758,62 @@ struct SiteRenderer {
                 </article>
               </div>
             </section>
+        """
+    }
+
+    /// Render a localized writing post page.
+    func renderWritingPost(pageKey: String, locale: String) throws -> String {
+        let localeContent = try localeContent(locale)
+        let page = try writingDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
+        let labels = localeContent.labels
+
+        let metaCards = """
+          <article class="stat-card reveal">
+            <span class="stat-card__value">\(escapeHTML(page.publishedValue))</span>
+            <span class="stat-card__label">\(escapeHTML(page.publishedLabel))</span>
+          </article>
+          <article class="stat-card reveal">
+            <span class="stat-card__value">\(escapeHTML(page.readingTimeValue))</span>
+            <span class="stat-card__label">\(escapeHTML(page.readingTimeLabel))</span>
+          </article>
+        """
+
+        let sections = page.sections.map { section -> String in
+            let paragraphs = section.paragraphs.map { "<p>\(escapeHTML($0))</p>" }.joined(separator: "\n")
+
+            return """
+            <section class="section section--compact">
+              <div class="shell split-heading">
+                <div>
+                  <span class="eyebrow">\(escapeHTML(section.eyebrow))</span>
+                  <h2>\(escapeHTML(section.title))</h2>
+                </div>
+                <div class="section-copy">
+                  \(paragraphs)
+                  \(renderOptionalList(section.items))
+                </div>
+              </div>
+            </section>
+            """
+        }.joined(separator: "\n")
+
+        return """
+            <section class="hero hero--page">
+              <div class="shell hero__content hero__content--page">
+                <a class="context-link" href="\(try pagePath("writing", locale: locale))">\(escapeHTML(label(labels, key: "back_to_writing", fallback: "Back to writing")))</a>
+                <span class="eyebrow">\(escapeHTML(page.eyebrow))</span>
+                <h1>\(escapeHTML(page.title))</h1>
+                <p class="hero__lede">\(escapeHTML(page.intro))</p>
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell stat-grid stat-grid--two">
+                \(metaCards)
+              </div>
+            </section>
+
+            \(sections)
         """
     }
 
@@ -850,7 +990,17 @@ struct SiteRenderer {
         case "about":
             return try renderAbout(locale: locale)
         default:
-            return try renderProjectDetail(pageKey: pageKey, locale: locale)
+            let localeContent = try localeContent(locale)
+
+            if localeContent.projectDetails[pageKey] != nil {
+                return try renderProjectDetail(pageKey: pageKey, locale: locale)
+            }
+
+            if localeContent.writingDetails[pageKey] != nil {
+                return try renderWritingPost(pageKey: pageKey, locale: locale)
+            }
+
+            throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
         }
     }
 
