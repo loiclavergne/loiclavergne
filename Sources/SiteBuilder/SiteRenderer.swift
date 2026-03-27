@@ -1033,7 +1033,31 @@ struct SiteRenderer {
         }.joined(separator: "\n")
 
         let sportsCards = page.sportsCards.map(renderContentCard).joined(separator: "\n")
+        let sportsArchiveMarkup: String
+        if page.sportsEntries.isEmpty {
+            sportsArchiveMarkup = """
+              <article class="card card--empty reveal">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "status", fallback: "Status")))</span>
+                <h3>\(escapeHTML(page.sportsEmptyStateTitle))</h3>
+                <p>\(escapeHTML(page.sportsEmptyStateCopy))</p>
+              </article>
+            """
+        } else {
+            sportsArchiveMarkup = page.sportsEntries.map(renderContentCard).joined(separator: "\n")
+        }
         let trophyCards = page.trophyCards.map(renderContentCard).joined(separator: "\n")
+        let trophyArchiveMarkup: String
+        if page.trophyEntries.isEmpty {
+            trophyArchiveMarkup = """
+              <article class="card card--empty reveal">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "status", fallback: "Status")))</span>
+                <h3>\(escapeHTML(page.trophiesEmptyStateTitle))</h3>
+                <p>\(escapeHTML(page.trophiesEmptyStateCopy))</p>
+              </article>
+            """
+        } else {
+            trophyArchiveMarkup = page.trophyEntries.map(renderContentCard).joined(separator: "\n")
+        }
 
         let socialLinks = payload.site.socials.map {
             #"<a class="button button--secondary" href="\#(escapeHTML($0.href))" rel="noopener noreferrer" target="_blank">\#(escapeHTML($0.label))</a>"#
@@ -1073,6 +1097,25 @@ struct SiteRenderer {
                   <p>\(escapeHTML(page.sportsCopy))</p>
                 </div>
               </div>
+              <div class="shell split-heading">
+                <div>
+                  <span class="eyebrow">\(escapeHTML(label(labels, key: "archive", fallback: "Archive")))</span>
+                  <h3>\(escapeHTML(page.sportsArchiveHeading))</h3>
+                </div>
+                <div class="section-copy">
+                  <p>\(escapeHTML(page.sportsArchiveIntro))</p>
+                </div>
+              </div>
+              <div class="shell card-grid card-grid--two">
+                \(sportsArchiveMarkup)
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell section-heading">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "approach", fallback: "Approach")))</span>
+                <h2>\(escapeHTML(page.sportsSystemHeading))</h2>
+              </div>
               <div class="shell card-grid card-grid--three">
                 \(sportsCards)
               </div>
@@ -1087,6 +1130,25 @@ struct SiteRenderer {
                 <div class="section-copy">
                   <p>\(escapeHTML(page.trophiesCopy))</p>
                 </div>
+              </div>
+              <div class="shell split-heading">
+                <div>
+                  <span class="eyebrow">\(escapeHTML(label(labels, key: "archive", fallback: "Archive")))</span>
+                  <h3>\(escapeHTML(page.trophiesArchiveHeading))</h3>
+                </div>
+                <div class="section-copy">
+                  <p>\(escapeHTML(page.trophiesArchiveIntro))</p>
+                </div>
+              </div>
+              <div class="shell card-grid card-grid--two">
+                \(trophyArchiveMarkup)
+              </div>
+            </section>
+
+            <section class="section section--compact">
+              <div class="shell section-heading">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "approach", fallback: "Approach")))</span>
+                <h2>\(escapeHTML(page.trophiesSystemHeading))</h2>
               </div>
               <div class="shell card-grid card-grid--three">
                 \(trophyCards)

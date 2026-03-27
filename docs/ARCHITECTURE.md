@@ -147,6 +147,13 @@ The library area now also has:
 - future-ready book detail support in the generator via localized `library_details`
   content blocks and route keys
 
+The about page now treats sports and trophies as archive surfaces instead of
+simple placeholder cards:
+- sports has a public archive layer plus a separate system/curation layer
+- trophies has a public archive layer plus a separate system/curation layer
+- both sections launch with localized empty states until curated public entries
+  are ready
+
 ## Why No Framework
 
 The current build avoids frontend and build-time package dependencies because:

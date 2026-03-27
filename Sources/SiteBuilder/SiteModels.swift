@@ -332,9 +332,21 @@ struct AboutPage: Decodable {
     let skillGroups: [SkillGroup]
     let sportsTitle: String
     let sportsCopy: String
+    let sportsArchiveHeading: String
+    let sportsArchiveIntro: String
+    let sportsEntries: [ContentCard]
+    let sportsEmptyStateTitle: String
+    let sportsEmptyStateCopy: String
+    let sportsSystemHeading: String
     let sportsCards: [ContentCard]
     let trophiesTitle: String
     let trophiesCopy: String
+    let trophiesArchiveHeading: String
+    let trophiesArchiveIntro: String
+    let trophyEntries: [ContentCard]
+    let trophiesEmptyStateTitle: String
+    let trophiesEmptyStateCopy: String
+    let trophiesSystemHeading: String
     let trophyCards: [ContentCard]
     let contactTitle: String
     let contactCopy: String

@@ -105,6 +105,7 @@ The v1 architecture includes:
 - bilingual project detail pages for current, archive, and selected hobby products
 - a real writing archive with empty-state support and future article-page scaffolding
 - a real library archive with empty-state support and future book-page scaffolding
+- real sports and trophy archive surfaces inside the about page
 - English and French localization
 - light, dark, and auto appearance modes
 - structured static education section on the work page

@@ -2044,6 +2044,12 @@
         ],
         "sports_title": "Sports",
         "sports_copy": "The sports layer should show discipline, rhythm, and continuity without turning the site into a telemetry feed.",
+        "sports_archive_heading": "A selective archive of training and milestones",
+        "sports_archive_intro": "This area is now structured as a real public archive surface for sport. It can hold selected training seasons, race efforts, or yearly snapshots when they are worth publishing, without exposing private or high-frequency tracking data.",
+        "sports_entries": [],
+        "sports_empty_state_title": "No sports highlights published yet",
+        "sports_empty_state_copy": "The archive is ready for curated training snapshots, race notes, and milestone entries. It intentionally launches empty until the right public level of detail is defined.",
+        "sports_system_heading": "Sports system",
         "sports_cards": [
           {
             "title": "Training profile",
@@ -2072,6 +2078,12 @@
         ],
         "trophies_title": "Trophy case",
         "trophies_copy": "The trophy case is intended as a curated visual archive, not a live sync dashboard.",
+        "trophies_archive_heading": "A curated visual archive",
+        "trophies_archive_intro": "The trophy area is now treated as a proper archive surface for selected awards, streaks, and seasonal collections. It stays manual and editorial rather than trying to mirror a live fitness account.",
+        "trophy_entries": [],
+        "trophies_empty_state_title": "No trophies published yet",
+        "trophies_empty_state_copy": "The trophy case is ready for manually selected Apple Watch awards and other meaningful milestones. It launches empty until the first curated set is worth showing.",
+        "trophies_system_heading": "Trophy system",
         "trophy_cards": [
           {
             "title": "Apple Watch rewards",
@@ -4024,6 +4036,12 @@
         ],
         "sports_title": "Sport",
         "sports_copy": "La couche sport doit montrer discipline, rythme et continuité sans transformer le site en flux de télémétrie.",
+        "sports_archive_heading": "Une archive sélective d'entraînement et de jalons",
+        "sports_archive_intro": "Cette zone est désormais structurée comme une vraie surface d'archive publique pour le sport. Elle pourra accueillir des saisons d'entraînement sélectionnées, des courses ou des instantanés annuels lorsqu'ils méritent d'être publiés, sans exposer de données privées ou de suivi trop fin.",
+        "sports_entries": [],
+        "sports_empty_state_title": "Aucun highlight sportif publié pour l'instant",
+        "sports_empty_state_copy": "L'archive est prête pour des instantanés d'entraînement, des notes de course et des entrées de jalons curées manuellement. Elle se lance volontairement vide tant que le bon niveau de détail public n'est pas défini.",
+        "sports_system_heading": "Système sport",
         "sports_cards": [
           {
             "title": "Profil d'entraînement",
@@ -4052,6 +4070,12 @@
         ],
         "trophies_title": "Vitrine de trophées",
         "trophies_copy": "La vitrine de trophées est pensée comme une archive visuelle éditorialisée, pas comme un dashboard synchronisé en live.",
+        "trophies_archive_heading": "Une archive visuelle curée",
+        "trophies_archive_intro": "La zone trophées est maintenant traitée comme une vraie surface d'archive pour des récompenses choisies, des streaks et des collections saisonnières. Elle reste manuelle et éditorialisée au lieu d'essayer de refléter un compte fitness en temps réel.",
+        "trophy_entries": [],
+        "trophies_empty_state_title": "Aucun trophée publié pour l'instant",
+        "trophies_empty_state_copy": "La vitrine est prête pour des récompenses Apple Watch sélectionnées et d'autres jalons personnels pertinents. Elle démarre vide jusqu'à ce qu'un premier ensemble curé mérite d'être montré.",
+        "trophies_system_heading": "Système de trophées",
         "trophy_cards": [
           {
             "title": "Récompenses Apple Watch",
