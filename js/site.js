@@ -437,6 +437,15 @@ function initSearchPalette() {
   }
 
   /**
+   * Move the active result index and resync the listbox state.
+   * @param {number} nextIndex
+   */
+  function setActiveIndex(nextIndex) {
+    activeIndex = nextIndex;
+    syncActiveResult();
+  }
+
+  /**
    * @param {string} query
    */
   function renderResults(query) {
@@ -607,16 +616,36 @@ function initSearchPalette() {
     if (event.key === "ArrowDown") {
       if (!visibleItems.length) return;
       event.preventDefault();
-      activeIndex = Math.min(activeIndex + 1, visibleItems.length - 1);
-      syncActiveResult();
+      if (activeIndex < 0) {
+        setActiveIndex(0);
+        return;
+      }
+      setActiveIndex(Math.min(activeIndex + 1, visibleItems.length - 1));
       return;
     }
 
     if (event.key === "ArrowUp") {
       if (!visibleItems.length) return;
       event.preventDefault();
-      activeIndex = Math.max(activeIndex - 1, 0);
-      syncActiveResult();
+      if (activeIndex < 0) {
+        setActiveIndex(visibleItems.length - 1);
+        return;
+      }
+      setActiveIndex(Math.max(activeIndex - 1, 0));
+      return;
+    }
+
+    if (event.key === "Home") {
+      if (!visibleItems.length) return;
+      event.preventDefault();
+      setActiveIndex(0);
+      return;
+    }
+
+    if (event.key === "End") {
+      if (!visibleItems.length) return;
+      event.preventDefault();
+      setActiveIndex(visibleItems.length - 1);
       return;
     }
 
