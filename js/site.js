@@ -13,6 +13,7 @@
 //
 
 const THEME_STORAGE_KEY = "loic.engineer.theme";
+const SEARCH_RECENT_STORAGE_KEY = "loic.engineer.search.recent";
 const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -325,9 +326,11 @@ function initSearchPalette() {
    *   fallbackItems: Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>,
    *   hint: string,
    *   indexURL: string,
+   *   locale: string,
    *   loading: string,
    *   noResults: string,
    *   placeholder: string,
+   *   recentLabel: string,
    *   resultsCountOne: string,
    *   resultsCountOther: string,
    *   resultsLabel: string,
@@ -459,6 +462,47 @@ function initSearchPalette() {
   }
 
   /**
+   * Resolve the locale-scoped storage key for recent destinations.
+   * @returns {string}
+   */
+  function recentStorageKey() {
+    return `${SEARCH_RECENT_STORAGE_KEY}.${config.locale}`;
+  }
+
+  /**
+   * Read recent destination routes without breaking when storage is unavailable.
+   * @returns {string[]}
+   */
+  function readRecentRoutes() {
+    try {
+      const stored = window.localStorage.getItem(recentStorageKey());
+      if (!stored) return [];
+
+      const parsed = JSON.parse(stored);
+      if (!Array.isArray(parsed)) return [];
+
+      return parsed.filter((value) => typeof value === "string" && value.startsWith("/"));
+    } catch (error) {
+      return [];
+    }
+  }
+
+  /**
+   * Persist a route in the locale-scoped recent destination list.
+   * @param {string} route
+   */
+  function storeRecentRoute(route) {
+    if (!route.startsWith("/")) return;
+
+    try {
+      const deduped = [route].concat(readRecentRoutes().filter((item) => item !== route)).slice(0, 5);
+      window.localStorage.setItem(recentStorageKey(), JSON.stringify(deduped));
+    } catch (error) {
+      // Ignore storage failures and keep the search experience functional.
+    }
+  }
+
+  /**
    * Keep the localized clear action in sync with the input state.
    */
   function syncClearButton() {
@@ -508,12 +552,29 @@ function initSearchPalette() {
   }
 
   /**
+   * Resolve the stored recent routes against the current locale item set.
+   * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
+   */
+  function recentItems() {
+    const itemsByRoute = new Map(searchItems().map((item) => [item.route, item]));
+    return readRecentRoutes()
+      .map((route) => itemsByRoute.get(route))
+      .filter(Boolean);
+  }
+
+  /**
    * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
    */
   function defaultItems() {
-    return searchItems()
+    const recent = recentItems();
+    const recentRoutes = new Set(recent.map((item) => item.route));
+    const suggestions = searchItems()
       .filter((item) => item.kind === "page")
       .concat(searchItems().filter((item) => item.kind === "project"))
+      .filter((item) => !recentRoutes.has(item.route));
+
+    return recent
+      .concat(suggestions)
       .slice(0, 8);
   }
 
@@ -582,12 +643,21 @@ function initSearchPalette() {
    * @param {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>} items
    * @returns {Array<{key: string, label: string, entries: Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>}>}
    */
-  function groupedItems(items) {
+  function groupedItems(items, includeRecents = false) {
     /** @type {Map<string, Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>>} */
     const entriesBySection = new Map();
     const orderedKeys = [];
+    const recentRoutes = includeRecents ? new Set(recentItems().map((item) => item.route)) : new Set();
+
+    /** @type {Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>} */
+    const recentEntries = [];
 
     items.forEach((item, index) => {
+      if (recentRoutes.has(item.route)) {
+        recentEntries.push({ item, index });
+        return;
+      }
+
       if (!entriesBySection.has(item.section)) {
         entriesBySection.set(item.section, []);
         orderedKeys.push(item.section);
@@ -596,11 +666,24 @@ function initSearchPalette() {
       entriesBySection.get(item.section)?.push({ item, index });
     });
 
-    return orderedKeys.map((key) => ({
+    const sectionGroups = orderedKeys.map((key) => ({
       key,
       label: config.sectionLabels[key] ?? key,
       entries: entriesBySection.get(key) ?? [],
     }));
+
+    if (!recentEntries.length) {
+      return sectionGroups;
+    }
+
+    return [
+      {
+        key: "__recent__",
+        label: config.recentLabel,
+        entries: recentEntries,
+      },
+      ...sectionGroups,
+    ];
   }
 
   function syncActiveResult() {
@@ -653,7 +736,7 @@ function initSearchPalette() {
       setStatus(query ? resultCountMessage(visibleItems.length) : config.suggestedLabel);
     }
 
-    const groups = groupedItems(visibleItems);
+    const groups = groupedItems(visibleItems, !query);
 
     results.replaceChildren(...groups.map((group) => {
       const groupItem = document.createElement("li");
@@ -806,6 +889,8 @@ function initSearchPalette() {
   function activateResult(route, event = null) {
     const isModifiedClick = event instanceof MouseEvent
       && (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0);
+
+    storeRecentRoute(route);
 
     if (isModifiedClick) {
       return;
