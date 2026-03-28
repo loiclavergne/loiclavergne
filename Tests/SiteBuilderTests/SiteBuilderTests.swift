@@ -73,6 +73,7 @@ final class SiteBuilderTests: XCTestCase {
         let urls = try renderer.buildPages()
         try renderer.buildSitemap(urls: urls.sorted())
         try renderer.buildFeeds()
+        try renderer.buildManifests()
         try renderer.buildRobots()
 
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("index.html").path))
@@ -80,12 +81,36 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("fr/writing/index.html").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("feed.xml").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("fr/feed.xml").path))
+        XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("site.webmanifest").path))
+        XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("fr/site.webmanifest").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("robots.txt").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("sitemap.xml").path))
 
         let englishFeed = try String(contentsOf: outputRoot.appendingPathComponent("feed.xml"), encoding: .utf8)
         XCTAssertTrue(englishFeed.contains("<feed xmlns=\"http://www.w3.org/2005/Atom\""))
         XCTAssertTrue(englishFeed.contains("https://loic.engineer/feed.xml"))
+
+        let englishManifestData = try Data(contentsOf: outputRoot.appendingPathComponent("site.webmanifest"))
+        let englishManifest = try XCTUnwrap(
+            try JSONSerialization.jsonObject(with: englishManifestData) as? [String: Any]
+        )
+        XCTAssertEqual(englishManifest["name"] as? String, "Loïc Lavergne")
+        XCTAssertEqual(englishManifest["start_url"] as? String, "/")
+        let englishIcons = try XCTUnwrap(englishManifest["icons"] as? [[String: Any]])
+        XCTAssertEqual(englishIcons.first?["src"] as? String, "/assets/img/og/og-default.svg")
+
+        let frenchManifestData = try Data(contentsOf: outputRoot.appendingPathComponent("fr/site.webmanifest"))
+        let frenchManifest = try XCTUnwrap(
+            try JSONSerialization.jsonObject(with: frenchManifestData) as? [String: Any]
+        )
+        XCTAssertEqual(frenchManifest["start_url"] as? String, "/fr/")
+        XCTAssertEqual(frenchManifest["scope"] as? String, "/fr/")
+
+        let home = try String(contentsOf: outputRoot.appendingPathComponent("index.html"), encoding: .utf8)
+        XCTAssertTrue(home.contains("<link rel=\"manifest\" href=\"https://loic.engineer/site.webmanifest\">"))
+
+        let frenchHome = try String(contentsOf: outputRoot.appendingPathComponent("fr/index.html"), encoding: .utf8)
+        XCTAssertTrue(frenchHome.contains("<link rel=\"manifest\" href=\"https://loic.engineer/fr/site.webmanifest\">"))
 
         let robots = try String(contentsOf: outputRoot.appendingPathComponent("robots.txt"), encoding: .utf8)
         XCTAssertTrue(robots.contains("User-agent: *"))

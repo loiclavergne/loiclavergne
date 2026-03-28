@@ -36,7 +36,7 @@ Core source files:
 - `Sources/SiteBuilder/Resources/site.json`: bilingual content, localized routes, metadata, and content model
 - `Sources/SiteBuilder/SiteModels.swift`: typed content loading
 - `Sources/SiteBuilder/SiteRenderer.swift`: shared renderers for pages, navigation, footer, and SEO tags
-- `Sources/SiteBuilder/main.swift`: generates static HTML files and `sitemap.xml`
+- `Sources/SiteBuilder/main.swift`: generates static HTML files and support outputs
 - `Sources/SiteServer/main.swift`: local Swift static file server for browser previews
 - `css/tokens.css`: design tokens, themes, and motion settings
 - `css/site.css`: layout, components, responsive rules, and page styling
@@ -48,6 +48,8 @@ Generated output:
 - `404.html`
 - `feed.xml`
 - `fr/feed.xml`
+- `site.webmanifest`
+- `fr/site.webmanifest`
 - `fr/**/index.html`
 - `work/index.html`
 - `projects/index.html`
@@ -115,7 +117,7 @@ The v1 architecture includes:
 - a real writing archive with empty-state support and future article-page scaffolding
 - a real library archive with empty-state support and future book-page scaffolding
 - real sports and trophy archive surfaces inside the about page
-- localized Atom feeds plus a static `robots.txt`
+- localized Atom feeds, localized web app manifests, and a static `robots.txt`
 - page-type-aware JSON-LD and breadcrumb structured data
 - Swift test coverage for route integrity, support files, and metadata regressions
 - English and French localization

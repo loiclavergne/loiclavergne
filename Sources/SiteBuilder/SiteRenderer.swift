@@ -115,6 +115,45 @@ struct SiteRenderer {
         }
     }
 
+    /// Write localized web app manifests for installable browser support.
+    func buildManifests() throws {
+        for locale in payload.locales.keys.sorted() {
+            let localeContent = try localeContent(locale)
+            let startURL = try pagePath("home", locale: locale)
+            let manifest: [String: Any] = [
+                "background_color": "#f5f5f7",
+                "description": localeContent.seo.siteDescription,
+                "dir": "ltr",
+                "display": "standalone",
+                "icons": [
+                    [
+                        "purpose": "any",
+                        "sizes": "any",
+                        "src": "/assets/img/og/og-default.svg",
+                        "type": "image/svg+xml"
+                    ]
+                ],
+                "lang": localeContent.htmlLang,
+                "name": payload.site.name,
+                "scope": locale == "fr" ? "/fr/" : "/",
+                "short_name": payload.site.name,
+                "start_url": startURL,
+                "theme_color": "#f5f5f7"
+            ]
+
+            let data = try JSONSerialization.data(withJSONObject: manifest, options: [.prettyPrinted, .sortedKeys])
+            let outputURL = locale == "fr"
+                ? rootURL.appendingPathComponent("fr/site.webmanifest")
+                : rootURL.appendingPathComponent("site.webmanifest")
+
+            try FileManager.default.createDirectory(
+                at: outputURL.deletingLastPathComponent(),
+                withIntermediateDirectories: true
+            )
+            try data.write(to: outputURL)
+        }
+    }
+
     /// Write the root robots.txt file.
     func buildRobots() throws {
         let robots = """
@@ -158,6 +197,15 @@ struct SiteRenderer {
         }
 
         return payload.site.baseUrl + "/feed.xml"
+    }
+
+    /// Build an absolute manifest URL from a locale.
+    func absoluteManifestURL(for locale: String) -> String {
+        if locale == "fr" {
+            return payload.site.baseUrl + "/fr/site.webmanifest"
+        }
+
+        return payload.site.baseUrl + "/site.webmanifest"
     }
 
     /// Map a route like `/fr/projects/` to the generated output file.
@@ -1584,6 +1632,7 @@ struct SiteRenderer {
         let ogImage = absoluteURL(for: localeContent.seo.ogImage)
         let englishFeed = absoluteFeedURL(for: "en")
         let frenchFeed = absoluteFeedURL(for: "fr")
+        let manifestURL = absoluteManifestURL(for: locale)
 
         return """
         <!--
@@ -1620,6 +1669,7 @@ struct SiteRenderer {
           <link rel="alternate" hreflang="x-default" href="\(escapeHTML(alternateEN))">
           <link rel="alternate" type="application/atom+xml" title="\(escapeHTML(payload.site.name)) Writing" href="\(escapeHTML(englishFeed))">
           <link rel="alternate" type="application/atom+xml" title="\(escapeHTML(payload.site.name)) Écrits" href="\(escapeHTML(frenchFeed))">
+          <link rel="manifest" href="\(escapeHTML(manifestURL))">
           <link rel="me" href="https://github.com/loiclavergne/">
           <link rel="me" href="https://www.linkedin.com/in/loiclavergne/">
           <link rel="me" href="https://bsky.app/profile/loic.engineer">

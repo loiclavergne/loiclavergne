@@ -16,8 +16,9 @@ do {
     let urls = try renderer.buildPages()
     try renderer.buildSitemap(urls: urls.sorted())
     try renderer.buildFeeds()
+    try renderer.buildManifests()
     try renderer.buildRobots()
-    print("Generated \(urls.count) pages, feeds, sitemap.xml, and robots.txt")
+    print("Generated \(urls.count) pages, feeds, manifests, sitemap.xml, and robots.txt")
 } catch {
     let nsError = error as NSError
     fputs("SiteBuilder failed: \(error.localizedDescription)\n", stderr)

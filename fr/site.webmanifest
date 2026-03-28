@@ -1,0 +1,20 @@
+{
+  "background_color" : "#f5f5f7",
+  "description" : "Loïc Lavergne est Engineering Manager et pilote la stratégie, l'architecture et la delivery mobile de Roole Map et Roole Premium.",
+  "dir" : "ltr",
+  "display" : "standalone",
+  "icons" : [
+    {
+      "purpose" : "any",
+      "sizes" : "any",
+      "src" : "\/assets\/img\/og\/og-default.svg",
+      "type" : "image\/svg+xml"
+    }
+  ],
+  "lang" : "fr",
+  "name" : "Loïc Lavergne",
+  "scope" : "\/fr\/",
+  "short_name" : "Loïc Lavergne",
+  "start_url" : "\/fr\/",
+  "theme_color" : "#f5f5f7"
+}
