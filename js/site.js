@@ -500,6 +500,9 @@ function initSearchPalette() {
         activeIndex = index;
         syncActiveResult();
       });
+      link.addEventListener("click", (event) => {
+        activateResult(item.route, event);
+      });
 
       listItem.append(link);
       return listItem;
@@ -589,6 +592,36 @@ function initSearchPalette() {
     lastTrigger?.focus({ preventScroll: true });
   }
 
+  /**
+   * Navigate to a selected result while preserving modifier-click behavior.
+   * @param {string} route
+   * @param {MouseEvent | KeyboardEvent | null} event
+   */
+  function activateResult(route, event = null) {
+    const isModifiedClick = event instanceof MouseEvent
+      && (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0);
+
+    if (isModifiedClick) {
+      return;
+    }
+
+    if (event) {
+      event.preventDefault();
+    }
+
+    modal.hidden = true;
+    setBackgroundInteractivity(false);
+    unlockScroll();
+    setExpanded(false);
+    input.value = "";
+    visibleItems = [];
+    activeIndex = -1;
+    results.replaceChildren();
+    input.removeAttribute("aria-activedescendant");
+    setStatus(config.emptyState);
+    window.location.href = route;
+  }
+
   openButton.addEventListener("click", () => {
     openSearch(openButton);
   });
@@ -650,8 +683,7 @@ function initSearchPalette() {
     }
 
     if (event.key === "Enter" && activeIndex >= 0 && visibleItems[activeIndex]) {
-      event.preventDefault();
-      window.location.href = visibleItems[activeIndex].route;
+      activateResult(visibleItems[activeIndex].route, event);
     }
   });
 
