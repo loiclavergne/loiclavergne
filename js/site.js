@@ -550,6 +550,8 @@ function initSearchPalette() {
       listItem.append(link);
       return listItem;
     }));
+
+    setActiveIndex(0);
   }
 
   /**
