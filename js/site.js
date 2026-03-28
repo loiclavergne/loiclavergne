@@ -729,8 +729,10 @@ function initSearchPalette() {
       return;
     }
 
-    if (event.key === "Enter" && activeIndex >= 0 && visibleItems[activeIndex]) {
-      activateResult(visibleItems[activeIndex].route, event);
+    if (event.key === "Enter") {
+      const resultIndex = activeIndex >= 0 ? activeIndex : 0;
+      if (!visibleItems[resultIndex]) return;
+      activateResult(visibleItems[resultIndex].route, event);
     }
   });
 
