@@ -302,12 +302,13 @@ function initSearchPalette() {
   const modal = document.querySelector("[data-search-modal]");
   const input = document.querySelector("[data-search-input]");
   const clearButton = document.querySelector("[data-search-clear]");
+  const assist = document.querySelector("[data-search-assist]");
   const status = document.querySelector("[data-search-status]");
   const results = document.querySelector("[data-search-results]");
   const configNode = document.getElementById("search-config");
   const shellElements = Array.from(document.querySelectorAll("[data-header], main, .site-footer"));
 
-  if (!openButton || !modal || !input || !clearButton || !status || !results || !configNode) {
+  if (!openButton || !modal || !input || !clearButton || !assist || !status || !results || !configNode) {
     return;
   }
 
@@ -325,6 +326,7 @@ function initSearchPalette() {
    *   close: string,
    *   emptyState: string,
    *   fallbackItems: Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>,
+   *   fallbackNote: string,
    *   hint: string,
    *   indexURL: string,
    *   locale: string,
@@ -332,6 +334,7 @@ function initSearchPalette() {
    *   noResults: string,
    *   placeholder: string,
    *   recentLabel: string,
+   *   recoveryLabel: string,
    *   resultsCountOne: string,
    *   resultsCountOther: string,
    *   resultsLabel: string,
@@ -365,6 +368,16 @@ function initSearchPalette() {
    */
   function setStatus(message) {
     status.textContent = message;
+  }
+
+  /**
+   * Show or hide the secondary assist line below the main status.
+   * @param {string} message
+   */
+  function setAssist(message = "") {
+    const hasMessage = message.trim().length > 0;
+    assist.hidden = !hasMessage;
+    assist.textContent = hasMessage ? message : "";
   }
 
   /**
@@ -732,24 +745,46 @@ function initSearchPalette() {
    */
   function renderResults(query) {
     const queryTokens = tokenizeSearchValue(query);
-    visibleItems = matchingItems(query);
+    const matchedItems = matchingItems(query);
+    let includeRecents = !query;
+
+    visibleItems = matchedItems;
     activeIndex = -1;
     results.replaceChildren();
     results.setAttribute("aria-busy", "false");
     input.removeAttribute("aria-activedescendant");
+    setAssist("");
 
-    if (!visibleItems.length) {
-      setStatus(loadFailed ? config.unavailable : (query ? config.noResults : config.emptyState));
-      return;
-    }
+    if (!matchedItems.length) {
+      if (!query) {
+        setStatus(loadFailed ? config.unavailable : config.emptyState);
+        if (loadFailed) {
+          setAssist(config.fallbackNote);
+        }
+        return;
+      }
 
-    if (loadFailed) {
+      const recoveryItems = defaultItems();
+      if (!recoveryItems.length) {
+        setStatus(loadFailed ? config.unavailable : config.noResults);
+        if (loadFailed) {
+          setAssist(config.fallbackNote);
+        }
+        return;
+      }
+
+      visibleItems = recoveryItems;
+      includeRecents = true;
+      setStatus(config.noResults);
+      setAssist(config.recoveryLabel);
+    } else if (loadFailed) {
       setStatus(config.unavailable);
+      setAssist(config.fallbackNote);
     } else {
       setStatus(query ? resultCountMessage(visibleItems.length) : config.suggestedLabel);
     }
 
-    const groups = groupedItems(visibleItems, !query);
+    const groups = groupedItems(visibleItems, includeRecents);
 
     results.replaceChildren(...groups.map((group) => {
       const groupItem = document.createElement("li");
@@ -908,6 +943,7 @@ function initSearchPalette() {
     results.replaceChildren();
     input.removeAttribute("aria-activedescendant");
     setStatus(config.emptyState);
+    setAssist("");
     lastTrigger?.focus({ preventScroll: true });
   }
 
@@ -940,6 +976,7 @@ function initSearchPalette() {
     results.replaceChildren();
     input.removeAttribute("aria-activedescendant");
     setStatus(config.emptyState);
+    setAssist("");
     window.location.href = route;
   }
 

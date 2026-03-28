@@ -400,9 +400,11 @@ struct SiteRenderer {
             "locale": locale,
             "loading": localeContent.search.loading,
             "clearRecent": localeContent.search.clearRecent,
+            "fallbackNote": localeContent.search.fallbackNote,
             "noResults": localeContent.search.noResults,
             "placeholder": localeContent.search.placeholder,
             "recentLabel": localeContent.search.recentLabel,
+            "recoveryLabel": localeContent.search.recoveryLabel,
             "resultsCountOne": localeContent.search.resultsCountOne,
             "resultsCountOther": localeContent.search.resultsCountOther,
             "resultsLabel": localeContent.search.resultsLabel,
@@ -455,6 +457,7 @@ struct SiteRenderer {
                   </div>
                 </div>
                 <p class="search-modal__status" id="site-search-status" data-search-status aria-live="polite">\(escapeHTML(search.emptyState))</p>
+                <p class="search-modal__assist" data-search-assist hidden></p>
                 <ul class="search-results" id="site-search-results" data-search-results aria-label="\(escapeHTML(search.resultsLabel))" role="listbox"></ul>
               </section>
             </div>

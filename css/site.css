@@ -409,6 +409,13 @@ html[data-resolved-theme="dark"] .site-header::before {
   font-size: 0.92rem;
 }
 
+.search-modal__assist {
+  margin: -0.35rem 0 0;
+  padding: 0 1.1rem 0.85rem;
+  color: var(--text-tertiary);
+  font-size: 0.88rem;
+}
+
 .search-results {
   list-style: none;
   margin: 0;
