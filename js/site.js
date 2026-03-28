@@ -399,11 +399,14 @@ function initSearchPalette() {
     const title = normalizeSearchValue(item.title);
     const description = normalizeSearchValue(item.description);
     const route = normalizeSearchValue(item.route);
+    const sectionLabel = normalizeSearchValue(config.sectionLabels[item.section] ?? item.section);
     let score = 0;
 
     if (title.startsWith(query)) score += 100;
     if (title.includes(query)) score += 60;
     if (description.includes(query)) score += 25;
+    if (sectionLabel.startsWith(query)) score += 40;
+    if (sectionLabel.includes(query)) score += 20;
     if (route.includes(query)) score += 10;
     if (item.kind === "page") score += 6;
 
