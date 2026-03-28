@@ -121,6 +121,7 @@ final class SiteBuilderTests: XCTestCase {
 
         let home = try String(contentsOf: outputRoot.appendingPathComponent("index.html"), encoding: .utf8)
         XCTAssertTrue(home.contains("<link rel=\"manifest\" href=\"https://loic.engineer/site.webmanifest\">"))
+        XCTAssertTrue(home.contains("document.documentElement.classList.add(\"js\")"))
         XCTAssertTrue(home.contains("data-search-open"))
         XCTAssertTrue(home.contains("data-search-modal"))
         XCTAssertTrue(home.contains("id=\"search-config\""))
@@ -133,6 +134,7 @@ final class SiteBuilderTests: XCTestCase {
 
         let frenchHome = try String(contentsOf: outputRoot.appendingPathComponent("fr/index.html"), encoding: .utf8)
         XCTAssertTrue(frenchHome.contains("<link rel=\"manifest\" href=\"https://loic.engineer/fr/site.webmanifest\">"))
+        XCTAssertTrue(frenchHome.contains("document.documentElement.classList.add(\"js\")"))
         XCTAssertTrue(frenchHome.contains("data-search-open"))
         XCTAssertTrue(frenchHome.contains("data-search-modal"))
         XCTAssertTrue(frenchHome.contains("id=\"search-config\""))

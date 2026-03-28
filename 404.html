@@ -16,6 +16,7 @@
   <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
   <script>
     (() => {
+      document.documentElement.classList.add("js");
       let stored = null;
       try {
         stored = window.localStorage.getItem("loic.engineer.theme");

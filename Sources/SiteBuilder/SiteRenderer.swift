@@ -298,6 +298,7 @@ struct SiteRenderer {
         """
           <script>
             (() => {
+              document.documentElement.classList.add("js");
               let stored = null;
               try {
                 stored = window.localStorage.getItem("loic.engineer.theme");
