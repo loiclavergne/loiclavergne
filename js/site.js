@@ -359,7 +359,7 @@ function initSearchPalette() {
   function focusableNodes() {
     return Array.from(modal.querySelectorAll(focusableSelector)).filter((element) => {
       if (!(element instanceof HTMLElement)) return false;
-      return !element.hasAttribute("disabled") && element.getClientRects().length > 0;
+      return !element.hasAttribute("disabled") && element.tabIndex >= 0 && element.getClientRects().length > 0;
     });
   }
 
@@ -461,6 +461,7 @@ function initSearchPalette() {
     results.replaceChildren(...visibleItems.map((item, index) => {
       const listItem = document.createElement("li");
       listItem.className = "search-results__item";
+      listItem.setAttribute("role", "presentation");
 
       const link = document.createElement("a");
       link.className = "search-result";
@@ -468,7 +469,10 @@ function initSearchPalette() {
       link.dataset.searchResult = String(index);
       link.id = `site-search-result-${index}`;
       link.setAttribute("role", "option");
+      link.tabIndex = -1;
+      link.setAttribute("aria-posinset", String(index + 1));
       link.setAttribute("aria-selected", "false");
+      link.setAttribute("aria-setsize", String(visibleItems.length));
 
       const meta = document.createElement("span");
       meta.className = "search-result__meta";
