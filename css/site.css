@@ -480,10 +480,15 @@ html[data-resolved-theme="dark"] .site-header::before {
 .search-result {
   display: grid;
   gap: 0.25rem;
+  width: 100%;
   padding: 0.95rem 1rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--surface-border);
   background: var(--page-background-strong);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
   transition:
     transform var(--duration-fast) var(--easing-standard),
     border-color var(--duration-fast) var(--easing-standard),

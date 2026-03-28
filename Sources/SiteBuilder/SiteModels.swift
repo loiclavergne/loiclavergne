@@ -257,10 +257,15 @@ struct SearchContent: Decodable {
     let placeholder: String
     let loading: String
     let fallbackNote: String
+    let quickActionsLabel: String
     let recentLabel: String
     let clearRecent: String
     let recoveryLabel: String
+    let switchLocaleDescription: String
     let suggestedLabel: String
+    let themeAutoDescription: String
+    let themeLightDescription: String
+    let themeDarkDescription: String
     let emptyState: String
     let noResults: String
     let resultsCountOne: String

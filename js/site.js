@@ -322,10 +322,11 @@ function initSearchPalette() {
   ].join(", ");
 
   /** @type {{
+   *   actionItems: Array<{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}>,
    *   clearRecent: string,
    *   close: string,
    *   emptyState: string,
-   *   fallbackItems: Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>,
+   *   fallbackItems: Array<{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}>,
    *   fallbackNote: string,
    *   hint: string,
    *   indexURL: string,
@@ -351,11 +352,11 @@ function initSearchPalette() {
     return;
   }
 
-  /** @type {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>} */
+  /** @type {Array<{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}>} */
   let allItems = [];
-  /** @type {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>} */
+  /** @type {Array<{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}>} */
   let visibleItems = [];
-  /** @type {Promise<Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>> | null} */
+  /** @type {Promise<Array<{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}>> | null} */
   let loadPromise = null;
   let activeIndex = -1;
   let lastTrigger = /** @type {HTMLElement | null} */ (null);
@@ -528,6 +529,24 @@ function initSearchPalette() {
   }
 
   /**
+   * Close the palette and restore the shell without changing routes.
+   */
+  function dismissSearch() {
+    modal.hidden = true;
+    setBackgroundInteractivity(false);
+    unlockScroll();
+    setExpanded(false);
+    input.value = "";
+    syncClearButton();
+    visibleItems = [];
+    activeIndex = -1;
+    results.replaceChildren();
+    input.removeAttribute("aria-activedescendant");
+    setStatus(config.emptyState);
+    setAssist("");
+  }
+
+  /**
    * Keep the localized clear action in sync with the input state.
    */
   function syncClearButton() {
@@ -570,41 +589,48 @@ function initSearchPalette() {
 
   /**
    * Return the best available item set for search and suggestions.
-   * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
+   * @returns {Array<{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}>}
    */
   function searchItems() {
-    return allItems.length ? allItems : config.fallbackItems;
+    const contentItems = allItems.length ? allItems : config.fallbackItems;
+    return config.actionItems.concat(contentItems);
   }
 
   /**
    * Resolve the stored recent routes against the current locale item set.
-   * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
+   * @returns {Array<{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}>}
    */
   function recentItems() {
-    const itemsByRoute = new Map(searchItems().map((item) => [item.route, item]));
+    const itemsByRoute = new Map(
+      searchItems()
+        .filter((item) => typeof item.route === "string" && item.route.startsWith("/"))
+        .map((item) => [item.route, item]),
+    );
     return readRecentRoutes()
       .map((route) => itemsByRoute.get(route))
       .filter(Boolean);
   }
 
   /**
-   * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
+   * @returns {Array<{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}>}
    */
   function defaultItems() {
     const recent = recentItems();
-    const recentRoutes = new Set(recent.map((item) => item.route));
+    const recentRoutes = new Set(recent.map((item) => item.route).filter(Boolean));
+    const actionItems = config.actionItems;
     const suggestions = searchItems()
       .filter((item) => item.kind === "page")
       .concat(searchItems().filter((item) => item.kind === "project"))
       .filter((item) => !recentRoutes.has(item.route));
 
     return recent
+      .concat(actionItems)
       .concat(suggestions)
       .slice(0, 8);
   }
 
   /**
-   * @param {{description: string, kind: string, locale: string, route: string, section: string, title: string}} item
+   * @param {{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}} item
    * @param {string} query
    * @param {string[]} queryTokens
    * @returns {number}
@@ -612,7 +638,7 @@ function initSearchPalette() {
   function scoreItem(item, query, queryTokens) {
     const title = normalizeSearchValue(item.title);
     const description = normalizeSearchValue(item.description);
-    const route = normalizeSearchValue(item.route);
+    const route = normalizeSearchValue(item.route ?? "");
     const sectionLabel = normalizeSearchValue(config.sectionLabels[item.section] ?? item.section);
     const fields = [title, description, route, sectionLabel];
     let score = 0;
@@ -640,13 +666,14 @@ function initSearchPalette() {
     }
 
     if (item.kind === "page") score += 6;
+    if (item.kind === "action") score += 4;
 
     return score;
   }
 
   /**
    * @param {string} query
-   * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
+   * @returns {Array<{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}>}
    */
   function matchingItems(query) {
     if (!query) {
@@ -665,16 +692,16 @@ function initSearchPalette() {
 
   /**
    * Group visible items by their localized section label.
-   * @param {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>} items
-   * @returns {Array<{actionLabel?: string, key: string, label: string, entries: Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>}>}
+   * @param {Array<{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}>} items
+   * @returns {Array<{actionLabel?: string, key: string, label: string, entries: Array<{item: {action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}, index: number}>}>}
    */
   function groupedItems(items, includeRecents = false) {
-    /** @type {Map<string, Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>>} */
+    /** @type {Map<string, Array<{item: {action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}, index: number}>>} */
     const entriesBySection = new Map();
     const orderedKeys = [];
     const recentRoutes = includeRecents ? new Set(recentItems().map((item) => item.route)) : new Set();
 
-    /** @type {Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>} */
+    /** @type {Array<{item: {action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}, index: number}>} */
     const recentEntries = [];
 
     items.forEach((item, index) => {
@@ -817,16 +844,23 @@ function initSearchPalette() {
       groupList.className = "search-results__group-list";
 
       group.entries.forEach(({ item, index }) => {
-        const link = document.createElement("a");
-        link.className = "search-result";
-        link.href = item.route;
-        link.dataset.searchResult = String(index);
-        link.id = `site-search-result-${index}`;
-        link.setAttribute("role", "option");
-        link.tabIndex = -1;
-        link.setAttribute("aria-posinset", String(index + 1));
-        link.setAttribute("aria-selected", "false");
-        link.setAttribute("aria-setsize", String(visibleItems.length));
+        const resultNode = item.route
+          ? document.createElement("a")
+          : document.createElement("button");
+
+        resultNode.className = "search-result";
+        if (resultNode instanceof HTMLAnchorElement) {
+          resultNode.href = item.route;
+        } else {
+          resultNode.type = "button";
+        }
+        resultNode.dataset.searchResult = String(index);
+        resultNode.id = `site-search-result-${index}`;
+        resultNode.setAttribute("role", "option");
+        resultNode.tabIndex = -1;
+        resultNode.setAttribute("aria-posinset", String(index + 1));
+        resultNode.setAttribute("aria-selected", "false");
+        resultNode.setAttribute("aria-setsize", String(visibleItems.length));
 
         const meta = document.createElement("span");
         meta.className = "search-result__meta";
@@ -840,16 +874,16 @@ function initSearchPalette() {
         description.className = "search-result__description";
         appendHighlightedText(description, item.description, queryTokens);
 
-        link.append(meta, title, description);
-        link.addEventListener("mouseenter", () => {
+        resultNode.append(meta, title, description);
+        resultNode.addEventListener("mouseenter", () => {
           activeIndex = index;
           syncActiveResult();
         });
-        link.addEventListener("click", (event) => {
-          activateResult(item.route, event);
+        resultNode.addEventListener("click", (event) => {
+          activateResult(item, event);
         });
 
-        groupList.append(link);
+        groupList.append(resultNode);
       });
 
       groupItem.append(groupHeader, groupList);
@@ -932,27 +966,51 @@ function initSearchPalette() {
   function closeSearch() {
     if (modal.hidden) return;
 
-    modal.hidden = true;
-    setBackgroundInteractivity(false);
-    unlockScroll();
-    setExpanded(false);
-    input.value = "";
-    syncClearButton();
-    visibleItems = [];
-    activeIndex = -1;
-    results.replaceChildren();
-    input.removeAttribute("aria-activedescendant");
-    setStatus(config.emptyState);
-    setAssist("");
+    dismissSearch();
     lastTrigger?.focus({ preventScroll: true });
   }
 
   /**
-   * Navigate to a selected result while preserving modifier-click behavior.
-   * @param {string} route
+   * Run a search result item while preserving route modifiers when relevant.
+   * @param {{action?: string, description: string, kind: string, locale: string, route?: string, section: string, title: string}} item
    * @param {MouseEvent | KeyboardEvent | null} event
    */
-  function activateResult(route, event = null) {
+  function activateResult(item, event = null) {
+    if (item.action === "theme:auto") {
+      if (event) {
+        event.preventDefault();
+      }
+      setTheme("auto");
+      dismissSearch();
+      lastTrigger?.focus({ preventScroll: true });
+      return;
+    }
+
+    if (item.action === "theme:light") {
+      if (event) {
+        event.preventDefault();
+      }
+      setTheme("light");
+      dismissSearch();
+      lastTrigger?.focus({ preventScroll: true });
+      return;
+    }
+
+    if (item.action === "theme:dark") {
+      if (event) {
+        event.preventDefault();
+      }
+      setTheme("dark");
+      dismissSearch();
+      lastTrigger?.focus({ preventScroll: true });
+      return;
+    }
+
+    const route = item.route;
+    if (!route) {
+      return;
+    }
+
     const isModifiedClick = event instanceof MouseEvent
       && (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0);
 
@@ -966,17 +1024,7 @@ function initSearchPalette() {
       event.preventDefault();
     }
 
-    modal.hidden = true;
-    setBackgroundInteractivity(false);
-    unlockScroll();
-    setExpanded(false);
-    input.value = "";
-    visibleItems = [];
-    activeIndex = -1;
-    results.replaceChildren();
-    input.removeAttribute("aria-activedescendant");
-    setStatus(config.emptyState);
-    setAssist("");
+    dismissSearch();
     window.location.href = route;
   }
 
@@ -1053,7 +1101,7 @@ function initSearchPalette() {
     if (event.key === "Enter") {
       const resultIndex = activeIndex >= 0 ? activeIndex : 0;
       if (!visibleItems[resultIndex]) return;
-      activateResult(visibleItems[resultIndex].route, event);
+      activateResult(visibleItems[resultIndex], event);
     }
   });
 

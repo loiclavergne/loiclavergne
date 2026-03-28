@@ -361,7 +361,7 @@ struct SiteRenderer {
     }
 
     /// Render the localized search UI configuration.
-    func renderSearchConfig(locale: String, localeContent: LocaleContent) throws -> String {
+    func renderSearchConfig(currentPage: String, locale: String, localeContent: LocaleContent) throws -> String {
         let fallbackPageKeys = ["home", "work", "projects", "writing", "library", "about"]
         let fallbackPages = try fallbackPageKeys.map { pageKey -> [String: String] in
             let metadata = try searchIndexMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale)
@@ -391,7 +391,50 @@ struct SiteRenderer {
             ]
         }
 
+        let switchLocale = localeContent.switchLocale
+        let switchPath = try pagePath(currentPage, locale: switchLocale)
+        let switchDescription = localeContent.search.switchLocaleDescription
+            .replacingOccurrences(of: "{{locale}}", with: localeContent.switchLabel)
+        let actionItems: [[String: String]] = [
+            [
+                "action": "theme:auto",
+                "description": localeContent.search.themeAutoDescription,
+                "kind": "action",
+                "locale": locale,
+                "section": "__actions__",
+                "title": localeContent.theme.auto
+            ],
+            [
+                "action": "theme:light",
+                "description": localeContent.search.themeLightDescription,
+                "kind": "action",
+                "locale": locale,
+                "section": "__actions__",
+                "title": localeContent.theme.light
+            ],
+            [
+                "action": "theme:dark",
+                "description": localeContent.search.themeDarkDescription,
+                "kind": "action",
+                "locale": locale,
+                "section": "__actions__",
+                "title": localeContent.theme.dark
+            ],
+            [
+                "description": switchDescription,
+                "kind": "action",
+                "locale": locale,
+                "route": switchPath,
+                "section": "__actions__",
+                "title": localeContent.switchLabel
+            ]
+        ]
+
+        var sectionLabels = localeContent.nav
+        sectionLabels["__actions__"] = localeContent.search.quickActionsLabel
+
         let config: [String: Any] = [
+            "actionItems": actionItems,
             "close": localeContent.search.close,
             "emptyState": localeContent.search.emptyState,
             "fallbackItems": fallbackPages + fallbackProjects,
@@ -408,7 +451,7 @@ struct SiteRenderer {
             "resultsCountOne": localeContent.search.resultsCountOne,
             "resultsCountOther": localeContent.search.resultsCountOther,
             "resultsLabel": localeContent.search.resultsLabel,
-            "sectionLabels": localeContent.nav,
+            "sectionLabels": sectionLabels,
             "suggestedLabel": localeContent.search.suggestedLabel,
             "title": localeContent.search.title,
             "unavailable": localeContent.search.unavailable
@@ -419,10 +462,10 @@ struct SiteRenderer {
     }
 
     /// Render the shared search modal for the current locale.
-    func renderSearchModal(locale: String) throws -> String {
+    func renderSearchModal(currentPage: String, locale: String) throws -> String {
         let localeContent = try localeContent(locale)
         let search = localeContent.search
-        let config = try renderSearchConfig(locale: locale, localeContent: localeContent)
+        let config = try renderSearchConfig(currentPage: currentPage, locale: locale, localeContent: localeContent)
 
         return """
             <div class="search-modal" data-search-modal hidden>
@@ -2166,7 +2209,7 @@ struct SiteRenderer {
         \(try renderMain(pageKey: pageKey, locale: locale))
           </main>
         \(try renderFooter(locale: locale))
-        \(try renderSearchModal(locale: locale))
+        \(try renderSearchModal(currentPage: pageKey, locale: locale))
           <script type="module" src="/js/site.js"></script>
         </body>
         </html>
