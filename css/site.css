@@ -17,6 +17,7 @@ html {
 }
 
 html:not(.js) .search-trigger,
+html:not(.js) .theme-switcher,
 html:not(.js) .search-modal {
   display: none !important;
 }
