@@ -196,6 +196,17 @@ function normalizeSearchValue(value) {
 }
 
 /**
+ * Split a normalized query into searchable tokens.
+ * @param {string} value
+ * @returns {string[]}
+ */
+function tokenizeSearchValue(value) {
+  return normalizeSearchValue(value)
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+/**
  * Determine whether the current event target is editable.
  * @param {EventTarget | null} target
  * @returns {boolean}
@@ -393,13 +404,15 @@ function initSearchPalette() {
   /**
    * @param {{description: string, kind: string, locale: string, route: string, section: string, title: string}} item
    * @param {string} query
+   * @param {string[]} queryTokens
    * @returns {number}
    */
-  function scoreItem(item, query) {
+  function scoreItem(item, query, queryTokens) {
     const title = normalizeSearchValue(item.title);
     const description = normalizeSearchValue(item.description);
     const route = normalizeSearchValue(item.route);
     const sectionLabel = normalizeSearchValue(config.sectionLabels[item.section] ?? item.section);
+    const fields = [title, description, route, sectionLabel];
     let score = 0;
 
     if (title.startsWith(query)) score += 100;
@@ -408,6 +421,22 @@ function initSearchPalette() {
     if (sectionLabel.startsWith(query)) score += 40;
     if (sectionLabel.includes(query)) score += 20;
     if (route.includes(query)) score += 10;
+
+    for (const token of queryTokens) {
+      if (!fields.some((field) => field.includes(token))) {
+        return 0;
+      }
+
+      if (title.startsWith(token)) score += 48;
+      else if (title.includes(token)) score += 28;
+
+      if (sectionLabel.startsWith(token)) score += 24;
+      else if (sectionLabel.includes(token)) score += 12;
+
+      if (description.includes(token)) score += 12;
+      if (route.includes(token)) score += 8;
+    }
+
     if (item.kind === "page") score += 6;
 
     return score;
@@ -422,8 +451,10 @@ function initSearchPalette() {
       return defaultItems();
     }
 
+    const queryTokens = tokenizeSearchValue(query);
+
     return searchItems()
-      .map((item) => ({ item, score: scoreItem(item, query) }))
+      .map((item) => ({ item, score: scoreItem(item, query, queryTokens) }))
       .filter((entry) => entry.score > 0)
       .sort((left, right) => right.score - left.score)
       .map((entry) => entry.item)
