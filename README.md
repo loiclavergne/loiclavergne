@@ -121,7 +121,7 @@ The v1 architecture includes:
 - real sports and trophy archive surfaces inside the about page
 - localized Atom feeds, localized web app manifests, GitHub Pages hosting files, and a static `robots.txt`
 - page-type-aware JSON-LD and breadcrumb structured data
-- Swift test coverage for route integrity, support files, and metadata regressions
+- Swift test coverage for route integrity, internal-link integrity, support files, and metadata regressions
 - English and French localization
 - light, dark, and auto appearance modes
 - structured static education section on the work page

@@ -175,6 +175,7 @@ Structured metadata is now page-type aware:
 
 The Swift package now includes automated tests for:
 - route coverage across locales
+- generated HTML internal-link and asset resolution
 - generator support outputs such as feeds, manifests, sitemap, `robots.txt`, and hosting files
 - structured-data regression checks for major page types
 

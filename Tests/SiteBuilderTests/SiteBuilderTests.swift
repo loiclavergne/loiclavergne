@@ -149,10 +149,133 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(about.contains("\"@type\" : \"AboutPage\""))
     }
 
+    func testGeneratedHTMLUsesResolvableInternalReferences() throws {
+        let payload = try SitePayload.load()
+        let outputRoot = makeTemporaryDirectory()
+        defer { try? FileManager.default.removeItem(at: outputRoot) }
+
+        let renderer = SiteRenderer(payload: payload, rootURL: outputRoot)
+        let urls = try renderer.buildPages()
+        try renderer.buildSitemap(urls: urls.sorted())
+        try renderer.buildFeeds()
+        try renderer.buildManifests()
+        try renderer.buildRobots()
+        try renderer.buildHostingFiles()
+
+        let htmlFiles = try generatedHTMLFiles(in: outputRoot)
+        XCTAssertFalse(htmlFiles.isEmpty)
+
+        let referencePattern = try XCTUnwrap(
+            NSRegularExpression(pattern: #"(?:href|src)="([^"]+)""#)
+        )
+        let removedFrenchSlugs = ["/fr/travail/", "/fr/projets/", "/fr/ecrits/", "/fr/bibliotheque/", "/fr/a-propos/"]
+
+        for fileURL in htmlFiles {
+            let html = try String(contentsOf: fileURL, encoding: .utf8)
+
+            for slug in removedFrenchSlugs {
+                XCTAssertFalse(html.contains(slug), "Found removed French slug \(slug) in \(fileURL.path)")
+            }
+
+            let range = NSRange(html.startIndex..<html.endIndex, in: html)
+            for match in referencePattern.matches(in: html, range: range) {
+                guard let groupRange = Range(match.range(at: 1), in: html) else {
+                    continue
+                }
+
+                let reference = String(html[groupRange])
+                if shouldSkipReference(reference) {
+                    continue
+                }
+
+                try assertResolvableReference(
+                    reference,
+                    outputRoot: outputRoot,
+                    assetRoot: workspaceRoot(),
+                    sourceFile: fileURL
+                )
+            }
+        }
+    }
+
     private func makeTemporaryDirectory() -> URL {
         let directory = FileManager.default.temporaryDirectory
             .appendingPathComponent("SiteBuilderTests-\(UUID().uuidString)", isDirectory: true)
         try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         return directory
+    }
+
+    private func generatedHTMLFiles(in outputRoot: URL) throws -> [URL] {
+        let enumerator = FileManager.default.enumerator(
+            at: outputRoot,
+            includingPropertiesForKeys: [.isRegularFileKey],
+            options: [.skipsHiddenFiles]
+        )
+
+        var files: [URL] = []
+        while let fileURL = enumerator?.nextObject() as? URL {
+            if fileURL.pathExtension == "html" {
+                files.append(fileURL)
+            }
+        }
+
+        return files.sorted { $0.path < $1.path }
+    }
+
+    private func shouldSkipReference(_ reference: String) -> Bool {
+        reference.hasPrefix("#")
+            || reference.hasPrefix("mailto:")
+            || reference.hasPrefix("tel:")
+            || reference.hasPrefix("data:")
+            || reference.hasPrefix("javascript:")
+    }
+
+    private func assertResolvableReference(_ reference: String, outputRoot: URL, assetRoot: URL, sourceFile: URL) throws {
+        let path: String
+
+        if let url = URL(string: reference), let scheme = url.scheme, ["http", "https"].contains(scheme) {
+            guard url.host == "loic.engineer" else {
+                return
+            }
+
+            path = url.path.isEmpty ? "/" : url.path
+        } else if reference.hasPrefix("/") {
+            path = reference
+        } else {
+            XCTFail("Found unexpected non-root relative reference '\(reference)' in \(sourceFile.path)")
+            return
+        }
+
+        let root = isSharedAssetPath(path) ? assetRoot : outputRoot
+        let candidate = outputURL(for: path, root: root)
+        XCTAssertTrue(
+            FileManager.default.fileExists(atPath: candidate.path),
+            "Missing internal reference '\(reference)' from \(sourceFile.path)"
+        )
+    }
+
+    private func isSharedAssetPath(_ path: String) -> Bool {
+        path.hasPrefix("/css/") || path.hasPrefix("/js/") || path.hasPrefix("/assets/")
+    }
+
+    private func outputURL(for path: String, root: URL) -> URL {
+        if path == "/" {
+            return root.appendingPathComponent("index.html")
+        }
+
+        let trimmed = path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        let directURL = root.appendingPathComponent(trimmed)
+        if FileManager.default.fileExists(atPath: directURL.path) {
+            return directURL
+        }
+
+        return directURL.appendingPathComponent("index.html")
+    }
+
+    private func workspaceRoot() -> URL {
+        URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
     }
 }
