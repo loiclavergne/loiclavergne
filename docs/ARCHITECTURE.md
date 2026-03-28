@@ -109,6 +109,10 @@ If a new asset is added, it should have a clear purpose in the generated site.
 Do not reintroduce unused vendor bundles or archive-era media into the runtime
 path.
 
+The sitemap now emits `xhtml:link` alternates for each English and French page
+variant so search engines can discover locale relationships without relying
+only on page-level `hreflang`.
+
 ## Localization Strategy
 
 Localization is URL-linked, not dynamically swapped inside a single canonical

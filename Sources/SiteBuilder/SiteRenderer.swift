@@ -43,20 +43,35 @@ struct SiteRenderer {
         )
     }
 
-    /// Write sitemap.xml for the generated route set.
-    func buildSitemap(urls: [String]) throws {
-        let entries = urls.map {
-            """
-              <url>
-                <loc>\($0)</loc>
-                <lastmod>\(payload.site.buildDate)</lastmod>
-              </url>
-            """
+    /// Write sitemap.xml for the localized route set with alternates.
+    func buildSitemap() throws {
+        let locales = payload.locales.keys.sorted()
+        let entries = try payload.pageKeys.flatMap { pageKey -> [String] in
+            let englishDefaultPath = try pagePath(pageKey, locale: "en")
+            let alternateLinks = try locales.map { locale -> String in
+                let path = try pagePath(pageKey, locale: locale)
+                let hreflang = try localeContent(locale).htmlLang
+                return #"    <xhtml:link rel="alternate" hreflang="\#(escapeHTML(hreflang))" href="\#(escapeHTML(absoluteURL(for: path)))"/>"#
+            }
+            let alternatesMarkup = (alternateLinks + [
+                #"    <xhtml:link rel="alternate" hreflang="x-default" href="\#(escapeHTML(absoluteURL(for: englishDefaultPath)))"/>"#
+            ]).joined(separator: "\n")
+
+            return try locales.map { locale in
+                let path = try pagePath(pageKey, locale: locale)
+                return """
+                  <url>
+                    <loc>\(absoluteURL(for: path))</loc>
+                    <lastmod>\(payload.site.buildDate)</lastmod>
+                \(alternatesMarkup)
+                  </url>
+                """
+            }
         }.joined(separator: "\n")
 
         let xml = """
         <?xml version="1.0" encoding="UTF-8"?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
         \(entries)
         </urlset>
         """

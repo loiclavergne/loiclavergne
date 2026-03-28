@@ -1,131 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://loic.engineer/</loc>
     <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/about/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/"/>
   </url>
   <url>
     <loc>https://loic.engineer/fr/</loc>
     <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/about/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/library/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/dakar-presse/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/digital-press-applications/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/le-moniteur-des-pharmacies/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/le-point-veterinaire/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/loic-engineer/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/myviapresse/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/roole-map/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/roole-premium/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/templated-mobile-starter/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/projects/vialife-digital/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/work/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/fr/writing/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/library/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/dakar-presse/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/digital-press-applications/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/le-moniteur-des-pharmacies/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/le-point-veterinaire/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/loic-engineer/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/myviapresse/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/roole-map/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/roole-premium/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/templated-mobile-starter/</loc>
-    <lastmod>2026-03-27</lastmod>
-  </url>
-  <url>
-    <loc>https://loic.engineer/projects/vialife-digital/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/"/>
   </url>
   <url>
     <loc>https://loic.engineer/work/</loc>
     <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/work/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/work/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/work/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/work/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/work/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/roole-map/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/roole-map/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/roole-map/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/roole-map/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/roole-map/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/roole-map/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/roole-map/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/roole-map/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/roole-premium/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/roole-premium/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/roole-premium/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/roole-premium/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/roole-premium/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/roole-premium/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/roole-premium/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/roole-premium/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/vialife-digital/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/vialife-digital/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/vialife-digital/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/vialife-digital/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/vialife-digital/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/vialife-digital/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/vialife-digital/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/vialife-digital/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/myviapresse/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/myviapresse/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/myviapresse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/myviapresse/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/myviapresse/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/myviapresse/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/myviapresse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/myviapresse/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/digital-press-applications/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/digital-press-applications/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/digital-press-applications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/digital-press-applications/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/digital-press-applications/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/digital-press-applications/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/digital-press-applications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/digital-press-applications/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/dakar-presse/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/dakar-presse/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/dakar-presse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/dakar-presse/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/dakar-presse/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/dakar-presse/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/dakar-presse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/dakar-presse/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/le-moniteur-des-pharmacies/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/le-moniteur-des-pharmacies/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/le-moniteur-des-pharmacies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/le-moniteur-des-pharmacies/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/le-moniteur-des-pharmacies/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/le-moniteur-des-pharmacies/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/le-moniteur-des-pharmacies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/le-moniteur-des-pharmacies/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/le-point-veterinaire/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/le-point-veterinaire/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/le-point-veterinaire/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/le-point-veterinaire/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/le-point-veterinaire/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/le-point-veterinaire/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/le-point-veterinaire/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/le-point-veterinaire/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/loic-engineer/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/loic-engineer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/loic-engineer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/loic-engineer/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/loic-engineer/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/loic-engineer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/loic-engineer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/loic-engineer/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/projects/templated-mobile-starter/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/templated-mobile-starter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/templated-mobile-starter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/templated-mobile-starter/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/projects/templated-mobile-starter/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/projects/templated-mobile-starter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/projects/templated-mobile-starter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/projects/templated-mobile-starter/"/>
   </url>
   <url>
     <loc>https://loic.engineer/writing/</loc>
     <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/writing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/writing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/writing/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/writing/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/writing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/writing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/writing/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/library/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/library/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/library/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/library/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/library/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/library/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/library/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/library/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/about/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/about/"/>
+  </url>
+  <url>
+    <loc>https://loic.engineer/fr/about/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://loic.engineer/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://loic.engineer/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://loic.engineer/about/"/>
   </url>
 </urlset>

@@ -15,7 +15,7 @@ do {
     let renderer = SiteRenderer(payload: payload, rootURL: outputRoot)
     let urls = try renderer.buildPages()
     try renderer.buildNotFoundPage()
-    try renderer.buildSitemap(urls: urls.sorted())
+    try renderer.buildSitemap()
     try renderer.buildFeeds()
     try renderer.buildManifests()
     try renderer.buildRobots()

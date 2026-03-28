@@ -70,9 +70,9 @@ final class SiteBuilderTests: XCTestCase {
         defer { try? FileManager.default.removeItem(at: outputRoot) }
 
         let renderer = SiteRenderer(payload: payload, rootURL: outputRoot)
-        let urls = try renderer.buildPages()
+        _ = try renderer.buildPages()
         try renderer.buildNotFoundPage()
-        try renderer.buildSitemap(urls: urls.sorted())
+        try renderer.buildSitemap()
         try renderer.buildFeeds()
         try renderer.buildManifests()
         try renderer.buildRobots()
@@ -122,6 +122,12 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(notFound.contains("\"documentTitle\" : \"Page introuvable | Loïc Lavergne\""))
         XCTAssertTrue(notFound.contains("\"href\" : \"\\/fr\\/work\\/\""))
 
+        let sitemap = try String(contentsOf: outputRoot.appendingPathComponent("sitemap.xml"), encoding: .utf8)
+        XCTAssertTrue(sitemap.contains("xmlns:xhtml=\"http://www.w3.org/1999/xhtml\""))
+        XCTAssertTrue(sitemap.contains("hreflang=\"en\" href=\"https://loic.engineer/work/\""))
+        XCTAssertTrue(sitemap.contains("hreflang=\"fr\" href=\"https://loic.engineer/fr/work/\""))
+        XCTAssertTrue(sitemap.contains("hreflang=\"x-default\" href=\"https://loic.engineer/work/\""))
+
         let robots = try String(contentsOf: outputRoot.appendingPathComponent("robots.txt"), encoding: .utf8)
         XCTAssertTrue(robots.contains("User-agent: *"))
         XCTAssertTrue(robots.contains("Sitemap: https://loic.engineer/sitemap.xml"))
@@ -162,9 +168,9 @@ final class SiteBuilderTests: XCTestCase {
         defer { try? FileManager.default.removeItem(at: outputRoot) }
 
         let renderer = SiteRenderer(payload: payload, rootURL: outputRoot)
-        let urls = try renderer.buildPages()
+        _ = try renderer.buildPages()
         try renderer.buildNotFoundPage()
-        try renderer.buildSitemap(urls: urls.sorted())
+        try renderer.buildSitemap()
         try renderer.buildFeeds()
         try renderer.buildManifests()
         try renderer.buildRobots()
