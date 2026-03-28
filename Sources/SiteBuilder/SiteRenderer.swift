@@ -399,6 +399,7 @@ struct SiteRenderer {
             "indexURL": searchIndexPath(for: locale),
             "locale": locale,
             "loading": localeContent.search.loading,
+            "clearRecent": localeContent.search.clearRecent,
             "noResults": localeContent.search.noResults,
             "placeholder": localeContent.search.placeholder,
             "recentLabel": localeContent.search.recentLabel,

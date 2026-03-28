@@ -59,6 +59,7 @@
     "placeholder": "Rechercher des pages, projets, écrits ou éléments du profil",
     "loading": "Chargement de l'index de recherche…",
     "recent_label": "Destinations récentes",
+    "clear_recent": "Effacer les récentes",
     "suggested_label": "Destinations suggérées",
     "empty_state": "Commencez à taper ou choisissez une destination suggérée.",
     "no_results": "Aucun résultat correspondant.",

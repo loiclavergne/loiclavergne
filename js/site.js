@@ -321,6 +321,7 @@ function initSearchPalette() {
   ].join(", ");
 
   /** @type {{
+   *   clearRecent: string,
    *   close: string,
    *   emptyState: string,
    *   fallbackItems: Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>,
@@ -503,6 +504,17 @@ function initSearchPalette() {
   }
 
   /**
+   * Remove all locale-scoped recent destinations.
+   */
+  function clearRecentRoutes() {
+    try {
+      window.localStorage.removeItem(recentStorageKey());
+    } catch (error) {
+      // Ignore storage failures and keep the search experience functional.
+    }
+  }
+
+  /**
    * Keep the localized clear action in sync with the input state.
    */
   function syncClearButton() {
@@ -641,7 +653,7 @@ function initSearchPalette() {
   /**
    * Group visible items by their localized section label.
    * @param {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>} items
-   * @returns {Array<{key: string, label: string, entries: Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>}>}
+   * @returns {Array<{actionLabel?: string, key: string, label: string, entries: Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>}>}
    */
   function groupedItems(items, includeRecents = false) {
     /** @type {Map<string, Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>>} */
@@ -678,6 +690,7 @@ function initSearchPalette() {
 
     return [
       {
+        actionLabel: config.clearRecent,
         key: "__recent__",
         label: config.recentLabel,
         entries: recentEntries,
@@ -744,9 +757,26 @@ function initSearchPalette() {
       groupItem.setAttribute("role", "group");
       groupItem.setAttribute("aria-label", group.label);
 
+      const groupHeader = document.createElement("div");
+      groupHeader.className = "search-results__group-header";
+
       const groupLabel = document.createElement("p");
       groupLabel.className = "search-results__group-label";
       appendHighlightedText(groupLabel, group.label, queryTokens);
+      groupHeader.append(groupLabel);
+
+      if (group.actionLabel) {
+        const groupAction = document.createElement("button");
+        groupAction.className = "search-results__group-action";
+        groupAction.type = "button";
+        groupAction.textContent = group.actionLabel;
+        groupAction.addEventListener("click", () => {
+          clearRecentRoutes();
+          renderResults("");
+          focusSearchInput();
+        });
+        groupHeader.append(groupAction);
+      }
 
       const groupList = document.createElement("div");
       groupList.className = "search-results__group-list";
@@ -787,7 +817,7 @@ function initSearchPalette() {
         groupList.append(link);
       });
 
-      groupItem.append(groupLabel, groupList);
+      groupItem.append(groupHeader, groupList);
       return groupItem;
     }));
 
