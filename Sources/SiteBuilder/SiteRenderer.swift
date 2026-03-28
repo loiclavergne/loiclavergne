@@ -387,7 +387,7 @@ struct SiteRenderer {
         return """
             <div class="search-modal" data-search-modal hidden>
               <div class="search-modal__backdrop" data-search-close></div>
-              <section class="search-modal__sheet" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title">
+              <section class="search-modal__sheet" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" aria-describedby="site-search-status">
                 <div class="search-modal__header">
                   <div>
                     <span class="eyebrow">\(escapeHTML(search.button))</span>
@@ -406,7 +406,7 @@ struct SiteRenderer {
                     aria-label="\(escapeHTML(search.title))"
                   >
                 </div>
-                <p class="search-modal__status" data-search-status aria-live="polite">\(escapeHTML(search.emptyState))</p>
+                <p class="search-modal__status" id="site-search-status" data-search-status aria-live="polite">\(escapeHTML(search.emptyState))</p>
                 <ul class="search-results" data-search-results aria-label="\(escapeHTML(search.resultsLabel))"></ul>
               </section>
             </div>

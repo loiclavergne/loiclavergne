@@ -295,7 +295,7 @@
     </footer>
     <div class="search-modal" data-search-modal hidden>
       <div class="search-modal__backdrop" data-search-close></div>
-      <section class="search-modal__sheet" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title">
+      <section class="search-modal__sheet" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" aria-describedby="site-search-status">
         <div class="search-modal__header">
           <div>
             <span class="eyebrow">Search</span>
@@ -314,7 +314,7 @@
             aria-label="Search the site"
           >
         </div>
-        <p class="search-modal__status" data-search-status aria-live="polite">Start typing or pick a suggested destination.</p>
+        <p class="search-modal__status" id="site-search-status" data-search-status aria-live="polite">Start typing or pick a suggested destination.</p>
         <ul class="search-results" data-search-results aria-label="Search results"></ul>
       </section>
     </div>

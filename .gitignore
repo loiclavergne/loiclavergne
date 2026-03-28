@@ -49,3 +49,4 @@ venv/
 
 # Local utility folders
 .ignore/
+.pages-dist/

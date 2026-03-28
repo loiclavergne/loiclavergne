@@ -319,7 +319,7 @@
     </footer>
     <div class="search-modal" data-search-modal hidden>
       <div class="search-modal__backdrop" data-search-close></div>
-      <section class="search-modal__sheet" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title">
+      <section class="search-modal__sheet" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" aria-describedby="site-search-status">
         <div class="search-modal__header">
           <div>
             <span class="eyebrow">Recherche</span>
@@ -338,7 +338,7 @@
             aria-label="Rechercher dans le site"
           >
         </div>
-        <p class="search-modal__status" data-search-status aria-live="polite">Commencez à taper ou choisissez une destination suggérée.</p>
+        <p class="search-modal__status" id="site-search-status" data-search-status aria-live="polite">Commencez à taper ou choisissez une destination suggérée.</p>
         <ul class="search-results" data-search-results aria-label="Résultats de recherche"></ul>
       </section>
     </div>

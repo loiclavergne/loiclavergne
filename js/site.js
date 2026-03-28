@@ -218,10 +218,20 @@ function initSearchPalette() {
   const status = document.querySelector("[data-search-status]");
   const results = document.querySelector("[data-search-results]");
   const configNode = document.getElementById("search-config");
+  const shellElements = Array.from(document.querySelectorAll("[data-header], main, .site-footer"));
 
   if (!openButton || !modal || !input || !status || !results || !configNode) {
     return;
   }
+
+  const focusableSelector = [
+    "a[href]",
+    "button:not([disabled])",
+    "input:not([disabled])",
+    "select:not([disabled])",
+    "textarea:not([disabled])",
+    "[tabindex]:not([tabindex='-1'])",
+  ].join(", ");
 
   /** @type {{
    *   close: string,
@@ -251,6 +261,7 @@ function initSearchPalette() {
   let loadPromise = null;
   let activeIndex = -1;
   let lastTrigger = /** @type {HTMLElement | null} */ (null);
+  let lockedScrollY = 0;
 
   /**
    * @param {string} message
@@ -264,6 +275,70 @@ function initSearchPalette() {
    */
   function setExpanded(isExpanded) {
     openButton.setAttribute("aria-expanded", String(isExpanded));
+  }
+
+  /**
+   * Keep the background shell inert while the modal is open.
+   * @param {boolean} isInactive
+   */
+  function setBackgroundInteractivity(isInactive) {
+    shellElements.forEach((element) => {
+      if (!(element instanceof HTMLElement)) return;
+
+      if ("inert" in element) {
+        element.inert = isInactive;
+      }
+
+      if (isInactive) {
+        element.setAttribute("aria-hidden", "true");
+      } else {
+        element.removeAttribute("aria-hidden");
+      }
+    });
+  }
+
+  /**
+   * Lock page scrolling in a Safari-friendly way.
+   */
+  function lockScroll() {
+    lockedScrollY = window.scrollY;
+    document.body.classList.add("search-open");
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${lockedScrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+  }
+
+  /**
+   * Restore page scrolling after the modal closes.
+   */
+  function unlockScroll() {
+    document.body.classList.remove("search-open");
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+    window.scrollTo(0, lockedScrollY);
+  }
+
+  /**
+   * Find focusable elements within the modal.
+   * @returns {HTMLElement[]}
+   */
+  function focusableNodes() {
+    return Array.from(modal.querySelectorAll(focusableSelector)).filter((element) => {
+      if (!(element instanceof HTMLElement)) return false;
+      return !element.hasAttribute("disabled") && element.getClientRects().length > 0;
+    });
+  }
+
+  function focusSearchInput() {
+    window.requestAnimationFrame(() => {
+      input.focus({ preventScroll: true });
+      input.select();
+    });
   }
 
   /**
@@ -417,26 +492,30 @@ function initSearchPalette() {
    * @param {HTMLElement} trigger
    */
   function openSearch(trigger) {
+    if (!modal.hidden) {
+      focusSearchInput();
+      return;
+    }
+
     lastTrigger = trigger;
     modal.hidden = false;
-    document.body.classList.add("search-open");
+    lockScroll();
+    setBackgroundInteractivity(true);
     setExpanded(true);
 
     void loadIndex().then(() => {
       renderResults(normalizeSearchValue(input.value));
     });
 
-    window.requestAnimationFrame(() => {
-      input.focus({ preventScroll: true });
-      input.select();
-    });
+    focusSearchInput();
   }
 
   function closeSearch() {
     if (modal.hidden) return;
 
     modal.hidden = true;
-    document.body.classList.remove("search-open");
+    setBackgroundInteractivity(false);
+    unlockScroll();
     setExpanded(false);
     input.value = "";
     visibleItems = [];
@@ -489,6 +568,34 @@ function initSearchPalette() {
     if (event.key === "Enter" && activeIndex >= 0 && visibleItems[activeIndex]) {
       event.preventDefault();
       window.location.href = visibleItems[activeIndex].route;
+    }
+  });
+
+  modal.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab") return;
+
+    const focusables = focusableNodes();
+    if (!focusables.length) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const activeElement = document.activeElement;
+
+    if (!(activeElement instanceof HTMLElement) || !modal.contains(activeElement)) {
+      event.preventDefault();
+      first.focus({ preventScroll: true });
+      return;
+    }
+
+    if (event.shiftKey && activeElement === first) {
+      event.preventDefault();
+      last.focus({ preventScroll: true });
+      return;
+    }
+
+    if (!event.shiftKey && activeElement === last) {
+      event.preventDefault();
+      first.focus({ preventScroll: true });
     }
   });
 
