@@ -33,6 +33,7 @@ There are no required external package dependencies for the current build.
 
 Core source files:
 - `Package.swift`: Swift package manifest for the local generator
+- `.github/workflows/ci.yml`: GitHub Actions validation pipeline for the static build
 - `Sources/SiteBuilder/Resources/site-metadata.json`: shared site metadata, routes, and page inventory
 - `Sources/SiteBuilder/Resources/locales/en.json`: English content source of truth
 - `Sources/SiteBuilder/Resources/locales/fr.json`: French content source of truth
@@ -104,6 +105,18 @@ Run the validation suite:
 swift test --package-path /Users/loki/Developer/portfolio
 ```
 
+Run the same validation steps locally:
+
+```bash
+swift build
+swift run SiteBuilder --check
+swift test --package-path /Users/loki/Developer/portfolio
+swift run SiteBuilder
+```
+
+From a clean checkout, you can also run `git diff --exit-code` after
+`swift run SiteBuilder` to confirm the generated output is already up to date.
+
 Serve locally:
 
 ```bash
@@ -154,6 +167,10 @@ The following remain intentionally static and manual for now:
 
 The generated site is plain static output and can be hosted directly on GitHub
 Pages.
+
+The repo also includes a GitHub Actions workflow that runs the Swift build,
+payload validation, test suite, full site generation, and a generated-output
+freshness check on every push and pull request.
 
 If a future feature truly requires live processing, the preferred escalation
 path is:

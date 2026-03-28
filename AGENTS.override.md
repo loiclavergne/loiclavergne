@@ -17,6 +17,7 @@ Priority for the current implementation phase:
 - preserve Apple-like polish, restraint, and bilingual parity
 - add deeper project storytelling through localized static detail pages
 - turn generated support outputs into polished user-facing static features
+- keep local and CI validation paths equally strict
 - keep placeholder states elegant where source content is not available yet
 - avoid regressing into archived vendor or data-loading patterns
 

@@ -68,6 +68,9 @@ longer part of the active architecture.
 
 - `Package.swift`
   Swift package manifest for the site generator.
+- `.github/workflows/ci.yml`
+  GitHub Actions pipeline that mirrors the local validation flow and checks
+  that generated output is up to date.
 - `Sources/SiteBuilder/Resources/site-metadata.json`
   Shared source of truth for site metadata, route definitions, social links,
   and the generated page inventory.
@@ -205,6 +208,14 @@ Run them with:
 
 Validate the bundled payload without writing site output:
 - `swift run SiteBuilder --check`
+
+The repo now also ships a GitHub Actions pipeline that mirrors the local
+validation sequence:
+- `swift build`
+- `swift run SiteBuilder --check`
+- `swift test --package-path /Users/loki/Developer/portfolio`
+- `swift run SiteBuilder`
+- `git diff --quiet` to catch stale generated output
 
 ## Why No Framework
 
