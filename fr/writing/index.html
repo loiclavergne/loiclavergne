@@ -302,22 +302,25 @@
           <button class="search-modal__close" type="button" data-search-close">Fermer</button>
         </div>
         <div class="search-modal__field">
-          <input
-            id="site-search-input"
-            class="search-modal__input"
-            type="search"
-            data-search-input
-            autocomplete="off"
-            autocapitalize="none"
-            spellcheck="false"
-            enterkeyhint="go"
-            placeholder="Rechercher des pages, projets, écrits ou éléments du profil"
-            aria-label="Rechercher dans le site"
-            role="combobox"
-            aria-autocomplete="list"
-            aria-controls="site-search-results"
-            aria-expanded="false"
-          >
+          <div class="search-modal__field-row">
+            <input
+              id="site-search-input"
+              class="search-modal__input"
+              type="search"
+              data-search-input
+              autocomplete="off"
+              autocapitalize="none"
+              spellcheck="false"
+              enterkeyhint="go"
+              placeholder="Rechercher des pages, projets, écrits ou éléments du profil"
+              aria-label="Rechercher dans le site"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-controls="site-search-results"
+              aria-expanded="false"
+            >
+            <button class="search-modal__clear" type="button" data-search-clear hidden aria-label="Effacer">Effacer</button>
+          </div>
         </div>
         <p class="search-modal__status" id="site-search-status" data-search-status aria-live="polite">Commencez à taper ou choisissez une destination suggérée.</p>
         <ul class="search-results" id="site-search-results" data-search-results aria-label="Résultats de recherche" role="listbox"></ul>
@@ -327,6 +330,72 @@
 {
   "close" : "Fermer",
   "emptyState" : "Commencez à taper ou choisissez une destination suggérée.",
+  "fallbackItems" : [
+    {
+      "description" : "Je pilote l'exécution mobile de Roole Map et Roole Premium, à la croisée de la roadmap, de l'architecture technique, de la coordination transverse et de la qualité de delivery.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/",
+      "section" : "home",
+      "title" : "Accueil"
+    },
+    {
+      "description" : "Le portfolio doit partir du présent, mais le parcours compte. Cette page garde le rôle actuel en tête puis déroule la trajectoire professionnelle.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/work\/",
+      "section" : "work",
+      "title" : "Le périmètre actuel d'abord, puis le chemin qui y mène."
+    },
+    {
+      "description" : "La sélection mélange leadership produit actuel et projets natifs plus anciens. L'objectif est de montrer l'amplitude sans transformer le site en mur de cartes.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/",
+      "section" : "projects",
+      "title" : "Des produits livrés entre mobilité, édition numérique et évolution de plateformes."
+    },
+    {
+      "description" : "L'écriture fait partie de la structure long terme du portfolio, mais le lancement v1 garde volontairement l'archive vide tant que les premiers textes ne sont pas prêts.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/writing\/",
+      "section" : "writing",
+      "title" : "Le système de publication est prêt avant l'ouverture de l'archive."
+    },
+    {
+      "description" : "La zone bibliothèque est pensée pour des données de lecture mises à jour manuellement. Elle affichera à terme la lecture en cours, les livres récents et les compteurs annuels et mensuels.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/library\/",
+      "section" : "library",
+      "title" : "La lecture doit ressembler à une surface produit, pas à un tableur."
+    },
+    {
+      "description" : "Cette page réunit le profil plus large : compétences, outils, sport, trophées et surface de contact du site.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/about\/",
+      "section" : "about",
+      "title" : "Profondeur technique, amplitude de leadership et couches personnelles autour du travail."
+    },
+    {
+      "description" : "A posé les premières fondations techniques du produit, puis a élargi le rôle vers la coordination plus large de l'architecture, de la delivery iOS et Android, de l'outillage et des standards de fonctionnement partagés.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/roole-map\/",
+      "section" : "projects",
+      "title" : "Du socle mobile initial à une delivery produit multi-équipes."
+    },
+    {
+      "description" : "Coordonne la delivery produit en parallèle de Roole Map tout en alignant architecture, process et modes de collaboration entre plusieurs applications partageant des standards mobiles communs.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/roole-premium\/",
+      "section" : "projects",
+      "title" : "Coordonner un produit membre avec des standards mobiles partagés."
+    }
+  ],
   "hint" : "⌘K",
   "indexURL" : "\/fr\/search-index.json",
   "loading" : "Chargement de l'index de recherche…",

@@ -207,6 +207,80 @@ function tokenizeSearchValue(value) {
 }
 
 /**
+ * Build a normalized character map for accent-insensitive highlighting.
+ * @param {string} value
+ * @returns {{normalized: string, sourceIndexes: number[]}}
+ */
+function normalizedCharacterMap(value) {
+  let normalized = "";
+  const sourceIndexes = [];
+
+  for (let index = 0; index < value.length; index += 1) {
+    const fragment = value[index]
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+
+    for (const char of fragment) {
+      normalized += char;
+      sourceIndexes.push(index);
+    }
+  }
+
+  return { normalized, sourceIndexes };
+}
+
+/**
+ * Compute merged highlight ranges for a string and normalized query tokens.
+ * @param {string} value
+ * @param {string[]} tokens
+ * @returns {Array<{start: number, end: number}>}
+ */
+function highlightRanges(value, tokens) {
+  if (!tokens.length) {
+    return [];
+  }
+
+  const { normalized, sourceIndexes } = normalizedCharacterMap(value);
+  /** @type {Array<{start: number, end: number}>} */
+  const ranges = [];
+
+  for (const token of tokens) {
+    if (!token) continue;
+
+    let searchIndex = 0;
+    while (searchIndex < normalized.length) {
+      const matchIndex = normalized.indexOf(token, searchIndex);
+      if (matchIndex === -1) break;
+
+      const start = sourceIndexes[matchIndex];
+      const end = sourceIndexes[matchIndex + token.length - 1] + 1;
+      ranges.push({ start, end });
+      searchIndex = matchIndex + token.length;
+    }
+  }
+
+  if (!ranges.length) {
+    return [];
+  }
+
+  ranges.sort((left, right) => left.start - right.start || left.end - right.end);
+
+  /** @type {Array<{start: number, end: number}>} */
+  const merged = [ranges[0]];
+  for (const range of ranges.slice(1)) {
+    const previous = merged[merged.length - 1];
+    if (range.start <= previous.end) {
+      previous.end = Math.max(previous.end, range.end);
+    } else {
+      merged.push({ ...range });
+    }
+  }
+
+  return merged;
+}
+
+/**
  * Determine whether the current event target is editable.
  * @param {EventTarget | null} target
  * @returns {boolean}
@@ -226,12 +300,13 @@ function initSearchPalette() {
   const openButton = document.querySelector("[data-search-open]");
   const modal = document.querySelector("[data-search-modal]");
   const input = document.querySelector("[data-search-input]");
+  const clearButton = document.querySelector("[data-search-clear]");
   const status = document.querySelector("[data-search-status]");
   const results = document.querySelector("[data-search-results]");
   const configNode = document.getElementById("search-config");
   const shellElements = Array.from(document.querySelectorAll("[data-header], main, .site-footer"));
 
-  if (!openButton || !modal || !input || !status || !results || !configNode) {
+  if (!openButton || !modal || !input || !clearButton || !status || !results || !configNode) {
     return;
   }
 
@@ -384,6 +459,47 @@ function initSearchPalette() {
   }
 
   /**
+   * Keep the localized clear action in sync with the input state.
+   */
+  function syncClearButton() {
+    const isEmpty = input.value.trim().length === 0;
+    clearButton.hidden = isEmpty;
+    clearButton.disabled = isEmpty;
+  }
+
+  /**
+   * Render highlighted text into a node using normalized query tokens.
+   * @param {HTMLElement} node
+   * @param {string} value
+   * @param {string[]} tokens
+   */
+  function appendHighlightedText(node, value, tokens) {
+    node.replaceChildren();
+
+    const ranges = highlightRanges(value, tokens);
+    if (!ranges.length) {
+      node.textContent = value;
+      return;
+    }
+
+    let cursor = 0;
+    for (const range of ranges) {
+      if (cursor < range.start) {
+        node.append(document.createTextNode(value.slice(cursor, range.start)));
+      }
+
+      const mark = document.createElement("mark");
+      mark.textContent = value.slice(range.start, range.end);
+      node.append(mark);
+      cursor = range.end;
+    }
+
+    if (cursor < value.length) {
+      node.append(document.createTextNode(value.slice(cursor)));
+    }
+  }
+
+  /**
    * Return the best available item set for search and suggestions.
    * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
    */
@@ -461,6 +577,32 @@ function initSearchPalette() {
       .slice(0, 8);
   }
 
+  /**
+   * Group visible items by their localized section label.
+   * @param {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>} items
+   * @returns {Array<{key: string, label: string, entries: Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>}>}
+   */
+  function groupedItems(items) {
+    /** @type {Map<string, Array<{item: {description: string, kind: string, locale: string, route: string, section: string, title: string}, index: number}>>} */
+    const entriesBySection = new Map();
+    const orderedKeys = [];
+
+    items.forEach((item, index) => {
+      if (!entriesBySection.has(item.section)) {
+        entriesBySection.set(item.section, []);
+        orderedKeys.push(item.section);
+      }
+
+      entriesBySection.get(item.section)?.push({ item, index });
+    });
+
+    return orderedKeys.map((key) => ({
+      key,
+      label: config.sectionLabels[key] ?? key,
+      entries: entriesBySection.get(key) ?? [],
+    }));
+  }
+
   function syncActiveResult() {
     const links = Array.from(results.querySelectorAll(".search-result"));
     links.forEach((link, index) => {
@@ -493,6 +635,7 @@ function initSearchPalette() {
    * @param {string} query
    */
   function renderResults(query) {
+    const queryTokens = tokenizeSearchValue(query);
     visibleItems = matchingItems(query);
     activeIndex = -1;
     results.replaceChildren();
@@ -510,45 +653,59 @@ function initSearchPalette() {
       setStatus(query ? resultCountMessage(visibleItems.length) : config.suggestedLabel);
     }
 
-    results.replaceChildren(...visibleItems.map((item, index) => {
-      const listItem = document.createElement("li");
-      listItem.className = "search-results__item";
-      listItem.setAttribute("role", "presentation");
+    const groups = groupedItems(visibleItems);
 
-      const link = document.createElement("a");
-      link.className = "search-result";
-      link.href = item.route;
-      link.dataset.searchResult = String(index);
-      link.id = `site-search-result-${index}`;
-      link.setAttribute("role", "option");
-      link.tabIndex = -1;
-      link.setAttribute("aria-posinset", String(index + 1));
-      link.setAttribute("aria-selected", "false");
-      link.setAttribute("aria-setsize", String(visibleItems.length));
+    results.replaceChildren(...groups.map((group) => {
+      const groupItem = document.createElement("li");
+      groupItem.className = "search-results__group";
+      groupItem.setAttribute("role", "group");
+      groupItem.setAttribute("aria-label", group.label);
 
-      const meta = document.createElement("span");
-      meta.className = "search-result__meta";
-      meta.textContent = config.sectionLabels[item.section] ?? item.section;
+      const groupLabel = document.createElement("p");
+      groupLabel.className = "search-results__group-label";
+      appendHighlightedText(groupLabel, group.label, queryTokens);
 
-      const title = document.createElement("span");
-      title.className = "search-result__title";
-      title.textContent = item.title;
+      const groupList = document.createElement("div");
+      groupList.className = "search-results__group-list";
 
-      const description = document.createElement("span");
-      description.className = "search-result__description";
-      description.textContent = item.description;
+      group.entries.forEach(({ item, index }) => {
+        const link = document.createElement("a");
+        link.className = "search-result";
+        link.href = item.route;
+        link.dataset.searchResult = String(index);
+        link.id = `site-search-result-${index}`;
+        link.setAttribute("role", "option");
+        link.tabIndex = -1;
+        link.setAttribute("aria-posinset", String(index + 1));
+        link.setAttribute("aria-selected", "false");
+        link.setAttribute("aria-setsize", String(visibleItems.length));
 
-      link.append(meta, title, description);
-      link.addEventListener("mouseenter", () => {
-        activeIndex = index;
-        syncActiveResult();
+        const meta = document.createElement("span");
+        meta.className = "search-result__meta";
+        appendHighlightedText(meta, config.sectionLabels[item.section] ?? item.section, queryTokens);
+
+        const title = document.createElement("span");
+        title.className = "search-result__title";
+        appendHighlightedText(title, item.title, queryTokens);
+
+        const description = document.createElement("span");
+        description.className = "search-result__description";
+        appendHighlightedText(description, item.description, queryTokens);
+
+        link.append(meta, title, description);
+        link.addEventListener("mouseenter", () => {
+          activeIndex = index;
+          syncActiveResult();
+        });
+        link.addEventListener("click", (event) => {
+          activateResult(item.route, event);
+        });
+
+        groupList.append(link);
       });
-      link.addEventListener("click", (event) => {
-        activateResult(item.route, event);
-      });
 
-      listItem.append(link);
-      return listItem;
+      groupItem.append(groupLabel, groupList);
+      return groupItem;
     }));
 
     setActiveIndex(0);
@@ -614,6 +771,7 @@ function initSearchPalette() {
     lockScroll();
     setBackgroundInteractivity(true);
     setExpanded(true);
+    syncClearButton();
     renderResults(normalizeSearchValue(input.value));
 
     void loadIndex().then(() => {
@@ -631,6 +789,7 @@ function initSearchPalette() {
     unlockScroll();
     setExpanded(false);
     input.value = "";
+    syncClearButton();
     visibleItems = [];
     activeIndex = -1;
     results.replaceChildren();
@@ -681,7 +840,15 @@ function initSearchPalette() {
     }
   });
 
+  clearButton.addEventListener("click", () => {
+    input.value = "";
+    syncClearButton();
+    renderResults("");
+    focusSearchInput();
+  });
+
   input.addEventListener("input", () => {
+    syncClearButton();
     renderResults(normalizeSearchValue(input.value));
     void loadIndex().then(() => {
       renderResults(normalizeSearchValue(input.value));
@@ -788,6 +955,8 @@ function initSearchPalette() {
       closeSearch();
     }
   });
+
+  syncClearButton();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

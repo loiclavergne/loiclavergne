@@ -264,6 +264,7 @@ struct SearchContent: Decodable {
     let unavailable: String
     let resultsLabel: String
     let close: String
+    let clear: String
 }
 
 struct SEOContent: Decodable {

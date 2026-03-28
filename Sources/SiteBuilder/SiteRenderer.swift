@@ -431,22 +431,25 @@ struct SiteRenderer {
                   <button class="search-modal__close" type="button" data-search-close">\(escapeHTML(search.close))</button>
                 </div>
                 <div class="search-modal__field">
-                  <input
-                    id="site-search-input"
-                    class="search-modal__input"
-                    type="search"
-                    data-search-input
-                    autocomplete="off"
-                    autocapitalize="none"
-                    spellcheck="false"
-                    enterkeyhint="go"
-                    placeholder="\(escapeHTML(search.placeholder))"
-                    aria-label="\(escapeHTML(search.title))"
-                    role="combobox"
-                    aria-autocomplete="list"
-                    aria-controls="site-search-results"
-                    aria-expanded="false"
-                  >
+                  <div class="search-modal__field-row">
+                    <input
+                      id="site-search-input"
+                      class="search-modal__input"
+                      type="search"
+                      data-search-input
+                      autocomplete="off"
+                      autocapitalize="none"
+                      spellcheck="false"
+                      enterkeyhint="go"
+                      placeholder="\(escapeHTML(search.placeholder))"
+                      aria-label="\(escapeHTML(search.title))"
+                      role="combobox"
+                      aria-autocomplete="list"
+                      aria-controls="site-search-results"
+                      aria-expanded="false"
+                    >
+                    <button class="search-modal__clear" type="button" data-search-clear hidden aria-label="\(escapeHTML(search.clear))">\(escapeHTML(search.clear))</button>
+                  </div>
                 </div>
                 <p class="search-modal__status" id="site-search-status" data-search-status aria-live="polite">\(escapeHTML(search.emptyState))</p>
                 <ul class="search-results" id="site-search-results" data-search-results aria-label="\(escapeHTML(search.resultsLabel))" role="listbox"></ul>
