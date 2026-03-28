@@ -36,7 +36,7 @@ Core source files:
 - `Sources/SiteBuilder/Resources/site.json`: bilingual content, localized routes, metadata, and content model
 - `Sources/SiteBuilder/SiteModels.swift`: typed content loading
 - `Sources/SiteBuilder/SiteRenderer.swift`: shared renderers for pages, navigation, footer, and SEO tags
-- `Sources/SiteBuilder/main.swift`: generates static HTML files and support outputs
+- `Sources/SiteBuilder/main.swift`: generates static HTML files, the root `404.html`, and support outputs
 - `Sources/SiteServer/main.swift`: local Swift static file server for browser previews
 - `css/tokens.css`: design tokens, themes, and motion settings
 - `css/site.css`: layout, components, responsive rules, and page styling

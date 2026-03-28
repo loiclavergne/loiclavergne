@@ -61,6 +61,7 @@ struct LocaleContent: Decodable {
     let footer: FooterContent
     let theme: ThemeContent
     let seo: SEOContent
+    let notFound: NotFoundContent
     let home: HomePage
     let work: WorkPage
     let projects: ProjectsPage
@@ -87,6 +88,16 @@ struct ThemeContent: Decodable {
 struct SEOContent: Decodable {
     let siteDescription: String
     let ogImage: String
+}
+
+struct NotFoundContent: Decodable {
+    let documentTitle: String
+    let title: String
+    let copy: String
+    let home: String
+    let primary: String
+    let note: String
+    let ariaLabel: String
 }
 
 struct RouteAction: Decodable {

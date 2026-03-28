@@ -168,6 +168,15 @@
         "site_description": "Loïc Lavergne is an Engineering Manager leading mobile products, architecture, and delivery across Roole Map and Roole Premium.",
         "og_image": "/assets/img/og/og-default.svg"
       },
+      "not_found": {
+        "document_title": "Page not found | Loïc Lavergne",
+        "title": "Page not found.",
+        "copy": "The page you requested does not exist, or the URL has changed.",
+        "home": "Go home",
+        "primary": "Open work",
+        "note": "Use the links below to return to the portfolio.",
+        "aria_label": "Suggested destinations"
+      },
       "home": {
         "page_title": "Loïc Lavergne | Engineering Manager, Mobile Products",
         "description": "Engineering leadership for mobile products, product strategy, architecture, and delivery.",
@@ -2159,6 +2168,15 @@
       "seo": {
         "site_description": "Loïc Lavergne est Engineering Manager et pilote la stratégie, l'architecture et la delivery mobile de Roole Map et Roole Premium.",
         "og_image": "/assets/img/og/og-default.svg"
+      },
+      "not_found": {
+        "document_title": "Page introuvable | Loïc Lavergne",
+        "title": "Page introuvable.",
+        "copy": "La page demandée n'existe pas, ou son URL a changé.",
+        "home": "Retour à l'accueil",
+        "primary": "Ouvrir le travail",
+        "note": "Utilisez les liens ci-dessous pour revenir au portfolio.",
+        "aria_label": "Destinations suggérées"
       },
       "home": {
         "page_title": "Loïc Lavergne | Engineering Manager, produits mobiles",

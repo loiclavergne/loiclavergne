@@ -52,10 +52,10 @@ Rendering flow:
 1. `swift run SiteBuilder` launches the local Swift package executable.
 2. `Sources/SiteBuilder/Resources/site.json` provides localized routes, page metadata, and page data.
 3. `Sources/SiteBuilder/SiteModels.swift` decodes the content into typed Swift structures.
-4. `Sources/SiteBuilder/SiteRenderer.swift` renders complete HTML documents for each page, locale, and project detail route.
-5. `Sources/SiteBuilder/main.swift` writes generated `index.html` files into the route folders and regenerates `sitemap.xml`, localized Atom feeds, localized web app manifests, `robots.txt`, and GitHub Pages hosting files.
+4. `Sources/SiteBuilder/SiteRenderer.swift` renders complete HTML documents for each page, locale, project detail route, and the root `404.html` fallback.
+5. `Sources/SiteBuilder/main.swift` writes generated `index.html` files into the route folders, rebuilds the root `404.html`, and regenerates `sitemap.xml`, localized Atom feeds, localized web app manifests, `robots.txt`, and GitHub Pages hosting files.
 6. `swift run SiteServer` can serve the generated output locally for browser previews without Ruby, Node, or Python, including the root `404.html` on missing routes.
-7. `404.html` provides a static fallback page with localized recovery links for missing routes.
+7. `404.html` is generated from the same bilingual source-of-truth and provides localized recovery links for missing routes.
 
 This keeps the shipped site fully static while avoiding duplicated hand-written
 HTML for every locale and page combination.

@@ -71,12 +71,14 @@ final class SiteBuilderTests: XCTestCase {
 
         let renderer = SiteRenderer(payload: payload, rootURL: outputRoot)
         let urls = try renderer.buildPages()
+        try renderer.buildNotFoundPage()
         try renderer.buildSitemap(urls: urls.sorted())
         try renderer.buildFeeds()
         try renderer.buildManifests()
         try renderer.buildRobots()
         try renderer.buildHostingFiles()
 
+        XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("404.html").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("index.html").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("writing/index.html").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("fr/writing/index.html").path))
@@ -114,6 +116,11 @@ final class SiteBuilderTests: XCTestCase {
 
         let frenchHome = try String(contentsOf: outputRoot.appendingPathComponent("fr/index.html"), encoding: .utf8)
         XCTAssertTrue(frenchHome.contains("<link rel=\"manifest\" href=\"https://loic.engineer/fr/site.webmanifest\">"))
+
+        let notFound = try String(contentsOf: outputRoot.appendingPathComponent("404.html"), encoding: .utf8)
+        XCTAssertTrue(notFound.contains("\"documentTitle\" : \"Page not found | Loïc Lavergne\""))
+        XCTAssertTrue(notFound.contains("\"documentTitle\" : \"Page introuvable | Loïc Lavergne\""))
+        XCTAssertTrue(notFound.contains("\"href\" : \"\\/fr\\/work\\/\""))
 
         let robots = try String(contentsOf: outputRoot.appendingPathComponent("robots.txt"), encoding: .utf8)
         XCTAssertTrue(robots.contains("User-agent: *"))
@@ -156,6 +163,7 @@ final class SiteBuilderTests: XCTestCase {
 
         let renderer = SiteRenderer(payload: payload, rootURL: outputRoot)
         let urls = try renderer.buildPages()
+        try renderer.buildNotFoundPage()
         try renderer.buildSitemap(urls: urls.sorted())
         try renderer.buildFeeds()
         try renderer.buildManifests()

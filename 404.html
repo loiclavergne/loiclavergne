@@ -103,56 +103,90 @@
       <article class="card card--featured error-card">
         <span class="eyebrow" id="error-code">404</span>
         <h1 id="error-title">Page not found.</h1>
-        <p class="hero__lede" id="error-copy">
-          The page you requested does not exist, or the URL has changed.
-        </p>
+        <p class="hero__lede" id="error-copy">The page you requested does not exist, or the URL has changed.</p>
         <div class="button-row">
           <a class="button button--primary" id="home-link" href="/">Go home</a>
           <a class="button button--secondary" id="primary-link" href="/work/">Open work</a>
         </div>
         <div class="route-grid" id="route-grid" aria-label="Suggested destinations"></div>
-        <p class="error-note" id="error-note">
-          Use the links below to return to the current site structure.
-        </p>
+        <p class="error-note" id="error-note">Use the links below to return to the portfolio.</p>
       </article>
     </section>
   </main>
   <script>
     (() => {
       const translations = {
-        en: {
-          documentTitle: "Page not found | Loïc Lavergne",
-          title: "Page not found.",
-          copy: "The page you requested does not exist, or the URL has changed.",
-          home: "Go home",
-          primary: "Open work",
-          note: "Use the links below to return to the portfolio.",
-          routes: [
-            { href: "/", label: "Home" },
-            { href: "/work/", label: "Work" },
-            { href: "/projects/", label: "Projects" },
-            { href: "/writing/", label: "Writing" },
-            { href: "/library/", label: "Library" },
-            { href: "/about/", label: "About" }
-          ]
-        },
-        fr: {
-          documentTitle: "Page introuvable | Loïc Lavergne",
-          title: "Page introuvable.",
-          copy: "La page demandée n'existe pas, ou son URL a changé.",
-          home: "Retour à l'accueil",
-          primary: "Ouvrir le travail",
-          note: "Utilisez les liens ci-dessous pour revenir au portfolio.",
-          routes: [
-            { href: "/fr/", label: "Accueil" },
-            { href: "/fr/work/", label: "Travail" },
-            { href: "/fr/projects/", label: "Projets" },
-            { href: "/fr/writing/", label: "Écrits" },
-            { href: "/fr/library/", label: "Bibliothèque" },
-            { href: "/fr/about/", label: "À propos" }
-          ]
-        }
-      };
+  "en" : {
+    "ariaLabel" : "Suggested destinations",
+    "copy" : "The page you requested does not exist, or the URL has changed.",
+    "documentTitle" : "Page not found | Loïc Lavergne",
+    "home" : "Go home",
+    "note" : "Use the links below to return to the portfolio.",
+    "primary" : "Open work",
+    "routes" : [
+      {
+        "href" : "\/",
+        "label" : "Home"
+      },
+      {
+        "href" : "\/work\/",
+        "label" : "Work"
+      },
+      {
+        "href" : "\/projects\/",
+        "label" : "Projects"
+      },
+      {
+        "href" : "\/writing\/",
+        "label" : "Writing"
+      },
+      {
+        "href" : "\/library\/",
+        "label" : "Library"
+      },
+      {
+        "href" : "\/about\/",
+        "label" : "About"
+      }
+    ],
+    "title" : "Page not found."
+  },
+  "fr" : {
+    "ariaLabel" : "Destinations suggérées",
+    "copy" : "La page demandée n'existe pas, ou son URL a changé.",
+    "documentTitle" : "Page introuvable | Loïc Lavergne",
+    "home" : "Retour à l'accueil",
+    "note" : "Utilisez les liens ci-dessous pour revenir au portfolio.",
+    "primary" : "Ouvrir le travail",
+    "routes" : [
+      {
+        "href" : "\/fr\/",
+        "label" : "Accueil"
+      },
+      {
+        "href" : "\/fr\/work\/",
+        "label" : "Travail"
+      },
+      {
+        "href" : "\/fr\/projects\/",
+        "label" : "Projets"
+      },
+      {
+        "href" : "\/fr\/writing\/",
+        "label" : "Écrits"
+      },
+      {
+        "href" : "\/fr\/library\/",
+        "label" : "Bibliothèque"
+      },
+      {
+        "href" : "\/fr\/about\/",
+        "label" : "À propos"
+      }
+    ],
+    "title" : "Page introuvable."
+  }
+};
 
       function normalizePathname(pathname) {
         let normalized = pathname || "/";
@@ -183,6 +217,7 @@
       primaryLink.textContent = content.primary;
 
       const routeGrid = document.getElementById("route-grid");
+      routeGrid.setAttribute("aria-label", content.ariaLabel);
       routeGrid.replaceChildren(...content.routes.map((route) => {
         const link = document.createElement("a");
         link.className = "route-link";

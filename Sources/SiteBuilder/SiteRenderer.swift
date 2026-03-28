@@ -34,6 +34,15 @@ struct SiteRenderer {
         return urls
     }
 
+    /// Write the root 404.html fallback page from localized site content.
+    func buildNotFoundPage() throws {
+        try renderNotFoundDocument().write(
+            to: rootURL.appendingPathComponent("404.html"),
+            atomically: true,
+            encoding: .utf8
+        )
+    }
+
     /// Write sitemap.xml for the generated route set.
     func buildSitemap(urls: [String]) throws {
         let entries = urls.map {
@@ -224,6 +233,72 @@ struct SiteRenderer {
         }
 
         return payload.site.baseUrl + "/site.webmanifest"
+    }
+
+    /// Render the theme bootstrap script used before CSS paints.
+    func renderThemeBootstrapScript() -> String {
+        """
+          <script>
+            (() => {
+              let stored = null;
+              try {
+                stored = window.localStorage.getItem("loic.engineer.theme");
+              } catch (error) {
+                stored = null;
+              }
+              const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+              const resolved = theme === "auto"
+                ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+                : theme;
+              document.documentElement.dataset.theme = theme;
+              document.documentElement.dataset.resolvedTheme = resolved;
+            })();
+          </script>
+        """
+    }
+
+    /// Build the localized route suggestions used by the shared 404 page.
+    func notFoundRouteItems(locale: String, localeContent: LocaleContent) throws -> [[String: String]] {
+        let orderedPageKeys = ["home", "work", "projects", "writing", "library", "about"]
+
+        return try orderedPageKeys.map { pageKey in
+            [
+                "href": try pagePath(pageKey, locale: locale),
+                "label": localeContent.nav[pageKey] ?? pageKey.capitalized
+            ]
+        }
+    }
+
+    /// Render the translation payload for the generated 404 page.
+    func renderNotFoundTranslations() throws -> String {
+        let english = try localeContent("en")
+        let french = try localeContent("fr")
+
+        let translations: [String: Any] = [
+            "en": [
+                "ariaLabel": english.notFound.ariaLabel,
+                "copy": english.notFound.copy,
+                "documentTitle": english.notFound.documentTitle,
+                "home": english.notFound.home,
+                "note": english.notFound.note,
+                "primary": english.notFound.primary,
+                "routes": try notFoundRouteItems(locale: "en", localeContent: english),
+                "title": english.notFound.title
+            ],
+            "fr": [
+                "ariaLabel": french.notFound.ariaLabel,
+                "copy": french.notFound.copy,
+                "documentTitle": french.notFound.documentTitle,
+                "home": french.notFound.home,
+                "note": french.notFound.note,
+                "primary": french.notFound.primary,
+                "routes": try notFoundRouteItems(locale: "fr", localeContent: french),
+                "title": french.notFound.title
+            ]
+        ]
+
+        let data = try JSONSerialization.data(withJSONObject: translations, options: [.prettyPrinted, .sortedKeys])
+        return String(decoding: data, as: UTF8.self).replacingOccurrences(of: "</", with: "<\\/")
     }
 
     /// Map a route like `/fr/projects/` to the generated output file.
@@ -1637,6 +1712,169 @@ struct SiteRenderer {
         return String(decoding: data, as: UTF8.self)
     }
 
+    /// Render the root 404 document with locale-aware recovery links.
+    func renderNotFoundDocument() throws -> String {
+        let english = try localeContent("en")
+        let translations = try renderNotFoundTranslations()
+
+        return """
+        <!--
+          404.html
+          \(payload.site.appName)
+
+          Created by Loïc Lavergne on 25/03/2026
+          Copyright © 2026 Loïc Lavergne. All rights reserved.
+        -->
+        <!DOCTYPE html>
+        <html lang="en" data-theme="auto">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="robots" content="noindex">
+          <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+          <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+          <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
+        \(renderThemeBootstrapScript())
+          <link rel="stylesheet" href="/css/tokens.css">
+          <link rel="stylesheet" href="/css/site.css">
+          <style>
+            .error-page {
+              min-height: 100vh;
+              display: grid;
+              align-items: center;
+              padding: 2rem 0;
+            }
+
+            .error-card {
+              gap: 1.25rem;
+            }
+
+            .error-card h1 {
+              max-width: 10ch;
+            }
+
+            .route-grid {
+              display: grid;
+              grid-template-columns: repeat(3, minmax(0, 1fr));
+              gap: 0.85rem;
+            }
+
+            .route-link {
+              display: grid;
+              gap: 0.3rem;
+              padding: 1rem 1.1rem;
+              border-radius: var(--radius-sm);
+              border: 1px solid var(--surface-border);
+              background: var(--page-background-strong);
+              transition:
+                transform var(--duration-fast) var(--easing-standard),
+                border-color var(--duration-fast) var(--easing-standard),
+                background var(--duration-fast) var(--easing-standard);
+            }
+
+            .route-link:hover {
+              transform: translateY(-1px);
+              border-color: var(--surface-border-strong);
+            }
+
+            .route-link__label {
+              color: var(--text-primary);
+              font-weight: 590;
+              letter-spacing: -0.01em;
+            }
+
+            .route-link__path {
+              color: var(--text-tertiary);
+              font-family: var(--font-mono);
+              font-size: 0.8rem;
+            }
+
+            .error-note {
+              color: var(--text-tertiary);
+              font-size: 0.95rem;
+            }
+
+            @media (max-width: 760px) {
+              .route-grid {
+                grid-template-columns: 1fr;
+              }
+            }
+          </style>
+          <title>\(escapeHTML(english.notFound.documentTitle))</title>
+        </head>
+        <body data-page="not-found">
+          <main class="error-page" id="main">
+            <section class="shell">
+              <article class="card card--featured error-card">
+                <span class="eyebrow" id="error-code">404</span>
+                <h1 id="error-title">\(escapeHTML(english.notFound.title))</h1>
+                <p class="hero__lede" id="error-copy">\(escapeHTML(english.notFound.copy))</p>
+                <div class="button-row">
+                  <a class="button button--primary" id="home-link" href="/">\(escapeHTML(english.notFound.home))</a>
+                  <a class="button button--secondary" id="primary-link" href="/work/">\(escapeHTML(english.notFound.primary))</a>
+                </div>
+                <div class="route-grid" id="route-grid" aria-label="\(escapeHTML(english.notFound.ariaLabel))"></div>
+                <p class="error-note" id="error-note">\(escapeHTML(english.notFound.note))</p>
+              </article>
+            </section>
+          </main>
+          <script>
+            (() => {
+              const translations = \(translations);
+
+              function normalizePathname(pathname) {
+                let normalized = pathname || "/";
+                normalized = normalized.replace(/index\\.html$/, "");
+                if (!normalized.endsWith("/")) {
+                  normalized += "/";
+                }
+                return normalized;
+              }
+
+              const normalizedPathname = normalizePathname(window.location.pathname);
+              const locale = normalizedPathname.startsWith("/fr/") ? "fr" : "en";
+              const content = translations[locale];
+              const primaryRoute = content.routes[1];
+
+              document.documentElement.lang = locale;
+              document.title = content.documentTitle;
+              document.getElementById("error-title").textContent = content.title;
+              document.getElementById("error-copy").textContent = content.copy;
+              document.getElementById("error-note").textContent = content.note;
+
+              const homeLink = document.getElementById("home-link");
+              homeLink.href = content.routes[0].href;
+              homeLink.textContent = content.home;
+
+              const primaryLink = document.getElementById("primary-link");
+              primaryLink.href = primaryRoute.href;
+              primaryLink.textContent = content.primary;
+
+              const routeGrid = document.getElementById("route-grid");
+              routeGrid.setAttribute("aria-label", content.ariaLabel);
+              routeGrid.replaceChildren(...content.routes.map((route) => {
+                const link = document.createElement("a");
+                link.className = "route-link";
+                link.href = route.href;
+
+                const label = document.createElement("span");
+                label.className = "route-link__label";
+                label.textContent = route.label;
+
+                const path = document.createElement("span");
+                path.className = "route-link__path";
+                path.textContent = route.href;
+
+                link.append(label, path);
+                return link;
+              }));
+            })();
+          </script>
+        </body>
+        </html>
+        """
+    }
+
     /// Render a complete localized HTML document.
     func renderDocument(pageKey: String, locale: String) throws -> String {
         let localeContent = try localeContent(locale)
@@ -1693,22 +1931,7 @@ struct SiteRenderer {
           <link rel="me" href="https://bsky.app/profile/loic.engineer">
           <link rel="me" href="https://www.instagram.com/loic.lavergne.tech">
           <link rel="icon" href="/assets/img/og/og-default.svg" type="image/svg+xml">
-          <script>
-            (() => {
-              let stored = null;
-              try {
-                stored = window.localStorage.getItem("loic.engineer.theme");
-              } catch (error) {
-                stored = null;
-              }
-              const theme = ["auto", "light", "dark"].includes(stored) ? stored : "auto";
-              const resolved = theme === "auto"
-                ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
-                : theme;
-              document.documentElement.dataset.theme = theme;
-              document.documentElement.dataset.resolvedTheme = resolved;
-            })();
-          </script>
+        \(renderThemeBootstrapScript())
           <link rel="stylesheet" href="/css/tokens.css">
           <link rel="stylesheet" href="/css/site.css">
           <title>\(escapeHTML(pageTitle))</title>
