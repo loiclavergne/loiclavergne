@@ -44,6 +44,93 @@ struct SitePayload: Decodable {
         )
     }
 
+    /// Validate that routes, localized content, and detail-page inventories stay aligned.
+    func validate() throws {
+        var issues: [String] = []
+        let localeKeys = Set(locales.keys)
+        let pageKeySet = Set(pageKeys)
+        let routeKeySet = Set(routes.keys)
+        let primaryNavigationKeys = Set(["home", "work", "projects", "writing", "library", "about"])
+        let projectPageKeys = Set(pageKeys.filter { $0.hasPrefix("project-") })
+        let writingPageKeys = Set(pageKeys.filter { $0.hasPrefix("post-") })
+        let libraryPageKeys = Set(pageKeys.filter { $0.hasPrefix("book-") })
+
+        if pageKeys.count != pageKeySet.count {
+            issues.append("Found duplicate entries in pageKeys.")
+        }
+
+        appendDifferenceIssues(
+            label: "route maps",
+            expected: pageKeySet,
+            actual: routeKeySet,
+            issues: &issues
+        )
+
+        for pageKey in pageKeys {
+            guard let localizedRoutes = routes[pageKey] else {
+                continue
+            }
+
+            appendDifferenceIssues(
+                label: "route locales for \(pageKey)",
+                expected: localeKeys,
+                actual: Set(localizedRoutes.keys),
+                issues: &issues
+            )
+        }
+
+        for (locale, content) in locales {
+            if !localeKeys.contains(content.switchLocale) {
+                issues.append("Locale \(locale) points to unknown switch locale \(content.switchLocale).")
+            }
+
+            appendDifferenceIssues(
+                label: "navigation keys for \(locale)",
+                expected: primaryNavigationKeys,
+                actual: Set(content.nav.keys),
+                issues: &issues
+            )
+
+            appendDifferenceIssues(
+                label: "project detail keys for \(locale)",
+                expected: projectPageKeys,
+                actual: Set(content.projectDetails.keys),
+                issues: &issues
+            )
+
+            appendDifferenceIssues(
+                label: "writing detail keys for \(locale)",
+                expected: writingPageKeys,
+                actual: Set(content.writingDetails.keys),
+                issues: &issues
+            )
+
+            appendDifferenceIssues(
+                label: "library detail keys for \(locale)",
+                expected: libraryPageKeys,
+                actual: Set(content.libraryDetails.keys),
+                issues: &issues
+            )
+
+            appendReferencedRouteIssues(
+                locale: locale,
+                routeGroups: [
+                    ("featured projects", content.projects.featured.compactMap(\.route)),
+                    ("archive projects", content.projects.archive.compactMap(\.route)),
+                    ("hobby projects", content.projects.hobby.compactMap(\.route)),
+                    ("writing posts", content.writing.posts.compactMap(\.route)),
+                    ("library entries", content.library.books.compactMap(\.route))
+                ],
+                knownPageKeys: pageKeySet,
+                issues: &issues
+            )
+        }
+
+        if !issues.isEmpty {
+            throw SiteBuilderError.invalidPayload(issues)
+        }
+    }
+
     /// Load and decode one bundled JSON resource.
     private static func loadResource<T: Decodable>(
         named resourceName: String,
@@ -69,6 +156,40 @@ struct SitePayload: Decodable {
 
         let data = try Data(contentsOf: resourceURL)
         return try decoder.decode(T.self, from: data)
+    }
+
+    /// Append missing or unexpected keys for a validation set comparison.
+    private func appendDifferenceIssues(
+        label: String,
+        expected: Set<String>,
+        actual: Set<String>,
+        issues: inout [String]
+    ) {
+        let missing = expected.subtracting(actual).sorted()
+        let unexpected = actual.subtracting(expected).sorted()
+
+        if !missing.isEmpty {
+            issues.append("Missing \(label): \(missing.joined(separator: ", ")).")
+        }
+
+        if !unexpected.isEmpty {
+            issues.append("Unexpected \(label): \(unexpected.joined(separator: ", ")).")
+        }
+    }
+
+    /// Append route-reference issues for curated content sections.
+    private func appendReferencedRouteIssues(
+        locale: String,
+        routeGroups: [(label: String, routes: [String])],
+        knownPageKeys: Set<String>,
+        issues: inout [String]
+    ) {
+        for group in routeGroups {
+            let unknownRoutes = group.routes.filter { !knownPageKeys.contains($0) }.sorted()
+            if !unknownRoutes.isEmpty {
+                issues.append("Unknown \(group.label) in \(locale): \(unknownRoutes.joined(separator: ", ")).")
+            }
+        }
     }
 }
 
@@ -411,6 +532,8 @@ enum SiteBuilderError: Error, LocalizedError {
     case missingRoute(pageKey: String, locale: String)
     case missingLocale(String)
     case invalidURL(String)
+    case invalidPayload([String])
+    case unknownArgument(String)
 
     var errorDescription: String? {
         switch self {
@@ -422,6 +545,11 @@ enum SiteBuilderError: Error, LocalizedError {
             return "Missing locale content for '\(locale)'"
         case let .invalidURL(url):
             return "Invalid site URL: \(url)"
+        case let .invalidPayload(issues):
+            let details = issues.map { "- \($0)" }.joined(separator: "\n")
+            return "Invalid site payload:\n\(details)"
+        case let .unknownArgument(argument):
+            return "Unknown argument '\(argument)'."
         }
     }
 }

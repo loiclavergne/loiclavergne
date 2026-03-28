@@ -52,9 +52,9 @@ Rendering flow:
 1. `swift run SiteBuilder` launches the local Swift package executable.
 2. `Sources/SiteBuilder/Resources/site-metadata.json` provides shared routes, site metadata, and the page inventory.
 3. `Sources/SiteBuilder/Resources/locales/en.json` and `Sources/SiteBuilder/Resources/locales/fr.json` provide localized page data.
-4. `Sources/SiteBuilder/SiteModels.swift` decodes the split resources into typed Swift structures.
+4. `Sources/SiteBuilder/SiteModels.swift` decodes the split resources into typed Swift structures and validates payload consistency.
 5. `Sources/SiteBuilder/SiteRenderer.swift` renders complete HTML documents for each page, locale, project detail route, and the root `404.html` fallback.
-6. `Sources/SiteBuilder/main.swift` writes generated `index.html` files into the route folders, rebuilds the root `404.html`, and regenerates `sitemap.xml`, localized Atom feeds, localized web app manifests, `robots.txt`, and GitHub Pages hosting files.
+6. `Sources/SiteBuilder/main.swift` can validate the bundled payload in isolation via `--check`, or write generated `index.html` files into the route folders, rebuild the root `404.html`, and regenerate `sitemap.xml`, localized Atom feeds, localized web app manifests, `robots.txt`, and GitHub Pages hosting files.
 7. `swift run SiteServer` can serve the generated output locally for browser previews without Ruby, Node, or Python, including the root `404.html` on missing routes.
 8. `404.html` is generated from the same bilingual source-of-truth and provides localized recovery links for missing routes.
 
@@ -187,9 +187,13 @@ The Swift package now includes automated tests for:
 - generated HTML internal-link and asset resolution
 - generator support outputs such as feeds, manifests, sitemap, `robots.txt`, and hosting files
 - structured-data regression checks for major page types
+- payload-validation regressions for split resources and route parity
 
 Run them with:
 - `swift test --package-path /Users/loki/Developer/portfolio`
+
+Validate the bundled payload without writing site output:
+- `swift run SiteBuilder --check`
 
 ## Why No Framework
 

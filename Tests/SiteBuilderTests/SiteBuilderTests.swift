@@ -11,6 +11,11 @@ import XCTest
 @testable import SiteBuilder
 
 final class SiteBuilderTests: XCTestCase {
+    func testPayloadValidationPassesForBundledResources() throws {
+        let payload = try SitePayload.load()
+        XCTAssertNoThrow(try payload.validate())
+    }
+
     func testPayloadHasRoutesForEveryPageAndLocale() throws {
         let payload = try SitePayload.load()
 
@@ -160,6 +165,23 @@ final class SiteBuilderTests: XCTestCase {
 
         let about = try renderer.renderStructuredData(pageKey: "about", locale: "en")
         XCTAssertTrue(about.contains("\"@type\" : \"AboutPage\""))
+    }
+
+    func testPayloadValidationFailsWhenRouteMapsDrift() throws {
+        let payload = try SitePayload.load()
+        var routes = payload.routes
+        routes.removeValue(forKey: "work")
+
+        let invalidPayload = SitePayload(
+            site: payload.site,
+            routes: routes,
+            pageKeys: payload.pageKeys,
+            locales: payload.locales
+        )
+
+        XCTAssertThrowsError(try invalidPayload.validate()) { error in
+            XCTAssertTrue(error.localizedDescription.contains("Missing route maps: work."))
+        }
     }
 
     func testGeneratedHTMLUsesResolvableInternalReferences() throws {

@@ -91,6 +91,7 @@ Useful checks:
 
 ```bash
 swift build
+swift run SiteBuilder --check
 swift run SiteServer
 ```
 

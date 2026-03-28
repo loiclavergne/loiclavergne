@@ -81,6 +81,12 @@ Rebuild the site:
 swift run SiteBuilder
 ```
 
+Validate the bundled content without writing output files:
+
+```bash
+swift run SiteBuilder --check
+```
+
 Compile the generator:
 
 ```bash
@@ -125,6 +131,7 @@ The v1 architecture includes:
 - localized sitemap alternates for English and French routes
 - page-type-aware JSON-LD and breadcrumb structured data
 - Swift test coverage for route integrity, internal-link integrity, support files, and metadata regressions
+- build-time payload validation for route parity, detail-page inventories, and split-resource consistency
 - English and French localization
 - light, dark, and auto appearance modes
 - structured static education section on the work page
