@@ -236,6 +236,7 @@ function initSearchPalette() {
   /** @type {{
    *   close: string,
    *   emptyState: string,
+   *   fallbackItems: Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>,
    *   hint: string,
    *   indexURL: string,
    *   loading: string,
@@ -266,6 +267,7 @@ function initSearchPalette() {
   let activeIndex = -1;
   let lastTrigger = /** @type {HTMLElement | null} */ (null);
   let lockedScrollY = 0;
+  let hasAttemptedLoad = false;
   let loadFailed = false;
 
   /**
@@ -371,12 +373,20 @@ function initSearchPalette() {
   }
 
   /**
+   * Return the best available item set for search and suggestions.
+   * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
+   */
+  function searchItems() {
+    return allItems.length ? allItems : config.fallbackItems;
+  }
+
+  /**
    * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
    */
   function defaultItems() {
-    return allItems
+    return searchItems()
       .filter((item) => item.kind === "page")
-      .concat(allItems.filter((item) => item.kind === "project"))
+      .concat(searchItems().filter((item) => item.kind === "project"))
       .slice(0, 8);
   }
 
@@ -409,7 +419,7 @@ function initSearchPalette() {
       return defaultItems();
     }
 
-    return allItems
+    return searchItems()
       .map((item) => ({ item, score: scoreItem(item, query) }))
       .filter((entry) => entry.score > 0)
       .sort((left, right) => right.score - left.score)
@@ -455,17 +465,16 @@ function initSearchPalette() {
     results.setAttribute("aria-busy", "false");
     input.removeAttribute("aria-activedescendant");
 
+    if (!visibleItems.length) {
+      setStatus(loadFailed ? config.unavailable : (query ? config.noResults : config.emptyState));
+      return;
+    }
+
     if (loadFailed) {
       setStatus(config.unavailable);
-      return;
+    } else {
+      setStatus(query ? resultCountMessage(visibleItems.length) : config.suggestedLabel);
     }
-
-    if (!visibleItems.length) {
-      setStatus(query ? config.noResults : config.emptyState);
-      return;
-    }
-
-    setStatus(query ? resultCountMessage(visibleItems.length) : config.suggestedLabel);
 
     results.replaceChildren(...visibleItems.map((item, index) => {
       const listItem = document.createElement("li");
@@ -513,7 +522,7 @@ function initSearchPalette() {
    * @returns {Promise<Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>>}
    */
   function loadIndex() {
-    if (allItems.length) {
+    if (allItems.length || loadFailed || hasAttemptedLoad) {
       return Promise.resolve(allItems);
     }
 
@@ -521,6 +530,7 @@ function initSearchPalette() {
       return loadPromise;
     }
 
+    hasAttemptedLoad = true;
     setStatus(config.loading);
     results.setAttribute("aria-busy", "true");
 
@@ -568,6 +578,7 @@ function initSearchPalette() {
     lockScroll();
     setBackgroundInteractivity(true);
     setExpanded(true);
+    renderResults(normalizeSearchValue(input.value));
 
     void loadIndex().then(() => {
       renderResults(normalizeSearchValue(input.value));
@@ -634,9 +645,11 @@ function initSearchPalette() {
     }
   });
 
-  input.addEventListener("input", async () => {
-    await loadIndex();
+  input.addEventListener("input", () => {
     renderResults(normalizeSearchValue(input.value));
+    void loadIndex().then(() => {
+      renderResults(normalizeSearchValue(input.value));
+    });
   });
 
   input.addEventListener("keydown", (event) => {

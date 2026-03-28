@@ -362,9 +362,39 @@ struct SiteRenderer {
 
     /// Render the localized search UI configuration.
     func renderSearchConfig(locale: String, localeContent: LocaleContent) throws -> String {
+        let fallbackPageKeys = ["home", "work", "projects", "writing", "library", "about"]
+        let fallbackPages = try fallbackPageKeys.map { pageKey -> [String: String] in
+            let metadata = try searchIndexMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale)
+            return [
+                "description": metadata.description,
+                "kind": searchIndexKind(for: pageKey),
+                "locale": locale,
+                "route": try pagePath(pageKey, locale: locale),
+                "section": primaryPageKey(for: pageKey),
+                "title": metadata.title
+            ]
+        }
+
+        let fallbackProjects = try localeContent.projects.featured.compactMap { project -> [String: String]? in
+            guard let routeKey = project.route else {
+                return nil
+            }
+
+            let metadata = try searchIndexMetadata(pageKey: routeKey, localeContent: localeContent, locale: locale)
+            return [
+                "description": metadata.description,
+                "kind": "project",
+                "locale": locale,
+                "route": try pagePath(routeKey, locale: locale),
+                "section": "projects",
+                "title": metadata.title
+            ]
+        }
+
         let config: [String: Any] = [
             "close": localeContent.search.close,
             "emptyState": localeContent.search.emptyState,
+            "fallbackItems": fallbackPages + fallbackProjects,
             "hint": localeContent.search.hint,
             "indexURL": searchIndexPath(for: locale),
             "loading": localeContent.search.loading,
