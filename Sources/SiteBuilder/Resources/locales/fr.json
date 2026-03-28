@@ -58,8 +58,12 @@
     "title": "Rechercher dans le site",
     "placeholder": "Rechercher des pages, projets, écrits ou éléments du profil",
     "loading": "Chargement de l'index de recherche…",
+    "suggested_label": "Destinations suggérées",
     "empty_state": "Commencez à taper ou choisissez une destination suggérée.",
     "no_results": "Aucun résultat correspondant.",
+    "results_count_one": "{{count}} résultat",
+    "results_count_other": "{{count}} résultats",
+    "unavailable": "La recherche est temporairement indisponible.",
     "results_label": "Résultats de recherche",
     "close": "Fermer"
   },

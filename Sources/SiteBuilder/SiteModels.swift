@@ -256,8 +256,12 @@ struct SearchContent: Decodable {
     let title: String
     let placeholder: String
     let loading: String
+    let suggestedLabel: String
     let emptyState: String
     let noResults: String
+    let resultsCountOne: String
+    let resultsCountOther: String
+    let unavailable: String
     let resultsLabel: String
     let close: String
 }

@@ -241,9 +241,13 @@ function initSearchPalette() {
    *   loading: string,
    *   noResults: string,
    *   placeholder: string,
+   *   resultsCountOne: string,
+   *   resultsCountOther: string,
    *   resultsLabel: string,
    *   sectionLabels: Record<string, string>,
-   *   title: string
+   *   suggestedLabel: string,
+   *   title: string,
+   *   unavailable: string
    * }} */
   let config;
 
@@ -262,12 +266,36 @@ function initSearchPalette() {
   let activeIndex = -1;
   let lastTrigger = /** @type {HTMLElement | null} */ (null);
   let lockedScrollY = 0;
+  let loadFailed = false;
 
   /**
    * @param {string} message
    */
   function setStatus(message) {
     status.textContent = message;
+  }
+
+  /**
+   * Replace tokenized placeholders in localized strings.
+   * @param {string} template
+   * @param {Record<string, string | number>} replacements
+   * @returns {string}
+   */
+  function formatTemplate(template, replacements) {
+    return template.replace(/\{\{(\w+)\}\}/g, (match, key) => {
+      if (!(key in replacements)) return match;
+      return String(replacements[key]);
+    });
+  }
+
+  /**
+   * Build a localized count label for visible results.
+   * @param {number} count
+   * @returns {string}
+   */
+  function resultCountMessage(count) {
+    const template = count === 1 ? config.resultsCountOne : config.resultsCountOther;
+    return formatTemplate(template, { count });
   }
 
   /**
@@ -418,12 +446,17 @@ function initSearchPalette() {
     results.setAttribute("aria-busy", "false");
     input.removeAttribute("aria-activedescendant");
 
+    if (loadFailed) {
+      setStatus(config.unavailable);
+      return;
+    }
+
     if (!visibleItems.length) {
       setStatus(query ? config.noResults : config.emptyState);
       return;
     }
 
-    setStatus(query ? config.resultsLabel : config.emptyState);
+    setStatus(query ? resultCountMessage(visibleItems.length) : config.suggestedLabel);
 
     results.replaceChildren(...visibleItems.map((item, index) => {
       const listItem = document.createElement("li");
@@ -487,12 +520,14 @@ function initSearchPalette() {
         return response.json();
       })
       .then((payload) => {
+        loadFailed = false;
         allItems = Array.isArray(payload.items) ? payload.items : [];
         return allItems;
       })
       .catch(() => {
+        loadFailed = true;
         allItems = [];
-        setStatus(config.noResults);
+        setStatus(config.unavailable);
         return allItems;
       })
       .finally(() => {

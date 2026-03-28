@@ -58,8 +58,12 @@
     "title": "Search the site",
     "placeholder": "Search pages, projects, writing, or profile details",
     "loading": "Loading search index…",
+    "suggested_label": "Suggested destinations",
     "empty_state": "Start typing or pick a suggested destination.",
     "no_results": "No matching results found.",
+    "results_count_one": "{{count}} result",
+    "results_count_other": "{{count}} results",
+    "unavailable": "Search is temporarily unavailable.",
     "results_label": "Search results",
     "close": "Close"
   },

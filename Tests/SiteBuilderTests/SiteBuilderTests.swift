@@ -131,6 +131,9 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(home.contains("aria-controls=\"site-search-results\""))
         XCTAssertTrue(home.contains("role=\"listbox\""))
         XCTAssertTrue(home.contains("\"indexURL\" : \"\\/search-index.json\""))
+        XCTAssertTrue(home.contains("\"suggestedLabel\" : \"Suggested destinations\""))
+        XCTAssertTrue(home.contains("\"resultsCountOther\" : \"{{count}} results\""))
+        XCTAssertTrue(home.contains("\"unavailable\" : \"Search is temporarily unavailable.\""))
 
         let frenchHome = try String(contentsOf: outputRoot.appendingPathComponent("fr/index.html"), encoding: .utf8)
         XCTAssertTrue(frenchHome.contains("<link rel=\"manifest\" href=\"https://loic.engineer/fr/site.webmanifest\">"))
@@ -144,6 +147,9 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(frenchHome.contains("aria-controls=\"site-search-results\""))
         XCTAssertTrue(frenchHome.contains("role=\"listbox\""))
         XCTAssertTrue(frenchHome.contains("\"indexURL\" : \"\\/fr\\/search-index.json\""))
+        XCTAssertTrue(frenchHome.contains("\"suggestedLabel\" : \"Destinations suggérées\""))
+        XCTAssertTrue(frenchHome.contains("\"resultsCountOther\" : \"{{count}} résultats\""))
+        XCTAssertTrue(frenchHome.contains("\"unavailable\" : \"La recherche est temporairement indisponible.\""))
 
         let englishSearchIndexData = try Data(contentsOf: outputRoot.appendingPathComponent("search-index.json"))
         let englishSearchIndex = try XCTUnwrap(

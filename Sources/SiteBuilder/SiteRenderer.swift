@@ -370,9 +370,13 @@ struct SiteRenderer {
             "loading": localeContent.search.loading,
             "noResults": localeContent.search.noResults,
             "placeholder": localeContent.search.placeholder,
+            "resultsCountOne": localeContent.search.resultsCountOne,
+            "resultsCountOther": localeContent.search.resultsCountOther,
             "resultsLabel": localeContent.search.resultsLabel,
             "sectionLabels": localeContent.nav,
-            "title": localeContent.search.title
+            "suggestedLabel": localeContent.search.suggestedLabel,
+            "title": localeContent.search.title,
+            "unavailable": localeContent.search.unavailable
         ]
 
         let data = try JSONSerialization.data(withJSONObject: config, options: [.prettyPrinted, .sortedKeys])
