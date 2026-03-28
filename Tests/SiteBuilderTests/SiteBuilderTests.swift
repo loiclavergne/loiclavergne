@@ -126,6 +126,9 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(home.contains("id=\"search-config\""))
         XCTAssertTrue(home.contains("role=\"dialog\""))
         XCTAssertTrue(home.contains("aria-describedby=\"site-search-status\""))
+        XCTAssertTrue(home.contains("role=\"combobox\""))
+        XCTAssertTrue(home.contains("aria-controls=\"site-search-results\""))
+        XCTAssertTrue(home.contains("role=\"listbox\""))
         XCTAssertTrue(home.contains("\"indexURL\" : \"\\/search-index.json\""))
 
         let frenchHome = try String(contentsOf: outputRoot.appendingPathComponent("fr/index.html"), encoding: .utf8)
@@ -135,6 +138,9 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(frenchHome.contains("id=\"search-config\""))
         XCTAssertTrue(frenchHome.contains("role=\"dialog\""))
         XCTAssertTrue(frenchHome.contains("aria-describedby=\"site-search-status\""))
+        XCTAssertTrue(frenchHome.contains("role=\"combobox\""))
+        XCTAssertTrue(frenchHome.contains("aria-controls=\"site-search-results\""))
+        XCTAssertTrue(frenchHome.contains("role=\"listbox\""))
         XCTAssertTrue(frenchHome.contains("\"indexURL\" : \"\\/fr\\/search-index.json\""))
 
         let englishSearchIndexData = try Data(contentsOf: outputRoot.appendingPathComponent("search-index.json"))

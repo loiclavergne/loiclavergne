@@ -275,6 +275,7 @@ function initSearchPalette() {
    */
   function setExpanded(isExpanded) {
     openButton.setAttribute("aria-expanded", String(isExpanded));
+    input.setAttribute("aria-expanded", String(isExpanded));
   }
 
   /**
@@ -393,11 +394,18 @@ function initSearchPalette() {
     links.forEach((link, index) => {
       const isActive = index === activeIndex;
       link.classList.toggle("is-active", isActive);
-      link.setAttribute("aria-current", isActive ? "true" : "false");
+      link.setAttribute("aria-selected", String(isActive));
       if (isActive) {
         link.scrollIntoView({ block: "nearest" });
       }
     });
+
+    const activeLink = activeIndex >= 0 ? links[activeIndex] : null;
+    if (activeLink instanceof HTMLElement && activeLink.id) {
+      input.setAttribute("aria-activedescendant", activeLink.id);
+    } else {
+      input.removeAttribute("aria-activedescendant");
+    }
   }
 
   /**
@@ -407,6 +415,8 @@ function initSearchPalette() {
     visibleItems = matchingItems(query);
     activeIndex = -1;
     results.replaceChildren();
+    results.setAttribute("aria-busy", "false");
+    input.removeAttribute("aria-activedescendant");
 
     if (!visibleItems.length) {
       setStatus(query ? config.noResults : config.emptyState);
@@ -423,6 +433,9 @@ function initSearchPalette() {
       link.className = "search-result";
       link.href = item.route;
       link.dataset.searchResult = String(index);
+      link.id = `site-search-result-${index}`;
+      link.setAttribute("role", "option");
+      link.setAttribute("aria-selected", "false");
 
       const meta = document.createElement("span");
       meta.className = "search-result__meta";
@@ -460,6 +473,7 @@ function initSearchPalette() {
     }
 
     setStatus(config.loading);
+    results.setAttribute("aria-busy", "true");
 
     loadPromise = fetch(config.indexURL, {
       headers: {
@@ -482,6 +496,7 @@ function initSearchPalette() {
         return allItems;
       })
       .finally(() => {
+        results.setAttribute("aria-busy", "false");
         loadPromise = null;
       });
 
@@ -521,6 +536,7 @@ function initSearchPalette() {
     visibleItems = [];
     activeIndex = -1;
     results.replaceChildren();
+    input.removeAttribute("aria-activedescendant");
     setStatus(config.emptyState);
     lastTrigger?.focus({ preventScroll: true });
   }

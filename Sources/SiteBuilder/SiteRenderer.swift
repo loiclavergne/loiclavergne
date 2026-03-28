@@ -397,17 +397,24 @@ struct SiteRenderer {
                 </div>
                 <div class="search-modal__field">
                   <input
+                    id="site-search-input"
                     class="search-modal__input"
                     type="search"
                     data-search-input
                     autocomplete="off"
+                    autocapitalize="none"
                     spellcheck="false"
+                    enterkeyhint="go"
                     placeholder="\(escapeHTML(search.placeholder))"
                     aria-label="\(escapeHTML(search.title))"
+                    role="combobox"
+                    aria-autocomplete="list"
+                    aria-controls="site-search-results"
+                    aria-expanded="false"
                   >
                 </div>
                 <p class="search-modal__status" id="site-search-status" data-search-status aria-live="polite">\(escapeHTML(search.emptyState))</p>
-                <ul class="search-results" data-search-results aria-label="\(escapeHTML(search.resultsLabel))"></ul>
+                <ul class="search-results" id="site-search-results" data-search-results aria-label="\(escapeHTML(search.resultsLabel))" role="listbox"></ul>
               </section>
             </div>
             <script type="application/json" id="search-config">

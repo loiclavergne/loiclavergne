@@ -302,17 +302,24 @@
         </div>
         <div class="search-modal__field">
           <input
+            id="site-search-input"
             class="search-modal__input"
             type="search"
             data-search-input
             autocomplete="off"
+            autocapitalize="none"
             spellcheck="false"
+            enterkeyhint="go"
             placeholder="Rechercher des pages, projets, écrits ou éléments du profil"
             aria-label="Rechercher dans le site"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-controls="site-search-results"
+            aria-expanded="false"
           >
         </div>
         <p class="search-modal__status" id="site-search-status" data-search-status aria-live="polite">Commencez à taper ou choisissez une destination suggérée.</p>
-        <ul class="search-results" data-search-results aria-label="Résultats de recherche"></ul>
+        <ul class="search-results" id="site-search-results" data-search-results aria-label="Résultats de recherche" role="listbox"></ul>
       </section>
     </div>
     <script type="application/json" id="search-config">
