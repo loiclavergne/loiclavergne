@@ -2,132 +2,132 @@
   "generated_at" : "2026-03-27",
   "items" : [
     {
-      "description" : "Engineering leadership for mobile products, product strategy, architecture, and delivery.",
+      "description" : "I lead mobile product execution across Roole Map and Roole Premium, working at the intersection of roadmap planning, technical architecture, cross-team coordination, and delivery quality.",
       "kind" : "page",
       "locale" : "en",
       "route" : "\/",
       "section" : "home",
-      "title" : "Loïc Lavergne | Engineering Manager, Mobile Products"
+      "title" : "Home"
     },
     {
-      "description" : "Current role, product leadership scope, and career timeline.",
+      "description" : "The portfolio should be present-first, but the path matters. This page keeps the current role at the top and then expands into the broader career timeline.",
       "kind" : "page",
       "locale" : "en",
       "route" : "\/work\/",
       "section" : "work",
-      "title" : "Work | Loïc Lavergne"
+      "title" : "Current leadership scope, then the path that led here."
     },
     {
-      "description" : "Current, past, and hobby projects across mobile products and digital publishing.",
+      "description" : "The project selection mixes current product leadership with earlier native delivery work. The goal is to show range without turning the site into a wall of cards.",
       "kind" : "page",
       "locale" : "en",
       "route" : "\/projects\/",
       "section" : "projects",
-      "title" : "Projects | Loïc Lavergne"
+      "title" : "Products shipped across mobility, publishing, and platform evolution."
     },
     {
-      "description" : "Roole Map case study covering mobile foundations, architecture evolution, and multi-team delivery.",
+      "description" : "Built the first technical foundations of the product, then expanded the role into broader coordination across architecture, iOS and Android delivery, tooling, and shared operating standards.",
       "kind" : "project",
       "locale" : "en",
       "route" : "\/projects\/roole-map\/",
       "section" : "projects",
-      "title" : "Roole Map | Projects | Loïc Lavergne"
+      "title" : "From mobile foundation to multi-team product delivery."
     },
     {
-      "description" : "Roole Premium case study covering member product delivery, cross-app standards, and shared mobile operating practices.",
+      "description" : "Coordinates product delivery alongside Roole Map while aligning architecture, process, and team collaboration patterns across applications with overlapping mobile standards.",
       "kind" : "project",
       "locale" : "en",
       "route" : "\/projects\/roole-premium\/",
       "section" : "projects",
-      "title" : "Roole Premium | Projects | Loïc Lavergne"
+      "title" : "Coordinating a member product with shared mobile standards."
     },
     {
-      "description" : "Vialife Digital case study covering APIs, readers, content transformation, audio, voice, and platform strategy for publishers.",
+      "description" : "Directed the design, development, and technical direction of Vialife Digital while contributing to business development and product strategy for publishers moving beyond traditional PDF distribution.",
       "kind" : "project",
       "locale" : "en",
       "route" : "\/projects\/vialife-digital\/",
       "section" : "projects",
-      "title" : "Vialife Digital | Projects | Loïc Lavergne"
+      "title" : "A digital publishing platform built across products, formats, and channels."
     },
     {
-      "description" : "MyViapresse case study covering native iOS evolution, subscriptions, offline reading, and long-lived consumer product delivery.",
+      "description" : "Owned the application across project management, product design, and native iOS development while guiding its evolution from a hybrid base to a modern Swift codebase with subscriptions, offline reading, and a proprietary reader framework.",
       "kind" : "project",
       "locale" : "en",
       "route" : "\/projects\/myviapresse\/",
       "section" : "projects",
-      "title" : "MyViapresse | Projects | Loïc Lavergne"
+      "title" : "A long-lived consumer press product through several technical generations."
     },
     {
-      "description" : "Digital Press Applications case study covering a shared mobile foundation for multiple branded press products and access models.",
+      "description" : "Owned the applications across project management, product design, and native iOS development while maintaining a shared architecture that could support distinct access models, brands, and content strategies.",
       "kind" : "project",
       "locale" : "en",
       "route" : "\/projects\/digital-press-applications\/",
       "section" : "projects",
-      "title" : "Digital Press Applications | Projects | Loïc Lavergne"
+      "title" : "One shared mobile foundation, several distribution models."
     },
     {
-      "description" : "Dakar Presse case study covering mobile access to Senegalese newspapers, subscriptions, and reliable reading for a distributed audience.",
+      "description" : "Owned the application across product design, project management, and iOS implementation on top of a custom Swift reading framework, with a focus on subscriptions, notifications, offline reading, and dependable daily access.",
       "kind" : "project",
       "locale" : "en",
       "route" : "\/projects\/dakar-presse\/",
       "section" : "projects",
-      "title" : "Dakar Presse | Projects | Loïc Lavergne"
+      "title" : "A focused press product for readers in Senegal and abroad."
     },
     {
-      "description" : "Le Moniteur des Pharmacies case study covering native iOS delivery for pharmacists across news, training, and reference tools.",
+      "description" : "Built the application natively in Swift with responsibility for feature implementation, data presentation, and user experience across news, learning, and professional reference use cases.",
       "kind" : "project",
       "locale" : "en",
       "route" : "\/projects\/le-moniteur-des-pharmacies\/",
       "section" : "projects",
-      "title" : "Le Moniteur des Pharmacies | Projects | Loïc Lavergne"
+      "title" : "A professional iOS product designed for dense, recurring pharmacist workflows."
     },
     {
-      "description" : "Le Point Vétérinaire.fr case study covering native iOS delivery for veterinarians across news, training, practical tools, and reference data.",
+      "description" : "Built the application in Swift with responsibility for feature implementation, content access, and user experience across veterinary information, training, and operational utility layers.",
       "kind" : "project",
       "locale" : "en",
       "route" : "\/projects\/le-point-veterinaire\/",
       "section" : "projects",
-      "title" : "Le Point Vétérinaire.fr | Projects | Loïc Lavergne"
+      "title" : "A veterinary product combining information, tools, and daily operational support."
     },
     {
-      "description" : "Case study for the portfolio itself: a bilingual static-first site treated like a long-term product.",
+      "description" : "Designed and built the site as a Swift-generated static product with localized routing, strong editorial hierarchy, privacy-first defaults, and maintainable content architecture.",
       "kind" : "project",
       "locale" : "en",
       "route" : "\/projects\/loic-engineer\/",
       "section" : "projects",
-      "title" : "loic.engineer | Projects | Loïc Lavergne"
+      "title" : "A portfolio treated like a product, not a profile page."
     },
     {
-      "description" : "Case study for an internal reusable mobile starter designed to accelerate new product foundations.",
+      "description" : "Designed a reusable mobile starter around shared architecture, tooling, and delivery conventions so new applications can begin from a stable, maintainable baseline.",
       "kind" : "project",
       "locale" : "en",
       "route" : "\/projects\/templated-mobile-starter\/",
       "section" : "projects",
-      "title" : "Templated Mobile Starter | Projects | Loïc Lavergne"
+      "title" : "A reusable mobile foundation for shipping new products faster."
     },
     {
-      "description" : "Blog architecture and future writing archive.",
+      "description" : "Writing is part of the long-term structure of the portfolio, but the v1 launch keeps the archive intentionally empty until the first pieces are ready.",
       "kind" : "page",
       "locale" : "en",
       "route" : "\/writing\/",
       "section" : "writing",
-      "title" : "Writing | Loïc Lavergne"
+      "title" : "The publishing system is ready before the archive goes live."
     },
     {
-      "description" : "Books, reading life, and manual reading stats.",
+      "description" : "The library area is designed for manually curated reading data. It will eventually show current shelves, recent reads, and yearly\/monthly counts.",
       "kind" : "page",
       "locale" : "en",
       "route" : "\/library\/",
       "section" : "library",
-      "title" : "Library | Loïc Lavergne"
+      "title" : "Reading should feel like a product surface, not a spreadsheet."
     },
     {
-      "description" : "Skills, broader profile, sports, trophies, and contact.",
+      "description" : "This page brings together the broader profile: skills, tools, sports, trophies, and the contact surface for the site.",
       "kind" : "page",
       "locale" : "en",
       "route" : "\/about\/",
       "section" : "about",
-      "title" : "About | Loïc Lavergne"
+      "title" : "Technical depth, leadership range, and the personal layers around the work."
     }
   ],
   "locale" : "en",

@@ -121,9 +121,15 @@ final class SiteBuilderTests: XCTestCase {
 
         let home = try String(contentsOf: outputRoot.appendingPathComponent("index.html"), encoding: .utf8)
         XCTAssertTrue(home.contains("<link rel=\"manifest\" href=\"https://loic.engineer/site.webmanifest\">"))
+        XCTAssertTrue(home.contains("data-search-open"))
+        XCTAssertTrue(home.contains("id=\"search-config\""))
+        XCTAssertTrue(home.contains("\"indexURL\" : \"\\/search-index.json\""))
 
         let frenchHome = try String(contentsOf: outputRoot.appendingPathComponent("fr/index.html"), encoding: .utf8)
         XCTAssertTrue(frenchHome.contains("<link rel=\"manifest\" href=\"https://loic.engineer/fr/site.webmanifest\">"))
+        XCTAssertTrue(frenchHome.contains("data-search-open"))
+        XCTAssertTrue(frenchHome.contains("id=\"search-config\""))
+        XCTAssertTrue(frenchHome.contains("\"indexURL\" : \"\\/fr\\/search-index.json\""))
 
         let englishSearchIndexData = try Data(contentsOf: outputRoot.appendingPathComponent("search-index.json"))
         let englishSearchIndex = try XCTUnwrap(

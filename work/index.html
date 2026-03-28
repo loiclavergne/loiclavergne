@@ -143,6 +143,10 @@
           <a class="site-nav__link" href="/">Home</a><a class="site-nav__link" href="/work/" aria-current="page">Work</a><a class="site-nav__link" href="/projects/">Projects</a><a class="site-nav__link" href="/writing/">Writing</a><a class="site-nav__link" href="/library/">Library</a><a class="site-nav__link" href="/about/">About</a>
         </nav>
         <div class="site-header__controls">
+          <button class="search-trigger" type="button" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+            <span class="search-trigger__label">Search</span>
+            <span class="search-trigger__hint" aria-hidden="true">⌘K</span>
+          </button>
           <div class="theme-switcher" aria-label="Appearance">
             <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
             <button class="theme-switcher__button" type="button" data-theme-control="light">Light</button>
@@ -313,6 +317,52 @@
         </nav>
       </div>
     </footer>
+    <div class="search-modal" data-search-modal hidden>
+      <div class="search-modal__backdrop" data-search-close></div>
+      <section class="search-modal__sheet" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title">
+        <div class="search-modal__header">
+          <div>
+            <span class="eyebrow">Search</span>
+            <h2 id="site-search-title">Search the site</h2>
+          </div>
+          <button class="search-modal__close" type="button" data-search-close">Close</button>
+        </div>
+        <div class="search-modal__field">
+          <input
+            class="search-modal__input"
+            type="search"
+            data-search-input
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Search pages, projects, writing, or profile details"
+            aria-label="Search the site"
+          >
+        </div>
+        <p class="search-modal__status" data-search-status aria-live="polite">Start typing or pick a suggested destination.</p>
+        <ul class="search-results" data-search-results aria-label="Search results"></ul>
+      </section>
+    </div>
+    <script type="application/json" id="search-config">
+{
+  "close" : "Close",
+  "emptyState" : "Start typing or pick a suggested destination.",
+  "hint" : "⌘K",
+  "indexURL" : "\/search-index.json",
+  "loading" : "Loading search index…",
+  "noResults" : "No matching results found.",
+  "placeholder" : "Search pages, projects, writing, or profile details",
+  "resultsLabel" : "Search results",
+  "sectionLabels" : {
+    "about" : "About",
+    "home" : "Home",
+    "library" : "Library",
+    "projects" : "Projects",
+    "work" : "Work",
+    "writing" : "Writing"
+  },
+  "title" : "Search the site"
+}
+    </script>
   <script type="module" src="/js/site.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 //  - appearance switching
 //  - reveal-on-view behavior
 //  - homepage story panel activation
+//  - command-palette search
 //
 
 const THEME_STORAGE_KEY = "loic.engineer.theme";
@@ -181,9 +182,344 @@ function initStoryPanels() {
   steps.forEach((step) => observer.observe(step));
 }
 
+/**
+ * Normalize text for accent-insensitive search comparisons.
+ * @param {string} value
+ * @returns {string}
+ */
+function normalizeSearchValue(value) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+/**
+ * Determine whether the current event target is editable.
+ * @param {EventTarget | null} target
+ * @returns {boolean}
+ */
+function isEditableTarget(target) {
+  if (!(target instanceof HTMLElement)) return false;
+  if (target.isContentEditable) return true;
+  return target instanceof HTMLInputElement
+    || target instanceof HTMLTextAreaElement
+    || target instanceof HTMLSelectElement;
+}
+
+/**
+ * Initialize the static command-palette search.
+ */
+function initSearchPalette() {
+  const openButton = document.querySelector("[data-search-open]");
+  const modal = document.querySelector("[data-search-modal]");
+  const input = document.querySelector("[data-search-input]");
+  const status = document.querySelector("[data-search-status]");
+  const results = document.querySelector("[data-search-results]");
+  const configNode = document.getElementById("search-config");
+
+  if (!openButton || !modal || !input || !status || !results || !configNode) {
+    return;
+  }
+
+  /** @type {{
+   *   close: string,
+   *   emptyState: string,
+   *   hint: string,
+   *   indexURL: string,
+   *   loading: string,
+   *   noResults: string,
+   *   placeholder: string,
+   *   resultsLabel: string,
+   *   sectionLabels: Record<string, string>,
+   *   title: string
+   * }} */
+  let config;
+
+  try {
+    config = JSON.parse(configNode.textContent ?? "{}");
+  } catch (error) {
+    return;
+  }
+
+  /** @type {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>} */
+  let allItems = [];
+  /** @type {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>} */
+  let visibleItems = [];
+  /** @type {Promise<Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>> | null} */
+  let loadPromise = null;
+  let activeIndex = -1;
+  let lastTrigger = /** @type {HTMLElement | null} */ (null);
+
+  /**
+   * @param {string} message
+   */
+  function setStatus(message) {
+    status.textContent = message;
+  }
+
+  /**
+   * @param {boolean} isExpanded
+   */
+  function setExpanded(isExpanded) {
+    openButton.setAttribute("aria-expanded", String(isExpanded));
+  }
+
+  /**
+   * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
+   */
+  function defaultItems() {
+    return allItems
+      .filter((item) => item.kind === "page")
+      .concat(allItems.filter((item) => item.kind === "project"))
+      .slice(0, 8);
+  }
+
+  /**
+   * @param {{description: string, kind: string, locale: string, route: string, section: string, title: string}} item
+   * @param {string} query
+   * @returns {number}
+   */
+  function scoreItem(item, query) {
+    const title = normalizeSearchValue(item.title);
+    const description = normalizeSearchValue(item.description);
+    const route = normalizeSearchValue(item.route);
+    let score = 0;
+
+    if (title.startsWith(query)) score += 100;
+    if (title.includes(query)) score += 60;
+    if (description.includes(query)) score += 25;
+    if (route.includes(query)) score += 10;
+    if (item.kind === "page") score += 6;
+
+    return score;
+  }
+
+  /**
+   * @param {string} query
+   * @returns {Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>}
+   */
+  function matchingItems(query) {
+    if (!query) {
+      return defaultItems();
+    }
+
+    return allItems
+      .map((item) => ({ item, score: scoreItem(item, query) }))
+      .filter((entry) => entry.score > 0)
+      .sort((left, right) => right.score - left.score)
+      .map((entry) => entry.item)
+      .slice(0, 8);
+  }
+
+  function syncActiveResult() {
+    const links = Array.from(results.querySelectorAll(".search-result"));
+    links.forEach((link, index) => {
+      const isActive = index === activeIndex;
+      link.classList.toggle("is-active", isActive);
+      link.setAttribute("aria-current", isActive ? "true" : "false");
+      if (isActive) {
+        link.scrollIntoView({ block: "nearest" });
+      }
+    });
+  }
+
+  /**
+   * @param {string} query
+   */
+  function renderResults(query) {
+    visibleItems = matchingItems(query);
+    activeIndex = -1;
+    results.replaceChildren();
+
+    if (!visibleItems.length) {
+      setStatus(query ? config.noResults : config.emptyState);
+      return;
+    }
+
+    setStatus(query ? config.resultsLabel : config.emptyState);
+
+    results.replaceChildren(...visibleItems.map((item, index) => {
+      const listItem = document.createElement("li");
+      listItem.className = "search-results__item";
+
+      const link = document.createElement("a");
+      link.className = "search-result";
+      link.href = item.route;
+      link.dataset.searchResult = String(index);
+
+      const meta = document.createElement("span");
+      meta.className = "search-result__meta";
+      meta.textContent = config.sectionLabels[item.section] ?? item.section;
+
+      const title = document.createElement("span");
+      title.className = "search-result__title";
+      title.textContent = item.title;
+
+      const description = document.createElement("span");
+      description.className = "search-result__description";
+      description.textContent = item.description;
+
+      link.append(meta, title, description);
+      link.addEventListener("mouseenter", () => {
+        activeIndex = index;
+        syncActiveResult();
+      });
+
+      listItem.append(link);
+      return listItem;
+    }));
+  }
+
+  /**
+   * @returns {Promise<Array<{description: string, kind: string, locale: string, route: string, section: string, title: string}>>}
+   */
+  function loadIndex() {
+    if (allItems.length) {
+      return Promise.resolve(allItems);
+    }
+
+    if (loadPromise) {
+      return loadPromise;
+    }
+
+    setStatus(config.loading);
+
+    loadPromise = fetch(config.indexURL, {
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Search index request failed.");
+        }
+        return response.json();
+      })
+      .then((payload) => {
+        allItems = Array.isArray(payload.items) ? payload.items : [];
+        return allItems;
+      })
+      .catch(() => {
+        allItems = [];
+        setStatus(config.noResults);
+        return allItems;
+      })
+      .finally(() => {
+        loadPromise = null;
+      });
+
+    return loadPromise;
+  }
+
+  /**
+   * @param {HTMLElement} trigger
+   */
+  function openSearch(trigger) {
+    lastTrigger = trigger;
+    modal.hidden = false;
+    document.body.classList.add("search-open");
+    setExpanded(true);
+
+    void loadIndex().then(() => {
+      renderResults(normalizeSearchValue(input.value));
+    });
+
+    window.requestAnimationFrame(() => {
+      input.focus({ preventScroll: true });
+      input.select();
+    });
+  }
+
+  function closeSearch() {
+    if (modal.hidden) return;
+
+    modal.hidden = true;
+    document.body.classList.remove("search-open");
+    setExpanded(false);
+    input.value = "";
+    visibleItems = [];
+    activeIndex = -1;
+    results.replaceChildren();
+    setStatus(config.emptyState);
+    lastTrigger?.focus({ preventScroll: true });
+  }
+
+  openButton.addEventListener("click", () => {
+    openSearch(openButton);
+  });
+
+  modal.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    if (target.closest("[data-search-close]")) {
+      closeSearch();
+    }
+  });
+
+  input.addEventListener("input", async () => {
+    await loadIndex();
+    renderResults(normalizeSearchValue(input.value));
+  });
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeSearch();
+      return;
+    }
+
+    if (event.key === "ArrowDown") {
+      if (!visibleItems.length) return;
+      event.preventDefault();
+      activeIndex = Math.min(activeIndex + 1, visibleItems.length - 1);
+      syncActiveResult();
+      return;
+    }
+
+    if (event.key === "ArrowUp") {
+      if (!visibleItems.length) return;
+      event.preventDefault();
+      activeIndex = Math.max(activeIndex - 1, 0);
+      syncActiveResult();
+      return;
+    }
+
+    if (event.key === "Enter" && activeIndex >= 0 && visibleItems[activeIndex]) {
+      event.preventDefault();
+      window.location.href = visibleItems[activeIndex].route;
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+      event.preventDefault();
+      openSearch(openButton);
+      return;
+    }
+
+    if (event.key === "/" && !event.metaKey && !event.ctrlKey && !event.altKey) {
+      if (!modal.hidden || isEditableTarget(event.target)) {
+        return;
+      }
+
+      event.preventDefault();
+      openSearch(openButton);
+      return;
+    }
+
+    if (event.key === "Escape" && !modal.hidden) {
+      event.preventDefault();
+      closeSearch();
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initThemeControls();
   initHeaderState();
   initRevealObserver();
   initStoryPanels();
+  initSearchPalette();
 });

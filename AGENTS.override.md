@@ -16,6 +16,7 @@ Priority for the current implementation phase:
 - deepen content quality without expanding runtime complexity
 - preserve Apple-like polish, restraint, and bilingual parity
 - add deeper project storytelling through localized static detail pages
+- turn generated support outputs into polished user-facing static features
 - keep placeholder states elegant where source content is not available yet
 - avoid regressing into archived vendor or data-loading patterns
 

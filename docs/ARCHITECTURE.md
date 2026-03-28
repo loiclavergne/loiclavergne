@@ -120,6 +120,13 @@ The sitemap now emits `xhtml:link` alternates for each English and French page
 variant so search engines can discover locale relationships without relying
 only on page-level `hreflang`.
 
+The generated localized search indexes now power the shared command-palette
+search UI in the browser. The runtime stays static-first:
+- each locale ships its own generated `search-index.json`
+- `js/site.js` fetches the current locale index on demand
+- the palette opens via header trigger, `⌘K`, `Ctrl-K`, or `/`
+- no backend or client framework is required
+
 ## Localization Strategy
 
 Localization is URL-linked, not dynamically swapped inside a single canonical
@@ -143,8 +150,9 @@ The UI follows system appearance by default and exposes a manual toggle for:
 - dark
 
 The homepage uses progressive enhancement for reveal behavior and a
-scroll-activated narrative panel. Core content remains fully readable with
-JavaScript disabled and motion reduced.
+scroll-activated narrative panel. The shared runtime also provides a localized
+command-palette search overlay powered by the generated search indexes. Core
+content remains fully readable with JavaScript disabled and motion reduced.
 
 ## Secondary Sections
 
@@ -188,7 +196,7 @@ The Swift package now includes automated tests for:
 - route coverage across locales
 - generated HTML internal-link and asset resolution
 - generator support outputs such as feeds, manifests, sitemap, `robots.txt`, and hosting files
-- generated search-index outputs for future static search or command-palette surfaces
+- generated search-index outputs and the command-palette wiring that consumes them
 - structured-data regression checks for major page types
 - payload-validation regressions for split resources and route parity
 

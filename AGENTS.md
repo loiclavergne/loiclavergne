@@ -34,7 +34,7 @@ Primary source files:
 - `Sources/SiteServer/main.swift`: local static server used for browser previews
 - `css/tokens.css`: design tokens and theme variables
 - `css/site.css`: layout, components, page styling, and responsive behavior
-- `js/site.js`: theme handling, reveal behavior, and homepage story activation
+- `js/site.js`: theme handling, reveal behavior, homepage story activation, and localized command-palette search
 - `assets/img/og/og-default.svg`: shared Open Graph image and SVG favicon
 
 Generated output:
@@ -72,6 +72,9 @@ Active runtime assets are intentionally minimal:
   locale-specific folder aliases when a host-level redirect rule is unavailable.
 - Keep the local Swift preview server aligned with production-like behavior
   where feasible; missing routes should surface the root `404.html`.
+- Keep the generated search indexes and the command-palette UI aligned. If
+  search metadata, page keys, or locale labels change, update the renderer,
+  static runtime, and tests in the same pass.
 - Do not reintroduce the removed Bootstrap, vendor, or JSON-driven asset tree
   unless there is a concrete architectural reason and the docs are updated in
   the same pass.

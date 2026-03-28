@@ -143,6 +143,10 @@
           <a class="site-nav__link" href="/fr/">Accueil</a><a class="site-nav__link" href="/fr/work/">Travail</a><a class="site-nav__link" href="/fr/projects/" aria-current="page">Projets</a><a class="site-nav__link" href="/fr/writing/">Écrits</a><a class="site-nav__link" href="/fr/library/">Bibliothèque</a><a class="site-nav__link" href="/fr/about/">À propos</a>
         </nav>
         <div class="site-header__controls">
+          <button class="search-trigger" type="button" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+            <span class="search-trigger__label">Recherche</span>
+            <span class="search-trigger__hint" aria-hidden="true">⌘K</span>
+          </button>
           <div class="theme-switcher" aria-label="Apparence">
             <button class="theme-switcher__button" type="button" data-theme-control="auto">Auto</button>
             <button class="theme-switcher__button" type="button" data-theme-control="light">Clair</button>
@@ -289,6 +293,52 @@
         </nav>
       </div>
     </footer>
+    <div class="search-modal" data-search-modal hidden>
+      <div class="search-modal__backdrop" data-search-close></div>
+      <section class="search-modal__sheet" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title">
+        <div class="search-modal__header">
+          <div>
+            <span class="eyebrow">Recherche</span>
+            <h2 id="site-search-title">Rechercher dans le site</h2>
+          </div>
+          <button class="search-modal__close" type="button" data-search-close">Fermer</button>
+        </div>
+        <div class="search-modal__field">
+          <input
+            class="search-modal__input"
+            type="search"
+            data-search-input
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Rechercher des pages, projets, écrits ou éléments du profil"
+            aria-label="Rechercher dans le site"
+          >
+        </div>
+        <p class="search-modal__status" data-search-status aria-live="polite">Commencez à taper ou choisissez une destination suggérée.</p>
+        <ul class="search-results" data-search-results aria-label="Résultats de recherche"></ul>
+      </section>
+    </div>
+    <script type="application/json" id="search-config">
+{
+  "close" : "Fermer",
+  "emptyState" : "Commencez à taper ou choisissez une destination suggérée.",
+  "hint" : "⌘K",
+  "indexURL" : "\/fr\/search-index.json",
+  "loading" : "Chargement de l'index de recherche…",
+  "noResults" : "Aucun résultat correspondant.",
+  "placeholder" : "Rechercher des pages, projets, écrits ou éléments du profil",
+  "resultsLabel" : "Résultats de recherche",
+  "sectionLabels" : {
+    "about" : "À propos",
+    "home" : "Accueil",
+    "library" : "Bibliothèque",
+    "projects" : "Projets",
+    "work" : "Travail",
+    "writing" : "Écrits"
+  },
+  "title" : "Rechercher dans le site"
+}
+    </script>
   <script type="module" src="/js/site.js"></script>
 </body>
 </html>

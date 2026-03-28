@@ -2,132 +2,132 @@
   "generated_at" : "2026-03-27",
   "items" : [
     {
-      "description" : "Leadership d'ingénierie pour les produits mobiles, la stratégie produit, l'architecture et la delivery.",
+      "description" : "Je pilote l'exécution mobile de Roole Map et Roole Premium, à la croisée de la roadmap, de l'architecture technique, de la coordination transverse et de la qualité de delivery.",
       "kind" : "page",
       "locale" : "fr",
       "route" : "\/fr\/",
       "section" : "home",
-      "title" : "Loïc Lavergne | Engineering Manager, produits mobiles"
+      "title" : "Accueil"
     },
     {
-      "description" : "Rôle actuel, périmètre de leadership produit et parcours professionnel.",
+      "description" : "Le portfolio doit partir du présent, mais le parcours compte. Cette page garde le rôle actuel en tête puis déroule la trajectoire professionnelle.",
       "kind" : "page",
       "locale" : "fr",
       "route" : "\/fr\/work\/",
       "section" : "work",
-      "title" : "Travail | Loïc Lavergne"
+      "title" : "Le périmètre actuel d'abord, puis le chemin qui y mène."
     },
     {
-      "description" : "Projets actuels, passés et personnels autour des produits mobiles et de l'édition numérique.",
+      "description" : "La sélection mélange leadership produit actuel et projets natifs plus anciens. L'objectif est de montrer l'amplitude sans transformer le site en mur de cartes.",
       "kind" : "page",
       "locale" : "fr",
       "route" : "\/fr\/projects\/",
       "section" : "projects",
-      "title" : "Projets | Loïc Lavergne"
+      "title" : "Des produits livrés entre mobilité, édition numérique et évolution de plateformes."
     },
     {
-      "description" : "Page projet Roole Map sur le socle mobile, l'évolution d'architecture et la delivery multi-équipes.",
+      "description" : "A posé les premières fondations techniques du produit, puis a élargi le rôle vers la coordination plus large de l'architecture, de la delivery iOS et Android, de l'outillage et des standards de fonctionnement partagés.",
       "kind" : "project",
       "locale" : "fr",
       "route" : "\/fr\/projects\/roole-map\/",
       "section" : "projects",
-      "title" : "Roole Map | Projets | Loïc Lavergne"
+      "title" : "Du socle mobile initial à une delivery produit multi-équipes."
     },
     {
-      "description" : "Page projet Roole Premium sur la delivery produit membre, les standards mobiles partagés et les pratiques multi-applications.",
+      "description" : "Coordonne la delivery produit en parallèle de Roole Map tout en alignant architecture, process et modes de collaboration entre plusieurs applications partageant des standards mobiles communs.",
       "kind" : "project",
       "locale" : "fr",
       "route" : "\/fr\/projects\/roole-premium\/",
       "section" : "projects",
-      "title" : "Roole Premium | Projets | Loïc Lavergne"
+      "title" : "Coordonner un produit membre avec des standards mobiles partagés."
     },
     {
-      "description" : "Page projet Vialife Digital sur les API, lecteurs, transformations de contenu, audio, voix et stratégie plateforme pour les éditeurs.",
+      "description" : "A dirigé la conception, le développement et la direction technique de Vialife Digital tout en contribuant au business development et à la stratégie produit pour des éditeurs allant au-delà de la distribution PDF traditionnelle.",
       "kind" : "project",
       "locale" : "fr",
       "route" : "\/fr\/projects\/vialife-digital\/",
       "section" : "projects",
-      "title" : "Vialife Digital | Projets | Loïc Lavergne"
+      "title" : "Une plateforme d'édition numérique pensée à travers produits, formats et canaux."
     },
     {
-      "description" : "Page projet MyViapresse sur l'évolution iOS native, les abonnements, la lecture hors ligne et la delivery produit grand public dans la durée.",
+      "description" : "Responsabilité de l'application sur le pilotage projet, le design produit et le développement iOS natif, tout en accompagnant son évolution depuis une base hybride vers un codebase Swift moderne avec abonnements, lecture hors ligne et framework lecteur propriétaire.",
       "kind" : "project",
       "locale" : "fr",
       "route" : "\/fr\/projects\/myviapresse\/",
       "section" : "projects",
-      "title" : "MyViapresse | Projets | Loïc Lavergne"
+      "title" : "Un produit presse grand public qui a traversé plusieurs générations techniques."
     },
     {
-      "description" : "Page projet Digital Press Applications sur un socle mobile partagé au service de plusieurs produits presse et modèles d'accès.",
+      "description" : "Responsabilité des applications sur le pilotage projet, le design produit et le développement iOS natif tout en maintenant une architecture partagée capable de supporter des marques, des modèles d'accès et des stratégies de contenu distincts.",
       "kind" : "project",
       "locale" : "fr",
       "route" : "\/fr\/projects\/digital-press-applications\/",
       "section" : "projects",
-      "title" : "Digital Press Applications | Projets | Loïc Lavergne"
+      "title" : "Un socle mobile partagé, plusieurs modèles de distribution."
     },
     {
-      "description" : "Page projet Dakar Presse sur l'accès mobile à la presse sénégalaise, les abonnements et une lecture fiable pour une audience distribuée.",
+      "description" : "Responsabilité de l'application sur le design produit, le pilotage projet et l'implémentation iOS sur un framework de lecture Swift, avec un accent sur les abonnements, les notifications, la lecture hors ligne et l'accès quotidien fiable.",
       "kind" : "project",
       "locale" : "fr",
       "route" : "\/fr\/projects\/dakar-presse\/",
       "section" : "projects",
-      "title" : "Dakar Presse | Projets | Loïc Lavergne"
+      "title" : "Un produit presse ciblé pour des lecteurs au Sénégal et à l'étranger."
     },
     {
-      "description" : "Étude de cas sur Le Moniteur des Pharmacies, produit iOS natif pour les pharmaciens entre actualités, formation et outils de référence.",
+      "description" : "Développement natif en Swift avec responsabilité sur l'implémentation des fonctionnalités, la présentation des données et l'expérience utilisateur autour d'usages d'information, d'apprentissage et de consultation métier.",
       "kind" : "project",
       "locale" : "fr",
       "route" : "\/fr\/projects\/le-moniteur-des-pharmacies\/",
       "section" : "projects",
-      "title" : "Le Moniteur des Pharmacies | Projets | Loïc Lavergne"
+      "title" : "Un produit iOS professionnel pensé pour des usages métier denses et récurrents."
     },
     {
-      "description" : "Étude de cas sur Le Point Vétérinaire.fr, produit iOS natif pour les vétérinaires entre actualités, formation, outils pratiques et données de référence.",
+      "description" : "Développement de l'application en Swift avec responsabilité sur l'implémentation des fonctionnalités, l'accès au contenu et l'expérience utilisateur à travers des couches d'information, de formation et d'utilité métier.",
       "kind" : "project",
       "locale" : "fr",
       "route" : "\/fr\/projects\/le-point-veterinaire\/",
       "section" : "projects",
-      "title" : "Le Point Vétérinaire.fr | Projets | Loïc Lavergne"
+      "title" : "Un produit vétérinaire mêlant information, outils et support opérationnel au quotidien."
     },
     {
-      "description" : "Étude de cas du portfolio lui-même : un site statique bilingue pensé comme un produit dans la durée.",
+      "description" : "Conception et développement du site comme produit statique généré en Swift, avec routage localisé, hiérarchie éditoriale forte, posture privacy-first et architecture de contenu maintenable.",
       "kind" : "project",
       "locale" : "fr",
       "route" : "\/fr\/projects\/loic-engineer\/",
       "section" : "projects",
-      "title" : "loic.engineer | Projets | Loïc Lavergne"
+      "title" : "Un portfolio traité comme un produit, pas comme une simple page profil."
     },
     {
-      "description" : "Étude de cas d'un socle mobile interne réutilisable conçu pour accélérer la création de nouveaux produits.",
+      "description" : "Conception d'un starter mobile réutilisable autour d'une architecture partagée, d'outillage et de conventions de delivery afin que les nouvelles applications démarrent depuis une base stable et maintenable.",
       "kind" : "project",
       "locale" : "fr",
       "route" : "\/fr\/projects\/templated-mobile-starter\/",
       "section" : "projects",
-      "title" : "Templated Mobile Starter | Projets | Loïc Lavergne"
+      "title" : "Un socle mobile réutilisable pour lancer de nouveaux produits plus vite."
     },
     {
-      "description" : "Architecture du blog et futur archive d'articles.",
+      "description" : "L'écriture fait partie de la structure long terme du portfolio, mais le lancement v1 garde volontairement l'archive vide tant que les premiers textes ne sont pas prêts.",
       "kind" : "page",
       "locale" : "fr",
       "route" : "\/fr\/writing\/",
       "section" : "writing",
-      "title" : "Écrits | Loïc Lavergne"
+      "title" : "Le système de publication est prêt avant l'ouverture de l'archive."
     },
     {
-      "description" : "Livres, vie de lecteur et statistiques de lecture manuelles.",
+      "description" : "La zone bibliothèque est pensée pour des données de lecture mises à jour manuellement. Elle affichera à terme la lecture en cours, les livres récents et les compteurs annuels et mensuels.",
       "kind" : "page",
       "locale" : "fr",
       "route" : "\/fr\/library\/",
       "section" : "library",
-      "title" : "Bibliothèque | Loïc Lavergne"
+      "title" : "La lecture doit ressembler à une surface produit, pas à un tableur."
     },
     {
-      "description" : "Compétences, profil élargi, sport, trophées et contact.",
+      "description" : "Cette page réunit le profil plus large : compétences, outils, sport, trophées et surface de contact du site.",
       "kind" : "page",
       "locale" : "fr",
       "route" : "\/fr\/about\/",
       "section" : "about",
-      "title" : "À propos | Loïc Lavergne"
+      "title" : "Profondeur technique, amplitude de leadership et couches personnelles autour du travail."
     }
   ],
   "locale" : "fr",

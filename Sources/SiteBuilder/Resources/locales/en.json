@@ -52,6 +52,17 @@
     "light": "Light",
     "dark": "Dark"
   },
+  "search": {
+    "button": "Search",
+    "hint": "⌘K",
+    "title": "Search the site",
+    "placeholder": "Search pages, projects, writing, or profile details",
+    "loading": "Loading search index…",
+    "empty_state": "Start typing or pick a suggested destination.",
+    "no_results": "No matching results found.",
+    "results_label": "Search results",
+    "close": "Close"
+  },
   "seo": {
     "site_description": "Loïc Lavergne is an Engineering Manager leading mobile products, architecture, and delivery across Roole Map and Roole Premium.",
     "og_image": "/assets/img/og/og-default.svg"

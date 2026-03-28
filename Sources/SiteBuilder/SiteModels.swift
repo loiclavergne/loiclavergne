@@ -224,6 +224,7 @@ struct LocaleContent: Decodable {
     let labels: [String: String]
     let footer: FooterContent
     let theme: ThemeContent
+    let search: SearchContent
     let seo: SEOContent
     let notFound: NotFoundContent
     let home: HomePage
@@ -247,6 +248,18 @@ struct ThemeContent: Decodable {
     let auto: String
     let light: String
     let dark: String
+}
+
+struct SearchContent: Decodable {
+    let button: String
+    let hint: String
+    let title: String
+    let placeholder: String
+    let loading: String
+    let emptyState: String
+    let noResults: String
+    let resultsLabel: String
+    let close: String
 }
 
 struct SEOContent: Decodable {

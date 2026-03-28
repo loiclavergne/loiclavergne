@@ -183,7 +183,7 @@ struct SiteRenderer {
         for locale in payload.locales.keys.sorted() {
             let localeContent = try localeContent(locale)
             let items = try payload.pageKeys.map { pageKey -> [String: String] in
-                let metadata = try pageMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale)
+                let metadata = try searchIndexMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale)
                 let route = try pagePath(pageKey, locale: locale)
 
                 return [
@@ -288,6 +288,11 @@ struct SiteRenderer {
         return payload.site.baseUrl + "/site.webmanifest"
     }
 
+    /// Build a localized search-index path.
+    func searchIndexPath(for locale: String) -> String {
+        locale == "fr" ? "/fr/search-index.json" : "/search-index.json"
+    }
+
     /// Render the theme bootstrap script used before CSS paints.
     func renderThemeBootstrapScript() -> String {
         """
@@ -352,6 +357,63 @@ struct SiteRenderer {
 
         let data = try JSONSerialization.data(withJSONObject: translations, options: [.prettyPrinted, .sortedKeys])
         return String(decoding: data, as: UTF8.self).replacingOccurrences(of: "</", with: "<\\/")
+    }
+
+    /// Render the localized search UI configuration.
+    func renderSearchConfig(locale: String, localeContent: LocaleContent) throws -> String {
+        let config: [String: Any] = [
+            "close": localeContent.search.close,
+            "emptyState": localeContent.search.emptyState,
+            "hint": localeContent.search.hint,
+            "indexURL": searchIndexPath(for: locale),
+            "loading": localeContent.search.loading,
+            "noResults": localeContent.search.noResults,
+            "placeholder": localeContent.search.placeholder,
+            "resultsLabel": localeContent.search.resultsLabel,
+            "sectionLabels": localeContent.nav,
+            "title": localeContent.search.title
+        ]
+
+        let data = try JSONSerialization.data(withJSONObject: config, options: [.prettyPrinted, .sortedKeys])
+        return String(decoding: data, as: UTF8.self).replacingOccurrences(of: "</", with: "<\\/")
+    }
+
+    /// Render the shared search modal for the current locale.
+    func renderSearchModal(locale: String) throws -> String {
+        let localeContent = try localeContent(locale)
+        let search = localeContent.search
+        let config = try renderSearchConfig(locale: locale, localeContent: localeContent)
+
+        return """
+            <div class="search-modal" data-search-modal hidden>
+              <div class="search-modal__backdrop" data-search-close></div>
+              <section class="search-modal__sheet" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title">
+                <div class="search-modal__header">
+                  <div>
+                    <span class="eyebrow">\(escapeHTML(search.button))</span>
+                    <h2 id="site-search-title">\(escapeHTML(search.title))</h2>
+                  </div>
+                  <button class="search-modal__close" type="button" data-search-close">\(escapeHTML(search.close))</button>
+                </div>
+                <div class="search-modal__field">
+                  <input
+                    class="search-modal__input"
+                    type="search"
+                    data-search-input
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="\(escapeHTML(search.placeholder))"
+                    aria-label="\(escapeHTML(search.title))"
+                  >
+                </div>
+                <p class="search-modal__status" data-search-status aria-live="polite">\(escapeHTML(search.emptyState))</p>
+                <ul class="search-results" data-search-results aria-label="\(escapeHTML(search.resultsLabel))"></ul>
+              </section>
+            </div>
+            <script type="application/json" id="search-config">
+        \(config)
+            </script>
+        """
     }
 
     /// Map a route like `/fr/projects/` to the generated output file.
@@ -476,6 +538,38 @@ struct SiteRenderer {
 
             if let detailPage = localeContent.libraryDetails[pageKey] {
                 return (detailPage.pageTitle, detailPage.description)
+            }
+
+            throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
+        }
+    }
+
+    /// Resolve cleaner metadata for the generated search index.
+    func searchIndexMetadata(pageKey: String, localeContent: LocaleContent, locale: String) throws -> (title: String, description: String) {
+        switch pageKey {
+        case "home":
+            return (localeContent.nav["home"] ?? "Home", localeContent.home.lede)
+        case "work":
+            return (localeContent.work.title, localeContent.work.intro)
+        case "projects":
+            return (localeContent.projects.title, localeContent.projects.intro)
+        case "writing":
+            return (localeContent.writing.title, localeContent.writing.intro)
+        case "library":
+            return (localeContent.library.title, localeContent.library.intro)
+        case "about":
+            return (localeContent.about.title, localeContent.about.intro)
+        default:
+            if let detailPage = localeContent.projectDetails[pageKey] {
+                return (detailPage.title, detailPage.summary)
+            }
+
+            if let detailPage = localeContent.writingDetails[pageKey] {
+                return (detailPage.title, detailPage.intro)
+            }
+
+            if let detailPage = localeContent.libraryDetails[pageKey] {
+                return (detailPage.title, detailPage.intro)
             }
 
             throw SiteBuilderError.missingRoute(pageKey: pageKey, locale: locale)
@@ -610,6 +704,7 @@ struct SiteRenderer {
     func renderNav(locale: String, currentPage: String) throws -> String {
         let localeContent = try localeContent(locale)
         let labels = localeContent.labels
+        let search = localeContent.search
         let switchLocale = localeContent.switchLocale
         let switchPath = try pagePath(currentPage, locale: switchLocale)
         let orderedPageKeys = ["home", "work", "projects", "writing", "library", "about"]
@@ -633,6 +728,10 @@ struct SiteRenderer {
                   \(links)
                 </nav>
                 <div class="site-header__controls">
+                  <button class="search-trigger" type="button" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+                    <span class="search-trigger__label">\(escapeHTML(search.button))</span>
+                    <span class="search-trigger__hint" aria-hidden="true">\(escapeHTML(search.hint))</span>
+                  </button>
                   <div class="theme-switcher" aria-label="\(escapeHTML(localeContent.theme.label))">
                     <button class="theme-switcher__button" type="button" data-theme-control="auto">\(escapeHTML(localeContent.theme.auto))</button>
                     <button class="theme-switcher__button" type="button" data-theme-control="light">\(escapeHTML(localeContent.theme.light))</button>
@@ -2016,6 +2115,7 @@ struct SiteRenderer {
         \(try renderMain(pageKey: pageKey, locale: locale))
           </main>
         \(try renderFooter(locale: locale))
+        \(try renderSearchModal(locale: locale))
           <script type="module" src="/js/site.js"></script>
         </body>
         </html>

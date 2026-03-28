@@ -42,7 +42,7 @@ Core source files:
 - `Sources/SiteServer/main.swift`: local Swift static file server for browser previews
 - `css/tokens.css`: design tokens, themes, and motion settings
 - `css/site.css`: layout, components, responsive rules, and page styling
-- `js/site.js`: appearance switching, reveal behavior, and homepage story activation
+- `js/site.js`: appearance switching, reveal behavior, homepage story activation, and localized command-palette search
 - `assets/img/og/og-default.svg`: shared Open Graph image and SVG favicon
 
 Generated output:
@@ -82,6 +82,9 @@ Rebuild the site:
 ```bash
 swift run SiteBuilder
 ```
+
+The generated site includes a localized command-palette search powered by the
+static search indexes. Use `⌘K`, `Ctrl-K`, or `/` in the browser to open it.
 
 Validate the bundled content without writing output files:
 
@@ -130,6 +133,7 @@ The v1 architecture includes:
 - a real library archive with empty-state support and future book-page scaffolding
 - real sports and trophy archive surfaces inside the about page
 - localized Atom feeds, localized search indexes, localized web app manifests, GitHub Pages hosting files, and a static `robots.txt`
+- localized command-palette search powered by static English and French search indexes
 - localized sitemap alternates for English and French routes
 - page-type-aware JSON-LD and breadcrumb structured data
 - Swift test coverage for route integrity, internal-link integrity, support files, and metadata regressions
