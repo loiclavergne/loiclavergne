@@ -263,6 +263,8 @@ struct SearchContent: Decodable {
     let recoveryLabel: String
     let switchLocaleDescription: String
     let suggestedLabel: String
+    let emailDescription: String
+    let openProfileDescription: String
     let themeAutoDescription: String
     let themeLightDescription: String
     let themeDarkDescription: String

@@ -617,7 +617,7 @@ function initSearchPalette() {
   function defaultItems() {
     const recent = recentItems();
     const recentRoutes = new Set(recent.map((item) => item.route).filter(Boolean));
-    const actionItems = config.actionItems;
+    const actionItems = config.actionItems.filter((item) => item.section === "__actions__");
     const suggestions = searchItems()
       .filter((item) => item.kind === "page")
       .concat(searchItems().filter((item) => item.kind === "project"))

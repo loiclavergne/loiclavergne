@@ -395,6 +395,28 @@ struct SiteRenderer {
         let switchPath = try pagePath(currentPage, locale: switchLocale)
         let switchDescription = localeContent.search.switchLocaleDescription
             .replacingOccurrences(of: "{{locale}}", with: localeContent.switchLabel)
+        let contactActions: [[String: String]] = [
+            [
+                "description": localeContent.search.emailDescription
+                    .replacingOccurrences(of: "{{email}}", with: payload.site.contactEmail),
+                "kind": "action",
+                "locale": locale,
+                "route": "mailto:\(payload.site.contactEmail)",
+                "section": "__contact__",
+                "title": label(localeContent.labels, key: "email", fallback: "Email")
+            ]
+        ] + payload.site.socials.map { social in
+            [
+                "description": localeContent.search.openProfileDescription
+                    .replacingOccurrences(of: "{{label}}", with: social.label),
+                "kind": "action",
+                "locale": locale,
+                "route": social.href,
+                "section": "__contact__",
+                "title": social.label
+            ]
+        }
+
         let actionItems: [[String: String]] = [
             [
                 "action": "theme:auto",
@@ -428,10 +450,11 @@ struct SiteRenderer {
                 "section": "__actions__",
                 "title": localeContent.switchLabel
             ]
-        ]
+        ] + contactActions
 
         var sectionLabels = localeContent.nav
         sectionLabels["__actions__"] = localeContent.search.quickActionsLabel
+        sectionLabels["__contact__"] = label(localeContent.labels, key: "reach_out", fallback: "Reach out")
 
         let config: [String: Any] = [
             "actionItems": actionItems,

@@ -65,6 +65,8 @@
     "recovery_label": "Try one of these destinations instead.",
     "switch_locale_description": "Open this page in {{locale}}.",
     "suggested_label": "Suggested destinations",
+    "email_description": "Write to {{email}}.",
+    "open_profile_description": "Open {{label}}.",
     "theme_auto_description": "Follow the system appearance.",
     "theme_light_description": "Use the light appearance.",
     "theme_dark_description": "Use the dark appearance.",
