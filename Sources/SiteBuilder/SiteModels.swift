@@ -356,6 +356,7 @@ enum SiteBuilderError: Error, LocalizedError {
     case missingResource(String)
     case missingRoute(pageKey: String, locale: String)
     case missingLocale(String)
+    case invalidURL(String)
 
     var errorDescription: String? {
         switch self {
@@ -365,6 +366,8 @@ enum SiteBuilderError: Error, LocalizedError {
             return "Missing route for page '\(pageKey)' and locale '\(locale)'"
         case let .missingLocale(locale):
             return "Missing locale content for '\(locale)'"
+        case let .invalidURL(url):
+            return "Invalid site URL: \(url)"
         }
     }
 }

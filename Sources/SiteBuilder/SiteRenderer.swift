@@ -166,6 +166,24 @@ struct SiteRenderer {
         try robots.write(to: rootURL.appendingPathComponent("robots.txt"), atomically: true, encoding: .utf8)
     }
 
+    /// Write GitHub Pages hosting support files derived from site metadata.
+    func buildHostingFiles() throws {
+        guard let host = URL(string: payload.site.baseUrl)?.host, !host.isEmpty else {
+            throw SiteBuilderError.invalidURL(payload.site.baseUrl)
+        }
+
+        try "\(host)\n".write(
+            to: rootURL.appendingPathComponent("CNAME"),
+            atomically: true,
+            encoding: .utf8
+        )
+        try "".write(
+            to: rootURL.appendingPathComponent(".nojekyll"),
+            atomically: true,
+            encoding: .utf8
+        )
+    }
+
     /// Resolve a localized route for the page.
     func pagePath(_ pageKey: String, locale: String) throws -> String {
         guard let localizedRoutes = payload.routes[pageKey], let path = localizedRoutes[locale] else {

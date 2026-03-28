@@ -50,6 +50,8 @@ Generated output:
 - `fr/feed.xml`
 - `site.webmanifest`
 - `fr/site.webmanifest`
+- `CNAME`
+- `.nojekyll`
 - `fr/**/index.html`
 - `work/index.html`
 - `projects/index.html`
@@ -117,7 +119,7 @@ The v1 architecture includes:
 - a real writing archive with empty-state support and future article-page scaffolding
 - a real library archive with empty-state support and future book-page scaffolding
 - real sports and trophy archive surfaces inside the about page
-- localized Atom feeds, localized web app manifests, and a static `robots.txt`
+- localized Atom feeds, localized web app manifests, GitHub Pages hosting files, and a static `robots.txt`
 - page-type-aware JSON-LD and breadcrumb structured data
 - Swift test coverage for route integrity, support files, and metadata regressions
 - English and French localization

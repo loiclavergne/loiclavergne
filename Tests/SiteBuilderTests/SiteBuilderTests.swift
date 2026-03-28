@@ -75,6 +75,7 @@ final class SiteBuilderTests: XCTestCase {
         try renderer.buildFeeds()
         try renderer.buildManifests()
         try renderer.buildRobots()
+        try renderer.buildHostingFiles()
 
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("index.html").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("writing/index.html").path))
@@ -85,6 +86,8 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("fr/site.webmanifest").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("robots.txt").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("sitemap.xml").path))
+        XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("CNAME").path))
+        XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent(".nojekyll").path))
 
         let englishFeed = try String(contentsOf: outputRoot.appendingPathComponent("feed.xml"), encoding: .utf8)
         XCTAssertTrue(englishFeed.contains("<feed xmlns=\"http://www.w3.org/2005/Atom\""))
@@ -115,6 +118,12 @@ final class SiteBuilderTests: XCTestCase {
         let robots = try String(contentsOf: outputRoot.appendingPathComponent("robots.txt"), encoding: .utf8)
         XCTAssertTrue(robots.contains("User-agent: *"))
         XCTAssertTrue(robots.contains("Sitemap: https://loic.engineer/sitemap.xml"))
+
+        let cname = try String(contentsOf: outputRoot.appendingPathComponent("CNAME"), encoding: .utf8)
+        XCTAssertEqual(cname, "loic.engineer\n")
+
+        let noJekyll = try String(contentsOf: outputRoot.appendingPathComponent(".nojekyll"), encoding: .utf8)
+        XCTAssertEqual(noJekyll, "")
     }
 
     func testStructuredDataUsesPageSpecificSchemaTypes() throws {
