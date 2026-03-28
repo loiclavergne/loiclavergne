@@ -1,0 +1,135 @@
+{
+  "generated_at" : "2026-03-27",
+  "items" : [
+    {
+      "description" : "Leadership d'ingénierie pour les produits mobiles, la stratégie produit, l'architecture et la delivery.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/",
+      "section" : "home",
+      "title" : "Loïc Lavergne | Engineering Manager, produits mobiles"
+    },
+    {
+      "description" : "Rôle actuel, périmètre de leadership produit et parcours professionnel.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/work\/",
+      "section" : "work",
+      "title" : "Travail | Loïc Lavergne"
+    },
+    {
+      "description" : "Projets actuels, passés et personnels autour des produits mobiles et de l'édition numérique.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/",
+      "section" : "projects",
+      "title" : "Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Page projet Roole Map sur le socle mobile, l'évolution d'architecture et la delivery multi-équipes.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/roole-map\/",
+      "section" : "projects",
+      "title" : "Roole Map | Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Page projet Roole Premium sur la delivery produit membre, les standards mobiles partagés et les pratiques multi-applications.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/roole-premium\/",
+      "section" : "projects",
+      "title" : "Roole Premium | Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Page projet Vialife Digital sur les API, lecteurs, transformations de contenu, audio, voix et stratégie plateforme pour les éditeurs.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/vialife-digital\/",
+      "section" : "projects",
+      "title" : "Vialife Digital | Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Page projet MyViapresse sur l'évolution iOS native, les abonnements, la lecture hors ligne et la delivery produit grand public dans la durée.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/myviapresse\/",
+      "section" : "projects",
+      "title" : "MyViapresse | Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Page projet Digital Press Applications sur un socle mobile partagé au service de plusieurs produits presse et modèles d'accès.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/digital-press-applications\/",
+      "section" : "projects",
+      "title" : "Digital Press Applications | Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Page projet Dakar Presse sur l'accès mobile à la presse sénégalaise, les abonnements et une lecture fiable pour une audience distribuée.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/dakar-presse\/",
+      "section" : "projects",
+      "title" : "Dakar Presse | Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Étude de cas sur Le Moniteur des Pharmacies, produit iOS natif pour les pharmaciens entre actualités, formation et outils de référence.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/le-moniteur-des-pharmacies\/",
+      "section" : "projects",
+      "title" : "Le Moniteur des Pharmacies | Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Étude de cas sur Le Point Vétérinaire.fr, produit iOS natif pour les vétérinaires entre actualités, formation, outils pratiques et données de référence.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/le-point-veterinaire\/",
+      "section" : "projects",
+      "title" : "Le Point Vétérinaire.fr | Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Étude de cas du portfolio lui-même : un site statique bilingue pensé comme un produit dans la durée.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/loic-engineer\/",
+      "section" : "projects",
+      "title" : "loic.engineer | Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Étude de cas d'un socle mobile interne réutilisable conçu pour accélérer la création de nouveaux produits.",
+      "kind" : "project",
+      "locale" : "fr",
+      "route" : "\/fr\/projects\/templated-mobile-starter\/",
+      "section" : "projects",
+      "title" : "Templated Mobile Starter | Projets | Loïc Lavergne"
+    },
+    {
+      "description" : "Architecture du blog et futur archive d'articles.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/writing\/",
+      "section" : "writing",
+      "title" : "Écrits | Loïc Lavergne"
+    },
+    {
+      "description" : "Livres, vie de lecteur et statistiques de lecture manuelles.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/library\/",
+      "section" : "library",
+      "title" : "Bibliothèque | Loïc Lavergne"
+    },
+    {
+      "description" : "Compétences, profil élargi, sport, trophées et contact.",
+      "kind" : "page",
+      "locale" : "fr",
+      "route" : "\/fr\/about\/",
+      "section" : "about",
+      "title" : "À propos | Loïc Lavergne"
+    }
+  ],
+  "locale" : "fr",
+  "site" : "Loïc Lavergne"
+}

@@ -178,6 +178,44 @@ struct SiteRenderer {
         }
     }
 
+    /// Write localized search indexes for future static search surfaces.
+    func buildSearchIndexes() throws {
+        for locale in payload.locales.keys.sorted() {
+            let localeContent = try localeContent(locale)
+            let items = try payload.pageKeys.map { pageKey -> [String: String] in
+                let metadata = try pageMetadata(pageKey: pageKey, localeContent: localeContent, locale: locale)
+                let route = try pagePath(pageKey, locale: locale)
+
+                return [
+                    "description": metadata.description,
+                    "kind": searchIndexKind(for: pageKey),
+                    "locale": locale,
+                    "route": route,
+                    "section": primaryPageKey(for: pageKey),
+                    "title": metadata.title
+                ]
+            }
+
+            let index: [String: Any] = [
+                "generated_at": payload.site.buildDate,
+                "items": items,
+                "locale": locale,
+                "site": payload.site.name
+            ]
+
+            let data = try JSONSerialization.data(withJSONObject: index, options: [.prettyPrinted, .sortedKeys])
+            let outputURL = locale == "fr"
+                ? rootURL.appendingPathComponent("fr/search-index.json")
+                : rootURL.appendingPathComponent("search-index.json")
+
+            try FileManager.default.createDirectory(
+                at: outputURL.deletingLastPathComponent(),
+                withIntermediateDirectories: true
+            )
+            try data.write(to: outputURL)
+        }
+    }
+
     /// Write the root robots.txt file.
     func buildRobots() throws {
         let robots = """
@@ -366,6 +404,23 @@ struct SiteRenderer {
         }
 
         return pageKey
+    }
+
+    /// Classify a page for the generated search index.
+    func searchIndexKind(for pageKey: String) -> String {
+        if pageKey.hasPrefix("project-") {
+            return "project"
+        }
+
+        if pageKey.hasPrefix("post-") {
+            return "post"
+        }
+
+        if pageKey.hasPrefix("book-") {
+            return "book"
+        }
+
+        return "page"
     }
 
     /// Resolve a project detail page from the locale payload.

@@ -1,0 +1,135 @@
+{
+  "generated_at" : "2026-03-27",
+  "items" : [
+    {
+      "description" : "Engineering leadership for mobile products, product strategy, architecture, and delivery.",
+      "kind" : "page",
+      "locale" : "en",
+      "route" : "\/",
+      "section" : "home",
+      "title" : "Loïc Lavergne | Engineering Manager, Mobile Products"
+    },
+    {
+      "description" : "Current role, product leadership scope, and career timeline.",
+      "kind" : "page",
+      "locale" : "en",
+      "route" : "\/work\/",
+      "section" : "work",
+      "title" : "Work | Loïc Lavergne"
+    },
+    {
+      "description" : "Current, past, and hobby projects across mobile products and digital publishing.",
+      "kind" : "page",
+      "locale" : "en",
+      "route" : "\/projects\/",
+      "section" : "projects",
+      "title" : "Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "Roole Map case study covering mobile foundations, architecture evolution, and multi-team delivery.",
+      "kind" : "project",
+      "locale" : "en",
+      "route" : "\/projects\/roole-map\/",
+      "section" : "projects",
+      "title" : "Roole Map | Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "Roole Premium case study covering member product delivery, cross-app standards, and shared mobile operating practices.",
+      "kind" : "project",
+      "locale" : "en",
+      "route" : "\/projects\/roole-premium\/",
+      "section" : "projects",
+      "title" : "Roole Premium | Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "Vialife Digital case study covering APIs, readers, content transformation, audio, voice, and platform strategy for publishers.",
+      "kind" : "project",
+      "locale" : "en",
+      "route" : "\/projects\/vialife-digital\/",
+      "section" : "projects",
+      "title" : "Vialife Digital | Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "MyViapresse case study covering native iOS evolution, subscriptions, offline reading, and long-lived consumer product delivery.",
+      "kind" : "project",
+      "locale" : "en",
+      "route" : "\/projects\/myviapresse\/",
+      "section" : "projects",
+      "title" : "MyViapresse | Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "Digital Press Applications case study covering a shared mobile foundation for multiple branded press products and access models.",
+      "kind" : "project",
+      "locale" : "en",
+      "route" : "\/projects\/digital-press-applications\/",
+      "section" : "projects",
+      "title" : "Digital Press Applications | Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "Dakar Presse case study covering mobile access to Senegalese newspapers, subscriptions, and reliable reading for a distributed audience.",
+      "kind" : "project",
+      "locale" : "en",
+      "route" : "\/projects\/dakar-presse\/",
+      "section" : "projects",
+      "title" : "Dakar Presse | Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "Le Moniteur des Pharmacies case study covering native iOS delivery for pharmacists across news, training, and reference tools.",
+      "kind" : "project",
+      "locale" : "en",
+      "route" : "\/projects\/le-moniteur-des-pharmacies\/",
+      "section" : "projects",
+      "title" : "Le Moniteur des Pharmacies | Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "Le Point Vétérinaire.fr case study covering native iOS delivery for veterinarians across news, training, practical tools, and reference data.",
+      "kind" : "project",
+      "locale" : "en",
+      "route" : "\/projects\/le-point-veterinaire\/",
+      "section" : "projects",
+      "title" : "Le Point Vétérinaire.fr | Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "Case study for the portfolio itself: a bilingual static-first site treated like a long-term product.",
+      "kind" : "project",
+      "locale" : "en",
+      "route" : "\/projects\/loic-engineer\/",
+      "section" : "projects",
+      "title" : "loic.engineer | Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "Case study for an internal reusable mobile starter designed to accelerate new product foundations.",
+      "kind" : "project",
+      "locale" : "en",
+      "route" : "\/projects\/templated-mobile-starter\/",
+      "section" : "projects",
+      "title" : "Templated Mobile Starter | Projects | Loïc Lavergne"
+    },
+    {
+      "description" : "Blog architecture and future writing archive.",
+      "kind" : "page",
+      "locale" : "en",
+      "route" : "\/writing\/",
+      "section" : "writing",
+      "title" : "Writing | Loïc Lavergne"
+    },
+    {
+      "description" : "Books, reading life, and manual reading stats.",
+      "kind" : "page",
+      "locale" : "en",
+      "route" : "\/library\/",
+      "section" : "library",
+      "title" : "Library | Loïc Lavergne"
+    },
+    {
+      "description" : "Skills, broader profile, sports, trophies, and contact.",
+      "kind" : "page",
+      "locale" : "en",
+      "route" : "\/about\/",
+      "section" : "about",
+      "title" : "About | Loïc Lavergne"
+    }
+  ],
+  "locale" : "en",
+  "site" : "Loïc Lavergne"
+}

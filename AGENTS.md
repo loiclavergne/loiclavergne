@@ -40,6 +40,8 @@ Primary source files:
 Generated output:
 - `index.html`
 - `404.html`
+- `search-index.json`
+- `fr/search-index.json`
 - `fr/**/index.html`
 - `work/index.html`
 - `projects/index.html`

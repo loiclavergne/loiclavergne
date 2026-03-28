@@ -50,6 +50,8 @@ Generated output:
 - `404.html`
 - `feed.xml`
 - `fr/feed.xml`
+- `search-index.json`
+- `fr/search-index.json`
 - `site.webmanifest`
 - `fr/site.webmanifest`
 - `CNAME`
@@ -127,7 +129,7 @@ The v1 architecture includes:
 - a real writing archive with empty-state support and future article-page scaffolding
 - a real library archive with empty-state support and future book-page scaffolding
 - real sports and trophy archive surfaces inside the about page
-- localized Atom feeds, localized web app manifests, GitHub Pages hosting files, and a static `robots.txt`
+- localized Atom feeds, localized search indexes, localized web app manifests, GitHub Pages hosting files, and a static `robots.txt`
 - localized sitemap alternates for English and French routes
 - page-type-aware JSON-LD and breadcrumb structured data
 - Swift test coverage for route integrity, internal-link integrity, support files, and metadata regressions

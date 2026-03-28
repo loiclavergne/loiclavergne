@@ -80,6 +80,7 @@ final class SiteBuilderTests: XCTestCase {
         try renderer.buildSitemap()
         try renderer.buildFeeds()
         try renderer.buildManifests()
+        try renderer.buildSearchIndexes()
         try renderer.buildRobots()
         try renderer.buildHostingFiles()
 
@@ -91,6 +92,8 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("fr/feed.xml").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("site.webmanifest").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("fr/site.webmanifest").path))
+        XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("search-index.json").path))
+        XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("fr/search-index.json").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("robots.txt").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("sitemap.xml").path))
         XCTAssertTrue(FileManager.default.fileExists(atPath: outputRoot.appendingPathComponent("CNAME").path))
@@ -121,6 +124,24 @@ final class SiteBuilderTests: XCTestCase {
 
         let frenchHome = try String(contentsOf: outputRoot.appendingPathComponent("fr/index.html"), encoding: .utf8)
         XCTAssertTrue(frenchHome.contains("<link rel=\"manifest\" href=\"https://loic.engineer/fr/site.webmanifest\">"))
+
+        let englishSearchIndexData = try Data(contentsOf: outputRoot.appendingPathComponent("search-index.json"))
+        let englishSearchIndex = try XCTUnwrap(
+            try JSONSerialization.jsonObject(with: englishSearchIndexData) as? [String: Any]
+        )
+        XCTAssertEqual(englishSearchIndex["locale"] as? String, "en")
+        let englishItems = try XCTUnwrap(englishSearchIndex["items"] as? [[String: String]])
+        XCTAssertEqual(englishItems.count, payload.pageKeys.count)
+        XCTAssertTrue(englishItems.contains(where: { $0["route"] == "/projects/roole-map/" && $0["kind"] == "project" }))
+
+        let frenchSearchIndexData = try Data(contentsOf: outputRoot.appendingPathComponent("fr/search-index.json"))
+        let frenchSearchIndex = try XCTUnwrap(
+            try JSONSerialization.jsonObject(with: frenchSearchIndexData) as? [String: Any]
+        )
+        XCTAssertEqual(frenchSearchIndex["locale"] as? String, "fr")
+        let frenchItems = try XCTUnwrap(frenchSearchIndex["items"] as? [[String: String]])
+        XCTAssertEqual(frenchItems.count, payload.pageKeys.count)
+        XCTAssertTrue(frenchItems.contains(where: { $0["route"] == "/fr/projects/roole-map/" && $0["kind"] == "project" }))
 
         let notFound = try String(contentsOf: outputRoot.appendingPathComponent("404.html"), encoding: .utf8)
         XCTAssertTrue(notFound.contains("\"documentTitle\" : \"Page not found | Loïc Lavergne\""))
@@ -195,6 +216,7 @@ final class SiteBuilderTests: XCTestCase {
         try renderer.buildSitemap()
         try renderer.buildFeeds()
         try renderer.buildManifests()
+        try renderer.buildSearchIndexes()
         try renderer.buildRobots()
         try renderer.buildHostingFiles()
 
