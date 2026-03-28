@@ -71,6 +71,12 @@ longer part of the active architecture.
 - `.github/workflows/ci.yml`
   GitHub Actions pipeline that mirrors the local validation flow and checks
   that generated output is up to date.
+- `.github/workflows/deploy.yml`
+  GitHub Pages deployment pipeline that publishes only the staged static site
+  surface after CI succeeds on `main` or via manual dispatch.
+- `scripts/stage-pages.sh`
+  Local staging helper that copies only public site files into `.pages-dist/`
+  for deployment artifacts.
 - `Sources/SiteBuilder/Resources/site-metadata.json`
   Shared source of truth for site metadata, route definitions, social links,
   and the generated page inventory.
@@ -216,6 +222,11 @@ validation sequence:
 - `swift test --package-path /Users/loki/Developer/portfolio`
 - `swift run SiteBuilder`
 - `git diff --quiet` to catch stale generated output
+
+Deployment is intentionally separate from validation:
+- `ci.yml` verifies the committed build inputs and outputs
+- `deploy.yml` publishes only the staged public surface, not the full repo
+- `scripts/stage-pages.sh` is the single source of truth for what gets shipped
 
 ## Why No Framework
 

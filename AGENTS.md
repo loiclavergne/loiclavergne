@@ -26,6 +26,8 @@ proprietary assets or visual materials.
 Primary source files:
 - `Package.swift`: Swift package manifest for the local site builder
 - `.github/workflows/ci.yml`: GitHub Actions validation workflow for build, tests, and generated output freshness
+- `.github/workflows/deploy.yml`: GitHub Pages deployment workflow for the staged public site surface
+- `scripts/stage-pages.sh`: deployment staging script that defines exactly which public files are shipped
 - `Sources/SiteBuilder/Resources/site-metadata.json`: shared metadata, routes, and page inventory
 - `Sources/SiteBuilder/Resources/locales/en.json`: English content source of truth
 - `Sources/SiteBuilder/Resources/locales/fr.json`: French content source of truth
@@ -79,6 +81,9 @@ Active runtime assets are intentionally minimal:
 - Keep the GitHub Actions workflow aligned with the supported local
   verification flow. If build, validation, or generation steps change, update
   `.github/workflows/ci.yml` in the same pass.
+- Keep deployment scoped to the public static surface. If generated outputs or
+  runtime assets change, update `scripts/stage-pages.sh` and
+  `.github/workflows/deploy.yml` in the same pass.
 - Do not reintroduce the removed Bootstrap, vendor, or JSON-driven asset tree
   unless there is a concrete architectural reason and the docs are updated in
   the same pass.

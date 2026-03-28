@@ -34,6 +34,8 @@ There are no required external package dependencies for the current build.
 Core source files:
 - `Package.swift`: Swift package manifest for the local generator
 - `.github/workflows/ci.yml`: GitHub Actions validation pipeline for the static build
+- `.github/workflows/deploy.yml`: GitHub Pages deployment workflow for the staged public site
+- `scripts/stage-pages.sh`: stages only the public static surface for Pages deployment
 - `Sources/SiteBuilder/Resources/site-metadata.json`: shared site metadata, routes, and page inventory
 - `Sources/SiteBuilder/Resources/locales/en.json`: English content source of truth
 - `Sources/SiteBuilder/Resources/locales/fr.json`: French content source of truth
@@ -171,6 +173,11 @@ Pages.
 The repo also includes a GitHub Actions workflow that runs the Swift build,
 payload validation, test suite, full site generation, and a generated-output
 freshness check on every push and pull request.
+
+Deployment is handled by a separate GitHub Pages workflow. It stages only the
+public site surface into a temporary `.pages-dist/` directory, uploads that
+artifact, and deploys it after successful CI runs on `main` or by manual
+dispatch.
 
 If a future feature truly requires live processing, the preferred escalation
 path is:

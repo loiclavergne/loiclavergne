@@ -18,6 +18,7 @@ Priority for the current implementation phase:
 - add deeper project storytelling through localized static detail pages
 - turn generated support outputs into polished user-facing static features
 - keep local and CI validation paths equally strict
+- keep deployment limited to the generated public site surface
 - keep placeholder states elegant where source content is not available yet
 - avoid regressing into archived vendor or data-loading patterns
 
