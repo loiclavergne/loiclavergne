@@ -1,0 +1,112 @@
+{
+  "site": {
+    "base_url": "https://loic.engineer",
+    "name": "Loïc Lavergne",
+    "app_name": "Loic Engineer Portfolio",
+    "lead_title": "Engineering Manager, Mobile Products",
+    "build_date": "2026-03-27",
+    "contact_email": "hello@loic.engineer",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/loiclavergne/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/loiclavergne/"
+      },
+      {
+        "label": "Bluesky",
+        "href": "https://bsky.app/profile/loic.engineer"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/loic.lavergne.tech"
+      }
+    ]
+  },
+  "routes": {
+    "home": {
+      "en": "/",
+      "fr": "/fr/"
+    },
+    "work": {
+      "en": "/work/",
+      "fr": "/fr/work/"
+    },
+    "projects": {
+      "en": "/projects/",
+      "fr": "/fr/projects/"
+    },
+    "project-roole-map": {
+      "en": "/projects/roole-map/",
+      "fr": "/fr/projects/roole-map/"
+    },
+    "project-roole-premium": {
+      "en": "/projects/roole-premium/",
+      "fr": "/fr/projects/roole-premium/"
+    },
+    "project-vialife-digital": {
+      "en": "/projects/vialife-digital/",
+      "fr": "/fr/projects/vialife-digital/"
+    },
+    "project-myviapresse": {
+      "en": "/projects/myviapresse/",
+      "fr": "/fr/projects/myviapresse/"
+    },
+    "project-digital-press-applications": {
+      "en": "/projects/digital-press-applications/",
+      "fr": "/fr/projects/digital-press-applications/"
+    },
+    "project-dakar-presse": {
+      "en": "/projects/dakar-presse/",
+      "fr": "/fr/projects/dakar-presse/"
+    },
+    "project-le-moniteur-des-pharmacies": {
+      "en": "/projects/le-moniteur-des-pharmacies/",
+      "fr": "/fr/projects/le-moniteur-des-pharmacies/"
+    },
+    "project-le-point-veterinaire": {
+      "en": "/projects/le-point-veterinaire/",
+      "fr": "/fr/projects/le-point-veterinaire/"
+    },
+    "project-loic-engineer": {
+      "en": "/projects/loic-engineer/",
+      "fr": "/fr/projects/loic-engineer/"
+    },
+    "project-templated-mobile-starter": {
+      "en": "/projects/templated-mobile-starter/",
+      "fr": "/fr/projects/templated-mobile-starter/"
+    },
+    "writing": {
+      "en": "/writing/",
+      "fr": "/fr/writing/"
+    },
+    "library": {
+      "en": "/library/",
+      "fr": "/fr/library/"
+    },
+    "about": {
+      "en": "/about/",
+      "fr": "/fr/about/"
+    }
+  },
+  "page_keys": [
+    "home",
+    "work",
+    "projects",
+    "project-roole-map",
+    "project-roole-premium",
+    "project-vialife-digital",
+    "project-myviapresse",
+    "project-digital-press-applications",
+    "project-dakar-presse",
+    "project-le-moniteur-des-pharmacies",
+    "project-le-point-veterinaire",
+    "project-loic-engineer",
+    "project-templated-mobile-starter",
+    "writing",
+    "library",
+    "about"
+  ]
+}

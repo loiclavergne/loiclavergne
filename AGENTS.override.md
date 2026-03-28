@@ -21,7 +21,7 @@ Priority for the current implementation phase:
 
 Current generator path:
 - Swift package executable `SiteBuilder`
-- JSON content resource bundled with the executable target
+- split JSON resources bundled with the executable target
 
 # Constraints To Respect
 

@@ -50,12 +50,13 @@ The repo keeps source files and generated output together.
 
 Rendering flow:
 1. `swift run SiteBuilder` launches the local Swift package executable.
-2. `Sources/SiteBuilder/Resources/site.json` provides localized routes, page metadata, and page data.
-3. `Sources/SiteBuilder/SiteModels.swift` decodes the content into typed Swift structures.
-4. `Sources/SiteBuilder/SiteRenderer.swift` renders complete HTML documents for each page, locale, project detail route, and the root `404.html` fallback.
-5. `Sources/SiteBuilder/main.swift` writes generated `index.html` files into the route folders, rebuilds the root `404.html`, and regenerates `sitemap.xml`, localized Atom feeds, localized web app manifests, `robots.txt`, and GitHub Pages hosting files.
-6. `swift run SiteServer` can serve the generated output locally for browser previews without Ruby, Node, or Python, including the root `404.html` on missing routes.
-7. `404.html` is generated from the same bilingual source-of-truth and provides localized recovery links for missing routes.
+2. `Sources/SiteBuilder/Resources/site-metadata.json` provides shared routes, site metadata, and the page inventory.
+3. `Sources/SiteBuilder/Resources/locales/en.json` and `Sources/SiteBuilder/Resources/locales/fr.json` provide localized page data.
+4. `Sources/SiteBuilder/SiteModels.swift` decodes the split resources into typed Swift structures.
+5. `Sources/SiteBuilder/SiteRenderer.swift` renders complete HTML documents for each page, locale, project detail route, and the root `404.html` fallback.
+6. `Sources/SiteBuilder/main.swift` writes generated `index.html` files into the route folders, rebuilds the root `404.html`, and regenerates `sitemap.xml`, localized Atom feeds, localized web app manifests, `robots.txt`, and GitHub Pages hosting files.
+7. `swift run SiteServer` can serve the generated output locally for browser previews without Ruby, Node, or Python, including the root `404.html` on missing routes.
+8. `404.html` is generated from the same bilingual source-of-truth and provides localized recovery links for missing routes.
 
 This keeps the shipped site fully static while avoiding duplicated hand-written
 HTML for every locale and page combination.
@@ -67,9 +68,13 @@ longer part of the active architecture.
 
 - `Package.swift`
   Swift package manifest for the site generator.
-- `Sources/SiteBuilder/Resources/site.json`
-  Source of truth for localized copy, navigation labels, route definitions,
-  social links, and public metadata.
+- `Sources/SiteBuilder/Resources/site-metadata.json`
+  Shared source of truth for site metadata, route definitions, social links,
+  and the generated page inventory.
+- `Sources/SiteBuilder/Resources/locales/en.json`
+  English source of truth for localized copy and page content.
+- `Sources/SiteBuilder/Resources/locales/fr.json`
+  French source of truth for localized copy and page content.
 - `Sources/SiteBuilder/SiteModels.swift`
   Typed content loading.
 - `Sources/SiteBuilder/SiteRenderer.swift`

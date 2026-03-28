@@ -1,0 +1,2001 @@
+{
+  "html_lang": "en",
+  "locale_code": "en_US",
+  "switch_locale": "fr",
+  "switch_label": "Français",
+  "skip_link": "Skip to content",
+  "nav": {
+    "home": "Home",
+    "work": "Work",
+    "projects": "Projects",
+    "writing": "Writing",
+    "library": "Library",
+    "about": "About"
+  },
+  "labels": {
+    "primary_nav": "Primary",
+    "social_links": "Social links",
+    "highlights": "Highlights",
+    "approach": "Approach",
+    "current_work": "Current Work",
+    "beyond_homepage": "Beyond the homepage",
+    "current_product": "Current Product",
+    "scope": "Scope",
+    "role_today": "Roole today",
+    "career": "Career",
+    "context": "Context",
+    "featured": "Featured",
+    "current_focus": "Current focus",
+    "view_project": "View project",
+    "read_post": "Read post",
+    "back_to_projects": "Back to projects",
+    "back_to_writing": "Back to writing",
+    "archive": "Archive",
+    "view_book": "View book",
+    "back_to_library": "Back to library",
+    "side_work": "Side Work",
+    "status": "Status",
+    "tracking": "Tracking",
+    "profile": "Profile",
+    "life": "Life",
+    "milestones": "Milestones",
+    "reach_out": "Reach out",
+    "email": "Email"
+  },
+  "footer": {
+    "tagline": "Engineering leadership for mobile products, architecture, and delivery.",
+    "copyright": "All rights reserved."
+  },
+  "theme": {
+    "label": "Appearance",
+    "auto": "Auto",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "seo": {
+    "site_description": "Loïc Lavergne is an Engineering Manager leading mobile products, architecture, and delivery across Roole Map and Roole Premium.",
+    "og_image": "/assets/img/og/og-default.svg"
+  },
+  "not_found": {
+    "document_title": "Page not found | Loïc Lavergne",
+    "title": "Page not found.",
+    "copy": "The page you requested does not exist, or the URL has changed.",
+    "home": "Go home",
+    "primary": "Open work",
+    "note": "Use the links below to return to the portfolio.",
+    "aria_label": "Suggested destinations"
+  },
+  "home": {
+    "page_title": "Loïc Lavergne | Engineering Manager, Mobile Products",
+    "description": "Engineering leadership for mobile products, product strategy, architecture, and delivery.",
+    "eyebrow": "Loïc Lavergne",
+    "title": "Engineering leadership for mobile products.",
+    "lede": "I lead mobile product execution across Roole Map and Roole Premium, working at the intersection of roadmap planning, technical architecture, cross-team coordination, and delivery quality.",
+    "cta_primary": {
+      "label": "Explore current work",
+      "route": "work"
+    },
+    "cta_secondary": {
+      "label": "Browse projects",
+      "route": "projects"
+    },
+    "metrics": [
+      {
+        "value": "10+",
+        "label": "years building products on Apple platforms"
+      },
+      {
+        "value": "2",
+        "label": "current mobile products led at Roole"
+      },
+      {
+        "value": "iOS + Android",
+        "label": "delivery scope and coordination"
+      }
+    ],
+    "story_heading": "A calm, systems-level way of building mobile products.",
+    "story_intro": "The homepage should answer three questions quickly: what I do today, what products I am responsible for, and how I lead teams toward predictable, high-quality releases.",
+    "story_steps": [
+      {
+        "id": "today",
+        "eyebrow": "Today",
+        "title": "Engineering Manager at Roole.",
+        "copy": "The role spans strategic planning, technical coordination, and operational delivery for Roole's mobile applications.",
+        "facts": [
+          "Coordinates multiple development teams and Tech Leads.",
+          "Owns product and technical roadmaps with product and backend stakeholders.",
+          "Tracks risks, dependencies, and delivery outcomes."
+        ]
+      },
+      {
+        "id": "products",
+        "eyebrow": "Current Products",
+        "title": "Roole Map and Roole Premium.",
+        "copy": "The work is split between a public mobility product and a member companion application, with shared standards across both teams.",
+        "facts": [
+          "Roole Map focuses on everyday driving, routing, services, and local discovery.",
+          "Roole Premium centralizes member services, benefits, and assistance workflows.",
+          "Both products share architectural and organizational alignment work."
+        ]
+      },
+      {
+        "id": "method",
+        "eyebrow": "Method",
+        "title": "Roadmap, architecture, and delivery stay connected.",
+        "copy": "I work across product, backend, design, and engineering to keep delivery standards coherent without losing execution speed.",
+        "facts": [
+          "Architecture and API integration stay close to roadmap decisions.",
+          "Cross-team practices evolve alongside the products.",
+          "Build quality, tooling, and maintainability remain part of delivery."
+        ]
+      },
+      {
+        "id": "range",
+        "eyebrow": "Range",
+        "title": "Hands-on depth still informs the leadership layer.",
+        "copy": "My background spans Swift, Apple platforms, Android collaboration, backend APIs, applied AI, and product design coordination.",
+        "facts": [
+          "Apple platform specialist across iOS, watchOS, tvOS, and macOS.",
+          "Comfortable with delivery systems, APIs, CI, and product design workflows.",
+          "Building with agentic and AI-assisted engineering is part of the current skill set."
+        ]
+      }
+    ],
+    "featured_projects_heading": "Selected current work",
+    "entry_points_heading": "Explore the rest of the profile",
+    "entry_points": [
+      {
+        "route": "writing",
+        "title": "Writing",
+        "copy": "The publishing system is ready in v1, with the archive to be populated next."
+      },
+      {
+        "route": "library",
+        "title": "Library",
+        "copy": "Books, reading life, and manual yearly and monthly stats are part of the product plan."
+      },
+      {
+        "route": "about",
+        "title": "About",
+        "copy": "Skills, sports, trophy case, contact details, and the broader personal profile live here."
+      }
+    ]
+  },
+  "work": {
+    "page_title": "Work | Loïc Lavergne",
+    "description": "Current role, product leadership scope, and career timeline.",
+    "eyebrow": "Work",
+    "title": "Current leadership scope, then the path that led here.",
+    "intro": "The portfolio should be present-first, but the path matters. This page keeps the current role at the top and then expands into the broader career timeline.",
+    "current_role": {
+      "organization": "Roole",
+      "title": "Engineering Manager",
+      "period": "January 2026 to present",
+      "location": "Boulogne-Billancourt, Île-de-France, France",
+      "summary": "Responsible for strategic planning, technical coordination, and delivery execution across Roole's mobile applications.",
+      "highlights": [
+        "Coordinates multiple development teams and Tech Leads across Roole Map and Roole Premium.",
+        "Defines and maintains product and technical roadmaps with product and backend stakeholders.",
+        "Aligns developers, designers, backend teams, and partners on requirements and quality criteria.",
+        "Oversees architecture, API integration, tooling, and continuous integration practices.",
+        "Improves shared standards and cross-team collaboration across the mobile organization.",
+        "Communicates progress, risks, and milestones to product and executive stakeholders."
+      ]
+    },
+    "product_cards": [
+      {
+        "name": "Roole Map",
+        "summary": "A free mobility application for everyday driving in France, with routing, services, fuel, charging, parking, and localized data."
+      },
+      {
+        "name": "Roole Premium",
+        "summary": "The digital companion application for Roole members, centralizing services, benefits, assistance, and secure access to the broader ecosystem."
+      }
+    ],
+    "experience_heading": "Experience",
+    "experience": [
+      {
+        "title": "Engineering Manager",
+        "organization": "Roole",
+        "period": "Jan 2026 - Present",
+        "summary": "Leads planning, technical coordination, and delivery across Roole's mobile products.",
+        "highlights": [
+          "Coordinates multiple development teams and Tech Leads across Roole Map and Roole Premium.",
+          "Defines product and technical roadmaps with product and backend stakeholders.",
+          "Aligns mobile, design, backend, and partner delivery around shared quality criteria."
+        ]
+      },
+      {
+        "title": "Tech Lead Mobile",
+        "organization": "Roole",
+        "period": "Oct 2022 - Dec 2025",
+        "summary": "Led technical design and delivery for Roole Map and helped shape mobile delivery practices.",
+        "highlights": [
+          "Led technical design and day-to-day development of Roole Map.",
+          "Helped establish the technical foundations, mobile organization, and delivery practices for the Factory.",
+          "Worked closely with design, product, and backend teams on architecture and feature execution."
+        ]
+      },
+      {
+        "title": "Chief Digital Officer",
+        "organization": "Vialife",
+        "period": "Oct 2020 - Sep 2022",
+        "summary": "Directed Vialife Digital across technical strategy, product evolution, and business alignment.",
+        "highlights": [
+          "Directed Vialife Digital across APIs, readers, content transformation, audio, and voice products.",
+          "Combined technical leadership with product strategy and business development support for publishers.",
+          "Aligned digital execution with long-term platform evolution and adoption."
+        ]
+      },
+      {
+        "title": "Mobile Project Manager",
+        "organization": "Vialife",
+        "period": "Oct 2018 - Sep 2020",
+        "summary": "Managed cross-platform delivery, technical evolution, backend API work, and R&D initiatives.",
+        "highlights": [
+          "Led the mobile team across iOS and Android delivery, publication, and technical decisions.",
+          "Contributed hands-on to Apple platform development across iOS, watchOS, tvOS, macOS, and CarPlay.",
+          "Worked on backend APIs, Firebase integrations, in-app purchases, and R&D formats including VR and audio."
+        ]
+      },
+      {
+        "title": "iOS Developer, Project Manager",
+        "organization": "Things Are Moving",
+        "period": "Sep 2015 - Sep 2018",
+        "summary": "Designed, built, and delivered native Apple platform applications end to end.",
+        "highlights": [
+          "Built native iOS, watchOS, tvOS, and macOS apps in Swift from design through App Store release.",
+          "Combined hands-on implementation with project coordination and visual integration.",
+          "Worked with Core Data, Core Location, Core Animation, In-App Purchases, and GameKit."
+        ]
+      },
+      {
+        "title": ".NET Developer (Intern)",
+        "organization": "Air Liquide",
+        "period": "Apr 2014 - Sep 2014",
+        "summary": "Contributed to enterprise .NET software implementation and maintenance.",
+        "highlights": [
+          "Internship focused on enterprise .NET implementation in French Guiana."
+        ]
+      },
+      {
+        "title": "Symfony Developer (Intern)",
+        "organization": "Superprof",
+        "period": "Oct 2013 - Mar 2014",
+        "summary": "Worked on Symfony-based backend features and product iteration tasks.",
+        "highlights": [
+          "Internship focused on Symfony backend feature work in a fast product environment."
+        ]
+      },
+      {
+        "title": "Ruby Developer (Intern)",
+        "organization": "Ubudu",
+        "period": "Jun 2012 - Dec 2012",
+        "summary": "Early web product experience on Ruby-based systems in a startup context.",
+        "highlights": [
+          "Early startup experience on Ruby-based products."
+        ]
+      }
+    ],
+    "education_heading": "Education",
+    "education_intro": "Formal education details are still missing from the public profile, but the section can already distinguish between academic background, early technical formation, and ongoing self-directed learning.",
+    "education_cards": [
+      {
+        "title": "Academic timeline",
+        "copy": "Institution names, degree titles, and dates can be added here once the public version of the education history is ready.",
+        "items": [
+          "The page is already structured for a future formal timeline.",
+          "No renderer changes should be needed once the data is available."
+        ]
+      },
+      {
+        "title": "Early technical foundation",
+        "copy": "Before the Apple-platform specialization, the foundation was broadened through internships across Ruby, Symfony, and .NET environments.",
+        "items": [
+          "Ubudu introduced early startup product work in Ruby.",
+          "Superprof added Symfony backend experience.",
+          "Air Liquide added enterprise .NET implementation work."
+        ]
+      },
+      {
+        "title": "Continuous learning",
+        "copy": "A large part of the education path has come from shipping products directly: Apple platforms, backend APIs, product design coordination, digital publishing systems, and AI-assisted workflows.",
+        "items": [
+          "Learning stayed close to real delivery constraints.",
+          "The range expanded with each product generation rather than through one isolated domain."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "page_title": "Projects | Loïc Lavergne",
+    "description": "Current, past, and hobby projects across mobile products and digital publishing.",
+    "eyebrow": "Projects",
+    "title": "Products shipped across mobility, publishing, and platform evolution.",
+    "intro": "The project selection mixes current product leadership with earlier native delivery work. The goal is to show range without turning the site into a wall of cards.",
+    "featured": [
+      {
+        "name": "Roole Map",
+        "period": "Oct 2022 - Present",
+        "summary": "Free mobility application for everyday driving across France, covering routing, fuel, charging, parking, nearby services, and localized data.",
+        "details": [
+          "Structured the mobile codebase and drove architectural changes, including a transition toward MVVM with SwiftUI.",
+          "Expanded from hands-on technical leadership into technical roadmap definition and iOS / Android coordination.",
+          "Aligned frontend and backend delivery while evolving architecture, tooling, and process quality."
+        ],
+        "route": "project-roole-map"
+      },
+      {
+        "name": "Roole Premium",
+        "period": "Sep 2025 - Present",
+        "summary": "Digital companion application for Roole members, centralizing services, benefits, contract access, and assistance features.",
+        "details": [
+          "Coordinates mobile delivery alongside Roole Map under shared standards.",
+          "Aligns process, architecture, and collaboration patterns across multiple teams.",
+          "Helps tighten the connection between product roadmaps and engineering execution."
+        ],
+        "route": "project-roole-premium"
+      }
+    ],
+    "archive_heading": "Selected earlier work",
+    "archive": [
+      {
+        "name": "Vialife Digital",
+        "period": "Oct 2020 - Sep 2022",
+        "summary": "Digital press platform spanning APIs, mobile and web readers, content transformation, audio, and voice integrations.",
+        "details": [
+          "Combined APIs, native readers, PDF-to-article extraction, audio generation, and voice-assistant integrations.",
+          "Supported publishers across web, mobile, and emerging channels from a unified platform.",
+          "Built with security, authenticated service-to-service communication, and long-term scalability in mind."
+        ],
+        "route": "project-vialife-digital"
+      },
+      {
+        "name": "Digital Press Applications",
+        "period": "Oct 2018 - Aug 2022",
+        "summary": "Suite of branded mobile newsstand applications built on a shared architecture and reading framework.",
+        "details": [
+          "Shared architecture powering Discover Press, Hotel Presse, Salon Presse, Comptoir Presse, Big Press, and Hello Press.",
+          "Full ownership across project management, product design in Sketch, and native iOS delivery in Swift.",
+          "Kept reading experience, authentication, and catalog behavior consistent while supporting different access models."
+        ],
+        "route": "project-digital-press-applications"
+      },
+      {
+        "name": "MyViapresse",
+        "period": "Aug 2015 - Aug 2022",
+        "summary": "Consumer press application combining subscriptions, single-issue purchases, and offline reading.",
+        "details": [
+          "Evolved from Titanium hybrid origins to a native Swift implementation and later full rewrite.",
+          "Added single-issue and auto-renewable subscription flows with a proprietary reading framework.",
+          "Delivered catalog browsing, previews, offline reading, and cross-device access."
+        ],
+        "route": "project-myviapresse"
+      },
+      {
+        "name": "Dakar Presse",
+        "period": "Nov 2015 - Jul 2022",
+        "summary": "Mobile access to Senegalese daily newspapers for readers in Senegal and abroad.",
+        "details": [
+          "Served Senegalese readers locally and abroad with subscriptions, notifications, and offline reading.",
+          "Fully owned product design, project management, and iOS implementation on top of a custom Swift reading framework.",
+          "Focused on secure subscription flows and reliable access for a geographically distributed audience."
+        ],
+        "route": "project-dakar-presse"
+      },
+      {
+        "name": "Le Moniteur des Pharmacies",
+        "period": "Mar 2017 - Sep 2018",
+        "summary": "Native iOS application for pharmacists combining news, training, and professional reference tools.",
+        "details": [
+          "Aggregated news, PDF and article reading, training resources, and reference databases for pharmacists.",
+          "Focused on frequent professional use with complex content types inside one native iOS product."
+        ],
+        "route": "project-le-moniteur-des-pharmacies"
+      },
+      {
+        "name": "Le Point Vétérinaire.fr",
+        "period": "Mar 2017 - Sep 2018",
+        "summary": "Native iOS application for veterinarians with information access, practical tools, and training content.",
+        "details": [
+          "Combined news, training, practical tools, directories, and veterinary drug data in one app.",
+          "Designed for recurring professional use with unified access to reference and operational tools."
+        ],
+        "route": "project-le-point-veterinaire"
+      }
+    ],
+    "hobby_heading": "Hobby and internal side projects",
+    "hobby": [
+      {
+        "name": "loic.engineer",
+        "summary": "This portfolio itself, designed as a static-first product with bilingual architecture and editorial presentation.",
+        "details": [
+          "Bilingual static architecture generated with Swift and shipped as plain HTML.",
+          "Designed around Apple-inspired editorial pacing, privacy, and accessibility."
+        ],
+        "route": "project-loic-engineer"
+      },
+      {
+        "name": "Templated Mobile Starter",
+        "summary": "A reusable app foundation for faster mobile product kickoffs with shared architectural conventions.",
+        "details": [
+          "Internal starter focused on shared architecture, delivery conventions, and faster product setup.",
+          "Useful for keeping code organization and tooling consistent across new mobile efforts."
+        ],
+        "route": "project-templated-mobile-starter"
+      }
+    ]
+  },
+  "project_details": {
+    "project-roole-map": {
+      "page_title": "Roole Map | Projects | Loïc Lavergne",
+      "description": "Roole Map case study covering mobile foundations, architecture evolution, and multi-team delivery.",
+      "eyebrow": "Roole Map",
+      "title": "From mobile foundation to multi-team product delivery.",
+      "intro": "Roole Map is a free mobility application designed to simplify everyday driving across France. My involvement started with hands-on technical leadership and grew into a broader role spanning roadmap alignment, architecture evolution, and cross-team delivery.",
+      "role_title": "Tech Lead Mobile, then Engineering Manager",
+      "organization": "Roole",
+      "period": "October 2022 - Present",
+      "summary": "Built the first technical foundations of the product, then expanded the role into broader coordination across architecture, iOS and Android delivery, tooling, and shared operating standards.",
+      "highlights": [
+        "Structured the mobile codebase and led major architectural changes, including a move toward MVVM with SwiftUI.",
+        "Expanded from hands-on technical leadership into roadmap definition and cross-team delivery coordination.",
+        "Aligned frontend, backend, design, and product work while improving maintainability and delivery quality."
+      ],
+      "metrics": [
+        {
+          "value": "France",
+          "label": "territory-scale mobility product for everyday drivers"
+        },
+        {
+          "value": "MVVM + SwiftUI",
+          "label": "major mobile architecture evolution"
+        },
+        {
+          "value": "iOS + Android",
+          "label": "delivery coordination across both platforms"
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "Product",
+          "title": "A driver utility product grounded in real territory data.",
+          "intro": "The product is meant to be practical first: routing, fuel, charging, parking, nearby services, and place discovery all need to feel reliable in a single everyday experience.",
+          "cards": [
+            {
+              "title": "Driver utility first",
+              "copy": "The app is designed around frequent driving needs rather than novelty, which keeps the product surface concrete and useful.",
+              "items": [
+                "Routing and mobility services stay central.",
+                "The user value is immediate and recurring."
+              ]
+            },
+            {
+              "title": "Territory-aware information",
+              "copy": "Public and partner datasets are combined to expose localized information such as fuel shortages, service availability, and nearby points of interest.",
+              "items": [
+                "Reliability depends on aggregation and contextual presentation.",
+                "The French territory is part of the product's specificity."
+              ]
+            },
+            {
+              "title": "Navigation without lock-in",
+              "copy": "The product can guide users toward relevant destinations while still handing off to their preferred navigation tools when appropriate.",
+              "items": [
+                "The experience stays helpful without forcing one navigation pattern.",
+                "Interoperability matters as much as interface polish."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Engineering",
+          "title": "The mobile foundation had to evolve while the product kept shipping.",
+          "intro": "The role began with direct technical ownership of the application and later widened into architecture stewardship across a growing delivery surface.",
+          "cards": [
+            {
+              "title": "Foundations first",
+              "copy": "Early work focused on structuring the mobile codebase so the product could keep growing without accumulating delivery friction.",
+              "items": [
+                "Code organization and ownership had to become clearer.",
+                "The technical baseline needed to support iteration speed."
+              ]
+            },
+            {
+              "title": "Architecture evolution",
+              "copy": "A significant part of the work was guiding the application toward an MVVM architecture with SwiftUI while keeping maintainability and team readability high.",
+              "items": [
+                "Architecture changes were tied to real delivery needs.",
+                "The goal was durability, not framework fashion."
+              ]
+            },
+            {
+              "title": "Tooling and quality",
+              "copy": "Builds, integration practices, and development workflows were treated as part of product quality rather than as side concerns.",
+              "items": [
+                "Continuous integration and tooling help stabilize delivery.",
+                "Maintainability is part of release predictability."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Delivery",
+          "title": "The project became a coordination problem as much as a coding problem.",
+          "intro": "As the role widened, the work shifted toward keeping roadmap, backend dependencies, mobile execution, and shared standards aligned across teams.",
+          "cards": [
+            {
+              "title": "Roadmap and engineering together",
+              "copy": "Technical direction stayed connected to product priorities so architecture decisions could support delivery rather than drift away from it.",
+              "items": [
+                "Risks and dependencies stay visible earlier.",
+                "Planning becomes more credible when engineering is fully in the loop."
+              ]
+            },
+            {
+              "title": "Cross-platform alignment",
+              "copy": "The work now includes coordination across iOS and Android so product execution stays coherent even when implementation details differ.",
+              "items": [
+                "Shared standards reduce unnecessary divergence.",
+                "The coordination layer matters as the product grows."
+              ]
+            },
+            {
+              "title": "Frontend and backend rhythm",
+              "copy": "A meaningful part of the role is keeping frontend and backend delivery in sync so product changes remain feasible, maintainable, and testable.",
+              "items": [
+                "API integration is part of product planning.",
+                "Execution quality depends on inter-team rhythm."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "project-roole-premium": {
+      "page_title": "Roole Premium | Projects | Loïc Lavergne",
+      "description": "Roole Premium case study covering member product delivery, cross-app standards, and shared mobile operating practices.",
+      "eyebrow": "Roole Premium",
+      "title": "Coordinating a member product with shared mobile standards.",
+      "intro": "Roole Premium is the digital companion for Roole members, bringing together services, benefits, assistance features, and secure access to the broader ecosystem. The work sits at the intersection of member experience, delivery coordination, and consistency across Roole's mobile applications.",
+      "role_title": "Engineering Manager",
+      "organization": "Roole",
+      "period": "September 2025 - Present",
+      "summary": "Coordinates product delivery alongside Roole Map while aligning architecture, process, and team collaboration patterns across applications with overlapping mobile standards.",
+      "highlights": [
+        "Leads delivery coordination for a member-facing application tied to Roole's broader service ecosystem.",
+        "Aligns process and architecture decisions across multiple mobile teams and products.",
+        "Strengthens the link between product roadmaps, engineering execution, and shared quality expectations."
+      ],
+      "metrics": [
+        {
+          "value": "Members",
+          "label": "service and benefits companion application"
+        },
+        {
+          "value": "Shared standards",
+          "label": "mobile alignment across parallel products"
+        },
+        {
+          "value": "Multi-team",
+          "label": "coordination across delivery streams"
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "Product",
+          "title": "A secure entry point into the Roole member ecosystem.",
+          "intro": "The application centralizes member-facing services, which means the product has to feel clear, dependable, and trustworthy while supporting practical service flows.",
+          "cards": [
+            {
+              "title": "Member services in one place",
+              "copy": "Roole Premium acts as the mobile entry point for benefits, contracts, services, and assistance-related journeys.",
+              "items": [
+                "The product surface needs to stay legible despite service breadth.",
+                "Clarity matters as much as feature presence."
+              ]
+            },
+            {
+              "title": "Secure ecosystem access",
+              "copy": "Because the app touches member identity and service relationships, access patterns and integration choices need to remain robust and predictable.",
+              "items": [
+                "The mobile product is tied to trusted service access.",
+                "Architecture decisions need to support that trust."
+              ]
+            },
+            {
+              "title": "Service experience over feature sprawl",
+              "copy": "The challenge is not only to add capabilities, but to keep the member experience coherent as the ecosystem grows.",
+              "items": [
+                "Product consistency is a delivery concern.",
+                "Restraint is part of a premium experience."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Organization",
+          "title": "The delivery problem spans more than one app.",
+          "intro": "Roole Premium is not isolated work. It is coordinated in parallel with Roole Map, which makes shared standards and operating habits especially important.",
+          "cards": [
+            {
+              "title": "Parallel product coordination",
+              "copy": "Delivery decisions are made with awareness of multiple mobile products, teams, and dependencies instead of in a single-app bubble.",
+              "items": [
+                "Coordination helps remove avoidable misalignment.",
+                "The products can evolve independently without fragmenting the organization."
+              ]
+            },
+            {
+              "title": "Shared standards",
+              "copy": "Architecture, process, and quality criteria are aligned where it makes sense so the mobile organization can move with more consistency.",
+              "items": [
+                "Standards reduce operational friction.",
+                "Common expectations help scale delivery quality."
+              ]
+            },
+            {
+              "title": "Roadmap connection",
+              "copy": "A central part of the role is keeping product intent, technical planning, and execution timing closely connected across stakeholders.",
+              "items": [
+                "Dependencies stay visible earlier.",
+                "Delivery tradeoffs become easier to explain and manage."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Execution",
+          "title": "Quality comes from process, architecture, and rhythm together.",
+          "intro": "The value of the work is not only in individual features, but in making the delivery system more predictable across teams and releases.",
+          "cards": [
+            {
+              "title": "Architecture and APIs",
+              "copy": "Application structure and API integration practices are part of the ongoing enablement work needed for maintainable delivery.",
+              "items": [
+                "Technical quality supports long-term product evolution.",
+                "Integration work is part of operating reliability."
+              ]
+            },
+            {
+              "title": "Operational cadence",
+              "copy": "Execution improves when product, design, backend, and mobile teams share the same understanding of timing, risk, and release quality.",
+              "items": [
+                "Cadence is as important as roadmap intent.",
+                "Predictability is built through shared operating habits."
+              ]
+            },
+            {
+              "title": "Scalable delivery practices",
+              "copy": "The broader goal is to leave the mobile organization with processes and technical habits that remain useful beyond one application cycle.",
+              "items": [
+                "The work should compound over time.",
+                "The best process changes are the ones teams keep using."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "project-vialife-digital": {
+      "page_title": "Vialife Digital | Projects | Loïc Lavergne",
+      "description": "Vialife Digital case study covering APIs, readers, content transformation, audio, voice, and platform strategy for publishers.",
+      "eyebrow": "Vialife Digital",
+      "title": "A digital publishing platform built across products, formats, and channels.",
+      "intro": "Vialife Digital was designed to help press publishers manage, distribute, and evolve their digital content across web, mobile, audio, and voice surfaces. The work combined technical direction, product design, and business alignment around a platform rather than a single app.",
+      "role_title": "Chief Digital Officer",
+      "organization": "Vialife",
+      "period": "October 2020 - September 2022",
+      "summary": "Directed the design, development, and technical direction of Vialife Digital while contributing to business development and product strategy for publishers moving beyond traditional PDF distribution.",
+      "highlights": [
+        "Led the platform across APIs, web and native readers, content transformation, audio generation, and voice integrations.",
+        "Aligned product evolution with commercial and publisher needs instead of treating engineering as a separate track.",
+        "Kept security, scalability, and maintainability central as the platform surface expanded."
+      ],
+      "metrics": [
+        {
+          "value": "APIs + readers",
+          "label": "platform scope across service and experience layers"
+        },
+        {
+          "value": "Audio + voice",
+          "label": "distribution beyond traditional reading surfaces"
+        },
+        {
+          "value": "iOS + Android",
+          "label": "native framework and reader delivery footprint"
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "Platform",
+          "title": "The product was a system, not a single interface.",
+          "intro": "The value came from connecting content ingestion, transformation, distribution, and reading experiences into one coherent platform that publishers could actually operate.",
+          "cards": [
+            {
+              "title": "Unified publishing platform",
+              "copy": "Vialife Digital brought together APIs, readers, catalog management, and distribution surfaces so publishers could work from a more consistent digital base.",
+              "items": [
+                "The platform connected operational and end-user layers.",
+                "The product vision was broader than one channel or one device."
+              ]
+            },
+            {
+              "title": "Content transformation",
+              "copy": "A key part of the platform was turning source material such as PDFs into richer digital formats that could support better reading and distribution experiences.",
+              "items": [
+                "Article extraction helped move beyond static facsimile reading.",
+                "Transformation capabilities created room for more accessible formats."
+              ]
+            },
+            {
+              "title": "Native and web reading surfaces",
+              "copy": "The platform included both web and mobile reading experiences, plus native frameworks intended to package the platform capabilities into reusable delivery tools.",
+              "items": [
+                "The reader experience had to stay coherent across surfaces.",
+                "Reuse mattered for long-term product economics."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Expansion",
+          "title": "The platform pushed beyond classic reading apps.",
+          "intro": "The work explored how press content could be repurposed for audio, voice assistants, and emerging consumption formats without losing control of the publishing system underneath.",
+          "cards": [
+            {
+              "title": "Audio generation",
+              "copy": "The platform explored automated audio transformations so publishers could extend their catalogs into listening experiences with less manual production effort.",
+              "items": [
+                "Machine learning entered the product through practical transformation problems.",
+                "Audio was treated as an extension of publishing, not a disconnected experiment."
+              ]
+            },
+            {
+              "title": "Voice assistant integrations",
+              "copy": "Integrations with Siri, Alexa, and Google Assistant extended the distribution model into voice-driven usage patterns.",
+              "items": [
+                "The same platform needed to serve different interaction models.",
+                "Content distribution had to stay consistent despite channel differences."
+              ]
+            },
+            {
+              "title": "Forward-looking R&D",
+              "copy": "The roadmap also looked at augmented and virtual reality formats to stay ahead of changing reader behaviors and distribution opportunities.",
+              "items": [
+                "Exploration stayed tied to product strategy.",
+                "R&D remained useful because it was connected to the platform's long-term direction."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Execution",
+          "title": "Technical direction had to stay close to publisher reality.",
+          "intro": "The role combined architecture, product strategy, and business alignment, which meant the platform had to be technically sound and commercially useful at the same time.",
+          "cards": [
+            {
+              "title": "Security and controlled access",
+              "copy": "Authenticated service-to-service communication, encrypted storage, and controlled access to digital assets were built into the platform rather than added later.",
+              "items": [
+                "Security was part of the product promise to publishers.",
+                "Sensitive content distribution required stronger operational discipline."
+              ]
+            },
+            {
+              "title": "Scalability and maintainability",
+              "copy": "The platform had to stay flexible enough to support multiple publisher contexts and delivery channels without becoming brittle.",
+              "items": [
+                "Long-term evolution mattered more than short-term patchwork.",
+                "Architecture choices were shaped by platform lifespan."
+              ]
+            },
+            {
+              "title": "Product and business together",
+              "copy": "Technical execution was continuously aligned with business development and publisher adoption so the platform could evolve in directions that were both feasible and valuable.",
+              "items": [
+                "The role sat between engineering depth and commercial usefulness.",
+                "Platform strategy worked because it stayed tied to real publisher needs."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "project-myviapresse": {
+      "page_title": "MyViapresse | Projects | Loïc Lavergne",
+      "description": "MyViapresse case study covering native iOS evolution, subscriptions, offline reading, and long-lived consumer product delivery.",
+      "eyebrow": "MyViapresse",
+      "title": "A long-lived consumer press product through several technical generations.",
+      "intro": "MyViapresse was a consumer mobile application for accessing a large catalog of magazines and newspapers through purchases and subscriptions. The project spanned multiple technical eras, making it a strong example of product continuity through architectural change.",
+      "role_title": "Project management and native iOS leadership",
+      "organization": "Vialife",
+      "period": "August 2015 - August 2022",
+      "summary": "Owned the application across project management, product design, and native iOS development while guiding its evolution from a hybrid base to a modern Swift codebase with subscriptions, offline reading, and a proprietary reader framework.",
+      "highlights": [
+        "Took the product through several technical generations, from Titanium origins to native Swift and later a full rewrite.",
+        "Introduced monetization flows for single-issue purchases and auto-renewable subscriptions.",
+        "Built on top of a proprietary reading framework designed for performance, consistency, and offline access."
+      ],
+      "metrics": [
+        {
+          "value": "400+",
+          "label": "press titles available through the catalog"
+        },
+        {
+          "value": "Hybrid to native",
+          "label": "major technical evolution across product lifetime"
+        },
+        {
+          "value": "IAP + subscriptions",
+          "label": "consumer monetization model delivered in-app"
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "Product",
+          "title": "A consumer reading product had to stay simple despite a large catalog.",
+          "intro": "The application served magazine and newspaper readers directly, so catalog clarity, reading continuity, and purchase confidence had to coexist in one mobile experience.",
+          "cards": [
+            {
+              "title": "Large catalog, clear access",
+              "copy": "The product exposed hundreds of titles while still needing to feel approachable for discovery, sampling, and repeat reading.",
+              "items": [
+                "Catalog breadth could not overwhelm the product surface.",
+                "Discovery and direct purchase had to coexist cleanly."
+              ]
+            },
+            {
+              "title": "Reading continuity",
+              "copy": "Offline reading and synchronized access across devices were part of making the product feel dependable instead of transactional.",
+              "items": [
+                "The value of a press app continues after the purchase moment.",
+                "Continuity matters for recurring reader habits."
+              ]
+            },
+            {
+              "title": "Editorial commerce",
+              "copy": "The application had to support both free discovery moments and paid conversion through individual purchases or subscriptions.",
+              "items": [
+                "Sampling and monetization were both first-class product concerns.",
+                "The experience needed to feel commercial without becoming heavy."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Engineering",
+          "title": "The project crossed several major implementation phases.",
+          "intro": "A meaningful part of the work was preserving product continuity while modernizing the stack, which made technical transitions a central product responsibility.",
+          "cards": [
+            {
+              "title": "From Titanium to Swift",
+              "copy": "The application started from a hybrid Titanium implementation and later moved into native Swift as the product and quality expectations evolved.",
+              "items": [
+                "The transition created room for better performance and maintainability.",
+                "Native implementation improved control over the reading experience."
+              ]
+            },
+            {
+              "title": "A full rewrite when needed",
+              "copy": "Later versions required a more complete rewrite in newer Xcode and Swift environments so the app could stay viable over time.",
+              "items": [
+                "The product was not kept alive through small patches alone.",
+                "Durability sometimes required deeper technical resets."
+              ]
+            },
+            {
+              "title": "Proprietary reading framework",
+              "copy": "A custom Swift reading framework gave the product a more consistent and performant base for content presentation and offline use.",
+              "items": [
+                "The reader was a core capability, not just a screen.",
+                "Reusable internal tooling improved the long-term technical base."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Monetization",
+          "title": "Commerce flows had to be credible, simple, and durable.",
+          "intro": "Subscriptions and single-issue purchases were not peripheral features. They were central to product viability, which meant the in-app commerce layer had to feel trustworthy and operationally stable.",
+          "cards": [
+            {
+              "title": "Single issues and subscriptions",
+              "copy": "The app supported both one-off purchases and auto-renewable subscriptions, which required a careful balance between flexibility and clarity.",
+              "items": [
+                "Different reader behaviors needed distinct purchase paths.",
+                "The product had to stay understandable around pricing and access."
+              ]
+            },
+            {
+              "title": "Store-driven product constraints",
+              "copy": "Implementing monetization meant working with the realities of in-app purchase systems, entitlement handling, and long-term maintainability.",
+              "items": [
+                "Commerce was tied to technical correctness as much as UI.",
+                "The business model depended on reliable operational flows."
+              ]
+            },
+            {
+              "title": "Consumer product durability",
+              "copy": "Because the application lived for years, monetization and reading systems both had to survive stack changes, catalog growth, and product iteration.",
+              "items": [
+                "Longevity was part of the engineering challenge.",
+                "The strongest technical choices were the ones the product could keep carrying forward."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "project-digital-press-applications": {
+      "page_title": "Digital Press Applications | Projects | Loïc Lavergne",
+      "description": "Digital Press Applications case study covering a shared mobile foundation for multiple branded press products and access models.",
+      "eyebrow": "Digital Press Applications",
+      "title": "One shared mobile foundation, several distribution models.",
+      "intro": "This suite grouped several digital newsstand applications built on a common technical and product base. The work required balancing consistency, customization, and delivery efficiency across products aimed at very different audiences and business contexts.",
+      "role_title": "Mobile Project Manager and native iOS lead",
+      "organization": "Vialife",
+      "period": "October 2018 - August 2022",
+      "summary": "Owned the applications across project management, product design, and native iOS development while maintaining a shared architecture that could support distinct access models, brands, and content strategies.",
+      "highlights": [
+        "Built and maintained a shared mobile foundation for Discover Press, Hôtel Presse, Salon Presse, Comptoir Presse, Big Press, and Hello Press.",
+        "Handled project management, product design in Sketch, and native iOS delivery in Swift.",
+        "Kept reading, authentication, and catalog behaviors consistent while adapting each product to a different distribution context."
+      ],
+      "metrics": [
+        {
+          "value": "6",
+          "label": "distinct branded applications on a shared base"
+        },
+        {
+          "value": "Shared architecture",
+          "label": "core foundation reused across product variants"
+        },
+        {
+          "value": "B2B + consumer contexts",
+          "label": "distribution models served by one system"
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "System",
+          "title": "The challenge was scale through structure, not duplication.",
+          "intro": "The suite only worked if the common foundation stayed strong enough to carry multiple products without forcing every new application to become a rewrite.",
+          "cards": [
+            {
+              "title": "A shared technical base",
+              "copy": "The applications were built on one templated architecture and one reading foundation so the core behaviors could be reused instead of rebuilt.",
+              "items": [
+                "Core features needed to stay stable across brands.",
+                "Reuse was essential to delivery speed and long-term maintenance."
+              ]
+            },
+            {
+              "title": "Variation without fragmentation",
+              "copy": "Each application still had to support its own access rules, audience, and context without breaking the coherence of the shared system.",
+              "items": [
+                "Customization had to stay bounded.",
+                "The suite needed flexibility without dissolving into six unrelated apps."
+              ]
+            },
+            {
+              "title": "Reading consistency",
+              "copy": "Catalog discovery, authentication, and reading flows needed to feel dependable regardless of the application's specific business model.",
+              "items": [
+                "The reading experience was a common product promise.",
+                "Consistency mattered more than surface-level visual variation."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Product",
+          "title": "Different access models shaped the design problem.",
+          "intro": "The suite covered corporate, hospitality, event-based, and more general distribution use cases, which meant product design had to be modular but still understandable.",
+          "cards": [
+            {
+              "title": "Organizational distribution",
+              "copy": "Some applications were designed for companies, partners, or membership contexts where access came through organizational authentication rather than an individual storefront.",
+              "items": [
+                "The product model changed with the client context.",
+                "Access logic shaped both UX and delivery requirements."
+              ]
+            },
+            {
+              "title": "Hospitality and event usage",
+              "copy": "Other products targeted hotels, salons, or temporary event scenarios where convenience, lightweight onboarding, and controlled access mattered most.",
+              "items": [
+                "The same reading core had to work in transient contexts.",
+                "The onboarding expectations differed from standard consumer apps."
+              ]
+            },
+            {
+              "title": "A family of products, not one clone",
+              "copy": "The goal was not to stamp out copies mechanically, but to build a coherent family of products that could express different distribution strategies on top of the same foundation.",
+              "items": [
+                "The architecture had to support product nuance.",
+                "Template work still needed product judgment."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Delivery",
+          "title": "Ownership combined design, implementation, and operational clarity.",
+          "intro": "Because the suite lived across several products, the work demanded end-to-end ownership rather than isolated implementation tasks.",
+          "cards": [
+            {
+              "title": "Project management and iOS delivery",
+              "copy": "The role covered coordination, specification, and native iOS implementation, which helped keep product intent and execution tightly connected.",
+              "items": [
+                "The work moved from design decisions to shipped code directly.",
+                "Fewer handoff gaps meant more coherent outcomes."
+              ]
+            },
+            {
+              "title": "Design with implementation awareness",
+              "copy": "Product design in Sketch was informed by the realities of the shared mobile framework, which helped keep the suite ambitious but realistic.",
+              "items": [
+                "Design decisions stayed close to implementation constraints.",
+                "Shared components benefited from repeated product use."
+              ]
+            },
+            {
+              "title": "Operational efficiency",
+              "copy": "A reusable suite only creates value if it also reduces delivery friction, release effort, and long-term maintenance costs across products.",
+              "items": [
+                "The system had to compound over time.",
+                "Efficiency was part of the product strategy, not just an engineering preference."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "project-dakar-presse": {
+      "page_title": "Dakar Presse | Projects | Loïc Lavergne",
+      "description": "Dakar Presse case study covering mobile access to Senegalese newspapers, subscriptions, and reliable reading for a distributed audience.",
+      "eyebrow": "Dakar Presse",
+      "title": "A focused press product for readers in Senegal and abroad.",
+      "intro": "Dakar Presse was designed to give readers access to Senegalese daily newspapers on mobile, both locally and across the diaspora. The product needed to feel simple, dependable, and well adapted to a geographically distributed audience with recurring reading habits.",
+      "role_title": "Project management, product design, and iOS development",
+      "organization": "Vialife",
+      "period": "November 2015 - July 2022",
+      "summary": "Owned the application across product design, project management, and iOS implementation on top of a custom Swift reading framework, with a focus on subscriptions, notifications, offline reading, and dependable daily access.",
+      "highlights": [
+        "Built a focused mobile reading product for Senegalese newspapers and an international reader base.",
+        "Handled product design, project leadership, and native iOS implementation end to end.",
+        "Prioritized secure subscription flows, offline reading, and reliable access for a distributed audience."
+      ],
+      "metrics": [
+        {
+          "value": "Daily press",
+          "label": "product rhythm shaped by recurring newspaper reading"
+        },
+        {
+          "value": "Diaspora audience",
+          "label": "served readers in Senegal and abroad"
+        },
+        {
+          "value": "Subscriptions + alerts",
+          "label": "core engagement and monetization model"
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "Audience",
+          "title": "The product had a clear audience and a clear daily use case.",
+          "intro": "Unlike a broad multi-title kiosk, Dakar Presse was focused on a specific national press market and on readers who wanted dependable access to familiar daily content.",
+          "cards": [
+            {
+              "title": "Readers in Senegal and abroad",
+              "copy": "The app served local readers as well as Senegalese communities living elsewhere, which made access reliability and mobile convenience especially important.",
+              "items": [
+                "The product had to bridge geography without losing clarity.",
+                "Diaspora usage shaped the value proposition directly."
+              ]
+            },
+            {
+              "title": "A daily reading habit",
+              "copy": "Because the product centered on daily newspapers, freshness, repeat visits, and a clear issue-based reading flow mattered more than novelty.",
+              "items": [
+                "The product rhythm followed the cadence of the press itself.",
+                "Readers needed fast access to current and recent editions."
+              ]
+            },
+            {
+              "title": "Focused product scope",
+              "copy": "The app benefited from being tightly scoped around a concrete audience and a recognizable content need.",
+              "items": [
+                "The product could stay direct and purposeful.",
+                "Focus improved both UX and operational decisions."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Experience",
+          "title": "The reading experience had to remain simple and trustworthy.",
+          "intro": "Subscription access, issue discovery, notifications, and offline reading all needed to support a daily-use product without making the app feel heavy or complicated.",
+          "cards": [
+            {
+              "title": "Subscription-centered access",
+              "copy": "Flexible subscriptions were part of the core experience, so the purchase and renewal logic had to feel credible and easy to understand.",
+              "items": [
+                "Access models had to match real reader behavior.",
+                "Trust in the subscription flow was part of product quality."
+              ]
+            },
+            {
+              "title": "Notifications and cover discovery",
+              "copy": "Scheduled notifications and daily cover discovery helped connect the product to a recurring reading routine instead of a one-time download model.",
+              "items": [
+                "The app needed to re-enter the reader's day naturally.",
+                "The front page remained a meaningful entry point."
+              ]
+            },
+            {
+              "title": "Offline reliability",
+              "copy": "Offline reading helped the product stay useful across variable connection conditions and different usage contexts.",
+              "items": [
+                "Dependability mattered as much as visual polish.",
+                "Mobile reading had to remain practical outside perfect connectivity."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Execution",
+          "title": "End-to-end ownership kept the product coherent.",
+          "intro": "The combination of product design, project leadership, and iOS implementation helped keep the product focused while it evolved over time.",
+          "cards": [
+            {
+              "title": "Design and implementation together",
+              "copy": "Design work in Sketch and iOS development in Swift were closely connected, which helped the final product stay practical and consistent.",
+              "items": [
+                "The product benefited from fewer translation gaps.",
+                "Visual and technical choices could evolve together."
+              ]
+            },
+            {
+              "title": "Custom reading foundation",
+              "copy": "The application relied on a proprietary reading framework rewritten in Swift to provide a stronger base for content presentation and usability.",
+              "items": [
+                "The reading layer was a product differentiator.",
+                "A reusable foundation improved long-term technical control."
+              ]
+            },
+            {
+              "title": "Reliable product operation",
+              "copy": "The broader goal was not just to ship features, but to keep the application dependable for a real audience returning day after day.",
+              "items": [
+                "Operational reliability was part of the public product promise.",
+                "The strongest decisions were the ones that supported repeated use over time."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "project-le-moniteur-des-pharmacies": {
+      "page_title": "Le Moniteur des Pharmacies | Projects | Loïc Lavergne",
+      "description": "Le Moniteur des Pharmacies case study covering native iOS delivery for pharmacists across news, training, and reference tools.",
+      "eyebrow": "Le Moniteur des Pharmacies",
+      "title": "A professional iOS product designed for dense, recurring pharmacist workflows.",
+      "intro": "Le Moniteur des Pharmacies brought together professional news, training resources, digital magazines, job listings, and reference tools for pharmacists in one native iOS application. The challenge was less about a single feature than about making a broad professional surface feel useful and navigable in daily practice.",
+      "role_title": "Native iOS development",
+      "organization": "Things Are Moving",
+      "period": "March 2017 - September 2018",
+      "summary": "Built the application natively in Swift with responsibility for feature implementation, data presentation, and user experience across news, learning, and professional reference use cases.",
+      "highlights": [
+        "Delivered a native iOS application aggregating multiple professional content types in one product.",
+        "Worked on feature implementation, data presentation, and overall usability in a dense information environment.",
+        "Helped turn professional resources into a practical day-to-day mobile tool for pharmacists."
+      ],
+      "metrics": [
+        {
+          "value": "Pharmacists",
+          "label": "specialized professional audience and usage context"
+        },
+        {
+          "value": "News + training + reference",
+          "label": "multiple content systems inside one product"
+        },
+        {
+          "value": "iOS native",
+          "label": "single-platform execution focused on reliability and clarity"
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "Product",
+          "title": "The app had to unite several professional needs without feeling fragmented.",
+          "intro": "The product mixed news, magazines, education, recruitment, and reference data, which meant the application needed to remain understandable even as the information surface grew.",
+          "cards": [
+            {
+              "title": "Professional news and reading",
+              "copy": "The app combined real-time professional news with digital magazine access in both PDF and article formats.",
+              "items": [
+                "The product had to support both quick updates and deeper reading sessions.",
+                "Different content modes needed to coexist cleanly."
+              ]
+            },
+            {
+              "title": "Learning and career content",
+              "copy": "Training resources, educational media, and job listings extended the product beyond information lookup into a broader professional companion.",
+              "items": [
+                "The application supported recurring professional development.",
+                "Career and learning content added another layer to the product surface."
+              ]
+            },
+            {
+              "title": "One professional hub",
+              "copy": "The overall challenge was to make the application feel like a unified professional tool instead of a loose collection of services.",
+              "items": [
+                "Information architecture mattered as much as implementation.",
+                "The value came from a coherent whole, not isolated features."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Reference",
+          "title": "Reference depth was part of the product's usefulness.",
+          "intro": "Pharmaceutical data, veterinary medicine references, and supporting databases had to remain accessible and practical within a mobile interface built for regular use.",
+          "cards": [
+            {
+              "title": "Drug reference access",
+              "copy": "The application surfaced pharmaceutical data across large reference sets so pharmacists could use the product as a working tool, not just a reading destination.",
+              "items": [
+                "Depth of reference content shaped the product design.",
+                "Practical lookup had to stay fast and reliable."
+              ]
+            },
+            {
+              "title": "Dense information presentation",
+              "copy": "A key part of the work was presenting professional data clearly enough to remain useful on mobile even when the underlying information was complex.",
+              "items": [
+                "Data presentation was a product responsibility.",
+                "Mobile constraints had to be respected without oversimplifying the content."
+              ]
+            },
+            {
+              "title": "Regular-use ergonomics",
+              "copy": "Because the product was built for recurring professional consultation, navigation and content access had to support repeat usage over time.",
+              "items": [
+                "The interface had to reward familiarity.",
+                "Efficiency mattered more than novelty."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Execution",
+          "title": "Native implementation helped keep a broad product coherent.",
+          "intro": "The work was grounded in hands-on Swift development, which kept product experience, content complexity, and technical implementation closely connected.",
+          "cards": [
+            {
+              "title": "Swift-based delivery",
+              "copy": "Native iOS implementation made it easier to keep the application responsive and to shape interactions around the realities of frequent professional use.",
+              "items": [
+                "Performance and clarity supported trust in the product.",
+                "Native delivery improved control over the user experience."
+              ]
+            },
+            {
+              "title": "Feature work with product awareness",
+              "copy": "Implementation was not limited to isolated screens; it required understanding how different professional needs fit together inside one application.",
+              "items": [
+                "Technical work stayed tied to information design.",
+                "Usability was part of the engineering responsibility."
+              ]
+            },
+            {
+              "title": "A practical professional tool",
+              "copy": "The end goal was to help pharmacists return to the app regularly for information, learning, and reference needs without friction.",
+              "items": [
+                "The product needed to earn repeated use.",
+                "Success depended on reliability and practical value."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "project-le-point-veterinaire": {
+      "page_title": "Le Point Vétérinaire.fr | Projects | Loïc Lavergne",
+      "description": "Le Point Vétérinaire.fr case study covering native iOS delivery for veterinarians across news, training, practical tools, and reference data.",
+      "eyebrow": "Le Point Vétérinaire.fr",
+      "title": "A veterinary product combining information, tools, and daily operational support.",
+      "intro": "Le Point Vétérinaire.fr was built to give veterinarians a single mobile product for professional news, training content, practical tools, directories, and reference data. The value came from bringing multiple everyday needs together in a product that stayed useful under regular professional use.",
+      "role_title": "Native iOS development",
+      "organization": "Things Are Moving",
+      "period": "March 2017 - September 2018",
+      "summary": "Built the application in Swift with responsibility for feature implementation, content access, and user experience across veterinary information, training, and operational utility layers.",
+      "highlights": [
+        "Delivered a native iOS product that combined professional information, practical tools, and learning content for veterinarians.",
+        "Worked on features, content access patterns, and user experience in a multi-surface professional app.",
+        "Helped unify reference data, tools, and regular updates into one mobile workflow."
+      ],
+      "metrics": [
+        {
+          "value": "Veterinarians",
+          "label": "specialized professional audience with recurring information needs"
+        },
+        {
+          "value": "Tools + directories + data",
+          "label": "operational utility layered into the product"
+        },
+        {
+          "value": "iOS native",
+          "label": "mobile execution centered on practical professional use"
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "Product",
+          "title": "The app had to support both reading and action.",
+          "intro": "Professional news and training content were important, but the product also needed to function as a place to find tools, directories, and actionable reference material.",
+          "cards": [
+            {
+              "title": "Information and training together",
+              "copy": "The app unified real-time news, training content, and digital publications so veterinarians could move between staying informed and learning in one product.",
+              "items": [
+                "The product needed to support both quick consultation and deeper study.",
+                "Different content types had to remain coherent inside the same interface."
+              ]
+            },
+            {
+              "title": "Practical utility layer",
+              "copy": "Directories, calculations, decision-support elements, and management tools made the application more than a publication reader.",
+              "items": [
+                "Utility was central to daily professional value.",
+                "The product had to feel actionable, not just informative."
+              ]
+            },
+            {
+              "title": "A daily professional companion",
+              "copy": "The broader design goal was to make the app feel worth revisiting as part of real veterinary work rather than as a static content library.",
+              "items": [
+                "Repeat use shaped the product decisions.",
+                "The app needed to remain useful beyond one content session."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Reference",
+          "title": "Reference data and tools had to stay accessible on mobile.",
+          "intro": "Veterinary drug data, supplier and professional directories, and supporting tools created a more operational product surface that had to remain usable on a phone.",
+          "cards": [
+            {
+              "title": "Veterinary drug information",
+              "copy": "The product included reference data that needed to stay discoverable and readable inside a constrained mobile interface.",
+              "items": [
+                "Reference depth shaped navigation and presentation choices.",
+                "The interface had to respect both speed and precision."
+              ]
+            },
+            {
+              "title": "Operational tools",
+              "copy": "Calculation tools, directories, and decision-support functions made the app relevant to practical professional work, not only to reading.",
+              "items": [
+                "The app served operational needs as well as editorial ones.",
+                "Practical features improved the product's recurring value."
+              ]
+            },
+            {
+              "title": "Unified access",
+              "copy": "A core challenge was keeping these different resources reachable through one product structure that remained understandable over time.",
+              "items": [
+                "The information architecture had to absorb complexity.",
+                "Consistency was essential to repeated use."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Execution",
+          "title": "Native delivery kept the product grounded in real usage.",
+          "intro": "Swift-based implementation helped translate a complex professional surface into an app that stayed responsive, clear, and maintainable.",
+          "cards": [
+            {
+              "title": "Feature implementation with context",
+              "copy": "Building features for the app meant understanding how information, tools, and workflows fit together instead of treating each screen in isolation.",
+              "items": [
+                "Implementation stayed close to product logic.",
+                "The app benefited from decisions made at the system level."
+              ]
+            },
+            {
+              "title": "Content access and usability",
+              "copy": "Making content and tools easy to reach was as important as adding them in the first place, especially for repeat professional use.",
+              "items": [
+                "Usability was part of the product promise.",
+                "Mobile constraints had to support speed, not hinder it."
+              ]
+            },
+            {
+              "title": "A coherent professional workflow",
+              "copy": "The product worked best when it felt like one dependable workflow surface rather than a stack of unrelated resources.",
+              "items": [
+                "Coherence was a technical and product responsibility.",
+                "The strongest implementation choices supported recurring work habits."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "project-loic-engineer": {
+      "page_title": "loic.engineer | Projects | Loïc Lavergne",
+      "description": "Case study for the portfolio itself: a bilingual static-first site treated like a long-term product.",
+      "eyebrow": "loic.engineer",
+      "title": "A portfolio treated like a product, not a profile page.",
+      "intro": "This site is a personal project built with the same care as a product surface: bilingual by design, static-first by default, and intentionally shaped around editorial pacing instead of generic portfolio blocks. The goal is to present current work, long-term craft, and personal systems in a way that feels precise, durable, and unmistakably Apple-aware without copying Apple assets.",
+      "role_title": "Product design, content architecture, and implementation",
+      "organization": "Personal project",
+      "period": "March 2026 - Present",
+      "summary": "Designed and built the site as a Swift-generated static product with localized routing, strong editorial hierarchy, privacy-first defaults, and maintainable content architecture.",
+      "highlights": [
+        "Built a bilingual static architecture generated with Swift and shipped as plain HTML, CSS, and JavaScript.",
+        "Designed the experience around Apple-inspired pacing, restraint, motion, accessibility, and performance.",
+        "Structured the content model so current work, archive projects, writing, reading, sports, and trophies can evolve without rebuilding the architecture."
+      ],
+      "metrics": [
+        {
+          "value": "2 locales",
+          "label": "English and French routes generated from one content source"
+        },
+        {
+          "value": "Swift-generated",
+          "label": "local tooling with static output and no frontend framework"
+        },
+        {
+          "value": "Static-first",
+          "label": "privacy, speed, and GitHub Pages compatibility by default"
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "Product",
+          "title": "The site was designed as an editorial product, not a résumé dump.",
+          "intro": "The structure prioritizes who I am professionally today, then expands into deeper layers of projects, technical profile, writing, reading, sports, and broader personal systems.",
+          "cards": [
+            {
+              "title": "Present first",
+              "copy": "The homepage is centered on current role, current work, and a clear technical profile before opening into deeper archive and personal sections.",
+              "items": [
+                "The site answers the present-tense question first.",
+                "Secondary areas still exist without competing with the core story."
+              ]
+            },
+            {
+              "title": "Editorial pacing over generic components",
+              "copy": "The layout uses restrained spacing, cinematic hierarchy, and progressive reveal rather than a template grid of interchangeable portfolio blocks.",
+              "items": [
+                "The design aims for calm precision instead of busyness.",
+                "Motion supports storytelling rather than decoration."
+              ]
+            },
+            {
+              "title": "A durable personal surface",
+              "copy": "The product is meant to stay maintainable as the career evolves, with room for deeper projects, writing, reading, and manual curation over time.",
+              "items": [
+                "The architecture is built for long-term ownership by one engineer.",
+                "The public surface can evolve without drifting into complexity."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "System",
+          "title": "The architecture stays lightweight without becoming brittle.",
+          "intro": "The public output is plain static HTML, while a local Swift generator handles bilingual routes, metadata, content reuse, and project-detail expansion.",
+          "cards": [
+            {
+              "title": "One source of truth",
+              "copy": "Localized copy, routes, metadata, and content structures live in a single content source that the generator turns into final pages.",
+              "items": [
+                "This limits duplication across English and French.",
+                "It keeps content changes separate from rendering concerns."
+              ]
+            },
+            {
+              "title": "Static output, modern feel",
+              "copy": "The site avoids frontend framework runtime costs while still supporting theme switching, reveal behavior, and project storytelling through small progressive-enhancement layers.",
+              "items": [
+                "Core content remains available without JavaScript.",
+                "Interactive behavior is deliberately minimal and recoverable."
+              ]
+            },
+            {
+              "title": "Privacy and operational simplicity",
+              "copy": "No trackers, no external font loading, and no live backend are required for the main product experience.",
+              "items": [
+                "The default posture favors user privacy and predictable performance.",
+                "Deployment remains compatible with simple static hosting."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Execution",
+          "title": "The project is also a testbed for taste and long-term maintenance.",
+          "intro": "Beyond the visible pages, the site is an ongoing exercise in content modeling, bilingual parity, documentation discipline, and shipping a polished experience with minimal moving parts.",
+          "cards": [
+            {
+              "title": "Documentation kept in step",
+              "copy": "README, architecture notes, and agent handoff guidance evolve with the implementation so another pass can continue cleanly later.",
+              "items": [
+                "The project is structured for continuity, not just launch.",
+                "Documentation is treated as part of the product system."
+              ]
+            },
+            {
+              "title": "Manual curation where it matters",
+              "copy": "Books, sports, trophies, and writing are modeled as product surfaces first, with manual data expected before any live integration is considered.",
+              "items": [
+                "The site avoids unnecessary automation.",
+                "Static-first choices stay intentional rather than temporary."
+              ]
+            },
+            {
+              "title": "A personal benchmark",
+              "copy": "The site sets a public quality bar for how I think about design, architecture, privacy, and product clarity when I build software.",
+              "items": [
+                "The implementation is itself part of the portfolio.",
+                "Taste and technical discipline are both visible outputs."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "project-templated-mobile-starter": {
+      "page_title": "Templated Mobile Starter | Projects | Loïc Lavergne",
+      "description": "Case study for an internal reusable mobile starter designed to accelerate new product foundations.",
+      "eyebrow": "Templated Mobile Starter",
+      "title": "A reusable mobile foundation for shipping new products faster.",
+      "intro": "Templated Mobile Starter is an internal foundation project meant to reduce repeated setup work when new mobile efforts begin. It captures architecture conventions, delivery expectations, and baseline tooling so teams can start from a coherent structure instead of rebuilding the same foundations from scratch each time.",
+      "role_title": "Architecture design and foundation work",
+      "organization": "Internal project",
+      "period": "Ongoing",
+      "summary": "Designed a reusable mobile starter around shared architecture, tooling, and delivery conventions so new applications can begin from a stable, maintainable baseline.",
+      "highlights": [
+        "Defined a starter intended to accelerate new mobile product setup without sacrificing architectural clarity.",
+        "Used the project to capture repeatable conventions around code organization, tooling, and delivery standards.",
+        "Treated reuse as a quality problem, not just a speed problem."
+      ],
+      "metrics": [
+        {
+          "value": "Shared baseline",
+          "label": "common architecture and conventions across new projects"
+        },
+        {
+          "value": "Faster kickoff",
+          "label": "less repeated setup work before product delivery starts"
+        },
+        {
+          "value": "Maintainable by design",
+          "label": "reuse shaped around clarity, not copy-paste"
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "Foundation",
+          "title": "The goal is to start cleaner, not just faster.",
+          "intro": "A starter only creates value if it raises the floor for new projects instead of introducing a rigid template that teams immediately fight against.",
+          "cards": [
+            {
+              "title": "Conventions from real work",
+              "copy": "The starter is informed by recurring needs seen across mobile product delivery: folder structure, shared services, environment handling, and predictable project setup.",
+              "items": [
+                "Reuse is grounded in repeated practical patterns.",
+                "The baseline is meant to remove avoidable setup decisions."
+              ]
+            },
+            {
+              "title": "Opinionated where it helps",
+              "copy": "The project favors a coherent starting point over a blank canvas, but keeps that opinionation focused on areas where consistency compounds.",
+              "items": [
+                "Some decisions are better made once and reused.",
+                "The starter should guide without overconstraining."
+              ]
+            },
+            {
+              "title": "A foundation for product teams",
+              "copy": "The intended outcome is not a demo repository but a practical base that helps real products begin with better defaults.",
+              "items": [
+                "The starter is useful only if teams can build on it confidently.",
+                "It should reduce friction early without creating debt later."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Architecture",
+          "title": "The system captures patterns that are expensive to rediscover.",
+          "intro": "Shared architecture, baseline tooling, and delivery rules are packaged so new projects inherit working patterns instead of relearning them under deadline pressure.",
+          "cards": [
+            {
+              "title": "Code organization",
+              "copy": "The starter helps keep features, services, and app structure understandable from the first commit onward.",
+              "items": [
+                "Early organization influences long-term maintainability.",
+                "A clear structure reduces unnecessary rework later."
+              ]
+            },
+            {
+              "title": "Tooling and delivery defaults",
+              "copy": "Build settings, conventions, and setup decisions can be carried into new products so teams spend less time on repeat integration work.",
+              "items": [
+                "Better defaults improve delivery rhythm.",
+                "Operational clarity matters from day one."
+              ]
+            },
+            {
+              "title": "Reuse without hidden complexity",
+              "copy": "The starter is useful only if it stays comprehensible. Shared foundations must remain explicit enough for teams to adapt them safely.",
+              "items": [
+                "Opaque magic would defeat the purpose.",
+                "The best abstractions reduce repetition without reducing understanding."
+              ]
+            }
+          ]
+        },
+        {
+          "eyebrow": "Execution",
+          "title": "The project turns repeatability into a maintainability advantage.",
+          "intro": "Internal foundation work matters because it changes how consistently new products begin, how quickly they reach a stable shape, and how much accidental divergence teams accumulate over time.",
+          "cards": [
+            {
+              "title": "Less reinvention at kickoff",
+              "copy": "By carrying forward proven defaults, new mobile initiatives can move faster toward product work instead of rebuilding scaffolding each time.",
+              "items": [
+                "Energy shifts from setup to user value sooner.",
+                "Kickoff quality improves along with speed."
+              ]
+            },
+            {
+              "title": "A shared language for teams",
+              "copy": "Common architectural conventions help engineers, leads, and collaborators reason about new projects with less translation overhead.",
+              "items": [
+                "Consistency improves onboarding and review quality.",
+                "Shared patterns make cross-project support easier."
+              ]
+            },
+            {
+              "title": "Internal leverage, not public complexity",
+              "copy": "The value of the starter is mostly operational and internal, but it still reflects a product mindset: design foundations carefully so future work becomes calmer and more predictable.",
+              "items": [
+                "The strongest internal tools reduce noise for everyone else.",
+                "Good foundations create compound returns over time."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "writing": {
+    "page_title": "Writing | Loïc Lavergne",
+    "description": "Blog architecture and future writing archive.",
+    "eyebrow": "Writing",
+    "title": "The publishing system is ready before the archive goes live.",
+    "intro": "Writing is part of the long-term structure of the portfolio, but the v1 launch keeps the archive intentionally empty until the first pieces are ready.",
+    "themes_heading": "Planned editorial themes",
+    "themes": [
+      {
+        "title": "Mobile architecture and delivery",
+        "copy": "Writing will focus on the systems that keep mobile products shippable: roadmap alignment, app architecture, APIs, CI, and team coordination.",
+        "items": [
+          "Grounded in real product delivery rather than abstract process.",
+          "Good fit for lessons that become public over time."
+        ]
+      },
+      {
+        "title": "Apple platform engineering",
+        "copy": "Another stream will cover Swift, SwiftUI, native frameworks, and the technical decisions behind premium Apple-platform experiences.",
+        "items": [
+          "Useful for long-lived codebases on iOS, watchOS, tvOS, and macOS.",
+          "Likely to mix implementation details with product-quality concerns."
+        ]
+      },
+      {
+        "title": "AI-assisted engineering",
+        "copy": "A third area is agentic workflow design: where AI helps engineering teams move faster without lowering standards on privacy, correctness, or maintainability.",
+        "items": [
+          "Focus stays on practical use, not hype.",
+          "The same rigor should apply to automation as to any other tool."
+        ]
+      }
+    ],
+    "archive_heading": "A real archive surface, ready for publication",
+    "archive_intro": "The writing area now has an actual archive model, localized post-page support, and a dedicated empty state. It launches without public essays on purpose, but the system is no longer just placeholder copy.",
+    "posts": [],
+    "empty_state_title": "No essays published yet",
+    "empty_state_copy": "The archive, metadata, and future article pages are already part of the site architecture. The first texts will appear here when they are ready for public release.",
+    "publishing_heading": "Publishing model",
+    "publishing_cards": [
+      {
+        "title": "Long-form essays first",
+        "copy": "The default format is thoughtful articles, not a rapid-fire notes feed. The site should favor durable pieces over constant posting."
+      },
+      {
+        "title": "Project and systems notes",
+        "copy": "Some entries can become case-study style notes on architecture choices, delivery patterns, or lessons from products once they are safe to publish."
+      },
+      {
+        "title": "Bilingual by architecture",
+        "copy": "The archive is already built on a localized content model, so publishing in English and French can follow the same static-first structure."
+      }
+    ],
+    "system_heading": "Post system",
+    "system_cards": [
+      {
+        "title": "Localized post routes",
+        "copy": "Future essays can have dedicated English and French pages with their own metadata, alternates, and canonical routes.",
+        "items": [
+          "The structure already supports localized article detail pages.",
+          "Language parity can be kept without hand-building duplicate templates."
+        ]
+      },
+      {
+        "title": "Editorial metadata built in",
+        "copy": "The article system is ready for page titles, descriptions, reading-time metadata, and long-form section structure without changing the renderer later.",
+        "items": [
+          "Posts can ship with the same quality bar as project pages.",
+          "SEO and structure are considered before content volume exists."
+        ]
+      },
+      {
+        "title": "Static by default",
+        "copy": "The archive remains fully static and manually curated until there is a clear reason to add more complexity.",
+        "items": [
+          "No CMS, no external service, and no runtime backend are required.",
+          "Publishing can stay calm, private, and maintainable."
+        ]
+      }
+    ],
+    "status_title": "Ready for first publication",
+    "status_copy": "Post pages, metadata, and archive structure are part of the architecture. The first public essays will be added in a later content pass."
+  },
+  "writing_details": {},
+  "library": {
+    "page_title": "Library | Loïc Lavergne",
+    "description": "Books, reading life, and manual reading stats.",
+    "eyebrow": "Library",
+    "title": "Reading should feel like a product surface, not a spreadsheet.",
+    "intro": "The library area is designed for manually curated reading data. It will eventually show current shelves, recent reads, and yearly/monthly counts.",
+    "stats": [
+      {
+        "label": "Books this year",
+        "value": "--"
+      },
+      {
+        "label": "Books this month",
+        "value": "--"
+      },
+      {
+        "label": "Currently reading",
+        "value": "--"
+      }
+    ],
+    "shelves_heading": "Manual shelves, ready for real books",
+    "shelves": [
+      {
+        "title": "Current shelf",
+        "copy": "This shelf is meant for the books currently in progress, with lightweight status and optional reading notes.",
+        "items": [
+          "Manual curation keeps the signal high.",
+          "No account sync is required to make the page useful."
+        ]
+      },
+      {
+        "title": "Recent reads",
+        "copy": "Finished books can surface as a compact editorial shelf rather than an exhaustive catalogue.",
+        "items": [
+          "A few strong notes matter more than logging everything.",
+          "The structure supports month and year views later."
+        ]
+      },
+      {
+        "title": "Reference shelf",
+        "copy": "Technical, product, and design references can live separately from broader reading so the library stays clear and navigable.",
+        "items": [
+          "Useful for books that continue shaping engineering practice.",
+          "Also a good fit for recurring recommendations."
+        ]
+      }
+    ],
+    "archive_heading": "A real reading archive, ready for curation",
+    "archive_intro": "The library now has a proper archive surface and future-ready detail support for individual books or reading notes. It still launches without real entries, but the page no longer depends on placeholder-only structure.",
+    "books": [],
+    "empty_state_title": "No books published yet",
+    "empty_state_copy": "The reading archive is ready for real titles, notes, and localized book pages. Entries can be added manually later without changing the renderer or deployment model.",
+    "tracking_heading": "Tracking model",
+    "tracking_cards": [
+      {
+        "title": "Year, month, now",
+        "copy": "The visible counters stay deliberately small in v1: books this year, books this month, and the current read."
+      },
+      {
+        "title": "Selective notes over exhaustive logs",
+        "copy": "The goal is not to mirror a reading service. The site should publish only the parts of the reading life that feel useful and durable."
+      },
+      {
+        "title": "Static-first by default",
+        "copy": "All shelves and counts can be updated manually in the content file without introducing external services, accounts, or background jobs."
+      }
+    ],
+    "system_heading": "Library system",
+    "system_cards": [
+      {
+        "title": "Future-ready book pages",
+        "copy": "The library can support dedicated pages for books, notes, and reading context once real entries exist.",
+        "items": [
+          "Localized detail pages can be added without redesigning the page architecture.",
+          "A single static generator still controls the archive shape."
+        ]
+      },
+      {
+        "title": "Manual curation stays intentional",
+        "copy": "The reading area is designed for selected titles and lightweight notes rather than for mirroring a third-party tracking service.",
+        "items": [
+          "The signal should stay editorial rather than exhaustive.",
+          "Manual control preserves privacy and long-term clarity."
+        ]
+      },
+      {
+        "title": "Static-first reading log",
+        "copy": "Counts, current reads, and future notes remain editable in the content source with no sync jobs, accounts, or background processing.",
+        "items": [
+          "The public site stays lightweight and private.",
+          "Reading data can evolve without creating operational complexity."
+        ]
+      }
+    ],
+    "status_title": "Manual tracking for v1",
+    "status_copy": "As soon as real books and counts are ready, this page can shift from scaffolding to a curated library without changing the architecture."
+  },
+  "library_details": {},
+  "about": {
+    "page_title": "About | Loïc Lavergne",
+    "description": "Skills, broader profile, sports, trophies, and contact.",
+    "eyebrow": "About",
+    "title": "Technical depth, leadership range, and the personal layers around the work.",
+    "intro": "This page brings together the broader profile: skills, tools, sports, trophies, and the contact surface for the site.",
+    "bio": "I build at the intersection of mobile product strategy, hands-on technical depth, and delivery systems. Over time the role has expanded from native iOS engineering into broader leadership across architecture, planning, and cross-team execution.",
+    "skills_heading": "Selected skills",
+    "skill_groups": [
+      {
+        "title": "Leadership and product delivery",
+        "items": [
+          "Engineering management",
+          "Roadmap planning",
+          "Technical coordination",
+          "Project management",
+          "Team management",
+          "Stakeholder alignment"
+        ]
+      },
+      {
+        "title": "Mobile and Apple platforms",
+        "items": [
+          "Swift",
+          "SwiftUI",
+          "iOS",
+          "watchOS",
+          "tvOS",
+          "macOS",
+          "Xcode",
+          "Objective-C",
+          "Cocoa",
+          "Cocoa Touch"
+        ]
+      },
+      {
+        "title": "Cross-platform, backend, and tooling",
+        "items": [
+          "Android",
+          "Kotlin",
+          "APIs",
+          "Git",
+          "Firebase",
+          "CI / tooling",
+          "Databases",
+          "SQL",
+          "MySQL",
+          "PHP",
+          "Python",
+          "Unix shell",
+          "JavaScript",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "title": "AI, ML, and emerging technologies",
+        "items": [
+          "Core ML",
+          "Machine learning",
+          "Artificial intelligence",
+          "Large language models",
+          "Agentic engineering",
+          "Agentic AI development",
+          "Augmented reality",
+          "ARKit"
+        ]
+      },
+      {
+        "title": "Design and creative tooling",
+        "items": [
+          "Figma",
+          "Sketch",
+          "Adobe Creative Suite",
+          "Unity3D",
+          "Blender"
+        ]
+      }
+    ],
+    "sports_title": "Sports",
+    "sports_copy": "The sports layer should show discipline, rhythm, and continuity without turning the site into a telemetry feed.",
+    "sports_archive_heading": "A selective archive of training and milestones",
+    "sports_archive_intro": "This area is now structured as a real public archive surface for sport. It can hold selected training seasons, race efforts, or yearly snapshots when they are worth publishing, without exposing private or high-frequency tracking data.",
+    "sports_entries": [],
+    "sports_empty_state_title": "No sports highlights published yet",
+    "sports_empty_state_copy": "The archive is ready for curated training snapshots, race notes, and milestone entries. It intentionally launches empty until the right public level of detail is defined.",
+    "sports_system_heading": "Sports system",
+    "sports_cards": [
+      {
+        "title": "Training profile",
+        "copy": "This area is ready for the sports practiced today, the weekly rhythm, and the broader role that training plays alongside work.",
+        "items": [
+          "Manual updates keep the public version intentional.",
+          "The section can stay selective without losing meaning."
+        ]
+      },
+      {
+        "title": "Events and milestones",
+        "copy": "Races, long efforts, seasonal goals, or personal bests can appear here as static highlights once they are worth publishing.",
+        "items": [
+          "A good fit for compact yearly recaps.",
+          "Also compatible with deeper subpages later."
+        ]
+      },
+      {
+        "title": "Consistency over raw telemetry",
+        "copy": "The site can show habits and continuity without exposing overly detailed health or workout data.",
+        "items": [
+          "Better signal for a public portfolio.",
+          "Closer to the calm editorial tone of the rest of the product."
+        ]
+      }
+    ],
+    "trophies_title": "Trophy case",
+    "trophies_copy": "The trophy case is intended as a curated visual archive, not a live sync dashboard.",
+    "trophies_archive_heading": "A curated visual archive",
+    "trophies_archive_intro": "The trophy area is now treated as a proper archive surface for selected awards, streaks, and seasonal collections. It stays manual and editorial rather than trying to mirror a live fitness account.",
+    "trophy_entries": [],
+    "trophies_empty_state_title": "No trophies published yet",
+    "trophies_empty_state_copy": "The trophy case is ready for manually selected Apple Watch awards and other meaningful milestones. It launches empty until the first curated set is worth showing.",
+    "trophies_system_heading": "Trophy system",
+    "trophy_cards": [
+      {
+        "title": "Apple Watch rewards",
+        "copy": "The section is designed to eventually host manually curated activity awards, streaks, and ring-related milestones."
+      },
+      {
+        "title": "Personal milestones",
+        "copy": "Broader personal achievements can sit next to fitness rewards when they matter enough to keep as part of the public profile."
+      },
+      {
+        "title": "Seasonal snapshots",
+        "copy": "Limited-time challenges or yearly highlight sets can be grouped into compact collections without requiring any backend integration."
+      }
+    ],
+    "contact_title": "Contact",
+    "contact_copy": "For now the contact path stays static and lightweight: email plus public profiles."
+  }
+}

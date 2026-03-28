@@ -33,7 +33,9 @@ There are no required external package dependencies for the current build.
 
 Core source files:
 - `Package.swift`: Swift package manifest for the local generator
-- `Sources/SiteBuilder/Resources/site.json`: bilingual content, localized routes, metadata, and content model
+- `Sources/SiteBuilder/Resources/site-metadata.json`: shared site metadata, routes, and page inventory
+- `Sources/SiteBuilder/Resources/locales/en.json`: English content source of truth
+- `Sources/SiteBuilder/Resources/locales/fr.json`: French content source of truth
 - `Sources/SiteBuilder/SiteModels.swift`: typed content loading
 - `Sources/SiteBuilder/SiteRenderer.swift`: shared renderers for pages, navigation, footer, and SEO tags
 - `Sources/SiteBuilder/main.swift`: generates static HTML files, the root `404.html`, and support outputs

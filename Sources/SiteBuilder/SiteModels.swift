@@ -22,17 +22,60 @@ struct SitePayload: Decodable {
         case locales
     }
 
-    /// Load the site payload from the SwiftPM resource bundle.
+    /// Load the site payload from split SwiftPM JSON resources.
     static func load() throws -> SitePayload {
-        guard let resourceURL = Bundle.module.url(forResource: "site", withExtension: "json") else {
-            throw SiteBuilderError.missingResource("site.json")
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+        let core: SiteCorePayload = try loadResource(
+            named: "site-metadata",
+            decoder: decoder
+        )
+        let locales = [
+            "en": try loadResource(named: "en", subdirectory: "locales", decoder: decoder) as LocaleContent,
+            "fr": try loadResource(named: "fr", subdirectory: "locales", decoder: decoder) as LocaleContent
+        ]
+
+        return SitePayload(
+            site: core.site,
+            routes: core.routes,
+            pageKeys: core.pageKeys,
+            locales: locales
+        )
+    }
+
+    /// Load and decode one bundled JSON resource.
+    private static func loadResource<T: Decodable>(
+        named resourceName: String,
+        subdirectory: String? = nil,
+        decoder: JSONDecoder
+    ) throws -> T {
+        guard let baseURL = Bundle.module.resourceURL else {
+            let resourcePath = subdirectory.map { "\($0)/\(resourceName).json" } ?? "\(resourceName).json"
+            throw SiteBuilderError.missingResource(resourcePath)
+        }
+
+        let candidatePaths = [
+            subdirectory.map { "\($0)/\(resourceName).json" },
+            "\(resourceName).json"
+        ].compactMap { $0 }
+
+        guard let resourceURL = candidatePaths
+            .map({ baseURL.appendingPathComponent($0) })
+            .first(where: { FileManager.default.fileExists(atPath: $0.path) }) else {
+            let preferredPath = subdirectory.map { "\($0)/\(resourceName).json" } ?? "\(resourceName).json"
+            throw SiteBuilderError.missingResource(preferredPath)
         }
 
         let data = try Data(contentsOf: resourceURL)
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return try decoder.decode(SitePayload.self, from: data)
+        return try decoder.decode(T.self, from: data)
     }
+}
+
+private struct SiteCorePayload: Decodable {
+    let site: SiteMetadata
+    let routes: [String: [String: String]]
+    let pageKeys: [String]
 }
 
 struct SiteMetadata: Decodable {

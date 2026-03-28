@@ -25,7 +25,9 @@ proprietary assets or visual materials.
 
 Primary source files:
 - `Package.swift`: Swift package manifest for the local site builder
-- `Sources/SiteBuilder/Resources/site.json`: bilingual content, routes, metadata, and content model
+- `Sources/SiteBuilder/Resources/site-metadata.json`: shared metadata, routes, and page inventory
+- `Sources/SiteBuilder/Resources/locales/en.json`: English content source of truth
+- `Sources/SiteBuilder/Resources/locales/fr.json`: French content source of truth
 - `Sources/SiteBuilder/SiteModels.swift`: typed data model and JSON loading
 - `Sources/SiteBuilder/SiteRenderer.swift`: static HTML renderer and shared page components
 - `Sources/SiteBuilder/main.swift`: build entry point that writes generated pages and sitemap
@@ -98,8 +100,8 @@ swift run SiteServer
 - `hello@loic.engineer` is currently treated as a placeholder contact address
   until the user confirms the final public inbox.
 - Education, writing, library, sports, and trophy sections now use structured
-  static content blocks in `site.json`, even when the underlying personal data
-  is still pending.
+  static content blocks in the split locale JSON resources, even when the
+  underlying personal data is still pending.
 - Formal education data, real reading data, sports specifics, trophy
   selections, and the final contact email still require a later content pass.
 - Blog architecture exists in v1 even though posts are not published yet.
