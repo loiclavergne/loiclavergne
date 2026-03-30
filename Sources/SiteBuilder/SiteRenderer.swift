@@ -861,6 +861,11 @@ struct SiteRenderer {
         return (previous, next)
     }
 
+    /// Resolve the current project within the curated project sequence.
+    private func projectFlowItem(pageKey: String, localeContent: LocaleContent) -> ProjectFlowItem? {
+        projectFlowItems(localeContent: localeContent).first(where: { $0.pageKey == pageKey })
+    }
+
     /// Render one navigation card within the project detail flow section.
     private func renderProjectFlowCard(
         _ item: ProjectFlowItem,
@@ -1273,6 +1278,7 @@ struct SiteRenderer {
         let labels = localeContent.labels
         let page = try projectDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
         let neighbors = projectFlowNeighbors(pageKey: pageKey, localeContent: localeContent)
+        let currentFlowItem = projectFlowItem(pageKey: pageKey, localeContent: localeContent)
         let overviewID = projectDetailSectionID(kind: "overview", index: 1)
         let signalsID = projectDetailSectionID(kind: "signals", index: 2)
 
@@ -1335,6 +1341,48 @@ struct SiteRenderer {
           </nav>
         """
 
+        let railFacts = [
+            (
+                label: label(labels, key: "project_group", fallback: "Group"),
+                value: currentFlowItem?.sectionLabel ?? label(labels, key: "projects", fallback: "Projects")
+            ),
+            (
+                label: label(labels, key: "period_label", fallback: "Period"),
+                value: page.period
+            ),
+            (
+                label: label(labels, key: "sections_label", fallback: "Sections"),
+                value: String(detailSections.count + 2)
+            ),
+            (
+                label: label(labels, key: "signals_label", fallback: "Signals"),
+                value: String(page.metrics.count)
+            )
+        ].map {
+            """
+            <li>
+              <span>\(escapeHTML($0.label))</span>
+              <strong>\(escapeHTML($0.value))</strong>
+            </li>
+            """
+        }.joined(separator: "\n")
+
+        let projectRail = """
+          <article class="card card--project-rail reveal">
+            <span class="eyebrow">\(escapeHTML(label(labels, key: "case_study", fallback: "Case study")))</span>
+            <h3>\(escapeHTML(page.title))</h3>
+            <p class="project-rail__meta">\(escapeHTML(page.organization)) · \(escapeHTML(page.roleTitle))</p>
+            <p>\(escapeHTML(label(labels, key: "project_rail_copy", fallback: "Keep the role, timeline, and navigation close while reading the full case study.")))</p>
+            <ul class="project-rail__facts">
+              \(railFacts)
+            </ul>
+            <div class="button-row">
+              <a class="button button--secondary" href="\(try pagePath("projects", locale: locale))">\(escapeHTML(label(labels, key: "all_projects", fallback: "All projects")))</a>
+              <a class="button button--secondary" href="mailto:\(escapeHTML(payload.site.contactEmail))">\(escapeHTML(label(labels, key: "email", fallback: "Email")))</a>
+            </div>
+          </article>
+        """
+
         let sections = detailSections.map(\.markup).joined(separator: "\n")
 
         var flowCards: [String] = []
@@ -1387,6 +1435,7 @@ struct SiteRenderer {
             <section class="section section--compact">
               <div class="shell project-detail-layout">
                 <aside class="project-detail-layout__aside">
+                  \(projectRail)
                   \(sectionIndex)
                 </aside>
                 <div class="project-detail-layout__content">
