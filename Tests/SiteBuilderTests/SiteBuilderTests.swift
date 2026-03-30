@@ -161,6 +161,12 @@ final class SiteBuilderTests: XCTestCase {
             contentsOf: outputRoot.appendingPathComponent("projects/roole-premium/index.html"),
             encoding: .utf8
         )
+        XCTAssertTrue(englishProjectDetail.contains("data-section-index"))
+        XCTAssertTrue(englishProjectDetail.contains("aria-label=\"On this page\""))
+        XCTAssertTrue(englishProjectDetail.contains("href=\"#section-1-overview\""))
+        XCTAssertTrue(englishProjectDetail.contains("href=\"#section-2-signals\""))
+        XCTAssertTrue(englishProjectDetail.contains("id=\"section-1-overview\""))
+        XCTAssertTrue(englishProjectDetail.contains("id=\"section-2-signals\""))
         XCTAssertTrue(englishProjectDetail.contains(">Continue exploring<"))
         XCTAssertTrue(englishProjectDetail.contains(">Previous project<"))
         XCTAssertTrue(englishProjectDetail.contains(">Next project<"))
@@ -210,6 +216,12 @@ final class SiteBuilderTests: XCTestCase {
             contentsOf: outputRoot.appendingPathComponent("fr/projects/roole-premium/index.html"),
             encoding: .utf8
         )
+        XCTAssertTrue(frenchProjectDetail.contains("data-section-index"))
+        XCTAssertTrue(frenchProjectDetail.contains("aria-label=\"Sur cette page\""))
+        XCTAssertTrue(frenchProjectDetail.contains("href=\"#section-1-overview\""))
+        XCTAssertTrue(frenchProjectDetail.contains("href=\"#section-2-signals\""))
+        XCTAssertTrue(frenchProjectDetail.contains("id=\"section-1-overview\""))
+        XCTAssertTrue(frenchProjectDetail.contains("id=\"section-2-signals\""))
         XCTAssertTrue(frenchProjectDetail.contains(">Continuer l&#x27;exploration<"))
         XCTAssertTrue(frenchProjectDetail.contains(">Projet précédent<"))
         XCTAssertTrue(frenchProjectDetail.contains(">Projet suivant<"))

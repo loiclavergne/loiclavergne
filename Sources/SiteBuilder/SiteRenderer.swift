@@ -296,6 +296,15 @@ struct SiteRenderer {
         return payload.site.baseUrl + "/site.webmanifest"
     }
 
+    /// Build a stable in-page anchor identifier for project detail sections.
+    func projectDetailSectionID(kind: String, index: Int? = nil) -> String {
+        if let index {
+            return "section-\(index)-\(kind)"
+        }
+
+        return "section-\(kind)"
+    }
+
     /// Build a localized search-index path.
     func searchIndexPath(for locale: String) -> String {
         locale == "fr" ? "/fr/search-index.json" : "/search-index.json"
@@ -1254,6 +1263,8 @@ struct SiteRenderer {
         let labels = localeContent.labels
         let page = try projectDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
         let neighbors = projectFlowNeighbors(pageKey: pageKey, localeContent: localeContent)
+        let overviewID = projectDetailSectionID(kind: "overview", index: 1)
+        let signalsID = projectDetailSectionID(kind: "signals", index: 2)
 
         let metrics = page.metrics.map {
             """
@@ -1264,11 +1275,12 @@ struct SiteRenderer {
             """
         }.joined(separator: "\n")
 
-        let sections = page.sections.map { section -> String in
+        let detailSections = page.sections.enumerated().map { index, section -> (id: String, title: String, markup: String) in
+            let sectionID = projectDetailSectionID(kind: "detail", index: index + 3)
             let cards = section.cards.map(renderContentCard).joined(separator: "\n")
 
-            return """
-            <section class="section section--compact">
+            let markup = """
+            <section class="section section--compact project-detail__section" id="\(sectionID)">
               <div class="shell split-heading">
                 <div>
                   <span class="eyebrow">\(escapeHTML(section.eyebrow))</span>
@@ -1283,7 +1295,37 @@ struct SiteRenderer {
               </div>
             </section>
             """
+
+            return (sectionID, section.title, markup)
+        }
+
+        let sectionIndexItems = [
+            (id: overviewID, title: label(labels, key: "overview", fallback: "Overview")),
+            (id: signalsID, title: label(labels, key: "key_signals", fallback: "Key signals"))
+        ] + detailSections.map { (id: $0.id, title: $0.title) }
+
+        let sectionIndexLinks = sectionIndexItems.map {
+            "<a class=\"section-index__link\" href=\"#\($0.id)\">\(escapeHTML($0.title))</a>"
         }.joined(separator: "\n")
+
+        let sectionIndex = """
+          <section class="section section--compact">
+            <div class="shell">
+              <nav class="section-index reveal" data-section-index aria-label="\(escapeHTML(label(labels, key: "on_this_page", fallback: "On this page")))">
+                <span class="eyebrow">\(escapeHTML(label(labels, key: "context", fallback: "Context")))</span>
+                <div class="section-index__header">
+                  <h2>\(escapeHTML(label(labels, key: "on_this_page", fallback: "On this page")))</h2>
+                  <p>\(escapeHTML(label(labels, key: "section_index_copy", fallback: "Jump between the overview, delivery signals, and the main sections of the case study.")))</p>
+                </div>
+                <div class="section-index__items">
+                  \(sectionIndexLinks)
+                </div>
+              </nav>
+            </div>
+          </section>
+        """
+
+        let sections = detailSections.map(\.markup).joined(separator: "\n")
 
         var flowCards: [String] = []
 
@@ -1332,7 +1374,9 @@ struct SiteRenderer {
               </div>
             </section>
 
-            <section class="section section--compact">
+            \(sectionIndex)
+
+            <section class="section section--compact project-detail__section" id="\(overviewID)">
               <div class="shell">
                 <article class="card card--featured reveal">
                   <span class="eyebrow">\(escapeHTML(page.organization))</span>
@@ -1344,7 +1388,7 @@ struct SiteRenderer {
               </div>
             </section>
 
-            <section class="section section--compact">
+            <section class="section section--compact project-detail__section" id="\(signalsID)">
               <div class="shell stat-grid">
                 \(metrics)
               </div>
