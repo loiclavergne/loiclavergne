@@ -736,6 +736,16 @@ struct SiteRenderer {
         """
     }
 
+    /// Render a project-detail heading with a stable permalink.
+    func renderProjectSectionTitle(title: String, sectionID: String, permalinkLabel: String) -> String {
+        """
+        <div class="project-section-title">
+          <h2>\(escapeHTML(title))</h2>
+          <a class="section-permalink" href="#\(escapeHTML(sectionID))" aria-label="\(escapeHTML(permalinkLabel)): \(escapeHTML(title))" data-section-permalink>#</a>
+        </div>
+        """
+    }
+
     /// Render a featured project card with an optional detail-page action.
     func renderFeaturedProjectCard(_ project: FeaturedProject, locale: String, localeContent: LocaleContent) throws -> String {
         let actionMarkup: String
@@ -1284,7 +1294,11 @@ struct SiteRenderer {
               <div class="shell split-heading">
                 <div>
                   <span class="eyebrow">\(escapeHTML(section.eyebrow))</span>
-                  <h2>\(escapeHTML(section.title))</h2>
+                  \(renderProjectSectionTitle(
+                    title: section.title,
+                    sectionID: sectionID,
+                    permalinkLabel: label(labels, key: "section_permalink", fallback: "Link to section")
+                  ))
                 </div>
                 <div class="section-copy">
                   <p>\(escapeHTML(section.intro))</p>
@@ -1305,7 +1319,7 @@ struct SiteRenderer {
         ] + detailSections.map { (id: $0.id, title: $0.title) }
 
         let sectionIndexLinks = sectionIndexItems.map {
-            "<a class=\"section-index__link\" href=\"#\($0.id)\">\(escapeHTML($0.title))</a>"
+            "<a class=\"section-index__link\" href=\"#\($0.id)\" data-section-link=\"\(escapeHTML($0.id))\">\(escapeHTML($0.title))</a>"
         }.joined(separator: "\n")
 
         let sectionIndex = """
@@ -1380,7 +1394,11 @@ struct SiteRenderer {
               <div class="shell">
                 <article class="card card--featured reveal">
                   <span class="eyebrow">\(escapeHTML(page.organization))</span>
-                  <h2>\(escapeHTML(page.roleTitle))</h2>
+                  \(renderProjectSectionTitle(
+                    title: page.roleTitle,
+                    sectionID: overviewID,
+                    permalinkLabel: label(labels, key: "section_permalink", fallback: "Link to section")
+                  ))
                   <p class="card__meta">\(escapeHTML(page.period))</p>
                   <p>\(escapeHTML(page.summary))</p>
                   \(renderList(page.highlights))
@@ -1389,6 +1407,19 @@ struct SiteRenderer {
             </section>
 
             <section class="section section--compact project-detail__section" id="\(signalsID)">
+              <div class="shell split-heading">
+                <div>
+                  <span class="eyebrow">\(escapeHTML(label(labels, key: "context", fallback: "Context")))</span>
+                  \(renderProjectSectionTitle(
+                    title: label(labels, key: "key_signals", fallback: "Key signals"),
+                    sectionID: signalsID,
+                    permalinkLabel: label(labels, key: "section_permalink", fallback: "Link to section")
+                  ))
+                </div>
+                <div class="section-copy">
+                  <p>\(escapeHTML(label(labels, key: "signals_copy", fallback: "These signals compress the main product, delivery, and operating constraints into a quick scan before the deeper sections.")))</p>
+                </div>
+              </div>
               <div class="shell stat-grid">
                 \(metrics)
               </div>

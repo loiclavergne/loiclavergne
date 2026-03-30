@@ -9,6 +9,7 @@
 //  - appearance switching
 //  - reveal-on-view behavior
 //  - homepage story panel activation
+//  - project section index activation
 //  - command-palette search
 //
 
@@ -181,6 +182,107 @@ function initStoryPanels() {
   );
 
   steps.forEach((step) => observer.observe(step));
+}
+
+/**
+ * Keep the project detail section index aligned with the visible section.
+ */
+function initSectionIndex() {
+  const index = document.querySelector("[data-section-index]");
+  if (!(index instanceof HTMLElement)) return;
+
+  const entries = Array.from(index.querySelectorAll("[data-section-link]"))
+    .map((link) => {
+      if (!(link instanceof HTMLAnchorElement)) return null;
+      const sectionID = link.dataset.sectionLink ?? link.getAttribute("href")?.replace(/^#/, "") ?? "";
+      if (!sectionID) return null;
+
+      const section = document.getElementById(sectionID);
+      if (!(section instanceof HTMLElement)) return null;
+
+      return { link, section, sectionID };
+    })
+    .filter(Boolean);
+
+  if (!entries.length) return;
+
+  /**
+   * @returns {number}
+   */
+  function sectionThreshold() {
+    const header = document.querySelector("[data-header]");
+    const headerHeight = header instanceof HTMLElement ? header.getBoundingClientRect().height : 0;
+    return headerHeight + 40;
+  }
+
+  /**
+   * @param {string} sectionID
+   */
+  function setActiveSection(sectionID) {
+    entries.forEach(({ link, sectionID: candidateID }) => {
+      const isActive = candidateID === sectionID;
+      link.classList.toggle("is-active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  /**
+   * @returns {string | null}
+   */
+  function hashedSectionID() {
+    const hash = window.location.hash.replace(/^#/, "");
+    if (!hash) return null;
+    return decodeURIComponent(hash);
+  }
+
+  /**
+   * @returns {boolean}
+   */
+  function syncFromHash() {
+    const sectionID = hashedSectionID();
+    if (!sectionID) return false;
+
+    const match = entries.find((entry) => entry.sectionID === sectionID);
+    if (!match) return false;
+
+    setActiveSection(match.sectionID);
+    return true;
+  }
+
+  function syncFromScroll() {
+    let activeID = entries[0].sectionID;
+    const threshold = sectionThreshold();
+
+    entries.forEach(({ section, sectionID }) => {
+      if (section.getBoundingClientRect().top <= threshold) {
+        activeID = sectionID;
+      }
+    });
+
+    setActiveSection(activeID);
+  }
+
+  entries.forEach(({ link, sectionID }) => {
+    link.addEventListener("click", () => {
+      setActiveSection(sectionID);
+    });
+  });
+
+  if (!syncFromHash()) {
+    syncFromScroll();
+  }
+
+  window.addEventListener("hashchange", () => {
+    if (!syncFromHash()) {
+      syncFromScroll();
+    }
+  });
+  window.addEventListener("scroll", syncFromScroll, { passive: true });
+  window.addEventListener("resize", syncFromScroll);
 }
 
 /**
@@ -1164,5 +1266,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderState();
   initRevealObserver();
   initStoryPanels();
+  initSectionIndex();
   initSearchPalette();
 });
