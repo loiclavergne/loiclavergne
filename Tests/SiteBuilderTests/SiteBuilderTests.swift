@@ -164,6 +164,9 @@ final class SiteBuilderTests: XCTestCase {
             contentsOf: outputRoot.appendingPathComponent("projects/roole-premium/index.html"),
             encoding: .utf8
         )
+        XCTAssertTrue(englishProjectDetail.contains("class=\"shell project-detail-layout\""))
+        XCTAssertTrue(englishProjectDetail.contains("class=\"project-detail-layout__aside\""))
+        XCTAssertTrue(englishProjectDetail.contains("class=\"project-detail-layout__content\""))
         XCTAssertTrue(englishProjectDetail.contains("data-section-index"))
         XCTAssertTrue(englishProjectDetail.contains("aria-label=\"On this page\""))
         XCTAssertTrue(englishProjectDetail.contains("href=\"#section-1-overview\""))
@@ -226,6 +229,9 @@ final class SiteBuilderTests: XCTestCase {
             contentsOf: outputRoot.appendingPathComponent("fr/projects/roole-premium/index.html"),
             encoding: .utf8
         )
+        XCTAssertTrue(frenchProjectDetail.contains("class=\"shell project-detail-layout\""))
+        XCTAssertTrue(frenchProjectDetail.contains("class=\"project-detail-layout__aside\""))
+        XCTAssertTrue(frenchProjectDetail.contains("class=\"project-detail-layout__content\""))
         XCTAssertTrue(frenchProjectDetail.contains("data-section-index"))
         XCTAssertTrue(frenchProjectDetail.contains("aria-label=\"Sur cette page\""))
         XCTAssertTrue(frenchProjectDetail.contains("href=\"#section-1-overview\""))

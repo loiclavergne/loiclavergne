@@ -199,42 +199,40 @@
       </div>
     </section>
 
-      <section class="section section--compact">
-    <div class="shell">
-      <nav class="section-index reveal" data-section-index aria-label="Sur cette page">
-        <span class="eyebrow">Contexte</span>
-        <div class="section-index__header">
-          <h2>Sur cette page</h2>
-          <p>Naviguez entre la vue d&#x27;ensemble, les repères de delivery et les sections principales de l&#x27;étude de cas.</p>
-        </div>
-        <div class="section-index__items">
-          <a class="section-index__link" href="#section-1-overview" data-section-link="section-1-overview">Vue d&#x27;ensemble</a>
+    <section class="section section--compact">
+      <div class="shell project-detail-layout">
+        <aside class="project-detail-layout__aside">
+            <nav class="section-index reveal" data-section-index aria-label="Sur cette page">
+    <span class="eyebrow">Contexte</span>
+    <div class="section-index__header">
+      <h2>Sur cette page</h2>
+      <p>Naviguez entre la vue d&#x27;ensemble, les repères de delivery et les sections principales de l&#x27;étude de cas.</p>
+    </div>
+    <div class="section-index__items">
+      <a class="section-index__link" href="#section-1-overview" data-section-link="section-1-overview">Vue d&#x27;ensemble</a>
 <a class="section-index__link" href="#section-2-signals" data-section-link="section-2-signals">Repères clés</a>
 <a class="section-index__link" href="#section-3-detail" data-section-link="section-3-detail">Le site a été conçu comme un produit éditorial, pas comme un CV déversé en ligne.</a>
 <a class="section-index__link" href="#section-4-detail" data-section-link="section-4-detail">L&#x27;architecture reste légère sans devenir fragile.</a>
 <a class="section-index__link" href="#section-5-detail" data-section-link="section-5-detail">Le projet sert aussi de banc d&#x27;essai pour le goût et la maintenabilité long terme.</a>
-        </div>
-      </nav>
     </div>
-  </section>
-
+  </nav>
+        </aside>
+        <div class="project-detail-layout__content">
     <section class="section section--compact project-detail__section" id="section-1-overview">
-      <div class="shell">
-        <article class="card card--featured reveal">
-          <span class="eyebrow">Projet personnel</span>
-          <div class="project-section-title">
+          <article class="card card--featured reveal">
+            <span class="eyebrow">Projet personnel</span>
+            <div class="project-section-title">
   <h2>Design produit, architecture de contenu et implémentation</h2>
   <a class="section-permalink" href="#section-1-overview" aria-label="Lien vers la section: Design produit, architecture de contenu et implémentation" data-section-permalink>#</a>
 </div>
           <p class="card__meta">Mars 2026 - Aujourd&#x27;hui</p>
-          <p>Conception et développement du site comme produit statique généré en Swift, avec routage localisé, hiérarchie éditoriale forte, posture privacy-first et architecture de contenu maintenable.</p>
-          <ul class="detail-list"><li>Mise en place d&#x27;une architecture statique bilingue générée en Swift et livrée en HTML, CSS et JavaScript simples.</li><li>Expérience conçue autour d&#x27;un rythme inspiré d&#x27;Apple, de retenue visuelle, de motion, d&#x27;accessibilité et de performance.</li><li>Structure de contenu pensée pour faire évoluer travail actuel, archive de projets, écrits, lecture, sport et trophées sans reconstruire l&#x27;architecture.</li></ul>
-        </article>
-      </div>
+            <p>Conception et développement du site comme produit statique généré en Swift, avec routage localisé, hiérarchie éditoriale forte, posture privacy-first et architecture de contenu maintenable.</p>
+            <ul class="detail-list"><li>Mise en place d&#x27;une architecture statique bilingue générée en Swift et livrée en HTML, CSS et JavaScript simples.</li><li>Expérience conçue autour d&#x27;un rythme inspiré d&#x27;Apple, de retenue visuelle, de motion, d&#x27;accessibilité et de performance.</li><li>Structure de contenu pensée pour faire évoluer travail actuel, archive de projets, écrits, lecture, sport et trophées sans reconstruire l&#x27;architecture.</li></ul>
+          </article>
     </section>
 
     <section class="section section--compact project-detail__section" id="section-2-signals">
-      <div class="shell split-heading">
+      <div class="split-heading">
         <div>
           <span class="eyebrow">Contexte</span>
           <div class="project-section-title">
@@ -246,7 +244,7 @@
           <p>Ces repères condensent les principaux enjeux produit, delivery et fonctionnement avant d&#x27;entrer dans les sections détaillées.</p>
         </div>
       </div>
-      <div class="shell stat-grid">
+      <div class="stat-grid">
         <article class="stat-card reveal">
   <span class="stat-card__value">2 locales</span>
   <span class="stat-card__label">routes anglaises et françaises générées depuis une seule source</span>
@@ -263,7 +261,7 @@
     </section>
 
     <section class="section section--compact project-detail__section" id="section-3-detail">
-  <div class="shell split-heading">
+  <div class="split-heading">
     <div>
       <span class="eyebrow">Produit</span>
       <div class="project-section-title">
@@ -275,7 +273,7 @@
       <p>La structure priorise d&#x27;abord qui je suis professionnellement aujourd&#x27;hui, puis s&#x27;ouvre vers des couches plus profondes de projets, profil technique, écrits, lecture, sport et systèmes personnels plus larges.</p>
     </div>
   </div>
-  <div class="shell card-grid card-grid--three">
+  <div class="card-grid card-grid--three">
     <article class="card reveal">
   <h3>Le présent d&#x27;abord</h3>
   <p>La homepage est centrée sur le rôle actuel, le travail actuel et un profil technique clair avant d&#x27;ouvrir vers l&#x27;archive et les sections plus personnelles.</p>
@@ -294,7 +292,7 @@
   </div>
 </section>
 <section class="section section--compact project-detail__section" id="section-4-detail">
-  <div class="shell split-heading">
+  <div class="split-heading">
     <div>
       <span class="eyebrow">Système</span>
       <div class="project-section-title">
@@ -306,7 +304,7 @@
       <p>La sortie publique est un HTML statique simple, tandis qu&#x27;un générateur local en Swift gère les routes bilingues, les métadonnées, la réutilisation de contenu et les pages détail projet.</p>
     </div>
   </div>
-  <div class="shell card-grid card-grid--three">
+  <div class="card-grid card-grid--three">
     <article class="card reveal">
   <h3>Une source de vérité unique</h3>
   <p>Copie localisée, routes, métadonnées et structures de contenu vivent dans une même source que le générateur transforme en pages finales.</p>
@@ -325,7 +323,7 @@
   </div>
 </section>
 <section class="section section--compact project-detail__section" id="section-5-detail">
-  <div class="shell split-heading">
+  <div class="split-heading">
     <div>
       <span class="eyebrow">Exécution</span>
       <div class="project-section-title">
@@ -337,7 +335,7 @@
       <p>Au-delà des pages visibles, le site est un exercice continu de modélisation de contenu, de parité bilingue, de discipline documentaire et de delivery d&#x27;une expérience polie avec un minimum de pièces mobiles.</p>
     </div>
   </div>
-  <div class="shell card-grid card-grid--three">
+  <div class="card-grid card-grid--three">
     <article class="card reveal">
   <h3>Documentation tenue à jour</h3>
   <p>README, notes d&#x27;architecture et consignes de reprise agent évoluent avec l&#x27;implémentation afin qu&#x27;un prochain passage puisse continuer proprement.</p>
@@ -355,6 +353,9 @@
 </article>
   </div>
 </section>
+        </div>
+      </div>
+    </section>
 
     <section class="section section--compact">
       <div class="shell split-heading">

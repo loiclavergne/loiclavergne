@@ -199,42 +199,40 @@
       </div>
     </section>
 
-      <section class="section section--compact">
-    <div class="shell">
-      <nav class="section-index reveal" data-section-index aria-label="On this page">
-        <span class="eyebrow">Context</span>
-        <div class="section-index__header">
-          <h2>On this page</h2>
-          <p>Jump between the overview, delivery signals, and the main sections of the case study.</p>
-        </div>
-        <div class="section-index__items">
-          <a class="section-index__link" href="#section-1-overview" data-section-link="section-1-overview">Overview</a>
+    <section class="section section--compact">
+      <div class="shell project-detail-layout">
+        <aside class="project-detail-layout__aside">
+            <nav class="section-index reveal" data-section-index aria-label="On this page">
+    <span class="eyebrow">Context</span>
+    <div class="section-index__header">
+      <h2>On this page</h2>
+      <p>Jump between the overview, delivery signals, and the main sections of the case study.</p>
+    </div>
+    <div class="section-index__items">
+      <a class="section-index__link" href="#section-1-overview" data-section-link="section-1-overview">Overview</a>
 <a class="section-index__link" href="#section-2-signals" data-section-link="section-2-signals">Key signals</a>
 <a class="section-index__link" href="#section-3-detail" data-section-link="section-3-detail">The site was designed as an editorial product, not a résumé dump.</a>
 <a class="section-index__link" href="#section-4-detail" data-section-link="section-4-detail">The architecture stays lightweight without becoming brittle.</a>
 <a class="section-index__link" href="#section-5-detail" data-section-link="section-5-detail">The project is also a testbed for taste and long-term maintenance.</a>
-        </div>
-      </nav>
     </div>
-  </section>
-
+  </nav>
+        </aside>
+        <div class="project-detail-layout__content">
     <section class="section section--compact project-detail__section" id="section-1-overview">
-      <div class="shell">
-        <article class="card card--featured reveal">
-          <span class="eyebrow">Personal project</span>
-          <div class="project-section-title">
+          <article class="card card--featured reveal">
+            <span class="eyebrow">Personal project</span>
+            <div class="project-section-title">
   <h2>Product design, content architecture, and implementation</h2>
   <a class="section-permalink" href="#section-1-overview" aria-label="Link to section: Product design, content architecture, and implementation" data-section-permalink>#</a>
 </div>
           <p class="card__meta">March 2026 - Present</p>
-          <p>Designed and built the site as a Swift-generated static product with localized routing, strong editorial hierarchy, privacy-first defaults, and maintainable content architecture.</p>
-          <ul class="detail-list"><li>Built a bilingual static architecture generated with Swift and shipped as plain HTML, CSS, and JavaScript.</li><li>Designed the experience around Apple-inspired pacing, restraint, motion, accessibility, and performance.</li><li>Structured the content model so current work, archive projects, writing, reading, sports, and trophies can evolve without rebuilding the architecture.</li></ul>
-        </article>
-      </div>
+            <p>Designed and built the site as a Swift-generated static product with localized routing, strong editorial hierarchy, privacy-first defaults, and maintainable content architecture.</p>
+            <ul class="detail-list"><li>Built a bilingual static architecture generated with Swift and shipped as plain HTML, CSS, and JavaScript.</li><li>Designed the experience around Apple-inspired pacing, restraint, motion, accessibility, and performance.</li><li>Structured the content model so current work, archive projects, writing, reading, sports, and trophies can evolve without rebuilding the architecture.</li></ul>
+          </article>
     </section>
 
     <section class="section section--compact project-detail__section" id="section-2-signals">
-      <div class="shell split-heading">
+      <div class="split-heading">
         <div>
           <span class="eyebrow">Context</span>
           <div class="project-section-title">
@@ -246,7 +244,7 @@
           <p>These signals compress the main product, delivery, and operating constraints into a quick scan before the deeper sections.</p>
         </div>
       </div>
-      <div class="shell stat-grid">
+      <div class="stat-grid">
         <article class="stat-card reveal">
   <span class="stat-card__value">2 locales</span>
   <span class="stat-card__label">English and French routes generated from one content source</span>
@@ -263,7 +261,7 @@
     </section>
 
     <section class="section section--compact project-detail__section" id="section-3-detail">
-  <div class="shell split-heading">
+  <div class="split-heading">
     <div>
       <span class="eyebrow">Product</span>
       <div class="project-section-title">
@@ -275,7 +273,7 @@
       <p>The structure prioritizes who I am professionally today, then expands into deeper layers of projects, technical profile, writing, reading, sports, and broader personal systems.</p>
     </div>
   </div>
-  <div class="shell card-grid card-grid--three">
+  <div class="card-grid card-grid--three">
     <article class="card reveal">
   <h3>Present first</h3>
   <p>The homepage is centered on current role, current work, and a clear technical profile before opening into deeper archive and personal sections.</p>
@@ -294,7 +292,7 @@
   </div>
 </section>
 <section class="section section--compact project-detail__section" id="section-4-detail">
-  <div class="shell split-heading">
+  <div class="split-heading">
     <div>
       <span class="eyebrow">System</span>
       <div class="project-section-title">
@@ -306,7 +304,7 @@
       <p>The public output is plain static HTML, while a local Swift generator handles bilingual routes, metadata, content reuse, and project-detail expansion.</p>
     </div>
   </div>
-  <div class="shell card-grid card-grid--three">
+  <div class="card-grid card-grid--three">
     <article class="card reveal">
   <h3>One source of truth</h3>
   <p>Localized copy, routes, metadata, and content structures live in a single content source that the generator turns into final pages.</p>
@@ -325,7 +323,7 @@
   </div>
 </section>
 <section class="section section--compact project-detail__section" id="section-5-detail">
-  <div class="shell split-heading">
+  <div class="split-heading">
     <div>
       <span class="eyebrow">Execution</span>
       <div class="project-section-title">
@@ -337,7 +335,7 @@
       <p>Beyond the visible pages, the site is an ongoing exercise in content modeling, bilingual parity, documentation discipline, and shipping a polished experience with minimal moving parts.</p>
     </div>
   </div>
-  <div class="shell card-grid card-grid--three">
+  <div class="card-grid card-grid--three">
     <article class="card reveal">
   <h3>Documentation kept in step</h3>
   <p>README, architecture notes, and agent handoff guidance evolve with the implementation so another pass can continue cleanly later.</p>
@@ -355,6 +353,9 @@
 </article>
   </div>
 </section>
+        </div>
+      </div>
+    </section>
 
     <section class="section section--compact">
       <div class="shell split-heading">

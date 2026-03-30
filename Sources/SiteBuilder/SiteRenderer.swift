@@ -1291,7 +1291,7 @@ struct SiteRenderer {
 
             let markup = """
             <section class="section section--compact project-detail__section" id="\(sectionID)">
-              <div class="shell split-heading">
+              <div class="split-heading">
                 <div>
                   <span class="eyebrow">\(escapeHTML(section.eyebrow))</span>
                   \(renderProjectSectionTitle(
@@ -1304,7 +1304,7 @@ struct SiteRenderer {
                   <p>\(escapeHTML(section.intro))</p>
                 </div>
               </div>
-              <div class="shell card-grid card-grid--three">
+              <div class="card-grid card-grid--three">
                 \(cards)
               </div>
             </section>
@@ -1323,20 +1323,16 @@ struct SiteRenderer {
         }.joined(separator: "\n")
 
         let sectionIndex = """
-          <section class="section section--compact">
-            <div class="shell">
-              <nav class="section-index reveal" data-section-index aria-label="\(escapeHTML(label(labels, key: "on_this_page", fallback: "On this page")))">
-                <span class="eyebrow">\(escapeHTML(label(labels, key: "context", fallback: "Context")))</span>
-                <div class="section-index__header">
-                  <h2>\(escapeHTML(label(labels, key: "on_this_page", fallback: "On this page")))</h2>
-                  <p>\(escapeHTML(label(labels, key: "section_index_copy", fallback: "Jump between the overview, delivery signals, and the main sections of the case study.")))</p>
-                </div>
-                <div class="section-index__items">
-                  \(sectionIndexLinks)
-                </div>
-              </nav>
+          <nav class="section-index reveal" data-section-index aria-label="\(escapeHTML(label(labels, key: "on_this_page", fallback: "On this page")))">
+            <span class="eyebrow">\(escapeHTML(label(labels, key: "context", fallback: "Context")))</span>
+            <div class="section-index__header">
+              <h2>\(escapeHTML(label(labels, key: "on_this_page", fallback: "On this page")))</h2>
+              <p>\(escapeHTML(label(labels, key: "section_index_copy", fallback: "Jump between the overview, delivery signals, and the main sections of the case study.")))</p>
             </div>
-          </section>
+            <div class="section-index__items">
+              \(sectionIndexLinks)
+            </div>
+          </nav>
         """
 
         let sections = detailSections.map(\.markup).joined(separator: "\n")
@@ -1388,26 +1384,28 @@ struct SiteRenderer {
               </div>
             </section>
 
-            \(sectionIndex)
-
+            <section class="section section--compact">
+              <div class="shell project-detail-layout">
+                <aside class="project-detail-layout__aside">
+                  \(sectionIndex)
+                </aside>
+                <div class="project-detail-layout__content">
             <section class="section section--compact project-detail__section" id="\(overviewID)">
-              <div class="shell">
-                <article class="card card--featured reveal">
-                  <span class="eyebrow">\(escapeHTML(page.organization))</span>
-                  \(renderProjectSectionTitle(
-                    title: page.roleTitle,
-                    sectionID: overviewID,
+                  <article class="card card--featured reveal">
+                    <span class="eyebrow">\(escapeHTML(page.organization))</span>
+                    \(renderProjectSectionTitle(
+                      title: page.roleTitle,
+                      sectionID: overviewID,
                     permalinkLabel: label(labels, key: "section_permalink", fallback: "Link to section")
                   ))
                   <p class="card__meta">\(escapeHTML(page.period))</p>
-                  <p>\(escapeHTML(page.summary))</p>
-                  \(renderList(page.highlights))
-                </article>
-              </div>
+                    <p>\(escapeHTML(page.summary))</p>
+                    \(renderList(page.highlights))
+                  </article>
             </section>
 
             <section class="section section--compact project-detail__section" id="\(signalsID)">
-              <div class="shell split-heading">
+              <div class="split-heading">
                 <div>
                   <span class="eyebrow">\(escapeHTML(label(labels, key: "context", fallback: "Context")))</span>
                   \(renderProjectSectionTitle(
@@ -1420,12 +1418,15 @@ struct SiteRenderer {
                   <p>\(escapeHTML(label(labels, key: "signals_copy", fallback: "These signals compress the main product, delivery, and operating constraints into a quick scan before the deeper sections.")))</p>
                 </div>
               </div>
-              <div class="shell stat-grid">
+              <div class="stat-grid">
                 \(metrics)
               </div>
             </section>
 
             \(sections)
+                </div>
+              </div>
+            </section>
 
             <section class="section section--compact">
               <div class="shell split-heading">
