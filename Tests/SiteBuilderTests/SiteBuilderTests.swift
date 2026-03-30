@@ -157,6 +157,17 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(home.contains("\"resultsCountOther\" : \"{{count}} results\""))
         XCTAssertTrue(home.contains("\"unavailable\" : \"Search is temporarily unavailable.\""))
 
+        let englishProjectDetail = try String(
+            contentsOf: outputRoot.appendingPathComponent("projects/roole-premium/index.html"),
+            encoding: .utf8
+        )
+        XCTAssertTrue(englishProjectDetail.contains(">Continue exploring<"))
+        XCTAssertTrue(englishProjectDetail.contains(">Previous project<"))
+        XCTAssertTrue(englishProjectDetail.contains(">Next project<"))
+        XCTAssertTrue(englishProjectDetail.contains("href=\"/projects/roole-map/\""))
+        XCTAssertTrue(englishProjectDetail.contains("href=\"/projects/vialife-digital/\""))
+        XCTAssertTrue(englishProjectDetail.contains("href=\"/projects/\""))
+
         let frenchHome = try String(contentsOf: outputRoot.appendingPathComponent("fr/index.html"), encoding: .utf8)
         XCTAssertTrue(frenchHome.contains("<link rel=\"manifest\" href=\"https://loic.engineer/fr/site.webmanifest\">"))
         XCTAssertTrue(frenchHome.contains("document.documentElement.classList.add(\"js\")"))
@@ -194,6 +205,17 @@ final class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(frenchHome.contains("\"suggestedLabel\" : \"Destinations suggérées\""))
         XCTAssertTrue(frenchHome.contains("\"resultsCountOther\" : \"{{count}} résultats\""))
         XCTAssertTrue(frenchHome.contains("\"unavailable\" : \"La recherche est temporairement indisponible.\""))
+
+        let frenchProjectDetail = try String(
+            contentsOf: outputRoot.appendingPathComponent("fr/projects/roole-premium/index.html"),
+            encoding: .utf8
+        )
+        XCTAssertTrue(frenchProjectDetail.contains(">Continuer l&#x27;exploration<"))
+        XCTAssertTrue(frenchProjectDetail.contains(">Projet précédent<"))
+        XCTAssertTrue(frenchProjectDetail.contains(">Projet suivant<"))
+        XCTAssertTrue(frenchProjectDetail.contains("href=\"/fr/projects/roole-map/\""))
+        XCTAssertTrue(frenchProjectDetail.contains("href=\"/fr/projects/vialife-digital/\""))
+        XCTAssertTrue(frenchProjectDetail.contains("href=\"/fr/projects/\""))
 
         let englishSearchIndexData = try Data(contentsOf: outputRoot.appendingPathComponent("search-index.json"))
         let englishSearchIndex = try XCTUnwrap(

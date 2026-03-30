@@ -13,6 +13,14 @@ struct SiteRenderer {
     let payload: SitePayload
     let rootURL: URL
 
+    private struct ProjectFlowItem {
+        let pageKey: String
+        let sectionLabel: String
+        let title: String
+        let summary: String
+        let period: String?
+    }
+
     /// Build all localized pages and return their canonical URLs.
     func buildPages() throws -> [String] {
         var urls: [String] = []
@@ -769,6 +777,93 @@ struct SiteRenderer {
         """
     }
 
+    /// Build the ordered project sequence from the localized curated project groups.
+    private func projectFlowItems(localeContent: LocaleContent) -> [ProjectFlowItem] {
+        let labels = localeContent.labels
+        let featuredLabel = label(labels, key: "featured", fallback: "Featured")
+        let archiveLabel = label(labels, key: "archive", fallback: "Archive")
+        let hobbyLabel = label(labels, key: "side_work", fallback: "Side Work")
+
+        let featured = localeContent.projects.featured.compactMap { project -> ProjectFlowItem? in
+            guard let route = project.route else {
+                return nil
+            }
+
+            return ProjectFlowItem(
+                pageKey: route,
+                sectionLabel: featuredLabel,
+                title: project.name,
+                summary: project.summary,
+                period: project.period
+            )
+        }
+
+        let archive = localeContent.projects.archive.compactMap { project -> ProjectFlowItem? in
+            guard let route = project.route else {
+                return nil
+            }
+
+            return ProjectFlowItem(
+                pageKey: route,
+                sectionLabel: archiveLabel,
+                title: project.name,
+                summary: project.summary,
+                period: project.period
+            )
+        }
+
+        let hobby = localeContent.projects.hobby.compactMap { project -> ProjectFlowItem? in
+            guard let route = project.route else {
+                return nil
+            }
+
+            return ProjectFlowItem(
+                pageKey: route,
+                sectionLabel: hobbyLabel,
+                title: project.name,
+                summary: project.summary,
+                period: project.period
+            )
+        }
+
+        return featured + archive + hobby
+    }
+
+    /// Resolve the previous and next project within the curated project sequence.
+    private func projectFlowNeighbors(pageKey: String, localeContent: LocaleContent) -> (previous: ProjectFlowItem?, next: ProjectFlowItem?) {
+        let items = projectFlowItems(localeContent: localeContent)
+
+        guard let index = items.firstIndex(where: { $0.pageKey == pageKey }) else {
+            return (nil, nil)
+        }
+
+        let previous = index > 0 ? items[index - 1] : nil
+        let next = index < items.count - 1 ? items[index + 1] : nil
+        return (previous, next)
+    }
+
+    /// Render one navigation card within the project detail flow section.
+    private func renderProjectFlowCard(
+        _ item: ProjectFlowItem,
+        eyebrow: String,
+        locale: String,
+        localeContent: LocaleContent
+    ) throws -> String {
+        let meta = [item.sectionLabel, item.period].compactMap { $0 }.joined(separator: " · ")
+
+        return """
+        <article class="card card--entry card--project-flow reveal">
+          <span class="eyebrow">\(escapeHTML(eyebrow))</span>
+          <h3>\(escapeHTML(item.title))</h3>
+          <p class="project-flow__meta">\(escapeHTML(meta))</p>
+          <p>\(escapeHTML(item.summary))</p>
+          <div class="button-row">
+            <a class="button button--secondary" href="\(try pagePath(item.pageKey, locale: locale))">\(escapeHTML(label(localeContent.labels, key: "view_project", fallback: "View project")))</a>
+          </div>
+        </article>
+        """
+    }
+
     /// Render a writing archive card with an optional detail-page action.
     func renderWritingPostCard(_ post: WritingPostSummary, locale: String, localeContent: LocaleContent) throws -> String {
         let actionMarkup: String
@@ -1158,6 +1253,7 @@ struct SiteRenderer {
         let localeContent = try localeContent(locale)
         let labels = localeContent.labels
         let page = try projectDetail(pageKey: pageKey, localeContent: localeContent, locale: locale)
+        let neighbors = projectFlowNeighbors(pageKey: pageKey, localeContent: localeContent)
 
         let metrics = page.metrics.map {
             """
@@ -1189,6 +1285,43 @@ struct SiteRenderer {
             """
         }.joined(separator: "\n")
 
+        var flowCards: [String] = []
+
+        if let previous = neighbors.previous {
+            flowCards.append(
+                try renderProjectFlowCard(
+                    previous,
+                    eyebrow: label(labels, key: "previous_project", fallback: "Previous project"),
+                    locale: locale,
+                    localeContent: localeContent
+                )
+            )
+        }
+
+        flowCards.append(
+            """
+            <article class="card card--project-flow reveal">
+              <span class="eyebrow">\(escapeHTML(localeContent.nav["projects"] ?? "Projects"))</span>
+              <h3>\(escapeHTML(label(labels, key: "all_projects", fallback: "All projects")))</h3>
+              <p>\(escapeHTML(label(labels, key: "project_index_copy", fallback: "Return to the full projects index to jump across current work, archive case studies, and side projects.")))</p>
+              <div class="button-row">
+                <a class="button button--secondary" href="\(try pagePath("projects", locale: locale))">\(escapeHTML(label(labels, key: "all_projects", fallback: "All projects")))</a>
+              </div>
+            </article>
+            """
+        )
+
+        if let next = neighbors.next {
+            flowCards.append(
+                try renderProjectFlowCard(
+                    next,
+                    eyebrow: label(labels, key: "next_project", fallback: "Next project"),
+                    locale: locale,
+                    localeContent: localeContent
+                )
+            )
+        }
+
         return """
             <section class="hero hero--page">
               <div class="shell hero__content hero__content--page">
@@ -1218,6 +1351,21 @@ struct SiteRenderer {
             </section>
 
             \(sections)
+
+            <section class="section section--compact">
+              <div class="shell split-heading">
+                <div>
+                  <span class="eyebrow">\(escapeHTML(label(labels, key: "context", fallback: "Context")))</span>
+                  <h2>\(escapeHTML(label(labels, key: "continue_exploring", fallback: "Continue exploring")))</h2>
+                </div>
+                <div class="section-copy">
+                  <p>\(escapeHTML(label(labels, key: "project_sequence_copy", fallback: "Move through the current case studies, archive work, and side projects without leaving the flow.")))</p>
+                </div>
+              </div>
+              <div class="shell card-grid card-grid--three project-flow">
+                \(flowCards.joined(separator: "\n"))
+              </div>
+            </section>
         """
     }
 

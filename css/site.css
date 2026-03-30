@@ -918,6 +918,25 @@ li {
   min-height: 100%;
 }
 
+.project-flow {
+  align-items: stretch;
+}
+
+.card--project-flow {
+  min-height: 100%;
+  align-content: start;
+}
+
+.project-flow__meta {
+  color: var(--text-tertiary);
+  font-size: 0.92rem;
+}
+
+.card--project-flow .button-row {
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
 .card__meta,
 .timeline-entry__period {
   color: var(--text-tertiary);
