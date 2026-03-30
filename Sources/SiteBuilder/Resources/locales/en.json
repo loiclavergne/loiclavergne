@@ -34,6 +34,8 @@
     "overview": "Overview",
     "key_signals": "Key signals",
     "section_permalink": "Link to section",
+    "section_link_copied": "Section link copied.",
+    "section_link_copy_failed": "Could not copy section link.",
     "previous_project": "Previous project",
     "next_project": "Next project",
     "all_projects": "All projects",

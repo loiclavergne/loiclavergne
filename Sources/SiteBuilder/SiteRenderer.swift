@@ -2450,6 +2450,14 @@ struct SiteRenderer {
         </head>
         <body data-page="\(escapeHTML(pageKey))">
           <a class="skip-link" href="#main">\(escapeHTML(localeContent.skipLink))</a>
+          <div
+            class="visually-hidden"
+            aria-live="polite"
+            aria-atomic="true"
+            data-section-announce
+            data-copy-success="\(escapeHTML(label(localeContent.labels, key: "section_link_copied", fallback: "Section link copied.")))"
+            data-copy-failure="\(escapeHTML(label(localeContent.labels, key: "section_link_copy_failed", fallback: "Could not copy section link.")))"
+          ></div>
         \(try renderNav(locale: locale, currentPage: pageKey))
           <main id="main">
         \(try renderMain(pageKey: pageKey, locale: locale))

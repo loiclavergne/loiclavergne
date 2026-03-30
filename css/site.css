@@ -88,6 +88,18 @@ button {
   transform: translateY(0);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -922,6 +934,12 @@ li {
   scroll-margin-top: calc(var(--header-height) + 1.5rem);
 }
 
+.project-detail__section:target .card,
+.project-detail__section:target .stat-card {
+  border-color: var(--surface-border-strong);
+  box-shadow: var(--shadow-focus);
+}
+
 .project-section-title {
   display: flex;
   align-items: start;
@@ -965,6 +983,14 @@ li {
   color: var(--text-primary);
   border-color: var(--surface-border);
   background: var(--page-background-strong);
+}
+
+.section-permalink.is-copied {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--text-primary);
+  border-color: transparent;
+  background: var(--accent-soft);
 }
 
 .section-index {

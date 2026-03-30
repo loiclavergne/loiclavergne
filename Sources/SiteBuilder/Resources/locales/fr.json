@@ -34,6 +34,8 @@
     "overview": "Vue d'ensemble",
     "key_signals": "Repères clés",
     "section_permalink": "Lien vers la section",
+    "section_link_copied": "Lien de section copié.",
+    "section_link_copy_failed": "Impossible de copier le lien de section.",
     "previous_project": "Projet précédent",
     "next_project": "Projet suivant",
     "all_projects": "Tous les projets",

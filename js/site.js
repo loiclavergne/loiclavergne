@@ -190,6 +190,10 @@ function initStoryPanels() {
 function initSectionIndex() {
   const index = document.querySelector("[data-section-index]");
   if (!(index instanceof HTMLElement)) return;
+  const announcer = document.querySelector("[data-section-announce]");
+  const copiedClassDuration = 1400;
+  /** @type {number | null} */
+  let copiedTimeout = null;
 
   const entries = Array.from(index.querySelectorAll("[data-section-link]"))
     .map((link) => {
@@ -205,6 +209,17 @@ function initSectionIndex() {
     .filter(Boolean);
 
   if (!entries.length) return;
+
+  /**
+   * @param {string} message
+   */
+  function announce(message) {
+    if (!(announcer instanceof HTMLElement)) return;
+    announcer.textContent = "";
+    window.requestAnimationFrame(() => {
+      announcer.textContent = message;
+    });
+  }
 
   /**
    * @returns {number}
@@ -269,6 +284,51 @@ function initSectionIndex() {
   entries.forEach(({ link, sectionID }) => {
     link.addEventListener("click", () => {
       setActiveSection(sectionID);
+    });
+  });
+
+  document.querySelectorAll("[data-section-permalink]").forEach((link) => {
+    if (!(link instanceof HTMLAnchorElement)) return;
+
+    link.addEventListener("click", async (event) => {
+      const href = link.getAttribute("href") ?? "";
+      if (!href.startsWith("#")) {
+        return;
+      }
+
+      const sectionID = href.slice(1);
+      if (!sectionID) {
+        return;
+      }
+
+      const targetSection = document.getElementById(sectionID);
+      if (!(targetSection instanceof HTMLElement)) {
+        return;
+      }
+
+      const nextURL = new URL(window.location.href);
+      nextURL.hash = sectionID;
+      setActiveSection(sectionID);
+
+      if (!navigator.clipboard?.writeText) {
+        return;
+      }
+
+      event.preventDefault();
+
+      try {
+        await navigator.clipboard.writeText(nextURL.toString());
+        window.history.replaceState(null, "", nextURL);
+        announce(announcer instanceof HTMLElement ? announcer.dataset.copySuccess ?? "" : "");
+        link.classList.add("is-copied");
+        window.clearTimeout(copiedTimeout ?? undefined);
+        copiedTimeout = window.setTimeout(() => {
+          link.classList.remove("is-copied");
+        }, copiedClassDuration);
+      } catch (error) {
+        window.history.replaceState(null, "", nextURL);
+        announce(announcer instanceof HTMLElement ? announcer.dataset.copyFailure ?? "" : "");
+      }
     });
   });
 
