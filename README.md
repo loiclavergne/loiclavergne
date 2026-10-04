@@ -48,7 +48,7 @@
 
  -rw-r--r--@   3 <strong>LinkedIn</strong>    262B <a href="https://www.linkedin.com/in/loiclavergne/">linkedin.com/in/loiclavergne</a>
  -rw-rw-rw-@   3 <strong>Email</strong>        96B <a href="mailto:twofold.wallow02@icloud.com">contact</a>
- drwxr-xr-x@   1 <strong>Portfolio</strong>   116K <a href="https://loic.engineer">loic.engineer</a>
- -r--r--r--@   1 <strong>Bluesky</strong>     706B <a href="https://bsky.app/profile/loic.engineer">bsky.app/profile/loic.engineer</a>
+ drwxr-xr-x@   1 <strong>Portfolio</strong>   116K <a href="https://loic.lavergne.tech">loic.lavergne.tech</a>
+ -r--r--r--@   1 <strong>Bluesky</strong>     706B <a href="https://bsky.app/profile/loic.lavergne.tech">bsky.app/profile/loic.lavergne.tech</a>
  -r--r--r--@   1 <strong>X</strong>           410B <a href="https://twitter.com/loiclavergne">twitter.com/loiclavergne</a>
 </pre>
